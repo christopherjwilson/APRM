@@ -16,64 +16,166 @@ biblio-style: apalike
 css: style.css
 ---
 
-# Overview
+# Welcome to the module
 
-## Aims of the module
+# Module Overview
 
-The module aims to introduce and develop core and advanced principles of quantitative psychological research design and statistical analysis. Specifically, it will begin with the foundations of designing and conducting empirical research projects and progress to explore a range of statistical analysis techniques and software suited to dealing with different kinds of data. The overall aim is to give students the confidence to develop appropriate research questions, generate testable hypotheses, design rigorous projects, collect data and select appropriate statistical procedures that lead to defensible scientific conclusions.   
+This Level 7 module for first year Doctorate in Clinical Psychology trainees aims to enable you to:
 
+  - Refresh and extend your knowledge, skills and critical understanding of advanced research methods using both qualitative and quantitative approaches;
+  - Creatively apply the principles of quantitative and qualitative research methods to clinical psychology research and practice;
+  - Refresh and extend your skills in project design, management, analysis and presentation.
 
-## Learning Outcomes
-On successful completion of this module, students will be able to:  
+The module is also designed to explicitly prepare you for the two Doctorate level research modules which occur in Years Two and Three of the programme, ensuring that you have the requisite knowledge and skills to successfully engage with those modules.
 
-**Personal & Transferable Skills**
+The key foci for this module include:
 
-1. Display advanced competency in the numeric, statistical and analytical skills required for psychological research projects.
-
-2. Demonstrate advanced knowledge and skills in research design.
-
-3. Demonstrate effective ability to conduct and interpret statistical analyses using SPSS.
-
-**Research Knowledge & Cognitive Skills**
-
-4. Interpret and evaluate quantitative methods in psychology. 
-Professional Skills
-
-5. Demonstrate an in-depth knowledge and understanding of research design and applied statistical techniques relevant to a specialist area of psychology.   
+  - critical review of established literature
+  - project design
+  - project management
+  - data analysis
+  - dissemination of research findings
+  
+The module is taught using a variety of techniques to best enhance your knowledge and understanding of the application of research theory and methods in the context of clinical psychology. These include lectures, seminars, guided statistical analysis and tutorials with the latter being used to provide individual guidance and formative feedback. The module has its own site on the University’s Virtual Learning Environment http://eat.tees.ac.uk - known as Blackboard), with resources and literature designed to support learning.
 
 
-## Indicative module content
 
-**This module includes (but is not limited to):**
+## Module timetable and delivery for 2020/2021
 
-- Experimental, quasi-experimental and non-experimental research designs    
-- Research Philosophy
-- Ethics 
-- Probability and Hypothesis Testing
-- Power
-- Moderation and Mediation
-- Using R for data analysis
-- Correlation and Regression
-- ANOVA and Factorial ANOVA
-- Reliability, Validity and Psychometrics
+The timetable for this module appears on the Clinical Psychology Programme Site/Timetables.
+The majority of the sessions will take place on Monday mornings. Please note that the timetable should be checked on a regular basis.
+
+**Due to COVID19 pandemic, the sessions for this module will be delivered online in 2020/21**
 
 
-## Assessment
+## Learning and Teaching Strategies
 
-### Assessment details
+The module is taught using a variety of techniques to best enhance your knowledge and understanding of the application of research theory and methods in the context of clinical psychology. This includes activities designed to encourage independent learning, a key skill for successful performance in research modules in Years Two and Three of the programme.  Evidence of independent learning is expected in the assignments for this module.  Specific links are made with research informed activity in practice. 
 
-**ECA (100% of the overall mark):** Produce a 3,000 word research report based on data gathered from a battery of psychological assessments to facilitate either a non-experimental or experimental design, including: a literature review, a testable research hypothesis, replicable methodology, appropriate results analysis, discussion of the findings and appropriate limitations and future work. *Learning outcomes: 1, 2, 3, 4 and 5.*
+You will be provided with two papers for critical review at the start of the module and asked to decide which one you will use for your summative critical review assignment; one of these papers is from a quantitative research tradition and the other is from a qualitative research tradition. 
 
-**Formative assessment:**
-Formative assessment and feed forward are embedded within the module from an early stage. Verbal feed forward is provided during inquiry and practice based learning activities and assessment preparation sessions.
+All presentations (with added annotations) are available, along with additional support materials, via an e-learning@tees on the VLE.  E-learning is enabled through group activities on the VLE or Microsoft Teams where discussion and problem solving is undertaken in relation to tasks set during teaching sessions. The discussion boards or Microsoft Teams site will be used to ask and answer questions that arise from the taught material and also your independent work.
 
-### Specific marking criteria for research report (in addition to generic assessment criteria): 
+## How will the online sessions work?
 
-- Students should produce a detailed and evidence based rationale leading to a testable hypothesis.
-- A methodology detailed enough for successful replication should be provided (including information on design, participants).
-- Data should be analysed correctly via an appropriate method with evidence of correct interpretation and assumption checking.
-- A discussion of the findings which relates results to theory should be presented.
-Appropriate threats to validity should be evaluated and discussed as limitations and implications for future work.
+The video below explains how online sessions will work:
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=156dcb6f-e48c-4efb-a87d-ac2b00ab921c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+# Assessment
+
+## Formative assessment
+
+Formative feedback is provided throughout the module through practical exercises and in seminars on trainee presentations.
+
+By the end of year one, trainees are expected to have identified a thesis topic and have a completed research proposal. As such, there are a number of formative milestones across the year that will be monitored by the module team. Please see Appendix 1 of this guide for details.
+
+The required format for thesis research proposals can be found in Appendix 2 of the DClinPsy
+Programme Research Handbook.
+
+**The formal formative assessment is of a presentation of the thesis research proposal to be presented during the research panels, which take place on 20, 21 and 22 July 2020.** The presentation will be 20 minutes’ long and will outline the thesis project that the trainee will develop in Years 2 and 3. There will also be 10 minutes allotted for questions from the panel which will have two academic members and one clinical member. This formative assessment is intended as a starting point for the Year 2 and 3 research methods modules. The timing is important as it should enable trainees to start the process of ethics approval for their dissertation. earlier. The trainees will hand in a printed copy of their slides with explanatory notes and references.
+
+
+**Formative Assessment Criteria**
+
+The following criteria will be used to assess the assignment:   
+
+-	Effective justification for the study. 
+-	Clearly defined research question. 
+-	Comprehensive and critical review of the literature (within time constraints). 
+-	Realistic research design. 
+-	Effective consideration of ethical issues. 
+-	Clear plan for writing up and dissemination. 
+-	Fulfilment of professional research ethics requirements. 
+-	Adherence to the relevant guidance for presentation as advised by the Module Tutor. 
+
+
+## Summative Assessments 
+
+Assessment consists of an ICA and an ECA, each worth 50% of the overall module mark. The deadlines for these assessments can be found in the assessments section on Blackboard or in the programme assessment timetable. 
+
+**ICA (50%)** - A critical review of a published primary research paper (choice to be made by a trainee from three papers with different methodologies provided by the tutor).  One of these papers is from a quantitative research approach, one from a qualitative research approach and the third will use mixed methods (2,000 words). 
+*Learning outcomes: (KU 1-4, CIS 1-3, KTS 1-3)*
+
+**ICA Assessment Criteria (Critical Appraisal of Published Primary Research Paper )**
+
+The following criteria will be used to assess the assignment:   
+
+- Demonstrate a critical understanding of the role of the reviewed paper for clinical psychologists in service delivery and/or practice. 
+- Demonstrate a critical and comprehensive understanding of the relevant methodological issues. 
+- Systematically and critically evaluate stages of the research process. 
+- Demonstrate a comprehensive and critical understanding of the ethical issues involved in the research. 
+- Reach effectively argued conclusions. 
+- Demonstrate independent learning ability through reflection on the critical review process. 
+- Adhere to the American Psychological Association (APA) guidelines for presentation and referencing. 
+
+
+**ECA (50%)** - A research project proposal which both addresses limitations identified in the ICA critical review (1) and develops the research further with the use of an alternative methodology (2,000 words).  
+*Learning outcomes: (KU 1-4, CIS 1-3, PPS 1-2, KTS 1-5)*
+
+**ECA Assessment Criteria (Research Project Proposal)**
+
+The following criteria will be used to assess the assignment: 
+
+- Identify a project that demonstrates a detailed and critical understanding of the research evidence reviewed and wider methodological issues, including the role of the project for informing service delivery and/or practice. 
+- Provide detailed and appropriately justified solutions to the design of the research project. 
+- Consider both methodological and ethical issues in the design of the research project. 
+- Demonstrate a detailed and critical understanding of the data analysis required for the proposed study. 
+- Adhere to the American Psychological Association (APA) guidelines for presentation and referencing. 
+
+### Word limits for assessment
+
+Word limits are as stated above (note that there is no allowance of +10%).  The word count refers to the assignment itself and does not include the reference list or tables/graphs.  The references cited in the main body of text are included in the word count.  
+
+## Submitting work
+
+All work should be submitted electronically, using the apporpriate links on the module Blackboard site. A printed hard copy of the assignment is **not** required and should not be submitted.  **The university's policy is that all assessments must be submitted by 4 p.m. on the day of the deadline.** 
+
+## A note about referencing
+
+There is an expectation that all academic assignments conform to current American Psychological Association referencing and citation conventions. Poor referencing will be taken into consideration when marking. It is recommended that you use a digital reference management system (e.g., Refworks, Mendley), which are freely available (and will save you time). The following online resources are also useful:
+
+<http://reciteworks.com/> - good for checking fine details (e.g., missing references)
+
+<http://www.apastyle.org> - detailed guidance for APA style
+
+<https://owl.english.purdue.edu/owl/resource/560/01/>- additional advice for APA style
+
+
+
+# Statistical analysis software
+
+You may be familiar with SPSS from your undergraduate statistics teaching. Please note that we do not use SPSS for teaching and instead use R Statistics. The reason for this is that R is a free statistical package, meaning that it can be accessed in NHS settings that do not have funding for SPSS. This will enable you to run statistical analyses whilst on placement where required, and also enables you to conduct statistical analyses as a qualified Psychologist without incurring any software costs. R is also more flexible than SPSS and has greater functionality. During the teaching you will be shown how to set up and install R, and how to run statistical analyses in this software.
+
+You can obtain R and R Studio from the following links:
+
+[https://cran.r-project.org/](https://cran.r-project.org/)
+
+[https://rstudio.com/](https://rstudio.com/)
+
+# Academic Support and Guidance
+
+Please contact the module team if you have any questions, concerns or any other areas you wish to discuss.
+
+## Module Team Contact Details
+
+Module Leader: Dr Christopher Wilson: christopher.wilson@tees.ac.uk
+
+Module Team: Dr Alan Bowman: A.Bowman@tees.ac.uk
+
+Guest lecturers from Schools within the University and Local NHS clinicians also contribute to some teaching
+
+# Appendix 1: Considering your thesis
+Your doctoral thesis is one of the largest pieces of work you will undertake during your training and it is important to start thinking about it early on. 
+
+You are advised to read around the area of your thesis topic on a continuing basis, and make use of tutorials with your supervision team when needed. 
+
+It is also advised that you consider research governance and ethics as you develop your project. Please speak to your academic supervisor about this as they will be able to advise or direct you to someone with appropriate expertise to address queries.  
+
+As specified in the Research Handbook, **please note that a revised version of your research proposal forms one of your year two summative assignments**. The deadline for this assignment is **early on in the start of second year** and it is therefore advised that you work on your revised proposal as soon as you receive feedback from the panels and have discussed this with your academic supervisor.
+
+
+
 
 
 

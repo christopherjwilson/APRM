@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 9 Using regression instead of ANOVA | Postgraduate Research Methods and Analysis</title>
+  <title>Section 3 Assessment | Postgraduate Research Methods and Analysis</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 9 Using regression instead of ANOVA | Postgraduate Research Methods and Analysis" />
+  <meta property="og:title" content="Section 3 Assessment | Postgraduate Research Methods and Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 9 Using regression instead of ANOVA | Postgraduate Research Methods and Analysis" />
+  <meta name="twitter:title" content="Section 3 Assessment | Postgraduate Research Methods and Analysis" />
   
   <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="working-with-data-in-r.html"/>
-<link rel="next" href="probability-and-hypothesis-testing.html"/>
+<link rel="prev" href="module-overview.html"/>
+<link rel="next" href="statistical-analysis-software.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -211,319 +211,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="using-regression-instead-of-anova" class="section level1">
-<h1><span class="header-section-number">Section 9</span> Using regression instead of ANOVA</h1>
-<p>People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
-<p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
-<div id="anova-approach" class="section level3">
-<h3><span class="header-section-number">9.0.1</span> ANOVA Approach</h3>
-<p>ANOVA asks the question in the following way:</p>
-<blockquote>
-<p>Is there a difference in reading comprehension scores between teaching groups?</p>
-</blockquote>
-<p>The analysis takes the following approach:</p>
+<div id="assessment" class="section level1">
+<h1><span class="header-section-number">Section 3</span> Assessment</h1>
+<div id="formative-assessment" class="section level2">
+<h2><span class="header-section-number">3.1</span> Formative assessment</h2>
+<p>Formative feedback is provided throughout the module through practical exercises and in seminars on trainee presentations.</p>
+<p>By the end of year one, trainees are expected to have identified a thesis topic and have a completed research proposal. As such, there are a number of formative milestones across the year that will be monitored by the module team. Please see Appendix 1 of this guide for details.</p>
+<p>The required format for thesis research proposals can be found in Appendix 2 of the DClinPsy
+Programme Research Handbook.</p>
+<p><strong>The formal formative assessment is of a presentation of the thesis research proposal to be presented during the research panels, which take place on 20, 21 and 22 July 2020.</strong> The presentation will be 20 minutes’ long and will outline the thesis project that the trainee will develop in Years 2 and 3. There will also be 10 minutes allotted for questions from the panel which will have two academic members and one clinical member. This formative assessment is intended as a starting point for the Year 2 and 3 research methods modules. The timing is important as it should enable trainees to start the process of ethics approval for their dissertation. earlier. The trainees will hand in a printed copy of their slides with explanatory notes and references.</p>
+<p><strong>Formative Assessment Criteria</strong></p>
+<p>The following criteria will be used to assess the assignment:</p>
 <ul>
-<li>What are the means of groups 1,2 and 3?</li>
-<li>Are the means of groups 1,2 and 3 different?</li>
-<li>Is the difference in means of groups 1,2 and 3 statistically significant?</li>
+<li>Effective justification for the study.</li>
+<li>Clearly defined research question.</li>
+<li>Comprehensive and critical review of the literature (within time constraints).</li>
+<li>Realistic research design.</li>
+<li>Effective consideration of ethical issues.</li>
+<li>Clear plan for writing up and dissemination.</li>
+<li>Fulfilment of professional research ethics requirements.</li>
+<li>Adherence to the relevant guidance for presentation as advised by the Module Tutor.</li>
 </ul>
-<p>If we were to summarise the data, we might present it in the following way:</p>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-group
-</th>
-<th style="text-align:right;">
-mean
-</th>
-<th style="text-align:right;">
-sd
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Basal
-</td>
-<td style="text-align:right;">
-6.681818
-</td>
-<td style="text-align:right;">
-2.766920
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-DRTA
-</td>
-<td style="text-align:right;">
-9.772727
-</td>
-<td style="text-align:right;">
-2.724349
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Strat
-</td>
-<td style="text-align:right;">
-7.772727
-</td>
-<td style="text-align:right;">
-3.927095
-</td>
-</tr>
-</tbody>
-</table>
-<p>In Table @ref(tab:data_summary) can see that the mean scores are different and highest in the DRTA group.</p>
-<p>If we were to run an ANOVA on the data, we might present it in the following way:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-term
-</th>
-<th style="text-align:right;">
-df
-</th>
-<th style="text-align:right;">
-sumsq
-</th>
-<th style="text-align:right;">
-meansq
-</th>
-<th style="text-align:right;">
-statistic
-</th>
-<th style="text-align:right;">
-p.value
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-group
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-108.1212
-</td>
-<td style="text-align:right;">
-54.06061
-</td>
-<td style="text-align:right;">
-5.317437
-</td>
-<td style="text-align:right;">
-0.0073468
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Residuals
-</td>
-<td style="text-align:right;">
-63
-</td>
-<td style="text-align:right;">
-640.5000
-</td>
-<td style="text-align:right;">
-10.16667
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-</tr>
-</tbody>
-</table>
-<p>Notice that the ANOVA (Table @ref(anova_approach)) tells us that the difference between groups is significant (p &lt; 0.05) but we cannot tell yet which of the 3 groups are significantly different from each other.</p>
 </div>
-<div id="regression-approach" class="section level3">
-<h3><span class="header-section-number">9.0.2</span> Regression approach</h3>
-<p>Regression asks the question the following way:</p>
-<blockquote>
-<p>Does teaching group predict reading comprehension score?</p>
-</blockquote>
-<p>The analysis takes the following approach:</p>
+<div id="summative-assessments" class="section level2">
+<h2><span class="header-section-number">3.2</span> Summative Assessments</h2>
+<p>Assessment consists of an ICA and an ECA, each worth 50% of the overall module mark. The deadlines for these assessments can be found in the assessments section on Blackboard or in the programme assessment timetable.</p>
+<p><strong>ICA (50%)</strong> - A critical review of a published primary research paper (choice to be made by a trainee from three papers with different methodologies provided by the tutor). One of these papers is from a quantitative research approach, one from a qualitative research approach and the third will use mixed methods (2,000 words).
+<em>Learning outcomes: (KU 1-4, CIS 1-3, KTS 1-3)</em></p>
+<p><strong>ICA Assessment Criteria (Critical Appraisal of Published Primary Research Paper )</strong></p>
+<p>The following criteria will be used to assess the assignment:</p>
 <ul>
-<li>Let’s use the mean of group 1 as a reference point (i.e. the intercept).</li>
-<li>What’s the difference between the intercept and the mean scores of the other groups (i.e. the coefficients)?</li>
-<li>Are any of the coefficients statistically significant?</li>
+<li>Demonstrate a critical understanding of the role of the reviewed paper for clinical psychologists in service delivery and/or practice.</li>
+<li>Demonstrate a critical and comprehensive understanding of the relevant methodological issues.</li>
+<li>Systematically and critically evaluate stages of the research process.</li>
+<li>Demonstrate a comprehensive and critical understanding of the ethical issues involved in the research.</li>
+<li>Reach effectively argued conclusions.</li>
+<li>Demonstrate independent learning ability through reflection on the critical review process.</li>
+<li>Adhere to the American Psychological Association (APA) guidelines for presentation and referencing.</li>
 </ul>
-<p>If we run a regression analysis, we might present the results like this:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-R2
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-0.1444271
-</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-term
-</th>
-<th style="text-align:right;">
-df
-</th>
-<th style="text-align:right;">
-sumsq
-</th>
-<th style="text-align:right;">
-meansq
-</th>
-<th style="text-align:right;">
-statistic
-</th>
-<th style="text-align:right;">
-p.value
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-group
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-108.1212
-</td>
-<td style="text-align:right;">
-54.06061
-</td>
-<td style="text-align:right;">
-5.317437
-</td>
-<td style="text-align:right;">
-0.0073468
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Residuals
-</td>
-<td style="text-align:right;">
-63
-</td>
-<td style="text-align:right;">
-640.5000
-</td>
-<td style="text-align:right;">
-10.16667
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-term
-</th>
-<th style="text-align:right;">
-estimate
-</th>
-<th style="text-align:right;">
-std.error
-</th>
-<th style="text-align:right;">
-statistic
-</th>
-<th style="text-align:right;">
-p.value
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-(Intercept)
-</td>
-<td style="text-align:right;">
-6.681818
-</td>
-<td style="text-align:right;">
-0.6797950
-</td>
-<td style="text-align:right;">
-9.829167
-</td>
-<td style="text-align:right;">
-0.0000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-groupDRTA
-</td>
-<td style="text-align:right;">
-3.090909
-</td>
-<td style="text-align:right;">
-0.9613753
-</td>
-<td style="text-align:right;">
-3.215091
-</td>
-<td style="text-align:right;">
-0.0020583
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-groupStrat
-</td>
-<td style="text-align:right;">
-1.090909
-</td>
-<td style="text-align:right;">
-0.9613753
-</td>
-<td style="text-align:right;">
-1.134738
-</td>
-<td style="text-align:right;">
-0.2607841
-</td>
-</tr>
-</tbody>
-</table>
-<p>If we look at the coefficient (estimate) for the intercept (see Table @ref(tab:regression_approach)), we can see that the value is the same as the mean of the Basal group in the previous section (Table @ref(tab:data_summary)).</p>
-<p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So the regression table is already comparing the 3 groups.</p>
+<p><strong>ECA (50%)</strong> - A research project proposal which both addresses limitations identified in the ICA critical review (1) and develops the research further with the use of an alternative methodology (2,000 words).<br />
+<em>Learning outcomes: (KU 1-4, CIS 1-3, PPS 1-2, KTS 1-5)</em></p>
+<p><strong>ECA Assessment Criteria (Research Project Proposal)</strong></p>
+<p>The following criteria will be used to assess the assignment:</p>
+<ul>
+<li>Identify a project that demonstrates a detailed and critical understanding of the research evidence reviewed and wider methodological issues, including the role of the project for informing service delivery and/or practice.</li>
+<li>Provide detailed and appropriately justified solutions to the design of the research project.</li>
+<li>Consider both methodological and ethical issues in the design of the research project.</li>
+<li>Demonstrate a detailed and critical understanding of the data analysis required for the proposed study.</li>
+<li>Adhere to the American Psychological Association (APA) guidelines for presentation and referencing.</li>
+</ul>
+<div id="word-limits-for-assessment" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Word limits for assessment</h3>
+<p>Word limits are as stated above (note that there is no allowance of +10%). The word count refers to the assignment itself and does not include the reference list or tables/graphs. The references cited in the main body of text are included in the word count.</p>
 </div>
-<div id="analysis-of-covariance" class="section level2">
-<h2><span class="header-section-number">9.1</span> Analysis of covariance</h2>
-
+</div>
+<div id="submitting-work" class="section level2">
+<h2><span class="header-section-number">3.3</span> Submitting work</h2>
+<p>All work should be submitted electronically, using the apporpriate links on the module Blackboard site. A printed hard copy of the assignment is <strong>not</strong> required and should not be submitted. <strong>The university’s policy is that all assessments must be submitted by 4 p.m. on the day of the deadline.</strong></p>
+</div>
+<div id="a-note-about-referencing" class="section level2">
+<h2><span class="header-section-number">3.4</span> A note about referencing</h2>
+<p>There is an expectation that all academic assignments conform to current American Psychological Association referencing and citation conventions. Poor referencing will be taken into consideration when marking. It is recommended that you use a digital reference management system (e.g., Refworks, Mendley), which are freely available (and will save you time). The following online resources are also useful:</p>
+<p><a href="http://reciteworks.com/" class="uri">http://reciteworks.com/</a> - good for checking fine details (e.g., missing references)</p>
+<p><a href="http://www.apastyle.org" class="uri">http://www.apastyle.org</a> - detailed guidance for APA style</p>
+<p><a href="https://owl.english.purdue.edu/owl/resource/560/01/" class="uri">https://owl.english.purdue.edu/owl/resource/560/01/</a>- additional advice for APA style</p>
 </div>
 </div>
             </section>
@@ -531,8 +282,8 @@ groupStrat
           </div>
         </div>
       </div>
-<a href="working-with-data-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="probability-and-hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="module-overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="statistical-analysis-software.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

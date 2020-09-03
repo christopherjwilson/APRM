@@ -147,7 +147,70 @@ happinessSample$intervention <- as.factor(happinessSample$intervention)
 
 ## Working with dataframes
 
+Dataframes are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).
+
+In a dataframe, variables are columns and each row usually reperesents one measurement or one participant.
+
+### View dataframe
+
+To view a dataframe, we can click on it in the environment window and it will display:
+
+![Clicking on datasets in hte environment will open them up for viewing](images/environment.png)
+
+![Viewing a dataframe](images/dataframe.png)
+
+### Refer to variables (columns) in a dataframe
+
+Columns in a dataframe are accessed using the "$" sign. For example, to access the *happiness* column in the *happinessSample* dataframe, we would type:
+
+```{r}
+happinessSample$happiness
+
+```
+
+As we can see above, the result is then displayed.
 
 ### Order, filter and group data
 
+If you have the **tidyverse** package loaded, it is easy to organise and filter data.
+
+
+```{r arrange data}
+
+arrange(happinessSample, happiness)
+arrange(happinessSample, desc(happiness)) # Arrange in descending order
+```
+
+- Show clients with a happiness score of less than 4
+
+```{r filter data}
+
+filter(happinessSample, happiness < 4)
+```
+
+- Show Intervention group 2 with happiness scores above 7
+
+```{r filter data 2}
+
+filter(happinessSample, happiness > 7 & intervention == 2)
+```
+
+- Group by intervention and show the mean happiness score
+
+```{r}
+happinessSample %>% group_by(intervention) %>% summarise(mean = mean(happiness))
+```
+
+
 ### Create new variables from data
+
+To create new variables from data, we can use the **mutate()** function.
+
+For example, let's say we wanted to calculate the difference between each person's happiness score and the mean happiness score.
+
+We could do the following:
+
+```{r}
+happinessSample %>% mutate(difference = happiness - mean(happiness))
+```
+
