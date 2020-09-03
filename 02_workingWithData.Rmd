@@ -172,7 +172,7 @@ happinessSample$happiness
 
 As we can see above, the result is then displayed.
 
-### Order, filter and group data
+## Order, filter and group data
 
 If you have the **tidyverse** package loaded, it is easy to organise and filter data.
 
@@ -204,7 +204,7 @@ happinessSample %>% group_by(intervention) %>% summarise(mean = mean(happiness))
 ```
 
 
-### Create new variables from data
+## Create new variables from data
 
 To create new variables from data, we can use the **mutate()** function.
 
