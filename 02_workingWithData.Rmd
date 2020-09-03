@@ -1,6 +1,8 @@
 
 # Working with data in R
 
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a31933a2-be52-407e-a459-ac2b00e2844f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## By the end of this section, you will be able to:
 - Import data into R from excel, SPSS and csv files
 - Save data to objects
