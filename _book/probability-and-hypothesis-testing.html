@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 5 Probability and hypothesis testing | Postgraduate Research Methods and Analysis</title>
+  <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 5 Probability and hypothesis testing | Postgraduate Research Methods and Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 5 Probability and hypothesis testing | Postgraduate Research Methods and Analysis" />
+  
+  <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  
+
+<meta name="author" content="Christopher J. Wilson" />
+
+
+<meta name="date" content="2020-07-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="using-regression-instead-of-anova.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Postgraduate Research and Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#aims-of-the-module"><i class="fa fa-check"></i><b>1.1</b> Aims of the module</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i><b>1.2</b> Learning Outcomes</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#indicative-module-content"><i class="fa fa-check"></i><b>1.3</b> Indicative module content</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i><b>1.4</b> Assessment</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#assessment-details"><i class="fa fa-check"></i><b>1.4.1</b> Assessment details</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#specific-marking-criteria-for-research-report-in-addition-to-generic-assessment-criteria"><i class="fa fa-check"></i><b>1.4.2</b> Specific marking criteria for research report (in addition to generic assessment criteria):</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and R Studio</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#by-the-end-of-this-section-you-should-be-able-to"><i class="fa fa-check"></i><b>2.1</b> By the end of this section, you should be able to:</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#why-learn-use-r"><i class="fa fa-check"></i><b>2.2</b> Why learn / use R?</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#some-information-about-r"><i class="fa fa-check"></i><b>2.2.1</b> Some information about R</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#moving-from-other-software-to-r"><i class="fa fa-check"></i><b>2.2.2</b> Moving from other software to R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#r-has-many-advantages"><i class="fa fa-check"></i><b>2.3</b> R has many advantages</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>2.4</b> Download R and R Studio</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#the-r-studio-environment"><i class="fa fa-check"></i><b>2.5</b> The R Studio environment</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#working-with-a-script"><i class="fa fa-check"></i><b>2.6</b> Working with a script</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>2.7</b> Installing and loading packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html"><i class="fa fa-check"></i><b>3</b> Working with data in R</a><ul>
+<li class="chapter" data-level="3.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>3.1</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#in-this-section-we-will-use-the-tidyverse-set-of-packages"><i class="fa fa-check"></i><b>3.2</b> In this section, we will use the Tidyverse set of packages</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#import-data-into-r-from-excel-spss-and-csv-files"><i class="fa fa-check"></i><b>3.3</b> Import data into R from excel, SPSS and csv files</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#understanding-objects-in-r"><i class="fa fa-check"></i><b>3.4</b> Understanding objects in R</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#identify-different-data-structures-and-variable-types"><i class="fa fa-check"></i><b>3.5</b> Identify different data structures and variable types</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#data-structures"><i class="fa fa-check"></i><b>3.5.1</b> Data structures</a></li>
+<li class="chapter" data-level="3.5.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#variable-types"><i class="fa fa-check"></i><b>3.5.2</b> Variable types</a></li>
+<li class="chapter" data-level="3.5.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#convert-variables-from-one-type-to-another"><i class="fa fa-check"></i><b>3.5.3</b> Convert variables from one type to another</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#working-with-dataframes"><i class="fa fa-check"></i><b>3.6</b> Working with dataframes</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#order-filter-and-group-data"><i class="fa fa-check"></i><b>3.6.1</b> Order, filter and group data</a></li>
+<li class="chapter" data-level="3.6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#create-new-variables-from-data"><i class="fa fa-check"></i><b>3.6.2</b> Create new variables from data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html"><i class="fa fa-check"></i><b>4</b> Using regression instead of ANOVA</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#anova-approach"><i class="fa fa-check"></i><b>4.0.1</b> ANOVA Approach</a></li>
+<li class="chapter" data-level="4.0.2" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#regression-approach"><i class="fa fa-check"></i><b>4.0.2</b> Regression approach</a></li>
+<li class="chapter" data-level="4.1" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#analysis-of-covariance"><i class="fa fa-check"></i><b>4.1</b> Analysis of covariance</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html"><i class="fa fa-check"></i><b>5</b> Probability and hypothesis testing</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#we-collect-data-from-sample-but-we-estimate-about-the-population"><i class="fa fa-check"></i><b>5.1</b> We collect data from sample but we estimate about the population</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#variance-in-sample-data-influences-our-confidence-in-population-estimates"><i class="fa fa-check"></i><b>5.2</b> Variance in sample data influences our confidence in population estimates</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#we-can-use-confidence-intervals-to-make-educated-guesses-about-the-population-mean"><i class="fa fa-check"></i><b>5.3</b> We can use confidence intervals to make educated guesses about the population mean</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#we-can-also-make-confidence-intervals-of-differences-between-means"><i class="fa fa-check"></i><b>5.4</b> We can also make confidence intervals of differences between means</a></li>
+<li class="chapter" data-level="5.5" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#the-null-hypothesis-and-statistical-significance"><i class="fa fa-check"></i><b>5.5</b> The null hypothesis and statistical significance</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Postgraduate Research Methods and Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probability-and-hypothesis-testing" class="section level1">
+<h1><span class="header-section-number">Section 5</span> Probability and hypothesis testing</h1>
+<div id="we-collect-data-from-sample-but-we-estimate-about-the-population" class="section level2">
+<h2><span class="header-section-number">5.1</span> We collect data from sample but we estimate about the population</h2>
+<p>One of the most important things to remember about hypothesis testing in statistics is why we use the approaches we do. That is, we need statistical approaches to test hypotheses because we can only collect data from samples of the population but our research questions and hypotheses apply to whole populations. For that reason, we need a way to estimate how well the <em>sample</em> reflects the <em>population.</em></p>
+<p>It is common for us to want to know what the mean (average) response of the population is on certain measures. For example, we might ask the question “what is the average score on this measure of happiness?”. In reality we can only measure a subset (sample) of the population, so we test as many people as we can. Below is a sample of 20 participants:</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-10">Table 5.1: </span>Some sample data for happiness score
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+participant
+</th>
+<th style="text-align:left;">
+intervention
+</th>
+<th style="text-align:right;">
+happiness
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.649888
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+8.206567
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+9.931643
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.565625
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.783817
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.610950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+11.543277
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.055113
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.780646
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.877890
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.025996
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+13.106269
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.865528
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+6.392150
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.746751
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+7.362572
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.711823
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+7.119858
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.044940
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.952521
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="variance-in-sample-data-influences-our-confidence-in-population-estimates" class="section level2">
+<h2><span class="header-section-number">5.2</span> Variance in sample data influences our confidence in population estimates</h2>
+<p>We can see from the table above that the mean of the sample is 9.8166913. However, this is not to say that the population mean is 9.8166913. For one thing, we can see that the range of scores in the sample is between 6.3921503 and 13.1062692. The standard deviation of the sample is 2.</p>
+<p>The fact that there is so much variance from person to person within our sample indicates that we are likely to be incorrect if we assume that the sample mean is the same as the population mean. The more variance there is within the sample data, the less confident we can be that the sample mean is an accurate representation of the population mean.</p>
+<p>Another thing that affects our ability to generalise from sample to population is that the sample size is only 20. Larger samples are less influenced by individual outliers, so the larger the sample size is, the more confident we can be that the sample mean is representative of the population mean (provided that the participant sample is representative of the population and recruited in a way to minimise bias).</p>
+<blockquote>
+<p>The <strong>standard error</strong> of the mean can be calculated to estimate how far the mean of the sample data is likely to be from the true population mean. It uses the concepts of variance and sample size to make this estimate. Standard error is calculated by dividing standard deviation by the square root of the sample size (<span class="math inline">\(SE = \frac{SD}{\sqrt{\left[n\right]}}\)</span>)</p>
+</blockquote>
+<p>In R, we can calculate the standard error of the happiness data like so:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="probability-and-hypothesis-testing.html#cb14-1"></a> standardError &lt;-<span class="st"> </span><span class="kw">sd</span>(happiness)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(happiness)) <span class="co">## Calculate standard error</span></span>
+<span id="cb14-2"><a href="probability-and-hypothesis-testing.html#cb14-2"></a></span>
+<span id="cb14-3"><a href="probability-and-hypothesis-testing.html#cb14-3"></a>standardError <span class="co">#Display the standard error</span></span></code></pre></div>
+<pre><code>## [1] 0.3496643</code></pre>
+<p>The standard error of our sample mean is 0.35. This suggests that using the sample mean is likely to be 0.35 away from the population mean.</p>
+</div>
+<div id="we-can-use-confidence-intervals-to-make-educated-guesses-about-the-population-mean" class="section level2">
+<h2><span class="header-section-number">5.3</span> We can use confidence intervals to make educated guesses about the population mean</h2>
+<p>Using the standard error, we can also create <strong>Confidence intervals</strong>, which are a range of values, within which the population mean is likely to fall. For example, we know from normal distribution that 95% of the population lies between +/- 1.96 standard deviations of the mean. If we use our sample mean (<span class="math inline">\(\bar{x}\)</span>) in place of the population mean and include the standard error to account for errors in our estimate, we come up with the following formula for 95% confidence intervals of the mean:</p>
+<p>Lower confidence interval = <span class="math inline">\(\bar{x} - 1.96*SE\)</span></p>
+<p>Upper confidence interval = <span class="math inline">\(\bar{x} + 1.96*SE\)</span></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="probability-and-hypothesis-testing.html#cb16-1"></a><span class="kw">mean</span>(happiness) <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Lower confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 9.131349</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="probability-and-hypothesis-testing.html#cb18-1"></a><span class="kw">mean</span>(happiness) <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Upper confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 10.50203</code></pre>
+<p><img src="images/normal.jpg" width="732" /></p>
+<p>The value of 1.96 come from the normal distribution, where 95% of the population lies between +/- 1.96 standard deviations of the mean. If we did not already know this, we could use the <em>qnorm()</em> function in R to calculate the value:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="probability-and-hypothesis-testing.html#cb20-1"></a><span class="co"># Calculate the number of standard deviations that contains 0% to 97.5% of the data (100% - 2.5%). </span></span>
+<span id="cb20-2"><a href="probability-and-hypothesis-testing.html#cb20-2"></a><span class="co"># We can then say that 95% of the data lies between + or - the answer: </span></span>
+<span id="cb20-3"><a href="probability-and-hypothesis-testing.html#cb20-3"></a></span>
+<span id="cb20-4"><a href="probability-and-hypothesis-testing.html#cb20-4"></a><span class="kw">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<pre><code>## [1] 1.959964</code></pre>
+<p>However, with smaller samples, since we are less confident about generalising to the population, we use the t-distribution to calculate that value. The shape of a t-distribution changes based on the sample size, so the smaller the sample size is, the wider the range that 95% of values lie between. We can calculate the 95% value for a particular sample size in R using the <em>qt()</em> function:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="probability-and-hypothesis-testing.html#cb22-1"></a><span class="co"># The qt function relates to t-distribution</span></span>
+<span id="cb22-2"><a href="probability-and-hypothesis-testing.html#cb22-2"></a></span>
+<span id="cb22-3"><a href="probability-and-hypothesis-testing.html#cb22-3"></a><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-1</span>)</span></code></pre></div>
+<pre><code>## [1] 2.093024</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="probability-and-hypothesis-testing.html#cb24-1"></a><span class="co"># for qt, we need to specify the degress of freedom, which is sample size minus 1</span></span></code></pre></div>
+<p>We can see that when we have a sample size of 20, 95% of values in our predicted population distribution will lie between + and - 2.0930241 standard deviations. Therefore, we can calculate more accurate confidence intervals using this value:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="probability-and-hypothesis-testing.html#cb25-1"></a><span class="kw">mean</span>(happiness) <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-1</span>) <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Lower confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 9.084835</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="probability-and-hypothesis-testing.html#cb27-1"></a><span class="kw">mean</span>(happiness) <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-1</span>) <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Upper confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 10.54855</code></pre>
+<p><strong>This tells us:</strong> if we were to take infinite number of similar samples, about 95% of their confidence intervals would contain the population mean. Therefore, we think it is reasonable to estimate that the population mean is somewhere in this range.</p>
+<blockquote>
+<p>Often people say that a 95% confidence interval means that there is a 95% chance that the population mean is between the lower and upper confidence interval. This is <strong>not</strong> an accurate statement, but it is often used as a shorthand to help people conceptualise what confidence intervals are.</p>
+</blockquote>
+</div>
+<div id="we-can-also-make-confidence-intervals-of-differences-between-means" class="section level2">
+<h2><span class="header-section-number">5.4</span> We can also make confidence intervals of differences between means</h2>
+<p>Often when we test hypotheses, we are testing the difference between two samples. For example, we might have 2 groups who have undergone different psychological interventions and want to know whether the difference we see our participant samples is likely to generalise to the population.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-17">Table 5.2: </span>Some sample data for happiness score with participants divided into 2 groups
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+participant
+</th>
+<th style="text-align:left;">
+intervention
+</th>
+<th style="text-align:right;">
+happiness
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.649888
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+8.206567
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+9.931643
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.565625
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.783817
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.610950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+11.543277
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.055113
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.780646
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.877890
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.025996
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+13.106269
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.865528
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+6.392150
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+9.746751
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+7.362572
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+10.711823
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+7.119858
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.044940
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+10.952521
+</td>
+</tr>
+</tbody>
+</table>
+<p>Using the same approach as in the previous section, we can estimate a confidence interval based on the difference in means and the sample size:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="probability-and-hypothesis-testing.html#cb29-1"></a><span class="co"># Calculate the number of standard deviations for 95% of the data </span></span>
+<span id="cb29-2"><a href="probability-and-hypothesis-testing.html#cb29-2"></a><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-2</span>) <span class="co"># since there are 2 intervention groups, degrees of freedom is now 20-2</span></span></code></pre></div>
+<pre><code>## [1] 2.100922</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="probability-and-hypothesis-testing.html#cb31-1"></a> group1 &lt;-<span class="st"> </span>happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(intervention <span class="op">==</span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(happiness), <span class="dt">sd=</span> <span class="kw">sd</span>(happiness)) </span>
+<span id="cb31-2"><a href="probability-and-hypothesis-testing.html#cb31-2"></a> </span>
+<span id="cb31-3"><a href="probability-and-hypothesis-testing.html#cb31-3"></a>  group2 &lt;-<span class="st"> </span>happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(intervention <span class="op">==</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(happiness), <span class="dt">sd=</span> <span class="kw">sd</span>(happiness)) </span>
+<span id="cb31-4"><a href="probability-and-hypothesis-testing.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="probability-and-hypothesis-testing.html#cb31-5"></a><span class="co"># calculate mean of difference</span></span>
+<span id="cb31-6"><a href="probability-and-hypothesis-testing.html#cb31-6"></a>meanDifference &lt;-<span class="st"> </span>group1<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span>group2<span class="op">$</span>mean</span>
+<span id="cb31-7"><a href="probability-and-hypothesis-testing.html#cb31-7"></a>seDifference &lt;-<span class="st"> </span><span class="kw">sqrt</span>(group1<span class="op">$</span>sd<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">19</span> <span class="op">+</span><span class="st"> </span>group2<span class="op">$</span>sd<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">19</span>)</span>
+<span id="cb31-8"><a href="probability-and-hypothesis-testing.html#cb31-8"></a></span>
+<span id="cb31-9"><a href="probability-and-hypothesis-testing.html#cb31-9"></a></span>
+<span id="cb31-10"><a href="probability-and-hypothesis-testing.html#cb31-10"></a><span class="co"># calculate 95% CI of this</span></span>
+<span id="cb31-11"><a href="probability-and-hypothesis-testing.html#cb31-11"></a>meanDifference <span class="op">-</span><span class="st"> </span>seDifference <span class="op">*</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.975</span>), <span class="dv">20-2</span>) <span class="co"># lower CI</span></span></code></pre></div>
+<pre><code>## [1] 0.1794904</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="probability-and-hypothesis-testing.html#cb33-1"></a>meanDifference <span class="op">+</span><span class="st"> </span>seDifference <span class="op">*</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.975</span>), <span class="dv">20-2</span>) <span class="co"># upper CI</span></span></code></pre></div>
+<pre><code>## [1] 2.196518</code></pre>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>This tells use that the 95% confidence interval of the difference is between 0.1794904 and 2.1965185. An important part of interpreting this, is to notice whether any point between these values is equal to zero. If the confidence interval of a difference contains a zero value, this means that in future research, with similar samples, it would be possible to see zero difference between the groups. If, on the other hand, the confidence interval does not cross zero, then it is likely that in future research, with similar samples, we would see some difference between the means.</p>
+<blockquote>
+<p>The fact of whether confidence intervals cross zero (or not) is linked directly to the idea of hypothesis testing and statistical significance.</p>
+</blockquote>
+</div>
+<div id="the-null-hypothesis-and-statistical-significance" class="section level2">
+<h2><span class="header-section-number">5.5</span> The null hypothesis and statistical significance</h2>
+<p>Using the same study from the previous example: we know that the null hypothesis can be phrased as “in the population, there is no difference between groups”. We then see how the confidence interval of a difference can help us test the null hypothesis: if the null hypothesis were not true, then it is unlikely that the confidence interval of the difference would contain zero.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="probability-and-hypothesis-testing.html#cb35-1"></a><span class="kw">t.test</span>(<span class="dt">data=</span> happinessSample, happiness <span class="op">~</span><span class="st"> </span>intervention)</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  happiness by intervention
+## t = 1.7954, df = 14.658, p-value = 0.09322
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.2252074  2.6012162
+## sample estimates:
+## mean in group 1 mean in group 2 
+##       10.410693        9.222689</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="using-regression-instead-of-anova.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PRBook.pdf", "PRBook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

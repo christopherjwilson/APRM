@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 4 Using regression instead of ANOVA | Postgraduate Research Methods and Analysis</title>
+  <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 4 Using regression instead of ANOVA | Postgraduate Research Methods and Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 4 Using regression instead of ANOVA | Postgraduate Research Methods and Analysis" />
+  
+  <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  
+
+<meta name="author" content="Christopher J. Wilson" />
+
+
+<meta name="date" content="2020-07-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="working-with-data-in-r.html"/>
+<link rel="next" href="probability-and-hypothesis-testing.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Postgraduate Research and Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#aims-of-the-module"><i class="fa fa-check"></i><b>1.1</b> Aims of the module</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i><b>1.2</b> Learning Outcomes</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#indicative-module-content"><i class="fa fa-check"></i><b>1.3</b> Indicative module content</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i><b>1.4</b> Assessment</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#assessment-details"><i class="fa fa-check"></i><b>1.4.1</b> Assessment details</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#specific-marking-criteria-for-research-report-in-addition-to-generic-assessment-criteria"><i class="fa fa-check"></i><b>1.4.2</b> Specific marking criteria for research report (in addition to generic assessment criteria):</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>2</b> Introduction to R and R Studio</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#by-the-end-of-this-section-you-should-be-able-to"><i class="fa fa-check"></i><b>2.1</b> By the end of this section, you should be able to:</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#why-learn-use-r"><i class="fa fa-check"></i><b>2.2</b> Why learn / use R?</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#some-information-about-r"><i class="fa fa-check"></i><b>2.2.1</b> Some information about R</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#moving-from-other-software-to-r"><i class="fa fa-check"></i><b>2.2.2</b> Moving from other software to R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#r-has-many-advantages"><i class="fa fa-check"></i><b>2.3</b> R has many advantages</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>2.4</b> Download R and R Studio</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#the-r-studio-environment"><i class="fa fa-check"></i><b>2.5</b> The R Studio environment</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#working-with-a-script"><i class="fa fa-check"></i><b>2.6</b> Working with a script</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>2.7</b> Installing and loading packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html"><i class="fa fa-check"></i><b>3</b> Working with data in R</a><ul>
+<li class="chapter" data-level="3.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>3.1</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#in-this-section-we-will-use-the-tidyverse-set-of-packages"><i class="fa fa-check"></i><b>3.2</b> In this section, we will use the Tidyverse set of packages</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#import-data-into-r-from-excel-spss-and-csv-files"><i class="fa fa-check"></i><b>3.3</b> Import data into R from excel, SPSS and csv files</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#understanding-objects-in-r"><i class="fa fa-check"></i><b>3.4</b> Understanding objects in R</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#identify-different-data-structures-and-variable-types"><i class="fa fa-check"></i><b>3.5</b> Identify different data structures and variable types</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#data-structures"><i class="fa fa-check"></i><b>3.5.1</b> Data structures</a></li>
+<li class="chapter" data-level="3.5.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#variable-types"><i class="fa fa-check"></i><b>3.5.2</b> Variable types</a></li>
+<li class="chapter" data-level="3.5.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#convert-variables-from-one-type-to-another"><i class="fa fa-check"></i><b>3.5.3</b> Convert variables from one type to another</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#working-with-dataframes"><i class="fa fa-check"></i><b>3.6</b> Working with dataframes</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#order-filter-and-group-data"><i class="fa fa-check"></i><b>3.6.1</b> Order, filter and group data</a></li>
+<li class="chapter" data-level="3.6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#create-new-variables-from-data"><i class="fa fa-check"></i><b>3.6.2</b> Create new variables from data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html"><i class="fa fa-check"></i><b>4</b> Using regression instead of ANOVA</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#anova-approach"><i class="fa fa-check"></i><b>4.0.1</b> ANOVA Approach</a></li>
+<li class="chapter" data-level="4.0.2" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#regression-approach"><i class="fa fa-check"></i><b>4.0.2</b> Regression approach</a></li>
+<li class="chapter" data-level="4.1" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#analysis-of-covariance"><i class="fa fa-check"></i><b>4.1</b> Analysis of covariance</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html"><i class="fa fa-check"></i><b>5</b> Probability and hypothesis testing</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#we-collect-data-from-sample-but-we-estimate-about-the-population"><i class="fa fa-check"></i><b>5.1</b> We collect data from sample but we estimate about the population</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#variance-in-sample-data-influences-our-confidence-in-population-estimates"><i class="fa fa-check"></i><b>5.2</b> Variance in sample data influences our confidence in population estimates</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#we-can-use-confidence-intervals-to-make-educated-guesses-about-the-population-mean"><i class="fa fa-check"></i><b>5.3</b> We can use confidence intervals to make educated guesses about the population mean</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#we-can-also-make-confidence-intervals-of-differences-between-means"><i class="fa fa-check"></i><b>5.4</b> We can also make confidence intervals of differences between means</a></li>
+<li class="chapter" data-level="5.5" data-path="probability-and-hypothesis-testing.html"><a href="probability-and-hypothesis-testing.html#the-null-hypothesis-and-statistical-significance"><i class="fa fa-check"></i><b>5.5</b> The null hypothesis and statistical significance</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Postgraduate Research Methods and Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="using-regression-instead-of-anova" class="section level1">
+<h1><span class="header-section-number">Section 4</span> Using regression instead of ANOVA</h1>
+<p>People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
+<p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
+<div id="anova-approach" class="section level3">
+<h3><span class="header-section-number">4.0.1</span> ANOVA Approach</h3>
+<p>ANOVA asks the question in the following way:</p>
+<blockquote>
+<p>Is there a difference in reading comprehension scores between teaching groups?</p>
+</blockquote>
+<p>The analysis takes the following approach:</p>
+<ul>
+<li>What are the means of groups 1,2 and 3?</li>
+<li>Are the means of groups 1,2 and 3 different?</li>
+<li>Is the difference in means of groups 1,2 and 3 statistically significant?</li>
+</ul>
+<p>If we were to summarise the data, we might present it in the following way:</p>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+group
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Basal
+</td>
+<td style="text-align:right;">
+6.681818
+</td>
+<td style="text-align:right;">
+2.766920
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DRTA
+</td>
+<td style="text-align:right;">
+9.772727
+</td>
+<td style="text-align:right;">
+2.724349
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strat
+</td>
+<td style="text-align:right;">
+7.772727
+</td>
+<td style="text-align:right;">
+3.927095
+</td>
+</tr>
+</tbody>
+</table>
+<p>In Table @ref(tab:data_summary) can see that the mean scores are different and highest in the DRTA group.</p>
+<p>If we were to run an ANOVA on the data, we might present it in the following way:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:right;">
+df
+</th>
+<th style="text-align:right;">
+sumsq
+</th>
+<th style="text-align:right;">
+meansq
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p.value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+group
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+108.1212
+</td>
+<td style="text-align:right;">
+54.06061
+</td>
+<td style="text-align:right;">
+5.317437
+</td>
+<td style="text-align:right;">
+0.0073468
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Residuals
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+640.5000
+</td>
+<td style="text-align:right;">
+10.16667
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the ANOVA (Table @ref(anova_approach)) tells us that the difference between groups is significant (p &lt; 0.05) but we cannot tell yet which of the 3 groups are significantly different from each other.</p>
+</div>
+<div id="regression-approach" class="section level3">
+<h3><span class="header-section-number">4.0.2</span> Regression approach</h3>
+<p>Regression asks the question the following way:</p>
+<blockquote>
+<p>Does teaching group predict reading comprehension score?</p>
+</blockquote>
+<p>The analysis takes the following approach:</p>
+<ul>
+<li>Let’s use the mean of group 1 as a reference point (i.e. the intercept).</li>
+<li>What’s the difference between the intercept and the mean scores of the other groups (i.e. the coefficients)?</li>
+<li>Are any of the coefficients statistically significant?</li>
+</ul>
+<p>If we run a regression analysis, we might present the results like this:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+R2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.1444271
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:right;">
+df
+</th>
+<th style="text-align:right;">
+sumsq
+</th>
+<th style="text-align:right;">
+meansq
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p.value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+group
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+108.1212
+</td>
+<td style="text-align:right;">
+54.06061
+</td>
+<td style="text-align:right;">
+5.317437
+</td>
+<td style="text-align:right;">
+0.0073468
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Residuals
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+640.5000
+</td>
+<td style="text-align:right;">
+10.16667
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:right;">
+estimate
+</th>
+<th style="text-align:right;">
+std.error
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p.value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+6.681818
+</td>
+<td style="text-align:right;">
+0.6797950
+</td>
+<td style="text-align:right;">
+9.829167
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+groupDRTA
+</td>
+<td style="text-align:right;">
+3.090909
+</td>
+<td style="text-align:right;">
+0.9613753
+</td>
+<td style="text-align:right;">
+3.215091
+</td>
+<td style="text-align:right;">
+0.0020583
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+groupStrat
+</td>
+<td style="text-align:right;">
+1.090909
+</td>
+<td style="text-align:right;">
+0.9613753
+</td>
+<td style="text-align:right;">
+1.134738
+</td>
+<td style="text-align:right;">
+0.2607841
+</td>
+</tr>
+</tbody>
+</table>
+<p>If we look at the coefficient (estimate) for the intercept (see Table @ref(tab:regression_approach)), we can see that the value is the same as the mean of the Basal group in the previous section (Table @ref(tab:data_summary)).</p>
+<p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So the regression table is already comparing the 3 groups.</p>
+</div>
+<div id="analysis-of-covariance" class="section level2">
+<h2><span class="header-section-number">4.1</span> Analysis of covariance</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="working-with-data-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probability-and-hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PRBook.pdf", "PRBook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

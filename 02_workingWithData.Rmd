@@ -1,0 +1,153 @@
+
+# Working with data in R
+
+## By the end of this section, you will be able to:
+- Import data into R from excel, SPSS and csv files
+- Save data to objects
+- Identify different data structures and variable types
+- Convert variables from one type to another
+- Order, filter and group data
+- Summarise data
+- Create new variables from data
+
+
+## In this section, we will use the Tidyverse set of packages
+
+-	A ‘toolkit’ of packages that are very useful for organsing and manipulating data
+- We will use the haven package to import SPSS files
+- We will use the dplyr to organise data
+- Also includes the ggplot2 and tidyR packages which we will use later
+
+To install: 
+
+    install.packages(“tidyverse”)
+
+(See the previous section on installing packages)
+
+## Import data into R from excel, SPSS and csv files
+
+We can import data from a range of sources using the **Import Dataset** button in the **Environment** tab:
+
+![Importing data](images/importData.png)
+
+It is also possible to import data using code, for example:
+
+    # importing a .csv file
+    library(readr)
+    studentData <- read_csv("Datasets/studentData.csv")
+
+
+    #importing an SPSS file
+    library(haven)
+    mySPSSData <- read_sav("Datasets/salesData.sav")
+
+Once the data are imported, it will be visible in the environment: 
+
+![Imported data in the environment](images/environment.png)
+
+## Understanding objects in R
+
+In R, an **object** is anything that is saved to memory. For example, we might do some analysis:
+
+
+    mean(happiness)
+
+  
+     
+However, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object: 
+
+
+    happinessMean <- mean(happiness)
+
+
+In the above code (reading left to right):
+
+- We name the object "happinessMean". This name can be anything we want.
+- The arrow means that the result of the code on the right will be saved to the object on the left.
+- The code on the right of the arrow calculates the mean of *happiness* data   
+    
+When this code is run, *happinessMean* will be stored in the environment window:
+
+![Result of a calculation in the environment](images/saveobject.png)
+
+To recall an object from the environment, we can simply type its name. For example:
+
+
+ 
+    happinessMean 
+
+
+
+> Its important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc.
+
+## Identify different data structures and variable types
+
+### Data structures
+
+There are many different types of data that R can work with. The most common type of data for most people tends to be a **dataframe**. A **dataframe** is what you might consider a "normal" 2-dimensional dataset, with rows of data and columns of variables:
+
+![A dataframe example](images/dataframe.png)
+
+R can also use other data types.
+
+A vector is a one-dimensional set of values:
+
+```{r}
+# a vector example
+
+scores <- c(1,4,6,8,3,4,6,7)
+
+```
+
+A matrix is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:
+
+```{r echo=F}
+#  a matrix example
+
+myMatrix <-array(1:12,dim=c(2,3,2))
+
+myMatrix
+```
+
+> We will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.
+
+### Variable types
+
+With numerical data, there are 4 key data types:
+
+- Nominal (a category, group or factor)
+- Ordinal (a ranking)
+- Interval (scale data that can include negative values)
+- Ratio (scale data that cannot include negative values)
+
+![Numerical data types](images/dataTypes.png)
+R can use all of these variable types:
+
+
+- **Nominal** variables are called **factors**
+- **Ordinal** variables are called **ordered factors**
+- **Interval and ratio** variables are called **numeric** data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)
+
+R can also use other data types such as text (**character**) data.
+
+### Convert variables from one type to another
+
+When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the **intervention** variable :
+
+```{r echo=F}
+# happinessSample$intervention <- as.numeric(happinessSample$intervention)
+happinessSample %>% arrange(by = happiness) %>% head(10)
+```
+In the **intervention** variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a **factor** variable. To ensure that R understands this, we can resave the intervention variable as a factor using the *as.factor()* function:
+
+```{r}
+happinessSample$intervention <- as.factor(happinessSample$intervention)
+```
+
+
+## Working with dataframes
+
+
+### Order, filter and group data
+
+### Create new variables from data
