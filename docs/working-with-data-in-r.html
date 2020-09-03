@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Postgraduate Research and Analysis</a></li>
+<li><a href="./">Advanced Psychological Research Methods (PSY4034)</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to the module</a></li>
@@ -324,16 +324,16 @@ R can use all of these variable types:</p>
 <h3><span class="header-section-number">8.5.3</span> Convert variables from one type to another</h3>
 <p>When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the <strong>intervention</strong> variable :</p>
 <pre><code>##    participant intervention happiness
-## 1           17            2  7.770500
-## 2            8            1  8.623022
-## 3           11            2  9.655643
-## 4            6            1  9.944049
-## 5            1            2 10.075945
-## 6           16            1 10.196265
-## 7           18            1 10.250482
-## 8           12            2 10.610940
-## 9           13            2 10.625019
-## 10          19            1 10.806403</code></pre>
+## 1           18            2  7.540558
+## 2            1            2  8.816708
+## 3            8            1  8.834426
+## 4           16            2  9.286319
+## 5           10            2  9.526387
+## 6            5            1  9.558649
+## 7            4            1  9.574320
+## 8           14            2  9.789020
+## 9            3            1 10.284861
+## 10          19            1 10.519364</code></pre>
 <p>In the <strong>intervention</strong> variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a <strong>factor</strong> variable. To ensure that R understands this, we can resave the intervention variable as a factor using the <em>as.factor()</em> function:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">happinessSample<span class="op">$</span>intervention &lt;-<span class="st"> </span><span class="kw">as.factor</span>(happinessSample<span class="op">$</span>intervention)</a></code></pre></div>
 </div>
@@ -358,9 +358,9 @@ R can use all of these variable types:</p>
 <h3><span class="header-section-number">8.6.2</span> Refer to variables (columns) in a dataframe</h3>
 <p>Columns in a dataframe are accessed using the “$” sign. For example, to access the <em>happiness</em> column in the <em>happinessSample</em> dataframe, we would type:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">happinessSample<span class="op">$</span>happiness</a></code></pre></div>
-<pre><code>##  [1] 10.075945 10.997555 11.516547 11.798120 11.219129  9.944049 11.449635  8.623022 11.738415
-## [10] 11.027962  9.655643 10.610940 10.625019 12.649402 12.363092 10.196265  7.770500 10.250482
-## [19] 10.806403 10.966440</code></pre>
+<pre><code>##  [1]  8.816708 10.565143 10.284861  9.574320  9.558649 11.967253 10.750421  8.834426 13.543082
+## [10]  9.526387 10.574117 11.062651 12.355462  9.789020 11.259118  9.286319 10.639367  7.540558
+## [19] 10.519364 11.254614</code></pre>
 <p>As we can see above, the result is then displayed.</p>
 </div>
 <div id="order-filter-and-group-data" class="section level3">
@@ -368,48 +368,48 @@ R can use all of these variable types:</p>
 <p>If you have the <strong>tidyverse</strong> package loaded, it is easy to organise and filter data.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">arrange</span>(happinessSample, happiness)</a></code></pre></div>
 <pre><code>##    participant intervention happiness
-## 1           17            2  7.770500
-## 2            8            1  8.623022
-## 3           11            2  9.655643
-## 4            6            1  9.944049
-## 5            1            2 10.075945
-## 6           16            1 10.196265
-## 7           18            1 10.250482
-## 8           12            2 10.610940
-## 9           13            2 10.625019
-## 10          19            1 10.806403
-## 11          20            1 10.966440
-## 12           2            1 10.997555
-## 13          10            1 11.027962
-## 14           5            2 11.219129
-## 15           7            1 11.449635
-## 16           3            2 11.516547
-## 17           9            2 11.738415
-## 18           4            2 11.798120
-## 19          15            1 12.363092
-## 20          14            1 12.649402</code></pre>
+## 1           18            2  7.540558
+## 2            1            2  8.816708
+## 3            8            1  8.834426
+## 4           16            2  9.286319
+## 5           10            2  9.526387
+## 6            5            1  9.558649
+## 7            4            1  9.574320
+## 8           14            2  9.789020
+## 9            3            1 10.284861
+## 10          19            1 10.519364
+## 11           2            2 10.565143
+## 12          11            1 10.574117
+## 13          17            2 10.639367
+## 14           7            2 10.750421
+## 15          12            2 11.062651
+## 16          20            1 11.254614
+## 17          15            1 11.259118
+## 18           6            1 11.967253
+## 19          13            1 12.355462
+## 20           9            2 13.543082</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">arrange</span>(happinessSample, <span class="kw">desc</span>(happiness)) <span class="co"># Arrange in descending order</span></a></code></pre></div>
 <pre><code>##    participant intervention happiness
-## 1           14            1 12.649402
-## 2           15            1 12.363092
-## 3            4            2 11.798120
-## 4            9            2 11.738415
-## 5            3            2 11.516547
-## 6            7            1 11.449635
-## 7            5            2 11.219129
-## 8           10            1 11.027962
-## 9            2            1 10.997555
-## 10          20            1 10.966440
-## 11          19            1 10.806403
-## 12          13            2 10.625019
-## 13          12            2 10.610940
-## 14          18            1 10.250482
-## 15          16            1 10.196265
-## 16           1            2 10.075945
-## 17           6            1  9.944049
-## 18          11            2  9.655643
-## 19           8            1  8.623022
-## 20          17            2  7.770500</code></pre>
+## 1            9            2 13.543082
+## 2           13            1 12.355462
+## 3            6            1 11.967253
+## 4           15            1 11.259118
+## 5           20            1 11.254614
+## 6           12            2 11.062651
+## 7            7            2 10.750421
+## 8           17            2 10.639367
+## 9           11            1 10.574117
+## 10           2            2 10.565143
+## 11          19            1 10.519364
+## 12           3            1 10.284861
+## 13          14            2  9.789020
+## 14           4            1  9.574320
+## 15           5            1  9.558649
+## 16          10            2  9.526387
+## 17          16            2  9.286319
+## 18           8            1  8.834426
+## 19           1            2  8.816708
+## 20          18            2  7.540558</code></pre>
 <ul>
 <li>Show clients with a happiness score of less than 4</li>
 </ul>
@@ -420,16 +420,17 @@ R can use all of these variable types:</p>
 <li>Show Intervention group 2 with happiness scores above 7</li>
 </ul>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">filter</span>(happinessSample, happiness <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="op">&amp;</span><span class="st"> </span>intervention <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</a></code></pre></div>
-<pre><code>##   participant intervention happiness
-## 1           1            2 10.075945
-## 2           3            2 11.516547
-## 3           4            2 11.798120
-## 4           5            2 11.219129
-## 5           9            2 11.738415
-## 6          11            2  9.655643
-## 7          12            2 10.610940
-## 8          13            2 10.625019
-## 9          17            2  7.770500</code></pre>
+<pre><code>##    participant intervention happiness
+## 1            1            2  8.816708
+## 2            2            2 10.565143
+## 3            7            2 10.750421
+## 4            9            2 13.543082
+## 5           10            2  9.526387
+## 6           12            2 11.062651
+## 7           14            2  9.789020
+## 8           16            2  9.286319
+## 9           17            2 10.639367
+## 10          18            2  7.540558</code></pre>
 <ul>
 <li>Group by intervention and show the mean happiness score</li>
 </ul>
@@ -438,8 +439,8 @@ R can use all of these variable types:</p>
 <pre><code>## # A tibble: 2 x 2
 ##   intervention  mean
 ##   &lt;fct&gt;        &lt;dbl&gt;
-## 1 1             10.8
-## 2 2             10.6</code></pre>
+## 1 1             10.6
+## 2 2             10.2</code></pre>
 </div>
 <div id="create-new-variables-from-data" class="section level3">
 <h3><span class="header-section-number">8.6.4</span> Create new variables from data</h3>
@@ -447,27 +448,27 @@ R can use all of these variable types:</p>
 <p>For example, let’s say we wanted to calculate the difference between each person’s happiness score and the mean happiness score.</p>
 <p>We could do the following:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">difference =</span> happiness <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(happiness))</a></code></pre></div>
-<pre><code>##    participant intervention happiness  difference
-## 1            1            2 10.075945 -0.63828289
-## 2            2            1 10.997555  0.28332653
-## 3            3            2 11.516547  0.80231829
-## 4            4            2 11.798120  1.08389162
-## 5            5            2 11.219129  0.50490098
-## 6            6            1  9.944049 -0.77017912
-## 7            7            1 11.449635  0.73540659
-## 8            8            1  8.623022 -2.09120656
-## 9            9            2 11.738415  1.02418653
-## 10          10            1 11.027962  0.31373383
-## 11          11            2  9.655643 -1.05858505
-## 12          12            2 10.610940 -0.10328796
-## 13          13            2 10.625019 -0.08920928
-## 14          14            1 12.649402  1.93517337
-## 15          15            1 12.363092  1.64886357
-## 16          16            1 10.196265 -0.51796308
-## 17          17            2  7.770500 -2.94372789
-## 18          18            1 10.250482 -0.46374608
-## 19          19            1 10.806403  0.09217467
-## 20          20            1 10.966440  0.25221194</code></pre>
+<pre><code>##    participant intervention happiness difference
+## 1            1            2  8.816708 -1.5683844
+## 2            2            2 10.565143  0.1800509
+## 3            3            1 10.284861 -0.1002314
+## 4            4            1  9.574320 -0.8107722
+## 5            5            1  9.558649 -0.8264434
+## 6            6            1 11.967253  1.5821607
+## 7            7            2 10.750421  0.3653288
+## 8            8            1  8.834426 -1.5506660
+## 9            9            2 13.543082  3.1579903
+## 10          10            2  9.526387 -0.8587050
+## 11          11            1 10.574117  0.1890251
+## 12          12            2 11.062651  0.6775592
+## 13          13            1 12.355462  1.9703700
+## 14          14            2  9.789020 -0.5960722
+## 15          15            1 11.259118  0.8740265
+## 16          16            2  9.286319 -1.0987725
+## 17          17            2 10.639367  0.2542751
+## 18          18            2  7.540558 -2.8445342
+## 19          19            1 10.519364  0.1342723
+## 20          20            1 11.254614  0.8695225</code></pre>
 
 </div>
 </div>
