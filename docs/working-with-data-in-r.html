@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 8 Working with data in R | Postgraduate Research Methods and Analysis</title>
+  <title>Section 4 Working with data in R | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 8 Working with data in R | Postgraduate Research Methods and Analysis" />
+  <meta property="og:title" content="Section 4 Working with data in R | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 8 Working with data in R | Postgraduate Research Methods and Analysis" />
+  <meta name="twitter:title" content="Section 4 Working with data in R | Advanced Psychological Research Methods (PSY4034)" />
   
   <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-03" />
+<meta name="date" content="2020-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="introduction-to-r-and-r-studio.html"/>
-
+<link rel="next" href="exploratory-and-descriptive-analysis-with-r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +64,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -131,54 +133,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Advanced Psychological Research Methods (PSY4034)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to the module</a></li>
-<li class="chapter" data-level="2" data-path="module-overview.html"><a href="module-overview.html"><i class="fa fa-check"></i><b>2</b> Module Overview</a><ul>
-<li class="chapter" data-level="2.1" data-path="module-overview.html"><a href="module-overview.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>2.1</b> Module timetable and delivery for 2020/2021</a></li>
-<li class="chapter" data-level="2.2" data-path="module-overview.html"><a href="module-overview.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>2.2</b> Learning and Teaching Strategies</a></li>
-<li class="chapter" data-level="2.3" data-path="module-overview.html"><a href="module-overview.html#how-will-the-online-sessions-work"><i class="fa fa-check"></i><b>2.3</b> How will the online sessions work?</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to the module</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#module-overview"><i class="fa fa-check"></i><b>1.1</b> Module Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2020/2021</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>1.2.1</b> Learning and Teaching Strategies</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#how-will-the-online-sessions-work"><i class="fa fa-check"></i><b>1.2.2</b> How will the online sessions work?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="assessment.html"><a href="assessment.html"><i class="fa fa-check"></i><b>3</b> Assessment</a><ul>
-<li class="chapter" data-level="3.1" data-path="assessment.html"><a href="assessment.html#formative-assessment"><i class="fa fa-check"></i><b>3.1</b> Formative assessment</a></li>
-<li class="chapter" data-level="3.2" data-path="assessment.html"><a href="assessment.html#summative-assessments"><i class="fa fa-check"></i><b>3.2</b> Summative Assessments</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="assessment.html"><a href="assessment.html#word-limits-for-assessment"><i class="fa fa-check"></i><b>3.2.1</b> Word limits for assessment</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i><b>1.3</b> Assessment</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#formative-assessment"><i class="fa fa-check"></i><b>1.3.1</b> Formative assessment</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#summative-assessments"><i class="fa fa-check"></i><b>1.3.2</b> Summative Assessments</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#word-limits-for-assessment"><i class="fa fa-check"></i><b>1.3.3</b> Word limits for assessment</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#submitting-work"><i class="fa fa-check"></i><b>1.3.4</b> Submitting work</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#a-note-about-referencing"><i class="fa fa-check"></i><b>1.3.5</b> A note about referencing</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="assessment.html"><a href="assessment.html#submitting-work"><i class="fa fa-check"></i><b>3.3</b> Submitting work</a></li>
-<li class="chapter" data-level="3.4" data-path="assessment.html"><a href="assessment.html#a-note-about-referencing"><i class="fa fa-check"></i><b>3.4</b> A note about referencing</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#statistical-analysis-software"><i class="fa fa-check"></i><b>1.4</b> Statistical analysis software</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#academic-support-and-guidance"><i class="fa fa-check"></i><b>1.5</b> Academic Support and Guidance</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#module-team-contact-details"><i class="fa fa-check"></i><b>1.5.1</b> Module Team Contact Details</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="statistical-analysis-software.html"><a href="statistical-analysis-software.html"><i class="fa fa-check"></i><b>4</b> Statistical analysis software</a></li>
-<li class="chapter" data-level="5" data-path="academic-support-and-guidance.html"><a href="academic-support-and-guidance.html"><i class="fa fa-check"></i><b>5</b> Academic Support and Guidance</a><ul>
-<li class="chapter" data-level="5.1" data-path="academic-support-and-guidance.html"><a href="academic-support-and-guidance.html#module-team-contact-details"><i class="fa fa-check"></i><b>5.1</b> Module Team Contact Details</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#considering-your-thesis"><i class="fa fa-check"></i><b>1.6</b> Considering your thesis</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="appendix-1-considering-your-thesis.html"><a href="appendix-1-considering-your-thesis.html"><i class="fa fa-check"></i><b>6</b> Appendix 1: Considering your thesis</a></li>
-<li class="chapter" data-level="7" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>7</b> Introduction to R and R Studio</a><ul>
-<li class="chapter" data-level="7.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#by-the-end-of-this-section-you-should-be-able-to"><i class="fa fa-check"></i><b>7.1</b> By the end of this section, you should be able to:</a></li>
-<li class="chapter" data-level="7.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#why-learn-use-r"><i class="fa fa-check"></i><b>7.2</b> Why learn / use R?</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#some-information-about-r"><i class="fa fa-check"></i><b>7.2.1</b> Some information about R</a></li>
-<li class="chapter" data-level="7.2.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#moving-from-other-software-to-r"><i class="fa fa-check"></i><b>7.2.2</b> Moving from other software to R</a></li>
+<li class="chapter" data-level="2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html"><i class="fa fa-check"></i><b>2</b> Research Methods Concepts Revision</a></li>
+<li class="chapter" data-level="3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>3</b> Introduction to R and R Studio</a><ul>
+<li class="chapter" data-level="3.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#by-the-end-of-this-section-you-should-be-able-to"><i class="fa fa-check"></i><b>3.1</b> By the end of this section, you should be able to:</a></li>
+<li class="chapter" data-level="3.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#why-learn-use-r"><i class="fa fa-check"></i><b>3.2</b> Why learn / use R?</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#some-information-about-r"><i class="fa fa-check"></i><b>3.2.1</b> Some information about R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#moving-from-other-software-to-r"><i class="fa fa-check"></i><b>3.2.2</b> Moving from other software to R</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#r-has-many-advantages"><i class="fa fa-check"></i><b>7.3</b> R has many advantages</a></li>
-<li class="chapter" data-level="7.4" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>7.4</b> Download R and R Studio</a></li>
-<li class="chapter" data-level="7.5" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#the-r-studio-environment"><i class="fa fa-check"></i><b>7.5</b> The R Studio environment</a></li>
-<li class="chapter" data-level="7.6" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#working-with-a-script"><i class="fa fa-check"></i><b>7.6</b> Working with a script</a></li>
-<li class="chapter" data-level="7.7" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>7.7</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="3.3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#r-has-many-advantages"><i class="fa fa-check"></i><b>3.3</b> R has many advantages</a></li>
+<li class="chapter" data-level="3.4" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>3.4</b> Download R and R Studio</a></li>
+<li class="chapter" data-level="3.5" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#the-r-studio-environment"><i class="fa fa-check"></i><b>3.5</b> The R Studio environment</a></li>
+<li class="chapter" data-level="3.6" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#working-with-a-script"><i class="fa fa-check"></i><b>3.6</b> Working with a script</a></li>
+<li class="chapter" data-level="3.7" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>3.7</b> Installing and loading packages</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html"><i class="fa fa-check"></i><b>8</b> Working with data in R</a><ul>
-<li class="chapter" data-level="8.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>8.1</b> By the end of this section, you will be able to:</a></li>
-<li class="chapter" data-level="8.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#in-this-section-we-will-use-the-tidyverse-set-of-packages"><i class="fa fa-check"></i><b>8.2</b> In this section, we will use the Tidyverse set of packages</a></li>
-<li class="chapter" data-level="8.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#import-data-into-r-from-excel-spss-and-csv-files"><i class="fa fa-check"></i><b>8.3</b> Import data into R from excel, SPSS and csv files</a></li>
-<li class="chapter" data-level="8.4" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#understanding-objects-in-r"><i class="fa fa-check"></i><b>8.4</b> Understanding objects in R</a></li>
-<li class="chapter" data-level="8.5" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#identify-different-data-structures-and-variable-types"><i class="fa fa-check"></i><b>8.5</b> Identify different data structures and variable types</a><ul>
-<li class="chapter" data-level="8.5.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#data-structures"><i class="fa fa-check"></i><b>8.5.1</b> Data structures</a></li>
-<li class="chapter" data-level="8.5.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#variable-types"><i class="fa fa-check"></i><b>8.5.2</b> Variable types</a></li>
-<li class="chapter" data-level="8.5.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#convert-variables-from-one-type-to-another"><i class="fa fa-check"></i><b>8.5.3</b> Convert variables from one type to another</a></li>
+<li class="chapter" data-level="4" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with data in R</a><ul>
+<li class="chapter" data-level="4.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>4.1</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="4.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#in-this-section-we-will-use-the-tidyverse-set-of-packages"><i class="fa fa-check"></i><b>4.2</b> In this section, we will use the Tidyverse set of packages</a></li>
+<li class="chapter" data-level="4.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#import-data-into-r-from-excel-spss-and-csv-files"><i class="fa fa-check"></i><b>4.3</b> Import data into R from excel, SPSS and csv files</a></li>
+<li class="chapter" data-level="4.4" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#understanding-objects-in-r"><i class="fa fa-check"></i><b>4.4</b> Understanding objects in R</a></li>
+<li class="chapter" data-level="4.5" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#identify-different-data-structures-and-variable-types"><i class="fa fa-check"></i><b>4.5</b> Identify different data structures and variable types</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#data-structures"><i class="fa fa-check"></i><b>4.5.1</b> Data structures</a></li>
+<li class="chapter" data-level="4.5.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#variable-types"><i class="fa fa-check"></i><b>4.5.2</b> Variable types</a></li>
+<li class="chapter" data-level="4.5.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#convert-variables-from-one-type-to-another"><i class="fa fa-check"></i><b>4.5.3</b> Convert variables from one type to another</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#working-with-dataframes"><i class="fa fa-check"></i><b>8.6</b> Working with dataframes</a><ul>
-<li class="chapter" data-level="8.6.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#view-dataframe"><i class="fa fa-check"></i><b>8.6.1</b> View dataframe</a></li>
-<li class="chapter" data-level="8.6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#refer-to-variables-columns-in-a-dataframe"><i class="fa fa-check"></i><b>8.6.2</b> Refer to variables (columns) in a dataframe</a></li>
-<li class="chapter" data-level="8.6.3" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#order-filter-and-group-data"><i class="fa fa-check"></i><b>8.6.3</b> Order, filter and group data</a></li>
-<li class="chapter" data-level="8.6.4" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#create-new-variables-from-data"><i class="fa fa-check"></i><b>8.6.4</b> Create new variables from data</a></li>
+<li class="chapter" data-level="4.6" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#working-with-dataframes"><i class="fa fa-check"></i><b>4.6</b> Working with dataframes</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#view-dataframe"><i class="fa fa-check"></i><b>4.6.1</b> View dataframe</a></li>
+<li class="chapter" data-level="4.6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#refer-to-variables-columns-in-a-dataframe"><i class="fa fa-check"></i><b>4.6.2</b> Refer to variables (columns) in a dataframe</a></li>
 </ul></li>
+<li class="chapter" data-level="4.7" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#order-filter-and-group-data"><i class="fa fa-check"></i><b>4.7</b> Order, filter and group data</a></li>
+<li class="chapter" data-level="4.8" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#create-new-variables-from-data"><i class="fa fa-check"></i><b>4.8</b> Create new variables from data</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html"><i class="fa fa-check"></i><b>5</b> Exploratory and descriptive analysis with R</a></li>
+<li class="chapter" data-level="6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html"><i class="fa fa-check"></i><b>6</b> Graphing and data presentation</a></li>
+<li class="chapter" data-level="7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>7</b> Correlation and Regression</a></li>
+<li class="chapter" data-level="8" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Regression</a></li>
+<li class="chapter" data-level="9" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>9</b> Moderation and mediation</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -191,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Postgraduate Research Methods and Analysis</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Psychological Research Methods (PSY4034)</a>
           </h1>
         </div>
 
@@ -200,11 +208,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="working-with-data-in-r" class="section level1">
-<h1><span class="header-section-number">Section 8</span> Working with data in R</h1>
+<h1><span class="header-section-number">Section 4</span> Working with data in R</h1>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a31933a2-be52-407e-a459-ac2b00e2844f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
 <div id="by-the-end-of-this-section-you-will-be-able-to" class="section level2">
-<h2><span class="header-section-number">8.1</span> By the end of this section, you will be able to:</h2>
+<h2><span class="header-section-number">4.1</span> By the end of this section, you will be able to:</h2>
 <ul>
 <li>Import data into R from excel, SPSS and csv files</li>
 <li>Save data to objects</li>
@@ -216,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="in-this-section-we-will-use-the-tidyverse-set-of-packages" class="section level2">
-<h2><span class="header-section-number">8.2</span> In this section, we will use the Tidyverse set of packages</h2>
+<h2><span class="header-section-number">4.2</span> In this section, we will use the Tidyverse set of packages</h2>
 <ul>
 <li>A ‘toolkit’ of packages that are very useful for organsing and manipulating data</li>
 <li>We will use the haven package to import SPSS files</li>
@@ -228,10 +236,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>(See the previous section on installing packages)</p>
 </div>
 <div id="import-data-into-r-from-excel-spss-and-csv-files" class="section level2">
-<h2><span class="header-section-number">8.3</span> Import data into R from excel, SPSS and csv files</h2>
+<h2><span class="header-section-number">4.3</span> Import data into R from excel, SPSS and csv files</h2>
 <p>We can import data from a range of sources using the <strong>Import Dataset</strong> button in the <strong>Environment</strong> tab:</p>
 <div class="figure">
-<img src="images/importData.png" alt="Importing data" />
+<img src="images/importData.png" alt="" />
 <p class="caption">Importing data</p>
 </div>
 <p>It is also possible to import data using code, for example:</p>
@@ -245,12 +253,12 @@ library(haven)
 mySPSSData &lt;- read_sav(&quot;Datasets/salesData.sav&quot;)</code></pre>
 <p>Once the data are imported, it will be visible in the environment:</p>
 <div class="figure">
-<img src="images/environment.png" alt="Imported data in the environment" />
+<img src="images/environment.png" alt="" />
 <p class="caption">Imported data in the environment</p>
 </div>
 </div>
 <div id="understanding-objects-in-r" class="section level2">
-<h2><span class="header-section-number">8.4</span> Understanding objects in R</h2>
+<h2><span class="header-section-number">4.4</span> Understanding objects in R</h2>
 <p>In R, an <strong>object</strong> is anything that is saved to memory. For example, we might do some analysis:</p>
 <pre><code>mean(happiness)</code></pre>
 <p>However, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object:</p>
@@ -263,7 +271,7 @@ mySPSSData &lt;- read_sav(&quot;Datasets/salesData.sav&quot;)</code></pre>
 </ul>
 <p>When this code is run, <em>happinessMean</em> will be stored in the environment window:</p>
 <div class="figure">
-<img src="images/saveobject.png" alt="Result of a calculation in the environment" />
+<img src="images/saveobject.png" alt="" />
 <p class="caption">Result of a calculation in the environment</p>
 </div>
 <p>To recall an object from the environment, we can simply type its name. For example:</p>
@@ -273,19 +281,19 @@ mySPSSData &lt;- read_sav(&quot;Datasets/salesData.sav&quot;)</code></pre>
 </blockquote>
 </div>
 <div id="identify-different-data-structures-and-variable-types" class="section level2">
-<h2><span class="header-section-number">8.5</span> Identify different data structures and variable types</h2>
+<h2><span class="header-section-number">4.5</span> Identify different data structures and variable types</h2>
 <div id="data-structures" class="section level3">
-<h3><span class="header-section-number">8.5.1</span> Data structures</h3>
+<h3><span class="header-section-number">4.5.1</span> Data structures</h3>
 <p>There are many different types of data that R can work with. The most common type of data for most people tends to be a <strong>dataframe</strong>. A <strong>dataframe</strong> is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:</p>
 <div class="figure">
-<img src="images/dataframe.png" alt="A dataframe example" />
+<img src="images/dataframe.png" alt="" />
 <p class="caption">A dataframe example</p>
 </div>
 <p>R can also use other data types.</p>
 <p>A vector is a one-dimensional set of values:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># a vector example</span></a>
-<a class="sourceLine" id="cb9-2" title="2"></a>
-<a class="sourceLine" id="cb9-3" title="3">scores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="working-with-data-in-r.html#cb9-1"></a><span class="co"># a vector example</span></span>
+<span id="cb9-2"><a href="working-with-data-in-r.html#cb9-2"></a></span>
+<span id="cb9-3"><a href="working-with-data-in-r.html#cb9-3"></a>scores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span></code></pre></div>
 <p>A matrix is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:</p>
 <pre><code>## , , 1
 ## 
@@ -303,7 +311,7 @@ mySPSSData &lt;- read_sav(&quot;Datasets/salesData.sav&quot;)</code></pre>
 </blockquote>
 </div>
 <div id="variable-types" class="section level3">
-<h3><span class="header-section-number">8.5.2</span> Variable types</h3>
+<h3><span class="header-section-number">4.5.2</span> Variable types</h3>
 <p>With numerical data, there are 4 key data types:</p>
 <ul>
 <li>Nominal (a category, group or factor)</li>
@@ -321,156 +329,157 @@ R can use all of these variable types:</p>
 <p>R can also use other data types such as text (<strong>character</strong>) data.</p>
 </div>
 <div id="convert-variables-from-one-type-to-another" class="section level3">
-<h3><span class="header-section-number">8.5.3</span> Convert variables from one type to another</h3>
+<h3><span class="header-section-number">4.5.3</span> Convert variables from one type to another</h3>
 <p>When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the <strong>intervention</strong> variable :</p>
 <pre><code>##    participant intervention happiness
-## 1           18            2  7.540558
-## 2            1            2  8.816708
-## 3            8            1  8.834426
-## 4           16            2  9.286319
-## 5           10            2  9.526387
-## 6            5            1  9.558649
-## 7            4            1  9.574320
-## 8           14            2  9.789020
-## 9            3            1 10.284861
-## 10          19            1 10.519364</code></pre>
+## 1            3            2  7.496348
+## 2            4            2  8.005785
+## 3           14            2  8.108862
+## 4           10            1  8.434055
+## 5            7            2  8.706117
+## 6           19            1  8.938039
+## 7           18            1  9.430443
+## 8           16            2  9.635104
+## 9           20            2  9.997975
+## 10          17            1 10.073392</code></pre>
 <p>In the <strong>intervention</strong> variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a <strong>factor</strong> variable. To ensure that R understands this, we can resave the intervention variable as a factor using the <em>as.factor()</em> function:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">happinessSample<span class="op">$</span>intervention &lt;-<span class="st"> </span><span class="kw">as.factor</span>(happinessSample<span class="op">$</span>intervention)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="working-with-data-in-r.html#cb12-1"></a>happinessSample<span class="op">$</span>intervention &lt;-<span class="st"> </span><span class="kw">as.factor</span>(happinessSample<span class="op">$</span>intervention)</span></code></pre></div>
 </div>
 </div>
 <div id="working-with-dataframes" class="section level2">
-<h2><span class="header-section-number">8.6</span> Working with dataframes</h2>
+<h2><span class="header-section-number">4.6</span> Working with dataframes</h2>
 <p>Dataframes are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).</p>
 <p>In a dataframe, variables are columns and each row usually reperesents one measurement or one participant.</p>
 <div id="view-dataframe" class="section level3">
-<h3><span class="header-section-number">8.6.1</span> View dataframe</h3>
+<h3><span class="header-section-number">4.6.1</span> View dataframe</h3>
 <p>To view a dataframe, we can click on it in the environment window and it will display:</p>
 <div class="figure">
-<img src="images/environment.png" alt="Clicking on datasets in hte environment will open them up for viewing" />
+<img src="images/environment.png" alt="" />
 <p class="caption">Clicking on datasets in hte environment will open them up for viewing</p>
 </div>
 <div class="figure">
-<img src="images/dataframe.png" alt="Viewing a dataframe" />
+<img src="images/dataframe.png" alt="" />
 <p class="caption">Viewing a dataframe</p>
 </div>
 </div>
 <div id="refer-to-variables-columns-in-a-dataframe" class="section level3">
-<h3><span class="header-section-number">8.6.2</span> Refer to variables (columns) in a dataframe</h3>
+<h3><span class="header-section-number">4.6.2</span> Refer to variables (columns) in a dataframe</h3>
 <p>Columns in a dataframe are accessed using the “$” sign. For example, to access the <em>happiness</em> column in the <em>happinessSample</em> dataframe, we would type:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">happinessSample<span class="op">$</span>happiness</a></code></pre></div>
-<pre><code>##  [1]  8.816708 10.565143 10.284861  9.574320  9.558649 11.967253 10.750421  8.834426 13.543082
-## [10]  9.526387 10.574117 11.062651 12.355462  9.789020 11.259118  9.286319 10.639367  7.540558
-## [19] 10.519364 11.254614</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="working-with-data-in-r.html#cb13-1"></a>happinessSample<span class="op">$</span>happiness</span></code></pre></div>
+<pre><code>##  [1] 10.114759 11.181468  7.496348  8.005785 13.090658 10.107867  8.706117 11.758492 11.422654
+## [10]  8.434055 10.797610 10.384450 11.601615  8.108862 10.363665  9.635104 10.073392  9.430443
+## [19]  8.938039  9.997975</code></pre>
 <p>As we can see above, the result is then displayed.</p>
 </div>
-<div id="order-filter-and-group-data" class="section level3">
-<h3><span class="header-section-number">8.6.3</span> Order, filter and group data</h3>
+</div>
+<div id="order-filter-and-group-data" class="section level2">
+<h2><span class="header-section-number">4.7</span> Order, filter and group data</h2>
 <p>If you have the <strong>tidyverse</strong> package loaded, it is easy to organise and filter data.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">arrange</span>(happinessSample, happiness)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="working-with-data-in-r.html#cb15-1"></a><span class="kw">arrange</span>(happinessSample, happiness)</span></code></pre></div>
 <pre><code>##    participant intervention happiness
-## 1           18            2  7.540558
-## 2            1            2  8.816708
-## 3            8            1  8.834426
-## 4           16            2  9.286319
-## 5           10            2  9.526387
-## 6            5            1  9.558649
-## 7            4            1  9.574320
-## 8           14            2  9.789020
-## 9            3            1 10.284861
-## 10          19            1 10.519364
-## 11           2            2 10.565143
-## 12          11            1 10.574117
-## 13          17            2 10.639367
-## 14           7            2 10.750421
-## 15          12            2 11.062651
-## 16          20            1 11.254614
-## 17          15            1 11.259118
-## 18           6            1 11.967253
-## 19          13            1 12.355462
-## 20           9            2 13.543082</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">arrange</span>(happinessSample, <span class="kw">desc</span>(happiness)) <span class="co"># Arrange in descending order</span></a></code></pre></div>
+## 1            3            2  7.496348
+## 2            4            2  8.005785
+## 3           14            2  8.108862
+## 4           10            1  8.434055
+## 5            7            2  8.706117
+## 6           19            1  8.938039
+## 7           18            1  9.430443
+## 8           16            2  9.635104
+## 9           20            2  9.997975
+## 10          17            1 10.073392
+## 11           6            2 10.107867
+## 12           1            1 10.114759
+## 13          15            2 10.363665
+## 14          12            1 10.384450
+## 15          11            1 10.797610
+## 16           2            1 11.181468
+## 17           9            2 11.422654
+## 18          13            1 11.601615
+## 19           8            2 11.758492
+## 20           5            2 13.090658</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="working-with-data-in-r.html#cb17-1"></a><span class="kw">arrange</span>(happinessSample, <span class="kw">desc</span>(happiness)) <span class="co"># Arrange in descending order</span></span></code></pre></div>
 <pre><code>##    participant intervention happiness
-## 1            9            2 13.543082
-## 2           13            1 12.355462
-## 3            6            1 11.967253
-## 4           15            1 11.259118
-## 5           20            1 11.254614
-## 6           12            2 11.062651
-## 7            7            2 10.750421
-## 8           17            2 10.639367
-## 9           11            1 10.574117
-## 10           2            2 10.565143
-## 11          19            1 10.519364
-## 12           3            1 10.284861
-## 13          14            2  9.789020
-## 14           4            1  9.574320
-## 15           5            1  9.558649
-## 16          10            2  9.526387
-## 17          16            2  9.286319
-## 18           8            1  8.834426
-## 19           1            2  8.816708
-## 20          18            2  7.540558</code></pre>
+## 1            5            2 13.090658
+## 2            8            2 11.758492
+## 3           13            1 11.601615
+## 4            9            2 11.422654
+## 5            2            1 11.181468
+## 6           11            1 10.797610
+## 7           12            1 10.384450
+## 8           15            2 10.363665
+## 9            1            1 10.114759
+## 10           6            2 10.107867
+## 11          17            1 10.073392
+## 12          20            2  9.997975
+## 13          16            2  9.635104
+## 14          18            1  9.430443
+## 15          19            1  8.938039
+## 16           7            2  8.706117
+## 17          10            1  8.434055
+## 18          14            2  8.108862
+## 19           4            2  8.005785
+## 20           3            2  7.496348</code></pre>
 <ul>
 <li>Show clients with a happiness score of less than 4</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">filter</span>(happinessSample, happiness <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="working-with-data-in-r.html#cb19-1"></a><span class="kw">filter</span>(happinessSample, happiness <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] participant  intervention happiness   
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <ul>
 <li>Show Intervention group 2 with happiness scores above 7</li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">filter</span>(happinessSample, happiness <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="op">&amp;</span><span class="st"> </span>intervention <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="working-with-data-in-r.html#cb21-1"></a><span class="kw">filter</span>(happinessSample, happiness <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span> <span class="op">&amp;</span><span class="st"> </span>intervention <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##    participant intervention happiness
-## 1            1            2  8.816708
-## 2            2            2 10.565143
-## 3            7            2 10.750421
-## 4            9            2 13.543082
-## 5           10            2  9.526387
-## 6           12            2 11.062651
-## 7           14            2  9.789020
-## 8           16            2  9.286319
-## 9           17            2 10.639367
-## 10          18            2  7.540558</code></pre>
+## 1            3            2  7.496348
+## 2            4            2  8.005785
+## 3            5            2 13.090658
+## 4            6            2 10.107867
+## 5            7            2  8.706117
+## 6            8            2 11.758492
+## 7            9            2 11.422654
+## 8           14            2  8.108862
+## 9           15            2 10.363665
+## 10          16            2  9.635104
+## 11          20            2  9.997975</code></pre>
 <ul>
 <li>Group by intervention and show the mean happiness score</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(intervention) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(happiness))</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="working-with-data-in-r.html#cb23-1"></a>happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(intervention) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(happiness))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 2 x 2
 ##   intervention  mean
 ##   &lt;fct&gt;        &lt;dbl&gt;
-## 1 1             10.6
-## 2 2             10.2</code></pre>
+## 1 1            10.1 
+## 2 2             9.88</code></pre>
 </div>
-<div id="create-new-variables-from-data" class="section level3">
-<h3><span class="header-section-number">8.6.4</span> Create new variables from data</h3>
+<div id="create-new-variables-from-data" class="section level2">
+<h2><span class="header-section-number">4.8</span> Create new variables from data</h2>
 <p>To create new variables from data, we can use the <strong>mutate()</strong> function.</p>
 <p>For example, let’s say we wanted to calculate the difference between each person’s happiness score and the mean happiness score.</p>
 <p>We could do the following:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">difference =</span> happiness <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(happiness))</a></code></pre></div>
-<pre><code>##    participant intervention happiness difference
-## 1            1            2  8.816708 -1.5683844
-## 2            2            2 10.565143  0.1800509
-## 3            3            1 10.284861 -0.1002314
-## 4            4            1  9.574320 -0.8107722
-## 5            5            1  9.558649 -0.8264434
-## 6            6            1 11.967253  1.5821607
-## 7            7            2 10.750421  0.3653288
-## 8            8            1  8.834426 -1.5506660
-## 9            9            2 13.543082  3.1579903
-## 10          10            2  9.526387 -0.8587050
-## 11          11            1 10.574117  0.1890251
-## 12          12            2 11.062651  0.6775592
-## 13          13            1 12.355462  1.9703700
-## 14          14            2  9.789020 -0.5960722
-## 15          15            1 11.259118  0.8740265
-## 16          16            2  9.286319 -1.0987725
-## 17          17            2 10.639367  0.2542751
-## 18          18            2  7.540558 -2.8445342
-## 19          19            1 10.519364  0.1342723
-## 20          20            1 11.254614  0.8695225</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="working-with-data-in-r.html#cb26-1"></a>happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">difference =</span> happiness <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(happiness))</span></code></pre></div>
+<pre><code>##    participant intervention happiness  difference
+## 1            1            1 10.114759  0.13229100
+## 2            2            1 11.181468  1.19899977
+## 3            3            2  7.496348 -2.48612000
+## 4            4            2  8.005785 -1.97668298
+## 5            5            2 13.090658  3.10818979
+## 6            6            2 10.107867  0.12539957
+## 7            7            2  8.706117 -1.27635107
+## 8            8            2 11.758492  1.77602378
+## 9            9            2 11.422654  1.44018624
+## 10          10            1  8.434055 -1.54841248
+## 11          11            1 10.797610  0.81514238
+## 12          12            1 10.384450  0.40198186
+## 13          13            1 11.601615  1.61914722
+## 14          14            2  8.108862 -1.87360567
+## 15          15            2 10.363665  0.38119705
+## 16          16            2  9.635104 -0.34736397
+## 17          17            1 10.073392  0.09092384
+## 18          18            1  9.430443 -0.55202466
+## 19          19            1  8.938039 -1.04442914
+## 20          20            2  9.997975  0.01550748</code></pre>
 
-</div>
 </div>
 </div>
             </section>
@@ -478,8 +487,8 @@ R can use all of these variable types:</p>
           </div>
         </div>
       </div>
-<a href="introduction-to-r-and-r-studio.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introduction-to-r-and-r-studio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exploratory-and-descriptive-analysis-with-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
