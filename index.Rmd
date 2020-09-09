@@ -154,6 +154,10 @@ There is an expectation that all academic assignments conform to current America
 
 You may be familiar with SPSS from your undergraduate statistics teaching. Please note that we do not use SPSS for teaching and instead use R Statistics. The reason for this is that R is a free statistical package, meaning that it can be accessed in NHS settings that do not have funding for SPSS. This will enable you to run statistical analyses whilst on placement where required, and also enables you to conduct statistical analyses as a qualified Psychologist without incurring any software costs. R is also more flexible than SPSS and has greater functionality. During the teaching you will be shown how to set up and install R, and how to run statistical analyses in this software.
 
+### Downloading R and R Studio
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=57425cb0-4364-4af1-b9ae-ac2f00b28010&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 You can obtain R and R Studio from the following links:
 
 [https://cran.r-project.org/](https://cran.r-project.org/)

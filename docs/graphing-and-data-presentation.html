@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 6 Graphing and data presentation | Advanced Psychological Research Methods (PSY4034)</title>
+  <title>Section 11 Graphing and data presentation | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 6 Graphing and data presentation | Advanced Psychological Research Methods (PSY4034)" />
+  <meta property="og:title" content="Section 11 Graphing and data presentation | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 6 Graphing and data presentation | Advanced Psychological Research Methods (PSY4034)" />
+  <meta name="twitter:title" content="Section 11 Graphing and data presentation | Advanced Psychological Research Methods (PSY4034)" />
   
   <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-04" />
+<meta name="date" content="2020-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exploratory-and-descriptive-analysis-with-r.html"/>
-<link rel="next" href="correlation-and-regression.html"/>
+<link rel="prev" href="basic-statistical-tests-more-detail-in-later-sections.html"/>
+<link rel="next" href="graphing-and-data-visualisation-with-r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -146,13 +148,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#submitting-work"><i class="fa fa-check"></i><b>1.3.4</b> Submitting work</a></li>
 <li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#a-note-about-referencing"><i class="fa fa-check"></i><b>1.3.5</b> A note about referencing</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#statistical-analysis-software"><i class="fa fa-check"></i><b>1.4</b> Statistical analysis software</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#statistical-analysis-software"><i class="fa fa-check"></i><b>1.4</b> Statistical analysis software</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#downloading-r-and-r-studio"><i class="fa fa-check"></i><b>1.4.1</b> Downloading R and R Studio</a></li>
+</ul></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#academic-support-and-guidance"><i class="fa fa-check"></i><b>1.5</b> Academic Support and Guidance</a><ul>
 <li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#module-team-contact-details"><i class="fa fa-check"></i><b>1.5.1</b> Module Team Contact Details</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#considering-your-thesis"><i class="fa fa-check"></i><b>1.6</b> Considering your thesis</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html"><i class="fa fa-check"></i><b>2</b> Research Methods Concepts Revision</a></li>
+<li class="chapter" data-level="2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html"><i class="fa fa-check"></i><b>2</b> Research Methods Concepts Revision</a><ul>
+<li class="chapter" data-level="2.1" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#basic-concepts-that-you-should-already-know"><i class="fa fa-check"></i><b>2.1</b> Basic concepts that you should already know</a></li>
+<li class="chapter" data-level="2.2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#probability-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.2</b> Probability and hypothesis testing</a></li>
+<li class="chapter" data-level="2.3" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#we-collect-data-from-sample-but-we-estimate-about-the-population"><i class="fa fa-check"></i><b>2.3</b> We collect data from sample but we estimate about the population</a></li>
+<li class="chapter" data-level="2.4" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#variance-in-sample-data-influences-our-confidence-in-population-estimates"><i class="fa fa-check"></i><b>2.4</b> Variance in sample data influences our confidence in population estimates</a></li>
+<li class="chapter" data-level="2.5" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#we-can-use-confidence-intervals-to-make-educated-guesses-about-the-population-mean"><i class="fa fa-check"></i><b>2.5</b> We can use confidence intervals to make educated guesses about the population mean</a></li>
+<li class="chapter" data-level="2.6" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#we-can-also-make-confidence-intervals-of-differences-between-means"><i class="fa fa-check"></i><b>2.6</b> We can also make confidence intervals of differences between means</a></li>
+<li class="chapter" data-level="2.7" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#the-null-hypothesis-and-statistical-significance"><i class="fa fa-check"></i><b>2.7</b> The null hypothesis and statistical significance</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>3</b> Introduction to R and R Studio</a><ul>
 <li class="chapter" data-level="3.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#by-the-end-of-this-section-you-should-be-able-to"><i class="fa fa-check"></i><b>3.1</b> By the end of this section, you should be able to:</a></li>
 <li class="chapter" data-level="3.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#why-learn-use-r"><i class="fa fa-check"></i><b>3.2</b> Why learn / use R?</a><ul>
@@ -182,11 +194,116 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#order-filter-and-group-data"><i class="fa fa-check"></i><b>4.7</b> Order, filter and group data</a></li>
 <li class="chapter" data-level="4.8" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#create-new-variables-from-data"><i class="fa fa-check"></i><b>4.8</b> Create new variables from data</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html"><i class="fa fa-check"></i><b>5</b> Exploratory and descriptive analysis with R</a></li>
-<li class="chapter" data-level="6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html"><i class="fa fa-check"></i><b>6</b> Graphing and data presentation</a></li>
-<li class="chapter" data-level="7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>7</b> Correlation and Regression</a></li>
-<li class="chapter" data-level="8" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Regression</a></li>
-<li class="chapter" data-level="9" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>9</b> Moderation and mediation</a></li>
+<li class="chapter" data-level="5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html"><i class="fa fa-check"></i><b>5</b> Exploratory and descriptive analysis with R</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#working-example---record-sales-data"><i class="fa fa-check"></i><b>5.1</b> Working example - record sales data</a></li>
+<li class="chapter" data-level="5.2" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-import-the-data"><i class="fa fa-check"></i><b>5.2</b> Let’s import the data</a></li>
+<li class="chapter" data-level="5.3" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-look-at-the-data"><i class="fa fa-check"></i><b>5.3</b> Let’s look at the data</a></li>
+<li class="chapter" data-level="5.4" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-make-sure-our-data-types-are-correct-1"><i class="fa fa-check"></i><b>5.4</b> Let’s make sure our data types are correct #1</a></li>
+<li class="chapter" data-level="5.5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-make-sure-our-data-types-are-correct-2"><i class="fa fa-check"></i><b>5.5</b> Let’s make sure our data types are correct #2</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html"><i class="fa fa-check"></i><b>6</b> Summarising data: Central tendency</a><ul>
+<li class="chapter" data-level="6.1" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>6.1</b> Measures of central tendency</a></li>
+<li class="chapter" data-level="6.2" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#mean"><i class="fa fa-check"></i><b>6.2</b> Mean</a></li>
+<li class="chapter" data-level="6.3" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#trimmed-mean"><i class="fa fa-check"></i><b>6.3</b> Trimmed mean</a></li>
+<li class="chapter" data-level="6.4" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#median"><i class="fa fa-check"></i><b>6.4</b> Median</a></li>
+<li class="chapter" data-level="6.5" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#mode"><i class="fa fa-check"></i><b>6.5</b> Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html"><i class="fa fa-check"></i><b>7</b> Measures of dispresion or variance</a><ul>
+<li class="chapter" data-level="7.1" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#range"><i class="fa fa-check"></i><b>7.1</b> Range</a></li>
+<li class="chapter" data-level="7.2" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#interquartile-range"><i class="fa fa-check"></i><b>7.2</b> Interquartile range</a></li>
+<li class="chapter" data-level="7.3" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#sum-of-squares"><i class="fa fa-check"></i><b>7.3</b> Sum of squares</a></li>
+<li class="chapter" data-level="7.4" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#variance"><i class="fa fa-check"></i><b>7.4</b> Variance</a></li>
+<li class="chapter" data-level="7.5" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#standard-deviation"><i class="fa fa-check"></i><b>7.5</b> Standard deviation</a></li>
+<li class="chapter" data-level="7.6" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#the-psych-package-includes-a-lot-of-useful-descriptive-stats"><i class="fa fa-check"></i><b>7.6</b> The <em>psych</em> package includes a lot of useful descriptive stats</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html"><i class="fa fa-check"></i><b>8</b> Skewness and Kurtosis</a><ul>
+<li class="chapter" data-level="8.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#assessing-skewness-of-distribution-1"><i class="fa fa-check"></i><b>8.1</b> Assessing skewness of distribution #1</a></li>
+<li class="chapter" data-level="8.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#assessing-skewness-of-distribution-2"><i class="fa fa-check"></i><b>8.2</b> Assessing skewness of distribution #2</a></li>
+<li class="chapter" data-level="8.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>8.3</b> Kurtosis</a></li>
+<li class="chapter" data-level="8.4" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#assessing-normality-of-distribution"><i class="fa fa-check"></i><b>8.4</b> Assessing normality of distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html"><i class="fa fa-check"></i><b>9</b> Getting and overall summary</a><ul>
+<li class="chapter" data-level="9.1" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html#summary---in-base-r"><i class="fa fa-check"></i><b>9.1</b> summary() - in “base R”</a></li>
+<li class="chapter" data-level="9.2" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html#describe---in-the-psych-package-1"><i class="fa fa-check"></i><b>9.2</b> describe() - in the “psych” package #1</a></li>
+<li class="chapter" data-level="9.3" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html#describe---in-the-psych-package-2"><i class="fa fa-check"></i><b>9.3</b> describe() - in the “psych” package #2</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html"><i class="fa fa-check"></i><b>10</b> Basic statistical tests (more detail in later sections)</a><ul>
+<li class="chapter" data-level="10.1" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html#corrleation"><i class="fa fa-check"></i><b>10.1</b> Corrleation</a></li>
+<li class="chapter" data-level="10.2" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html#tests-of-difference---t-test"><i class="fa fa-check"></i><b>10.2</b> Tests of difference - t-test</a></li>
+<li class="chapter" data-level="10.3" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html#tests-of-difference---anova"><i class="fa fa-check"></i><b>10.3</b> Tests of difference - ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html"><i class="fa fa-check"></i><b>11</b> Graphing and data presentation</a><ul>
+<li class="chapter" data-level="11.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#what-makes-bad-data-presentation"><i class="fa fa-check"></i><b>11.1</b> What makes bad data presentation?</a></li>
+<li class="chapter" data-level="11.2" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#reporting-and-presenting-statistical-tests"><i class="fa fa-check"></i><b>11.2</b> Reporting and presenting statistical tests</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#t-tests-anova-etc."><i class="fa fa-check"></i><b>11.2.1</b> T-tests, ANOVA etc.</a></li>
+<li class="chapter" data-level="11.2.2" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#t-tests-anova-etc.-1"><i class="fa fa-check"></i><b>11.2.2</b> T-tests, ANOVA etc.</a></li>
+<li class="chapter" data-level="11.2.3" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#correlation"><i class="fa fa-check"></i><b>11.2.3</b> Correlation</a></li>
+<li class="chapter" data-level="11.2.4" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#regression-models"><i class="fa fa-check"></i><b>11.2.4</b> Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#looking-for-trends-in-data"><i class="fa fa-check"></i><b>11.3</b> Looking for trends in data</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#comparisons-or-deviations"><i class="fa fa-check"></i><b>11.3.1</b> Comparisons or Deviations</a></li>
+<li class="chapter" data-level="11.3.2" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#trends"><i class="fa fa-check"></i><b>11.3.2</b> Trends</a></li>
+<li class="chapter" data-level="11.3.3" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#patterns-or-relationships"><i class="fa fa-check"></i><b>11.3.3</b> Patterns or Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#what-are-we-trying-to-say"><i class="fa fa-check"></i><b>11.4</b> What are we trying to say?</a></li>
+<li class="chapter" data-level="11.5" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#the-gestalt-principles-of-visual-perception"><i class="fa fa-check"></i><b>11.5</b> The Gestalt principles of visual perception</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#proximity"><i class="fa fa-check"></i><b>11.5.1</b> Proximity</a></li>
+<li class="chapter" data-level="11.5.2" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#similarity"><i class="fa fa-check"></i><b>11.5.2</b> Similarity</a></li>
+<li class="chapter" data-level="11.5.3" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#enclosure"><i class="fa fa-check"></i><b>11.5.3</b> Enclosure</a></li>
+<li class="chapter" data-level="11.5.4" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#closure"><i class="fa fa-check"></i><b>11.5.4</b> Closure</a></li>
+<li class="chapter" data-level="11.5.5" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#continuity"><i class="fa fa-check"></i><b>11.5.5</b> Continuity</a></li>
+<li class="chapter" data-level="11.5.6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#connection"><i class="fa fa-check"></i><b>11.5.6</b> Connection</a></li>
+<li class="chapter" data-level="11.5.7" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#webers-law"><i class="fa fa-check"></i><b>11.5.7</b> Weber’s Law</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#processing-data-and-visual-information"><i class="fa fa-check"></i><b>11.6</b> Processing data and visual information</a></li>
+<li class="chapter" data-level="11.7" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#limits-of-short-term-memory"><i class="fa fa-check"></i><b>11.7</b> Limits of short-term memory</a></li>
+<li class="chapter" data-level="11.8" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#designing-for-limits-of-stm"><i class="fa fa-check"></i><b>11.8</b> Designing for limits of STM</a><ul>
+<li class="chapter" data-level="11.8.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#what-is-a-chunk"><i class="fa fa-check"></i><b>11.8.1</b> What is a chunk?</a></li>
+</ul></li>
+<li class="chapter" data-level="11.9" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#designing-for-rapid-perception"><i class="fa fa-check"></i><b>11.9</b> Designing for rapid perception</a><ul>
+<li class="chapter" data-level="11.9.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#how-many-5s-are-in-this-list"><i class="fa fa-check"></i><b>11.9.1</b> How many 5s are in this list?</a></li>
+</ul></li>
+<li class="chapter" data-level="11.10" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#preattentive-visual-cues"><i class="fa fa-check"></i><b>11.10</b> Preattentive visual cues</a><ul>
+<li class="chapter" data-level="11.10.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#colour"><i class="fa fa-check"></i><b>11.10.1</b> Colour</a></li>
+<li class="chapter" data-level="11.10.2" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#position"><i class="fa fa-check"></i><b>11.10.2</b> Position</a></li>
+<li class="chapter" data-level="11.10.3" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#form"><i class="fa fa-check"></i><b>11.10.3</b> Form</a></li>
+<li class="chapter" data-level="11.10.4" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#hue"><i class="fa fa-check"></i><b>11.10.4</b> Hue</a></li>
+<li class="chapter" data-level="11.10.5" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#intensity"><i class="fa fa-check"></i><b>11.10.5</b> Intensity</a></li>
+<li class="chapter" data-level="11.10.6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#hue-and-intensity"><i class="fa fa-check"></i><b>11.10.6</b> Hue and Intensity</a></li>
+</ul></li>
+<li class="chapter" data-level="11.11" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#colour-is-perceived-relative-to-its-surroundings"><i class="fa fa-check"></i><b>11.11</b> Colour is perceived relative to its surroundings</a><ul>
+<li class="chapter" data-level="11.11.1" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#position-1"><i class="fa fa-check"></i><b>11.11.1</b> Position</a></li>
+<li class="chapter" data-level="11.11.2" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#orientation"><i class="fa fa-check"></i><b>11.11.2</b> Orientation</a></li>
+<li class="chapter" data-level="11.11.3" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#line-length"><i class="fa fa-check"></i><b>11.11.3</b> Line Length</a></li>
+<li class="chapter" data-level="11.11.4" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#width"><i class="fa fa-check"></i><b>11.11.4</b> Width</a></li>
+<li class="chapter" data-level="11.11.5" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#size"><i class="fa fa-check"></i><b>11.11.5</b> Size</a></li>
+<li class="chapter" data-level="11.11.6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#shape"><i class="fa fa-check"></i><b>11.11.6</b> Shape</a></li>
+<li class="chapter" data-level="11.11.7" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#added-marks"><i class="fa fa-check"></i><b>11.11.7</b> Added marks</a></li>
+<li class="chapter" data-level="11.11.8" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#enclosure-1"><i class="fa fa-check"></i><b>11.11.8</b> Enclosure</a></li>
+</ul></li>
+<li class="chapter" data-level="11.12" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#choosing-the-best-visual-cues-for-quantitive-data"><i class="fa fa-check"></i><b>11.12</b> Choosing the best visual cues for quantitive data</a></li>
+<li class="chapter" data-level="11.13" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html#telling-the-story"><i class="fa fa-check"></i><b>11.13</b> Telling the story</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html"><i class="fa fa-check"></i><b>12</b> Graphing and data visualisation with R</a><ul>
+<li class="chapter" data-level="12.1" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#by-the-end-of-this-section-you-will-be-able-to-1"><i class="fa fa-check"></i><b>12.1</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="12.2" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-grammar-of-visualisation"><i class="fa fa-check"></i><b>12.2</b> The “grammar of visualisation”</a></li>
+<li class="chapter" data-level="12.3" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#how-to-code-a-graph"><i class="fa fa-check"></i><b>12.3</b> How to code a graph</a></li>
+<li class="chapter" data-level="12.4" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-graph-output"><i class="fa fa-check"></i><b>12.4</b> The graph output</a></li>
+<li class="chapter" data-level="12.5" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-geoms-leads-to-different-visualisations"><i class="fa fa-check"></i><b>12.5</b> Changing the geoms leads to different visualisations</a></li>
+<li class="chapter" data-level="12.6" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#it-is-possible-to-represent-more-variables-on-the-plot"><i class="fa fa-check"></i><b>12.6</b> It is possible to represent more variables on the plot</a></li>
+<li class="chapter" data-level="12.7" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#it-is-possible-to-represent-more-variables-on-the-plot-2"><i class="fa fa-check"></i><b>12.7</b> It is possible to represent more variables on the plot #2</a></li>
+<li class="chapter" data-level="12.8" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#it-is-possible-to-represent-more-variables-on-the-plot-3"><i class="fa fa-check"></i><b>12.8</b> It is possible to represent more variables on the plot #3</a></li>
+<li class="chapter" data-level="12.9" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plotting-summaries-of-data"><i class="fa fa-check"></i><b>12.9</b> Plotting summaries of data</a></li>
+<li class="chapter" data-level="12.10" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-axis-labels-and-title-on-a-plot"><i class="fa fa-check"></i><b>12.10</b> Changing the axis labels and title on a plot</a></li>
+<li class="chapter" data-level="12.11" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-legend-on-a-plot"><i class="fa fa-check"></i><b>12.11</b> Changing the legend on a plot</a></li>
+<li class="chapter" data-level="12.12" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#storing-plots-to-be-recalled-later"><i class="fa fa-check"></i><b>12.12</b> Storing plots to be recalled later</a></li>
+<li class="chapter" data-level="12.13" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>12.13</b> Recalling a stored plot</a></li>
+<li class="chapter" data-level="12.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>12.14</b> Saving plots # 1</a></li>
+<li class="chapter" data-level="12.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>12.15</b> Plots can also be saved using code</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>13</b> Correlation and Regression</a></li>
+<li class="chapter" data-level="14" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>14</b> Multiple Regression</a></li>
+<li class="chapter" data-level="15" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>15</b> Moderation and mediation</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -208,16 +325,459 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="graphing-and-data-presentation" class="section level1">
-<h1><span class="header-section-number">Section 6</span> Graphing and data presentation</h1>
-
+<h1><span class="header-section-number">Section 11</span> Graphing and data presentation</h1>
+<div id="what-makes-bad-data-presentation" class="section level2">
+<h2><span class="header-section-number">11.1</span> What makes bad data presentation?</h2>
+<div class="figure">
+<img src="img/badinfographic1.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/badinfographic2.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/badinfographic3.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/badinfographic4.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/badinfographic5.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="reporting-and-presenting-statistical-tests" class="section level2">
+<h2><span class="header-section-number">11.2</span> Reporting and presenting statistical tests</h2>
+<div id="t-tests-anova-etc." class="section level3">
+<h3><span class="header-section-number">11.2.1</span> T-tests, ANOVA etc.</h3>
+<p>Reporting in written format
+&gt; There was a signifiant difference between Group A and Group B on measure X, t(38) = 12.34, P&lt;0.05</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Mean</th>
+<th align="center">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Group 1</td>
+<td align="center">110</td>
+<td align="center">11.2</td>
+</tr>
+<tr class="even">
+<td>Group 2</td>
+<td align="center">90</td>
+<td align="center">7.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="t-tests-anova-etc.-1" class="section level3">
+<h3><span class="header-section-number">11.2.2</span> T-tests, ANOVA etc.</h3>
+<p>Visually, we want to convey:
+* The relative difference between factors/groups
+* Which differences are significant</p>
+<div class="figure">
+<img src="img/barChart.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="correlation" class="section level3">
+<h3><span class="header-section-number">11.2.3</span> Correlation</h3>
+<p>Reporting in written format
+&gt; There was a strong positive correlation Variable X and Variable Y, r=0.82, P&lt;0.05</p>
+<p>Visually, we want to convey:
+* Direction of relationship
+* Strength of relationship</p>
+<div class="figure">
+<img src="img/scatterplot.gif" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="regression-models" class="section level3">
+<h3><span class="header-section-number">11.2.4</span> Regression Models</h3>
+<p>Reporting in written format
+<img src="img/regressionTable.PNG" alt="fullSize" /></p>
+<p>Visually, we want to convey:
+* Strength of contribution of each predictor
+* Confidence / significance of each predictor</p>
+<div class="figure">
+<img src="img/regression.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+</div>
+<div id="looking-for-trends-in-data" class="section level2">
+<h2><span class="header-section-number">11.3</span> Looking for trends in data</h2>
+<blockquote>
+<p>Now we really do have essentially free and ubiquitous data. So the complimentary scarce factor is the ability to understand that data and extract value from it. The ability to take data—to be able to understand it, to process it, to extract value from it, to visualize it, to communicate it— that’s going to be a hugely important skill in the next decades. – Hal Varian</p>
+</blockquote>
+<p>So, what are we looking for?</p>
+<div id="comparisons-or-deviations" class="section level3">
+<h3><span class="header-section-number">11.3.1</span> Comparisons or Deviations</h3>
+<p>Anchor Points: Highest, Lowest, Average</p>
+<div class="figure">
+<img src="img/peaks.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>Absolute differences
+<img src="img/bar.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/skittles3.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>Proportions
+<img src="img/skittles1.jpg" alt="fullSize" /></p>
+<p>Distribution
+<img src="img/boxplot1.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/skittles2.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="trends" class="section level3">
+<h3><span class="header-section-number">11.3.2</span> Trends</h3>
+<p>Direction
+<img src="img/trend.png" alt="fullSize" /></p>
+<p>Peak
+<img src="img/peak.png" alt="fullSize" /></p>
+<p>Rate of change
+<img src="img/shower1.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/heartrate.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>Fluctuations
+<img src="img/fluctuations.jpg" alt="fullSize" /></p>
+<p>Signal from Noise
+<iframe src="http://52.26.82.213/vocab_norms" class="stretch"></iframe>
+<img src="img/seasonal.png" alt="fullSize" /></p>
+</div>
+<div id="patterns-or-relationships" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> Patterns or Relationships</h3>
+<p>Outliers
+<img src="img/outliers3.gif" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/outliers1.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/outliers2.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>Correlation and Association</p>
+<div class="figure">
+<img src="img/income.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/scatterElipse.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>Clusters
+<img src="img/clusters1.png" alt="fullSize" /></p>
+<p>Overlap
+<img src="img/overlap1.png" alt="fullSize" /></p>
+</div>
+</div>
+<div id="what-are-we-trying-to-say" class="section level2">
+<h2><span class="header-section-number">11.4</span> What are we trying to say?</h2>
+<p>Who/What?
+<img src="img/What.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/What2.PNG" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>How many?
+<img src="img/howMany.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/howMany2.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>Where?
+<img src="img/Where.png" alt="fullSize" /></p>
+<p>When?
+<img src="img/when.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/when2.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/when3.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<p>How?
+<img src="img/how.png" alt="fullSize" /></p>
+<div class="figure">
+<img src="img/how2.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="the-gestalt-principles-of-visual-perception" class="section level2">
+<h2><span class="header-section-number">11.5</span> The Gestalt principles of visual perception</h2>
+<ul>
+<li>Proximity</li>
+<li>Similarity</li>
+<li>Enclosure</li>
+<li>Closure</li>
+<li>Continuity</li>
+<li>Connection</li>
+</ul>
+<div id="proximity" class="section level3">
+<h3><span class="header-section-number">11.5.1</span> Proximity</h3>
+<div class="figure">
+<img src="img/proximity.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="similarity" class="section level3">
+<h3><span class="header-section-number">11.5.2</span> Similarity</h3>
+<div class="figure">
+<img src="img/similarity.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="enclosure" class="section level3">
+<h3><span class="header-section-number">11.5.3</span> Enclosure</h3>
+<div class="figure">
+<img src="img/enclosure.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="closure" class="section level3">
+<h3><span class="header-section-number">11.5.4</span> Closure</h3>
+<div class="figure">
+<img src="img/closure.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="continuity" class="section level3">
+<h3><span class="header-section-number">11.5.5</span> Continuity</h3>
+<div class="figure">
+<img src="img/continuity.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="connection" class="section level3">
+<h3><span class="header-section-number">11.5.6</span> Connection</h3>
+<div class="figure">
+<img src="img/connection.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="webers-law" class="section level3">
+<h3><span class="header-section-number">11.5.7</span> Weber’s Law</h3>
+<p>We are only capable of perceiving differences in a stimulus that are beyond a certain proportion of the original value</p>
+<div class="figure">
+<img src="img/weber1.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/weber1.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/weber2.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+</div>
+<div id="processing-data-and-visual-information" class="section level2">
+<h2><span class="header-section-number">11.6</span> Processing data and visual information</h2>
+<div class="figure">
+<img src="img/memorymodel.gif" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="limits-of-short-term-memory" class="section level2">
+<h2><span class="header-section-number">11.7</span> Limits of short-term memory</h2>
+<ul>
+<li>It is temporary.</li>
+<li>A portion of it is dedicated to visual information.</li>
+<li>It has a limited storage capacity.</li>
+</ul>
+<p>We can store only 3-9 chunks of visual information at a time in short-term memory. When it is full, for something new to be brought in, something that’s already there must either be moved into long-term memory or removed.</p>
+</div>
+<div id="designing-for-limits-of-stm" class="section level2">
+<h2><span class="header-section-number">11.8</span> Designing for limits of STM</h2>
+<div id="what-is-a-chunk" class="section level3">
+<h3><span class="header-section-number">11.8.1</span> What is a chunk?</h3>
+<ul>
+<li><p>Individual numbers can be stored as discrete chunks</p></li>
+<li><p>A well-designed graphic can represent a lot of information as a single chunk</p></li>
+</ul>
+</div>
+</div>
+<div id="designing-for-rapid-perception" class="section level2">
+<h2><span class="header-section-number">11.9</span> Designing for rapid perception</h2>
+<div id="how-many-5s-are-in-this-list" class="section level3">
+<h3><span class="header-section-number">11.9.1</span> How many 5s are in this list?</h3>
+<div class="figure">
+<img src="img/numbers1.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/numbers2.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+</div>
+<div id="preattentive-visual-cues" class="section level2">
+<h2><span class="header-section-number">11.10</span> Preattentive visual cues</h2>
+<div id="colour" class="section level3">
+<h3><span class="header-section-number">11.10.1</span> Colour</h3>
+<ul>
+<li>Hue</li>
+<li>Intensity</li>
+</ul>
+</div>
+<div id="position" class="section level3">
+<h3><span class="header-section-number">11.10.2</span> Position</h3>
+<ul>
+<li>X/Y Location</li>
+</ul>
+</div>
+<div id="form" class="section level3">
+<h3><span class="header-section-number">11.10.3</span> Form</h3>
+<ul>
+<li>Orientation</li>
+<li>Line length</li>
+<li>Line width</li>
+<li>Size</li>
+<li>Shape</li>
+<li>Added marks</li>
+<li>Enclosure</li>
+</ul>
+<div class="figure">
+<img src="img/visualEncoding.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="hue" class="section level3">
+<h3><span class="header-section-number">11.10.4</span> Hue</h3>
+<div class="figure">
+<img src="img/modalities5.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="intensity" class="section level3">
+<h3><span class="header-section-number">11.10.5</span> Intensity</h3>
+<div class="figure">
+<img src="img/modalities6.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="hue-and-intensity" class="section level3">
+<h3><span class="header-section-number">11.10.6</span> Hue and Intensity</h3>
+<div class="figure">
+<img src="img/modalities7.png" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+</div>
+<div id="colour-is-perceived-relative-to-its-surroundings" class="section level2">
+<h2><span class="header-section-number">11.11</span> Colour is perceived relative to its surroundings</h2>
+<div class="figure">
+<img src="img/hue2.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<div class="figure">
+<img src="img/gradient.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<ul>
+<li>Be aware of context when using colour</li>
+<li>We want data to be fully legible</li>
+<li>We want data to appear the same when we need it to appear the same and different when we need it to appear different</li>
+</ul>
+<div id="position-1" class="section level3">
+<h3><span class="header-section-number">11.11.1</span> Position</h3>
+<div class="figure">
+<img src="img/position.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+<ul>
+<li>Most commonly used way of conveying data (e.g. scales)</li>
+<li>Easiest to interpret</li>
+</ul>
+</div>
+<div id="orientation" class="section level3">
+<h3><span class="header-section-number">11.11.2</span> Orientation</h3>
+<div class="figure">
+<img src="img/orientation.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="line-length" class="section level3">
+<h3><span class="header-section-number">11.11.3</span> Line Length</h3>
+<div class="figure">
+<img src="img/linelength.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="width" class="section level3">
+<h3><span class="header-section-number">11.11.4</span> Width</h3>
+<div class="figure">
+<img src="img/lineWidth.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="size" class="section level3">
+<h3><span class="header-section-number">11.11.5</span> Size</h3>
+<div class="figure">
+<img src="img/size.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="shape" class="section level3">
+<h3><span class="header-section-number">11.11.6</span> Shape</h3>
+<div class="figure">
+<img src="img/shape.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="added-marks" class="section level3">
+<h3><span class="header-section-number">11.11.7</span> Added marks</h3>
+<div class="figure">
+<img src="img/marks.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+<div id="enclosure-1" class="section level3">
+<h3><span class="header-section-number">11.11.8</span> Enclosure</h3>
+<div class="figure">
+<img src="img/enclosure2.jpg" alt="" />
+<p class="caption">fullSize</p>
+</div>
+</div>
+</div>
+<div id="choosing-the-best-visual-cues-for-quantitive-data" class="section level2">
+<h2><span class="header-section-number">11.12</span> Choosing the best visual cues for quantitive data</h2>
+<div class="figure">
+<img src="img/table1.png" alt="" />
+<p class="caption">fullSizefullSize</p>
+</div>
+</div>
+<div id="telling-the-story" class="section level2">
+<h2><span class="header-section-number">11.13</span> Telling the story</h2>
+<ul>
+<li><p>The human stuff is the main stuff, and the data should enrich it</p></li>
+<li><p>People who present data are good at who, what, where and when. Not so good at “Why?”</p></li>
+</ul>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exploratory-and-descriptive-analysis-with-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="correlation-and-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="basic-statistical-tests-more-detail-in-later-sections.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="graphing-and-data-visualisation-with-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -267,6 +827,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

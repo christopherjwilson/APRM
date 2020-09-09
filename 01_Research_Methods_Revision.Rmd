@@ -1,3 +1,143 @@
 # Research Methods Concepts Revision
 
+## Basic concepts that you should already know
+
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8e6af012-9d1d-411b-81a7-ac2c00d35e1f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+## Probability and hypothesis testing
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f496c1dc-d3a2-4358-aff3-ac3000b4139c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+One of the most important things to remember about hypothesis testing in statistics is why we use the approaches we do. That is, we need statistical approaches to test hypotheses because we can only collect data from samples of the population but our research questions and hypotheses apply to whole populations. For that reason, we need a way to estimate how well the *sample* reflects the *population.*
+
+It is common for us to want to know what the mean (average) response of the population is on certain measures. For example, we might ask the question "what is the average score on this measure of happiness?". In reality we can only measure a subset (sample) of the population, so we test as many people as we can. Below is a sample of 20 participants:
+
+```{r echo=F}
+library(kableExtra)
+
+kable(happinessSample, caption = "Some sample data for happiness score") %>%  kable_styling("striped", full_width = F)
+
+```
+
+
+## Variance in sample data influences our confidence in population estimates
+
+We can see from the table above that the mean of the sample is `r mean(happiness)`. However, this is not to say that the population mean is `r mean(happiness)`. For one thing, we can see that the range of scores in the sample is between `r min(happiness)` and `r max(happiness)`. The standard deviation of the sample is `r sd(happiness) %>% round()`. 
+
+
+The fact that there is so much variance from person to person within our sample indicates that we are likely to be incorrect if we assume that the sample mean is the same as the population mean. The more variance there is within the sample data, the less confident we can be that the sample mean is an accurate representation of the population mean.
+
+Another thing that affects our ability to generalise from sample to population is that the sample size is only `r length(happiness) `. Larger samples are less influenced by individual outliers, so the larger the sample size is, the more confident we can be that the sample mean is representative of the population mean (provided that the participant sample is representative of the population and recruited in a way to minimise bias).  
+
+
+>The **standard error** of the mean can be calculated to estimate how far the  mean of the sample data is likely to be from the true population mean. It uses the concepts of variance and sample size to make this estimate. Standard error is calculated by dividing standard deviation by the square root of the sample size ($SE = \frac{SD}{\sqrt{\left[n\right]}}$)
+
+In R, we can calculate the standard error of the happiness data like so:
+
+```{r}
+ standardError <- sd(happiness)/sqrt(length(happiness)) ## Calculate standard error
+
+standardError #Display the standard error
+
+```
+
+The standard error of our sample mean is `r standardError %>% round(digits = 2) `. This suggests that using the sample mean is likely to be `r standardError %>% round(digits = 2) ` away from the population mean.
+
+## We can use confidence intervals to make educated guesses about the population mean
+
+Using the standard error, we can also create **Confidence intervals**, which are a range of values, within which the population mean is likely to fall. For example, we know from normal distribution that 95% of the population lies between +/- 1.96 standard deviations of the mean. If we use our sample mean ($\bar{x}$) in place of the population mean and include the standard error to account for errors in our estimate, we come up with the following formula for 95% confidence intervals of the mean:
+
+Lower confidence interval = $\bar{x} - 1.96*SE$
+
+Upper confidence interval = $\bar{x} + 1.96*SE$
+
+```{r}
+mean(happiness) - 1.96 * standardError # Lower confidence interval
+mean(happiness) + 1.96 * standardError # Upper confidence interval
+```
+
+
+```{r echo=F}
+knitr::include_graphics('images/normal.jpg')
+```
+
+The value of 1.96 come from the normal distribution, where 95% of the population lies between +/- 1.96 standard deviations of the mean. If we did not already know this, we could use the *qnorm()* function in R to calculate the value:
+
+```{r}
+# Calculate the number of standard deviations that contains 0% to 97.5% of the data (100% - 2.5%). 
+# We can then say that 95% of the data lies between + or - the answer: 
+
+qnorm(0.975)
+
+```
+
+However, with smaller samples, since we are less confident about generalising to the population, we use the t-distribution to calculate that value. The shape of a t-distribution changes based on the sample size, so the smaller the sample size is, the wider the range that 95% of values lie between. We can calculate the 95% value for a particular sample size in R using the *qt()* function:
+
+```{r}
+# The qt function relates to t-distribution
+
+qt(0.975,df=20-1)
+
+# for qt, we need to specify the degress of freedom, which is sample size minus 1
+```
+We can see that when we have a sample size of 20, 95% of values in our predicted population distribution will lie between + and - `r qt(0.975,df=20-1) ` standard deviations. Therefore, we can calculate more accurate confidence intervals using this value:
+
+```{r}
+mean(happiness) - qt(0.975,df=20-1) * standardError # Lower confidence interval
+mean(happiness) + qt(0.975,df=20-1) * standardError # Upper confidence interval
+```
+
+**This tells us:** if we were to take infinite number of similar samples, about 95% of their confidence intervals would contain the population mean. Therefore, we think it is reasonable to estimate that the population mean is somewhere in this range. 
+
+> Often people say that a 95% confidence interval means that there is a 95% chance that the population mean is between the lower and upper confidence interval. This is **not** an accurate statement, but it is often used as a shorthand to help people conceptualise what confidence intervals are.
+
+## We can also make confidence intervals of differences between means
+
+Often when we test hypotheses, we are testing the difference between two samples. For example, we might have 2 groups who have undergone different psychological interventions and want to know whether the difference we see our participant samples is likely to generalise to the population.  
+
+```{r echo=F}
+
+kable(happinessSample, caption = "Some sample data for happiness score with participants divided into 2 groups") %>%  kable_styling("striped", full_width = F)
+```
+
+Using the same approach as in the previous section, we can estimate a confidence interval based on the difference in means and the sample size:
+
+```{r}
+# Calculate the number of standard deviations for 95% of the data 
+qt(0.975,df=20-2) # since there are 2 intervention groups, degrees of freedom is now 20-2
+
+ group1 <- happinessSample %>% filter(intervention ==1) %>% summarise(mean = mean(happiness), sd= sd(happiness)) 
+ 
+  group2 <- happinessSample %>% filter(intervention ==2) %>% summarise(mean = mean(happiness), sd= sd(happiness)) 
+
+# calculate mean of difference
+meanDifference <- group1$mean - group2$mean
+seDifference <- sqrt(((group1$sd^2)/19) + ((group2$sd^2)/19))
+
+
+# calculate 95% CI of this
+meanDifference - seDifference * qt(c(0.975), 20-2) # lower CI
+meanDifference + seDifference * qt(c(0.975), 20-2) # upper CI
+
+```
+```{r echo=F}
+data1 <- data.frame(ncol = 3)
+data1$mean <- meanDifference
+data1$lci <- meanDifference - seDifference * qt(c(0.975), 20-2)
+data1$uci <- meanDifference + seDifference * qt(c(0.975), 20-2)
+
+ggplot(data1, aes(y = meanDifference, x = 0)) + geom_point() + geom_errorbar(aes(ymin=lci, ymax=uci, width=.1)) + ylim(-10,10) + xlim(-1,1) + coord_flip()  
+
+```
+
+This tells use that the 95% confidence interval of the difference is between `r meanDifference - seDifference * qt(c(0.975), 20-2) ` and `r meanDifference + seDifference * qt(c(0.975), 20-2) `. An important part of interpreting this, is to notice whether any point between these values is equal to zero. If the confidence interval of a difference contains a zero value, this means that in future research, with similar samples, it would be possible to see zero difference between the groups. If, on the other hand, the confidence interval does not cross zero, then it is likely that in future research, with similar samples, we would see some difference between the means.   
+
+> The fact of whether confidence intervals cross zero (or not) is linked directly to the idea of hypothesis testing and statistical significance.
+
+
+## The null hypothesis and statistical significance
+
+Using the same study from the previous example: we know that the null hypothesis can be phrased as "in the population, there is no difference between groups". We then see how the confidence interval of a difference can help us test the null hypothesis: if the null hypothesis were not true, then it is unlikely that the confidence interval of the difference would contain zero.
+
+Therefore, if confidence intervals overlap, then there is a possibility of no difference existing between the populations. As such, we are unable to reject the null hypothesis.
+

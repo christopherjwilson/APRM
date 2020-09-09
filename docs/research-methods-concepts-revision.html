@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-04" />
+<meta name="date" content="2020-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,8 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -146,13 +148,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#submitting-work"><i class="fa fa-check"></i><b>1.3.4</b> Submitting work</a></li>
 <li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#a-note-about-referencing"><i class="fa fa-check"></i><b>1.3.5</b> A note about referencing</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#statistical-analysis-software"><i class="fa fa-check"></i><b>1.4</b> Statistical analysis software</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#statistical-analysis-software"><i class="fa fa-check"></i><b>1.4</b> Statistical analysis software</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#downloading-r-and-r-studio"><i class="fa fa-check"></i><b>1.4.1</b> Downloading R and R Studio</a></li>
+</ul></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#academic-support-and-guidance"><i class="fa fa-check"></i><b>1.5</b> Academic Support and Guidance</a><ul>
 <li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#module-team-contact-details"><i class="fa fa-check"></i><b>1.5.1</b> Module Team Contact Details</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#considering-your-thesis"><i class="fa fa-check"></i><b>1.6</b> Considering your thesis</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html"><i class="fa fa-check"></i><b>2</b> Research Methods Concepts Revision</a></li>
+<li class="chapter" data-level="2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html"><i class="fa fa-check"></i><b>2</b> Research Methods Concepts Revision</a><ul>
+<li class="chapter" data-level="2.1" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#basic-concepts-that-you-should-already-know"><i class="fa fa-check"></i><b>2.1</b> Basic concepts that you should already know</a></li>
+<li class="chapter" data-level="2.2" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#probability-and-hypothesis-testing"><i class="fa fa-check"></i><b>2.2</b> Probability and hypothesis testing</a></li>
+<li class="chapter" data-level="2.3" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#variance-in-sample-data-influences-our-confidence-in-population-estimates"><i class="fa fa-check"></i><b>2.3</b> Variance in sample data influences our confidence in population estimates</a></li>
+<li class="chapter" data-level="2.4" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#we-can-use-confidence-intervals-to-make-educated-guesses-about-the-population-mean"><i class="fa fa-check"></i><b>2.4</b> We can use confidence intervals to make educated guesses about the population mean</a></li>
+<li class="chapter" data-level="2.5" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#we-can-also-make-confidence-intervals-of-differences-between-means"><i class="fa fa-check"></i><b>2.5</b> We can also make confidence intervals of differences between means</a></li>
+<li class="chapter" data-level="2.6" data-path="research-methods-concepts-revision.html"><a href="research-methods-concepts-revision.html#the-null-hypothesis-and-statistical-significance"><i class="fa fa-check"></i><b>2.6</b> The null hypothesis and statistical significance</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>3</b> Introduction to R and R Studio</a><ul>
 <li class="chapter" data-level="3.1" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#by-the-end-of-this-section-you-should-be-able-to"><i class="fa fa-check"></i><b>3.1</b> By the end of this section, you should be able to:</a></li>
 <li class="chapter" data-level="3.2" data-path="introduction-to-r-and-r-studio.html"><a href="introduction-to-r-and-r-studio.html#why-learn-use-r"><i class="fa fa-check"></i><b>3.2</b> Why learn / use R?</a><ul>
@@ -182,11 +193,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#order-filter-and-group-data"><i class="fa fa-check"></i><b>4.7</b> Order, filter and group data</a></li>
 <li class="chapter" data-level="4.8" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#create-new-variables-from-data"><i class="fa fa-check"></i><b>4.8</b> Create new variables from data</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html"><i class="fa fa-check"></i><b>5</b> Exploratory and descriptive analysis with R</a></li>
-<li class="chapter" data-level="6" data-path="graphing-and-data-presentation.html"><a href="graphing-and-data-presentation.html"><i class="fa fa-check"></i><b>6</b> Graphing and data presentation</a></li>
-<li class="chapter" data-level="7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>7</b> Correlation and Regression</a></li>
-<li class="chapter" data-level="8" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Regression</a></li>
-<li class="chapter" data-level="9" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>9</b> Moderation and mediation</a></li>
+<li class="chapter" data-level="5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html"><i class="fa fa-check"></i><b>5</b> Exploratory and descriptive analysis with R</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#working-example---record-sales-data"><i class="fa fa-check"></i><b>5.1</b> Working example - record sales data</a></li>
+<li class="chapter" data-level="5.2" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-import-the-data"><i class="fa fa-check"></i><b>5.2</b> Let’s import the data</a></li>
+<li class="chapter" data-level="5.3" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-look-at-the-data"><i class="fa fa-check"></i><b>5.3</b> Let’s look at the data</a></li>
+<li class="chapter" data-level="5.4" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-make-sure-our-data-types-are-correct-1"><i class="fa fa-check"></i><b>5.4</b> Let’s make sure our data types are correct #1</a></li>
+<li class="chapter" data-level="5.5" data-path="exploratory-and-descriptive-analysis-with-r.html"><a href="exploratory-and-descriptive-analysis-with-r.html#lets-make-sure-our-data-types-are-correct-2"><i class="fa fa-check"></i><b>5.5</b> Let’s make sure our data types are correct #2</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html"><i class="fa fa-check"></i><b>6</b> Summarising data: Central tendency</a><ul>
+<li class="chapter" data-level="6.1" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>6.1</b> Measures of central tendency</a></li>
+<li class="chapter" data-level="6.2" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#mean"><i class="fa fa-check"></i><b>6.2</b> Mean</a></li>
+<li class="chapter" data-level="6.3" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#trimmed-mean"><i class="fa fa-check"></i><b>6.3</b> Trimmed mean</a></li>
+<li class="chapter" data-level="6.4" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#median"><i class="fa fa-check"></i><b>6.4</b> Median</a></li>
+<li class="chapter" data-level="6.5" data-path="summarising-data-central-tendency.html"><a href="summarising-data-central-tendency.html#mode"><i class="fa fa-check"></i><b>6.5</b> Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html"><i class="fa fa-check"></i><b>7</b> Measures of dispresion or variance</a><ul>
+<li class="chapter" data-level="7.1" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#range"><i class="fa fa-check"></i><b>7.1</b> Range</a></li>
+<li class="chapter" data-level="7.2" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#interquartile-range"><i class="fa fa-check"></i><b>7.2</b> Interquartile range</a></li>
+<li class="chapter" data-level="7.3" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#sum-of-squares"><i class="fa fa-check"></i><b>7.3</b> Sum of squares</a></li>
+<li class="chapter" data-level="7.4" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#variance"><i class="fa fa-check"></i><b>7.4</b> Variance</a></li>
+<li class="chapter" data-level="7.5" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#standard-deviation"><i class="fa fa-check"></i><b>7.5</b> Standard deviation</a></li>
+<li class="chapter" data-level="7.6" data-path="measures-of-dispresion-or-variance.html"><a href="measures-of-dispresion-or-variance.html#the-psych-package-includes-a-lot-of-useful-descriptive-stats"><i class="fa fa-check"></i><b>7.6</b> The <em>psych</em> package includes a lot of useful descriptive stats</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html"><i class="fa fa-check"></i><b>8</b> Skewness and Kurtosis</a><ul>
+<li class="chapter" data-level="8.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#assessing-skewness-of-distribution-1"><i class="fa fa-check"></i><b>8.1</b> Assessing skewness of distribution #1</a></li>
+<li class="chapter" data-level="8.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#assessing-skewness-of-distribution-2"><i class="fa fa-check"></i><b>8.2</b> Assessing skewness of distribution #2</a></li>
+<li class="chapter" data-level="8.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>8.3</b> Kurtosis</a></li>
+<li class="chapter" data-level="8.4" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#assessing-normality-of-distribution"><i class="fa fa-check"></i><b>8.4</b> Assessing normality of distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html"><i class="fa fa-check"></i><b>9</b> Getting and overall summary</a><ul>
+<li class="chapter" data-level="9.1" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html#summary---in-base-r"><i class="fa fa-check"></i><b>9.1</b> summary() - in “base R”</a></li>
+<li class="chapter" data-level="9.2" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html#describe---in-the-psych-package-1"><i class="fa fa-check"></i><b>9.2</b> describe() - in the “psych” package #1</a></li>
+<li class="chapter" data-level="9.3" data-path="getting-and-overall-summary.html"><a href="getting-and-overall-summary.html#describe---in-the-psych-package-2"><i class="fa fa-check"></i><b>9.3</b> describe() - in the “psych” package #2</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html"><i class="fa fa-check"></i><b>10</b> Basic statistical tests (more detail in later sections)</a><ul>
+<li class="chapter" data-level="10.1" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html#corrleation"><i class="fa fa-check"></i><b>10.1</b> Corrleation</a></li>
+<li class="chapter" data-level="10.2" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html#tests-of-difference---t-test"><i class="fa fa-check"></i><b>10.2</b> Tests of difference - t-test</a></li>
+<li class="chapter" data-level="10.3" data-path="basic-statistical-tests-more-detail-in-later-sections.html"><a href="basic-statistical-tests-more-detail-in-later-sections.html#tests-of-difference---anova"><i class="fa fa-check"></i><b>10.3</b> Tests of difference - ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html"><i class="fa fa-check"></i><b>11</b> Graphing and data visualisation with R</a><ul>
+<li class="chapter" data-level="11.1" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#by-the-end-of-this-section-you-will-be-able-to-1"><i class="fa fa-check"></i><b>11.1</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="11.2" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-grammar-of-visualisation"><i class="fa fa-check"></i><b>11.2</b> The “grammar of visualisation”</a></li>
+<li class="chapter" data-level="11.3" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#how-to-code-a-graph"><i class="fa fa-check"></i><b>11.3</b> How to code a graph</a></li>
+<li class="chapter" data-level="11.4" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-graph-output"><i class="fa fa-check"></i><b>11.4</b> The graph output</a></li>
+<li class="chapter" data-level="11.5" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-geoms-leads-to-different-visualisations"><i class="fa fa-check"></i><b>11.5</b> Changing the geoms leads to different visualisations</a></li>
+<li class="chapter" data-level="11.6" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#it-is-possible-to-represent-more-variables-on-the-plot"><i class="fa fa-check"></i><b>11.6</b> It is possible to represent more variables on the plot</a></li>
+<li class="chapter" data-level="11.7" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#it-is-possible-to-represent-more-variables-on-the-plot-2"><i class="fa fa-check"></i><b>11.7</b> It is possible to represent more variables on the plot #2</a></li>
+<li class="chapter" data-level="11.8" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#it-is-possible-to-represent-more-variables-on-the-plot-3"><i class="fa fa-check"></i><b>11.8</b> It is possible to represent more variables on the plot #3</a></li>
+<li class="chapter" data-level="11.9" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plotting-summaries-of-data"><i class="fa fa-check"></i><b>11.9</b> Plotting summaries of data</a></li>
+<li class="chapter" data-level="11.10" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-axis-labels-and-title-on-a-plot"><i class="fa fa-check"></i><b>11.10</b> Changing the axis labels and title on a plot</a></li>
+<li class="chapter" data-level="11.11" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-legend-on-a-plot"><i class="fa fa-check"></i><b>11.11</b> Changing the legend on a plot</a></li>
+<li class="chapter" data-level="11.12" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#storing-plots-to-be-recalled-later"><i class="fa fa-check"></i><b>11.12</b> Storing plots to be recalled later</a></li>
+<li class="chapter" data-level="11.13" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>11.13</b> Recalling a stored plot</a></li>
+<li class="chapter" data-level="11.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>11.14</b> Saving plots # 1</a></li>
+<li class="chapter" data-level="11.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>11.15</b> Plots can also be saved using code</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>12</b> Correlation</a><ul>
+<li class="chapter" data-level="12.1" data-path="correlation.html"><a href="correlation.html#what-is-correlation"><i class="fa fa-check"></i><b>12.1</b> What is Correlation?</a></li>
+<li class="chapter" data-level="12.2" data-path="correlation.html"><a href="correlation.html#how-is-correlation-calculated"><i class="fa fa-check"></i><b>12.2</b> How is correlation calculated?</a></li>
+<li class="chapter" data-level="12.3" data-path="correlation.html"><a href="correlation.html#running-correlation-in-r"><i class="fa fa-check"></i><b>12.3</b> Running correlation in R</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="correlation.html"><a href="correlation.html#check-assumptions-data"><i class="fa fa-check"></i><b>12.3.1</b> Check assumptions: data</a></li>
+<li class="chapter" data-level="12.3.2" data-path="correlation.html"><a href="correlation.html#check-assumptions-distribution"><i class="fa fa-check"></i><b>12.3.2</b> Check assumptions: distribution</a></li>
+<li class="chapter" data-level="12.3.3" data-path="correlation.html"><a href="correlation.html#check-assumptions-distribution-2"><i class="fa fa-check"></i><b>12.3.3</b> Check assumptions: distribution #2</a></li>
+<li class="chapter" data-level="12.3.4" data-path="correlation.html"><a href="correlation.html#checking-assumptions-linearity"><i class="fa fa-check"></i><b>12.3.4</b> Checking assumptions: linearity</a></li>
+<li class="chapter" data-level="12.3.5" data-path="correlation.html"><a href="correlation.html#run-correlation"><i class="fa fa-check"></i><b>12.3.5</b> Run correlation</a></li>
+<li class="chapter" data-level="12.3.6" data-path="correlation.html"><a href="correlation.html#check-r-value-correlation-value"><i class="fa fa-check"></i><b>12.3.6</b> Check r Value (correlation value)</a></li>
+<li class="chapter" data-level="12.3.7" data-path="correlation.html"><a href="correlation.html#check-the-significance-of-the-correlation"><i class="fa fa-check"></i><b>12.3.7</b> Check the significance of the correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="simple-regression.html"><a href="simple-regression.html"><i class="fa fa-check"></i><b>13</b> Simple Regression</a><ul>
+<li class="chapter" data-level="13.1" data-path="simple-regression.html"><a href="simple-regression.html#what-is-regression"><i class="fa fa-check"></i><b>13.1</b> What is regression?</a></li>
+<li class="chapter" data-level="13.2" data-path="simple-regression.html"><a href="simple-regression.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>13.2</b> How is regression calculated?</a></li>
+<li class="chapter" data-level="13.3" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation"><i class="fa fa-check"></i><b>13.3</b> The regression equation</a></li>
+<li class="chapter" data-level="13.4" data-path="simple-regression.html"><a href="simple-regression.html#running-regression-in-r"><i class="fa fa-check"></i><b>13.4</b> Running regression in R</a></li>
+<li class="chapter" data-level="13.5" data-path="simple-regression.html"><a href="simple-regression.html#run-regression"><i class="fa fa-check"></i><b>13.5</b> Run regression</a></li>
+<li class="chapter" data-level="13.6" data-path="simple-regression.html"><a href="simple-regression.html#what-are-residuals"><i class="fa fa-check"></i><b>13.6</b> What are residuals?</a></li>
+<li class="chapter" data-level="13.7" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>13.7</b> Check assumptions: distribution</a></li>
+<li class="chapter" data-level="13.8" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>13.8</b> Check assumptions: linearity</a></li>
+<li class="chapter" data-level="13.9" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>13.9</b> Check assumptions: Homogeneity of Variance #1</a></li>
+<li class="chapter" data-level="13.10" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>13.10</b> Check assumptions: Influential cases</a></li>
+<li class="chapter" data-level="13.11" data-path="simple-regression.html"><a href="simple-regression.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>13.11</b> Check the r squared value</a></li>
+<li class="chapter" data-level="13.12" data-path="simple-regression.html"><a href="simple-regression.html#check-model-significance"><i class="fa fa-check"></i><b>13.12</b> Check model significance</a></li>
+<li class="chapter" data-level="13.13" data-path="simple-regression.html"><a href="simple-regression.html#check-coefficient-values"><i class="fa fa-check"></i><b>13.13</b> Check coefficient values</a></li>
+<li class="chapter" data-level="13.14" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation-1"><i class="fa fa-check"></i><b>13.14</b> The regression equation</a></li>
+<li class="chapter" data-level="13.15" data-path="simple-regression.html"><a href="simple-regression.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>13.15</b> Accounting for error in predictions</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>14</b> Multiple Regression</a></li>
+<li class="chapter" data-level="15" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>15</b> Moderation and mediation</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -209,9 +302,578 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="research-methods-concepts-revision" class="section level1">
 <h1><span class="header-section-number">Section 2</span> Research Methods Concepts Revision</h1>
+<div id="basic-concepts-that-you-should-already-know" class="section level2">
+<h2><span class="header-section-number">2.1</span> Basic concepts that you should already know</h2>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8e6af012-9d1d-411b-81a7-ac2c00d35e1f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
+</div>
+<div id="probability-and-hypothesis-testing" class="section level2">
+<h2><span class="header-section-number">2.2</span> Probability and hypothesis testing</h2>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f496c1dc-d3a2-4358-aff3-ac3000b4139c&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
+</iframe>
+<p>One of the most important things to remember about hypothesis testing in statistics is why we use the approaches we do. That is, we need statistical approaches to test hypotheses because we can only collect data from samples of the population but our research questions and hypotheses apply to whole populations. For that reason, we need a way to estimate how well the <em>sample</em> reflects the <em>population.</em></p>
+<p>It is common for us to want to know what the mean (average) response of the population is on certain measures. For example, we might ask the question “what is the average score on this measure of happiness?”. In reality we can only measure a subset (sample) of the population, so we test as many people as we can. Below is a sample of 20 participants:</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-2">Table 2.1: </span>Some sample data for happiness score
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+participant
+</th>
+<th style="text-align:right;">
+intervention
+</th>
+<th style="text-align:right;">
+happiness
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7.103812
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.615329
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+11.549276
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.563185
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12.139707
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9.151149
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.808470
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.621477
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+11.003898
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.325688
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9.210101
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10.170440
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.087144
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.431595
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+14.520958
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.306914
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8.886615
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+8.569640
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.794769
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10.930206
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="variance-in-sample-data-influences-our-confidence-in-population-estimates" class="section level2">
+<h2><span class="header-section-number">2.3</span> Variance in sample data influences our confidence in population estimates</h2>
+<p>We can see from the table above that the mean of the sample is 10.5895185. However, this is not to say that the population mean is 10.5895185. For one thing, we can see that the range of scores in the sample is between 7.1038116 and 14.520958. The standard deviation of the sample is 2.</p>
+<p>The fact that there is so much variance from person to person within our sample indicates that we are likely to be incorrect if we assume that the sample mean is the same as the population mean. The more variance there is within the sample data, the less confident we can be that the sample mean is an accurate representation of the population mean.</p>
+<p>Another thing that affects our ability to generalise from sample to population is that the sample size is only 20. Larger samples are less influenced by individual outliers, so the larger the sample size is, the more confident we can be that the sample mean is representative of the population mean (provided that the participant sample is representative of the population and recruited in a way to minimise bias).</p>
+<blockquote>
+<p>The <strong>standard error</strong> of the mean can be calculated to estimate how far the mean of the sample data is likely to be from the true population mean. It uses the concepts of variance and sample size to make this estimate. Standard error is calculated by dividing standard deviation by the square root of the sample size (<span class="math inline">\(SE = \frac{SD}{\sqrt{\left[n\right]}}\)</span>)</p>
+</blockquote>
+<p>In R, we can calculate the standard error of the happiness data like so:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="research-methods-concepts-revision.html#cb1-1"></a> standardError &lt;-<span class="st"> </span><span class="kw">sd</span>(happiness)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(happiness)) <span class="co">## Calculate standard error</span></span>
+<span id="cb1-2"><a href="research-methods-concepts-revision.html#cb1-2"></a></span>
+<span id="cb1-3"><a href="research-methods-concepts-revision.html#cb1-3"></a>standardError <span class="co">#Display the standard error</span></span></code></pre></div>
+<pre><code>## [1] 0.3471094</code></pre>
+<p>The standard error of our sample mean is 0.35. This suggests that using the sample mean is likely to be 0.35 away from the population mean.</p>
+</div>
+<div id="we-can-use-confidence-intervals-to-make-educated-guesses-about-the-population-mean" class="section level2">
+<h2><span class="header-section-number">2.4</span> We can use confidence intervals to make educated guesses about the population mean</h2>
+<p>Using the standard error, we can also create <strong>Confidence intervals</strong>, which are a range of values, within which the population mean is likely to fall. For example, we know from normal distribution that 95% of the population lies between +/- 1.96 standard deviations of the mean. If we use our sample mean (<span class="math inline">\(\bar{x}\)</span>) in place of the population mean and include the standard error to account for errors in our estimate, we come up with the following formula for 95% confidence intervals of the mean:</p>
+<p>Lower confidence interval = <span class="math inline">\(\bar{x} - 1.96*SE\)</span></p>
+<p>Upper confidence interval = <span class="math inline">\(\bar{x} + 1.96*SE\)</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="research-methods-concepts-revision.html#cb3-1"></a><span class="kw">mean</span>(happiness) <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Lower confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 9.909184</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="research-methods-concepts-revision.html#cb5-1"></a><span class="kw">mean</span>(happiness) <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Upper confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 11.26985</code></pre>
+<p><img src="images/normal.jpg" width="732" /></p>
+<p>The value of 1.96 come from the normal distribution, where 95% of the population lies between +/- 1.96 standard deviations of the mean. If we did not already know this, we could use the <em>qnorm()</em> function in R to calculate the value:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="research-methods-concepts-revision.html#cb7-1"></a><span class="co"># Calculate the number of standard deviations that contains 0% to 97.5% of the data (100% - 2.5%). </span></span>
+<span id="cb7-2"><a href="research-methods-concepts-revision.html#cb7-2"></a><span class="co"># We can then say that 95% of the data lies between + or - the answer: </span></span>
+<span id="cb7-3"><a href="research-methods-concepts-revision.html#cb7-3"></a></span>
+<span id="cb7-4"><a href="research-methods-concepts-revision.html#cb7-4"></a><span class="kw">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<pre><code>## [1] 1.959964</code></pre>
+<p>However, with smaller samples, since we are less confident about generalising to the population, we use the t-distribution to calculate that value. The shape of a t-distribution changes based on the sample size, so the smaller the sample size is, the wider the range that 95% of values lie between. We can calculate the 95% value for a particular sample size in R using the <em>qt()</em> function:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="research-methods-concepts-revision.html#cb9-1"></a><span class="co"># The qt function relates to t-distribution</span></span>
+<span id="cb9-2"><a href="research-methods-concepts-revision.html#cb9-2"></a></span>
+<span id="cb9-3"><a href="research-methods-concepts-revision.html#cb9-3"></a><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-1</span>)</span></code></pre></div>
+<pre><code>## [1] 2.093024</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="research-methods-concepts-revision.html#cb11-1"></a><span class="co"># for qt, we need to specify the degress of freedom, which is sample size minus 1</span></span></code></pre></div>
+<p>We can see that when we have a sample size of 20, 95% of values in our predicted population distribution will lie between + and - 2.0930241 standard deviations. Therefore, we can calculate more accurate confidence intervals using this value:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="research-methods-concepts-revision.html#cb12-1"></a><span class="kw">mean</span>(happiness) <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-1</span>) <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Lower confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 9.86301</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="research-methods-concepts-revision.html#cb14-1"></a><span class="kw">mean</span>(happiness) <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-1</span>) <span class="op">*</span><span class="st"> </span>standardError <span class="co"># Upper confidence interval</span></span></code></pre></div>
+<pre><code>## [1] 11.31603</code></pre>
+<p><strong>This tells us:</strong> if we were to take infinite number of similar samples, about 95% of their confidence intervals would contain the population mean. Therefore, we think it is reasonable to estimate that the population mean is somewhere in this range.</p>
+<blockquote>
+<p>Often people say that a 95% confidence interval means that there is a 95% chance that the population mean is between the lower and upper confidence interval. This is <strong>not</strong> an accurate statement, but it is often used as a shorthand to help people conceptualise what confidence intervals are.</p>
+</blockquote>
+</div>
+<div id="we-can-also-make-confidence-intervals-of-differences-between-means" class="section level2">
+<h2><span class="header-section-number">2.5</span> We can also make confidence intervals of differences between means</h2>
+<p>Often when we test hypotheses, we are testing the difference between two samples. For example, we might have 2 groups who have undergone different psychological interventions and want to know whether the difference we see our participant samples is likely to generalise to the population.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-9">Table 2.2: </span>Some sample data for happiness score with participants divided into 2 groups
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+participant
+</th>
+<th style="text-align:right;">
+intervention
+</th>
+<th style="text-align:right;">
+happiness
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7.103812
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.615329
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+11.549276
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.563185
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12.139707
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9.151149
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.808470
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.621477
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+11.003898
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.325688
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9.210101
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10.170440
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.087144
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.431595
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+14.520958
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11.306914
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8.886615
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+8.569640
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.794769
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10.930206
+</td>
+</tr>
+</tbody>
+</table>
+<p>Using the same approach as in the previous section, we can estimate a confidence interval based on the difference in means and the sample size:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="research-methods-concepts-revision.html#cb16-1"></a><span class="co"># Calculate the number of standard deviations for 95% of the data </span></span>
+<span id="cb16-2"><a href="research-methods-concepts-revision.html#cb16-2"></a><span class="kw">qt</span>(<span class="fl">0.975</span>,<span class="dt">df=</span><span class="dv">20-2</span>) <span class="co"># since there are 2 intervention groups, degrees of freedom is now 20-2</span></span></code></pre></div>
+<pre><code>## [1] 2.100922</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="research-methods-concepts-revision.html#cb18-1"></a> group1 &lt;-<span class="st"> </span>happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(intervention <span class="op">==</span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(happiness), <span class="dt">sd=</span> <span class="kw">sd</span>(happiness)) </span>
+<span id="cb18-2"><a href="research-methods-concepts-revision.html#cb18-2"></a> </span>
+<span id="cb18-3"><a href="research-methods-concepts-revision.html#cb18-3"></a>  group2 &lt;-<span class="st"> </span>happinessSample <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(intervention <span class="op">==</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(happiness), <span class="dt">sd=</span> <span class="kw">sd</span>(happiness)) </span>
+<span id="cb18-4"><a href="research-methods-concepts-revision.html#cb18-4"></a></span>
+<span id="cb18-5"><a href="research-methods-concepts-revision.html#cb18-5"></a><span class="co"># calculate mean of difference</span></span>
+<span id="cb18-6"><a href="research-methods-concepts-revision.html#cb18-6"></a>meanDifference &lt;-<span class="st"> </span>group1<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span>group2<span class="op">$</span>mean</span>
+<span id="cb18-7"><a href="research-methods-concepts-revision.html#cb18-7"></a>seDifference &lt;-<span class="st"> </span><span class="kw">sqrt</span>(((group1<span class="op">$</span>sd<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">19</span>) <span class="op">+</span><span class="st"> </span>((group2<span class="op">$</span>sd<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">19</span>))</span>
+<span id="cb18-8"><a href="research-methods-concepts-revision.html#cb18-8"></a></span>
+<span id="cb18-9"><a href="research-methods-concepts-revision.html#cb18-9"></a></span>
+<span id="cb18-10"><a href="research-methods-concepts-revision.html#cb18-10"></a><span class="co"># calculate 95% CI of this</span></span>
+<span id="cb18-11"><a href="research-methods-concepts-revision.html#cb18-11"></a>meanDifference <span class="op">-</span><span class="st"> </span>seDifference <span class="op">*</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.975</span>), <span class="dv">20-2</span>) <span class="co"># lower CI</span></span></code></pre></div>
+<pre><code>## [1] -0.2119831</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="research-methods-concepts-revision.html#cb20-1"></a>meanDifference <span class="op">+</span><span class="st"> </span>seDifference <span class="op">*</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.975</span>), <span class="dv">20-2</span>) <span class="co"># upper CI</span></span></code></pre></div>
+<pre><code>## [1] 1.768871</code></pre>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>This tells use that the 95% confidence interval of the difference is between -0.2119831 and 1.7688714. An important part of interpreting this, is to notice whether any point between these values is equal to zero. If the confidence interval of a difference contains a zero value, this means that in future research, with similar samples, it would be possible to see zero difference between the groups. If, on the other hand, the confidence interval does not cross zero, then it is likely that in future research, with similar samples, we would see some difference between the means.</p>
+<blockquote>
+<p>The fact of whether confidence intervals cross zero (or not) is linked directly to the idea of hypothesis testing and statistical significance.</p>
+</blockquote>
+</div>
+<div id="the-null-hypothesis-and-statistical-significance" class="section level2">
+<h2><span class="header-section-number">2.6</span> The null hypothesis and statistical significance</h2>
+<p>Using the same study from the previous example: we know that the null hypothesis can be phrased as “in the population, there is no difference between groups”. We then see how the confidence interval of a difference can help us test the null hypothesis: if the null hypothesis were not true, then it is unlikely that the confidence interval of the difference would contain zero.</p>
+<p>Therefore, if confidence intervals overlap, then there is a possibility of no difference existing between the populations. As such, we are unable to reject the null hypothesis.</p>
 
+</div>
 </div>
             </section>
 
@@ -269,6 +931,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

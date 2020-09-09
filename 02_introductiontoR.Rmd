@@ -44,6 +44,8 @@
 
 ## Download R and R Studio
 
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=57425cb0-4364-4af1-b9ae-ac2f00b28010&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Click on these links to download:
 
 - [R project](https://cran.r-project.org/) 
