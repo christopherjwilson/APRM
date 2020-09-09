@@ -168,6 +168,7 @@ hist(Album_Sales$Sales)
 - We can check raw skewness value using the *skew()* command in the **psych** package
 
 ```{r}
+library(psych)
 skew(Album_Sales$Sales)
 
 ```
