@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-08" />
+<meta name="date" content="2020-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -304,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Section 9</span> Getting and overall summary</h1>
 <div id="summary---in-base-r" class="section level2 smaller">
 <h2><span class="header-section-number">9.1</span> summary() - in “base R”</h2>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="getting-and-overall-summary.html#cb79-1"></a><span class="kw">summary</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="getting-and-overall-summary.html#cb85-1"></a><span class="kw">summary</span>(Album_Sales)</span></code></pre></div>
 <pre><code>##     Adverts             Sales          Airplay         Attract          Genre   
 ##  Min.   :   9.104   Min.   : 10.0   Min.   : 0.00   Min.   : 1.00   Country:46  
 ##  1st Qu.: 215.918   1st Qu.:137.5   1st Qu.:19.75   1st Qu.: 6.00   HipHop :53  
@@ -315,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="describe---in-the-psych-package-1" class="section level2 smaller">
 <h2><span class="header-section-number">9.2</span> describe() - in the “psych” package #1</h2>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="getting-and-overall-summary.html#cb81-1"></a><span class="kw">describe</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="getting-and-overall-summary.html#cb87-1"></a><span class="kw">describe</span>(Album_Sales)</span></code></pre></div>
 <pre><code>##         vars   n   mean     sd median trimmed    mad  min     max   range  skew kurtosis    se
 ## Adverts    1 200 614.41 485.66 531.92  560.81 489.09  9.1 2271.86 2262.76  0.84     0.17 34.34
 ## Sales      2 200 193.20  80.70 200.00  192.69  88.96 10.0  360.00  350.00  0.04    -0.72  5.71
@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We can describe by factor variables</li>
 </ul>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="getting-and-overall-summary.html#cb83-1"></a><span class="kw">describeBy</span>(Album_Sales, <span class="dt">group =</span> Album_Sales<span class="op">$</span>Genre)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="getting-and-overall-summary.html#cb89-1"></a><span class="kw">describeBy</span>(Album_Sales, <span class="dt">group =</span> Album_Sales<span class="op">$</span>Genre)</span></code></pre></div>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: Country

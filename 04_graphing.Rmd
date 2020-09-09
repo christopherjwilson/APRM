@@ -1,6 +1,10 @@
 
 # Graphing and data visualisation with R
 
+## Presenting data visually
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6637feb6-88dd-440e-a72a-ac3000f4ab8d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## By the end of this section, you will be able to:
  
 

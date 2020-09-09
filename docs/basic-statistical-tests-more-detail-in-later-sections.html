@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-08" />
+<meta name="date" content="2020-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -308,13 +308,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb85-1"></a><span class="kw">plot</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb91-1"></a><span class="kw">plot</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p>“Is there a relationship between advert spend and sales?”</p>
 <ul>
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb86-1"></a><span class="kw">cor.test</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb92-1"></a><span class="kw">cor.test</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -333,9 +333,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We would use a t-test to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb88-1"></a>myTtestData &lt;-<span class="st"> </span>Album_Sales <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Genre <span class="op">==</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Country&quot;</span>, <span class="st">&quot;HipHop&quot;</span>))</span>
-<span id="cb88-2"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb88-2"></a></span>
-<span id="cb88-3"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb88-3"></a><span class="kw">t.test</span>(myTtestData<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>myTtestData<span class="op">$</span>Genre)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb94-1"></a>myTtestData &lt;-<span class="st"> </span>Album_Sales <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Genre <span class="op">==</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Country&quot;</span>, <span class="st">&quot;HipHop&quot;</span>))</span>
+<span id="cb94-2"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb94-2"></a></span>
+<span id="cb94-3"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb94-3"></a><span class="kw">t.test</span>(myTtestData<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>myTtestData<span class="op">$</span>Genre)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -354,8 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We would use an ANOVA to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb90-1"></a>myAnova &lt;-<span class="st"> </span><span class="kw">aov</span>(Album_Sales<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>Album_Sales<span class="op">$</span>Genre)</span>
-<span id="cb90-2"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb90-2"></a><span class="kw">summary</span>(myAnova)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb96-1"></a>myAnova &lt;-<span class="st"> </span><span class="kw">aov</span>(Album_Sales<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>Album_Sales<span class="op">$</span>Genre)</span>
+<span id="cb96-2"><a href="basic-statistical-tests-more-detail-in-later-sections.html#cb96-2"></a><span class="kw">summary</span>(myAnova)</span></code></pre></div>
 <pre><code>##                    Df  Sum Sq Mean Sq F value Pr(&gt;F)
 ## Album_Sales$Genre   3   23530    7843   1.208  0.308
 ## Residuals         196 1272422    6492</code></pre>

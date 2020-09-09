@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-08" />
+<meta name="date" content="2020-09-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -308,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>It is possible to use graphs to view the distribution</li>
 <li>We will focus on graphic presentation of data next week</li>
 </ul>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="skewness-and-kurtosis.html#cb72-1"></a><span class="kw">hist</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="skewness-and-kurtosis.html#cb78-1"></a><span class="kw">hist</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 </div>
 <div id="assessing-skewness-of-distribution-2" class="section level2 smaller">
@@ -316,7 +316,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We can check raw skewness value using the <em>skew()</em> command in the <strong>psych</strong> package</li>
 </ul>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="skewness-and-kurtosis.html#cb73-1"></a><span class="kw">skew</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="skewness-and-kurtosis.html#cb79-1"></a><span class="kw">skew</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## [1] 0.0432729</code></pre>
 </div>
 <div id="kurtosis" class="section level2 smaller">
@@ -347,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="skewness-and-kurtosis.html#cb75-1"></a><span class="kw">kurtosi</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="skewness-and-kurtosis.html#cb81-1"></a><span class="kw">kurtosi</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## [1] -0.7157339</code></pre>
 </div>
 <div id="assessing-normality-of-distribution" class="section level2 smaller">
@@ -356,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We can use the shapiro-wilk test of normality</li>
 <li>This is part of “base” r (no package needed)</li>
 </ul>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="skewness-and-kurtosis.html#cb77-1"></a><span class="kw">shapiro.test</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="skewness-and-kurtosis.html#cb83-1"></a><span class="kw">shapiro.test</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
