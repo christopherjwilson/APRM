@@ -1,3 +1,231 @@
 # Multiple Regression
 
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ba877fd1-de67-46b0-b395-ac3100e8b86b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+
+## By the end of this session, you will be able to:
+
+```{r, include=FALSE}
+
+library(tidyverse)
+regression_data <- read.csv("Datasets/regression_data.csv")
+regression_data$treatment_group <- factor(regression_data$treatment_group)
+```
+
+- Compare multiple regression to simple regression
+- Describe the assumptions of multiple regression
+- Consider sample size in regression
+- Use categorical predictors in regression in R
+- Conduct different types of multiple regression
+- Interpret the output of Multiple regression
+
+## What is multiple regression?
+
+- An extension of simple regression
+- Same format as simple regression but adding each predictor: 
+ 
+ $$ Y = b_1X_1 + b_2X_2 + b_0 $$
+
+(The constant can be referred to in the equation as **c** or **b0** )
+
+## What are the assumptions of Multiple Regression?
+
+- They are primarily the same as simple regression
+- The additional assumption of no **multicollinearity** (due to having multiple predictors)
+  - i.e. predictors should not be highly correlated
+  
+## What is multicollinearity?
+
+- Multicollinearity = predictors correlated highly with each other.
+- This is not good because:
+  - It makes it difficult to determine the role of individual predictors
+  - Increases the error of the model (higher standard errors)
+  - Difficult to identify significant predictors - wider confidence interval
+
+## Testing multicollinearity  
+
+```{r}
+## use the mctest package
+# install.packages(‘mctest’)o
+library(mctest)
+
+m1 <- lm(aggression_level ~ treatment_group + treatment_duration + trust_score, data=regression_data)
+
+mctest(m1) 
+
+```
+- The format of *mctest()* is: 
+    
+    mctest(predictors, outcome)
+
+- In the above example we used the *cbind()* function to bind 3 columns of data together (the predictors) 
+  
+  
+## Sample size for multiple regression
+
+- Is based on the number of predictors
+- More predictors = more participants needed
+- **Do a power analysis**
+- Loose "rule of thumb" = 10-15 participants per predictor
+
+
+
+## Approaches to multiple regression: All predictors at once
+
+> Research question: Do a client's treatment duration and treatment group predict aggression level?
+
+```{r}
+model1 <- lm(data = regression_data, aggression_level ~ treatment_duration + treatment_group)
+```
+- Here we are including all of the predictors at the same time
+- Note that we are using a plus sign + between each predictor
+  - This means that no interactions will be tested
+
+### Using categorical predictors in R
+
+- Treatment group is a categorical (also called "nominal" or "factor") variable
+- No special "dummy coding" is required in R to use categorical predictors in regression
+- R will use the first group as the reference category and test whether being in another group shows a significant difference
+- R chooses the reference group based on numerical value or alphabetical order
+- If you want you can change the reference category or "force" it using the relevel function:
+```{r}
+regression_data$treatment_group <- relevel(regression_data$treatment_group, ref = "therapy1")
+```
+
+
+### Reviewing the output
+
+```{r}
+summary(model1)
+```
+
+
+- Multiple R^2 = Total variance in outcome that is explained by the model
+- p-value = Statistical significance of the model
+- Coefficients = Contribution of each predictor to the model
+  - Pr = Significance of the individual predictor
+  - Estimate = Change in the outcome level that occurs when the predictor increases by 1 unit of measurement
+
+
+### All predictors at once (testing interactions)
+
+> Research questions: 
+> - Do a client's treatment duration and treatment group  predict aggression level
+> - Do the predictors interact?
+
+```{r}
+model2 <- lm(data = regression_data, aggression_level ~ treatment_duration * treatment_group)
+```
+- Here we are including all of the predictors at the same time
+- Note that we are using an asterisk * between each predictor
+  - This means that interactions will be tested
+
+Reviewing the output
+
+<code style="font-size: 1em; width=100%;">
+```{r}
+
+summary(model2) %>% coefficients
+
+```
+</code>
+
+
+- We get additional information in the coefficients table about the interaction between variables
+  - e.g. does the interaction between level of trust and treatment duration predict the outcome (aggression level)?
+
+- We can see from the output that none of the interactions are significant
+
+### Hierarchical multiple regression: Theory driven "blocks" of variables
+
+- It might be the case that we have previous research or theory to guide how we run the analysis
+- For example, we might know that treatment duration and therapy group are likely to predict the outcome
+- We might want to check whether client's level of trust in the clinician has any **additional** impact on our ability to predict the outcome (aggression level)
+
+> - To do this, we run three regression models
+>   - Model 0: the constant (baseline)
+>   - Model 1: treatment duration and therapy group
+>   - Model 2: treatment duration and therapy group and trust score
+
+- We then compare the two regression models to see if:
+  - Model 1 is better than Model 0 (the constant)
+  - Model 2 is better than Model 1
+
+**Hierarchical multiple regression: Running and comparing 2 models**
+
+```{r}
+## run regression using the same method as above
+model0 <- lm(data = regression_data, aggression_level ~ 1)
+model1 <- lm(data = regression_data, aggression_level ~ treatment_duration + treatment_group)
+model2 <- lm(data = regression_data, aggression_level ~ treatment_duration + treatment_group + trust_score)
+
+## use the aov() command to compare the models
+anova(model0,model1,model2)
+```
+
+- We can see that:
+  - Model 1 (treatment duration and treatment group) is significant relative to the constant (Model 0)
+  - Model 2 (treatment duration, treatment group and trust score) shows no significant change compared to Model 1
+
+### Stepwise multiple regression: computational selection of predictors
+
+- Stepwise multiple regression is controversial because:
+  - The computer selects which predictors to include based on Akaike information criterion (AIC)
+    - This is a calculation of the quality of statistical models when they are compared to each other
+    
+  > ### What's the problem?
+  > - This selection is not based on any underlying theory or understanding of the real-life relationship between the variables 
+
+### Stepwise multiple regression: loading the MASS package and run the full model
+
+1. **install and load the MASS package**
+1. **run a regression model with all of the variables**
+1. use the *stepAIC()* command on the full model to run stepwise regression
+1. View the best model
+
+```{r}
+library(MASS)
+
+# Run the full model 
+full.model <- lm(data = regression_data, aggression_level ~ treatment_duration + treatment_group + trust_score)
+
+```
+
+### Stepwise multiple regression: Use stepAIC( ) with options
+
+- **Trace** *(TRUE or FALSE)*: do we want to see the steps that were involved in selecting the best model ?
+- **Direction** *("forward", "backward" or "both")*: 
+  - start with no variables and add them *(forward)*
+  - start with all variables and subtract them *(backward)*
+  - use both approaches *(both)*
+
+<code style="font-size: 1em; width=100%;">
+```{r}
+# Run stepwise
+step.model <- stepAIC(full.model, direction = "both", trace = TRUE)
+
+```
+</code>
+
+### Stepwise multiple regression: Display the best model
+
+1. install and load the MASS package
+1. run a regression model with all of the variables
+1. **use the *stepAIC()* command on the full model to run stepwise regression** 
+1. **View best model**
+
+```{r}
+#view the stepwise output
+summary(step.model)
+```
+
+## Summary
+
+
+- Multiple regression is an extension of simple regression
+- We need to check the same assumptions + multicolinearity
+- When entering multiple predictors:
+  - Heirarchical: we have a theoretical basis for the models
+  - Stepwise: the computer selects the best model
+- Comparing multiple models using Akaike information criterion (AIC)
+
