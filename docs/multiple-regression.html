@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 8 Multiple Regression | Advanced Psychological Research Methods (PSY4034)</title>
+  <title>Section 9 Multiple Regression | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 8 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
+  <meta property="og:title" content="Section 9 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 8 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
+  <meta name="twitter:title" content="Section 9 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
   
   <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="correlation.html"/>
-<link rel="next" href="moderation-and-mediation.html"/>
+<link rel="prev" href="simple-regression.html"/>
+<link rel="next" href="mediation-analysis.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -237,10 +239,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.11" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-axis-labels-and-title-on-a-plot"><i class="fa fa-check"></i><b>6.11</b> Changing the axis labels and title on a plot</a></li>
 <li class="chapter" data-level="6.12" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-legend-on-a-plot"><i class="fa fa-check"></i><b>6.12</b> Changing the legend on a plot</a></li>
 <li class="chapter" data-level="6.13" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#storing-plots-to-be-recalled-later"><i class="fa fa-check"></i><b>6.13</b> Storing plots to be recalled later</a></li>
-<li class="chapter" data-level="6.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#create-plot-and-store-it-as-myplot-object"><i class="fa fa-check"></i><b>6.14</b> Create plot and store it as “myPlot” object</a></li>
-<li class="chapter" data-level="6.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>6.15</b> Recalling a stored plot</a></li>
-<li class="chapter" data-level="6.16" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>6.16</b> Saving plots # 1</a></li>
-<li class="chapter" data-level="6.17" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>6.17</b> Plots can also be saved using code</a></li>
+<li class="chapter" data-level="6.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>6.14</b> Recalling a stored plot</a></li>
+<li class="chapter" data-level="6.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>6.15</b> Saving plots # 1</a></li>
+<li class="chapter" data-level="6.16" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>6.16</b> Plots can also be saved using code</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a><ul>
 <li class="chapter" data-level="7.1" data-path="correlation.html"><a href="correlation.html#what-is-correlation"><i class="fa fa-check"></i><b>7.1</b> What is Correlation?</a></li>
@@ -254,46 +255,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.6" data-path="correlation.html"><a href="correlation.html#check-r-value-correlation-value"><i class="fa fa-check"></i><b>7.3.6</b> Check r Value (correlation value)</a></li>
 <li class="chapter" data-level="7.3.7" data-path="correlation.html"><a href="correlation.html#check-the-significance-of-the-correlation"><i class="fa fa-check"></i><b>7.3.7</b> Check the significance of the correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="correlation.html"><a href="correlation.html#what-is-regression"><i class="fa fa-check"></i><b>7.4</b> What is regression?</a></li>
-<li class="chapter" data-level="7.5" data-path="correlation.html"><a href="correlation.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>7.5</b> How is regression calculated?</a></li>
-<li class="chapter" data-level="7.6" data-path="correlation.html"><a href="correlation.html#the-regression-equation"><i class="fa fa-check"></i><b>7.6</b> The regression equation</a></li>
-<li class="chapter" data-level="7.7" data-path="correlation.html"><a href="correlation.html#running-regression-in-r"><i class="fa fa-check"></i><b>7.7</b> Running regression in R</a></li>
-<li class="chapter" data-level="7.8" data-path="correlation.html"><a href="correlation.html#run-regression"><i class="fa fa-check"></i><b>7.8</b> Run regression</a></li>
-<li class="chapter" data-level="7.9" data-path="correlation.html"><a href="correlation.html#what-are-residuals"><i class="fa fa-check"></i><b>7.9</b> What are residuals?</a></li>
-<li class="chapter" data-level="7.10" data-path="correlation.html"><a href="correlation.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>7.10</b> Check assumptions: distribution</a></li>
-<li class="chapter" data-level="7.11" data-path="correlation.html"><a href="correlation.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>7.11</b> Check assumptions: linearity</a></li>
-<li class="chapter" data-level="7.12" data-path="correlation.html"><a href="correlation.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>7.12</b> Check assumptions: Homogeneity of Variance #1</a></li>
-<li class="chapter" data-level="7.13" data-path="correlation.html"><a href="correlation.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>7.13</b> Check assumptions: Influential cases</a></li>
-<li class="chapter" data-level="7.14" data-path="correlation.html"><a href="correlation.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>7.14</b> Check the r squared value</a></li>
-<li class="chapter" data-level="7.15" data-path="correlation.html"><a href="correlation.html#check-model-significance"><i class="fa fa-check"></i><b>7.15</b> Check model significance</a></li>
-<li class="chapter" data-level="7.16" data-path="correlation.html"><a href="correlation.html#check-coefficient-values"><i class="fa fa-check"></i><b>7.16</b> Check coefficient values</a></li>
-<li class="chapter" data-level="7.17" data-path="correlation.html"><a href="correlation.html#the-regression-equation-1"><i class="fa fa-check"></i><b>7.17</b> The regression equation</a></li>
-<li class="chapter" data-level="7.18" data-path="correlation.html"><a href="correlation.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>7.18</b> Accounting for error in predictions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#by-the-end-of-this-session-you-will-be-able-to"><i class="fa fa-check"></i><b>8.1</b> By the end of this session, you will be able to:</a></li>
-<li class="chapter" data-level="8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>8.2</b> What is multiple regression?</a></li>
-<li class="chapter" data-level="8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#what-are-the-assumptions-of-multiple-regression"><i class="fa fa-check"></i><b>8.3</b> What are the assumptions of Multiple Regression?</a></li>
-<li class="chapter" data-level="8.4" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multicollinearity"><i class="fa fa-check"></i><b>8.4</b> What is multicollinearity?</a></li>
-<li class="chapter" data-level="8.5" data-path="multiple-regression.html"><a href="multiple-regression.html#testing-multicollinearity"><i class="fa fa-check"></i><b>8.5</b> Testing multicollinearity</a></li>
-<li class="chapter" data-level="8.6" data-path="multiple-regression.html"><a href="multiple-regression.html#sample-size-for-multiple-regression"><i class="fa fa-check"></i><b>8.6</b> Sample size for multiple regression</a></li>
-<li class="chapter" data-level="8.7" data-path="multiple-regression.html"><a href="multiple-regression.html#approaches-to-multiple-regression-all-predictors-at-once"><i class="fa fa-check"></i><b>8.7</b> Approaches to multiple regression: All predictors at once</a><ul>
-<li class="chapter" data-level="8.7.1" data-path="multiple-regression.html"><a href="multiple-regression.html#using-categorical-predictors-in-r"><i class="fa fa-check"></i><b>8.7.1</b> Using categorical predictors in R</a></li>
-<li class="chapter" data-level="8.7.2" data-path="multiple-regression.html"><a href="multiple-regression.html#reviewing-the-output"><i class="fa fa-check"></i><b>8.7.2</b> Reviewing the output</a></li>
-<li class="chapter" data-level="8.7.3" data-path="multiple-regression.html"><a href="multiple-regression.html#all-predictors-at-once-testing-interactions"><i class="fa fa-check"></i><b>8.7.3</b> All predictors at once (testing interactions)</a></li>
-<li class="chapter" data-level="8.7.4" data-path="multiple-regression.html"><a href="multiple-regression.html#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><i class="fa fa-check"></i><b>8.7.4</b> Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
-<li class="chapter" data-level="8.7.5" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-computational-selection-of-predictors"><i class="fa fa-check"></i><b>8.7.5</b> Stepwise multiple regression: computational selection of predictors</a></li>
-<li class="chapter" data-level="8.7.6" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><i class="fa fa-check"></i><b>8.7.6</b> Stepwise multiple regression: loading the MASS package and run the full model</a></li>
-<li class="chapter" data-level="8.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>8.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
-<li class="chapter" data-level="8.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>8.7.8</b> Stepwise multiple regression: Display the best model</a></li>
+<li class="chapter" data-level="8" data-path="simple-regression.html"><a href="simple-regression.html"><i class="fa fa-check"></i><b>8</b> Simple Regression</a><ul>
+<li class="chapter" data-level="8.1" data-path="simple-regression.html"><a href="simple-regression.html#what-is-regression"><i class="fa fa-check"></i><b>8.1</b> What is regression?</a></li>
+<li class="chapter" data-level="8.2" data-path="simple-regression.html"><a href="simple-regression.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>8.2</b> How is regression calculated?</a></li>
+<li class="chapter" data-level="8.3" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation"><i class="fa fa-check"></i><b>8.3</b> The regression equation</a></li>
+<li class="chapter" data-level="8.4" data-path="simple-regression.html"><a href="simple-regression.html#running-regression-in-r"><i class="fa fa-check"></i><b>8.4</b> Running regression in R</a></li>
+<li class="chapter" data-level="8.5" data-path="simple-regression.html"><a href="simple-regression.html#run-regression"><i class="fa fa-check"></i><b>8.5</b> Run regression</a></li>
+<li class="chapter" data-level="8.6" data-path="simple-regression.html"><a href="simple-regression.html#what-are-residuals"><i class="fa fa-check"></i><b>8.6</b> What are residuals?</a></li>
+<li class="chapter" data-level="8.7" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>8.7</b> Check assumptions: distribution</a></li>
+<li class="chapter" data-level="8.8" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>8.8</b> Check assumptions: linearity</a></li>
+<li class="chapter" data-level="8.9" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>8.9</b> Check assumptions: Homogeneity of Variance #1</a></li>
+<li class="chapter" data-level="8.10" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>8.10</b> Check assumptions: Influential cases</a></li>
+<li class="chapter" data-level="8.11" data-path="simple-regression.html"><a href="simple-regression.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>8.11</b> Check the r squared value</a></li>
+<li class="chapter" data-level="8.12" data-path="simple-regression.html"><a href="simple-regression.html#check-model-significance"><i class="fa fa-check"></i><b>8.12</b> Check model significance</a></li>
+<li class="chapter" data-level="8.13" data-path="simple-regression.html"><a href="simple-regression.html#check-coefficient-values"><i class="fa fa-check"></i><b>8.13</b> Check coefficient values</a></li>
+<li class="chapter" data-level="8.14" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation-1"><i class="fa fa-check"></i><b>8.14</b> The regression equation</a></li>
+<li class="chapter" data-level="8.15" data-path="simple-regression.html"><a href="simple-regression.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>8.15</b> Accounting for error in predictions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>8.8</b> Using regression with categorical predictors (more information)</a><ul>
-<li class="chapter" data-level="8.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>8.8.1</b> ANOVA Approach</a></li>
-<li class="chapter" data-level="8.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>8.8.2</b> Regression approach</a></li>
-<li class="chapter" data-level="8.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.8.3</b> Interpreting regression output</a></li>
+<li class="chapter" data-level="9" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>9</b> Multiple Regression</a><ul>
+<li class="chapter" data-level="9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#by-the-end-of-this-session-you-will-be-able-to"><i class="fa fa-check"></i><b>9.1</b> By the end of this session, you will be able to:</a></li>
+<li class="chapter" data-level="9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>9.2</b> What is multiple regression?</a></li>
+<li class="chapter" data-level="9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#what-are-the-assumptions-of-multiple-regression"><i class="fa fa-check"></i><b>9.3</b> What are the assumptions of Multiple Regression?</a></li>
+<li class="chapter" data-level="9.4" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multicollinearity"><i class="fa fa-check"></i><b>9.4</b> What is multicollinearity?</a></li>
+<li class="chapter" data-level="9.5" data-path="multiple-regression.html"><a href="multiple-regression.html#testing-multicollinearity"><i class="fa fa-check"></i><b>9.5</b> Testing multicollinearity</a></li>
+<li class="chapter" data-level="9.6" data-path="multiple-regression.html"><a href="multiple-regression.html#sample-size-for-multiple-regression"><i class="fa fa-check"></i><b>9.6</b> Sample size for multiple regression</a></li>
+<li class="chapter" data-level="9.7" data-path="multiple-regression.html"><a href="multiple-regression.html#approaches-to-multiple-regression-all-predictors-at-once"><i class="fa fa-check"></i><b>9.7</b> Approaches to multiple regression: All predictors at once</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="multiple-regression.html"><a href="multiple-regression.html#using-categorical-predictors-in-r"><i class="fa fa-check"></i><b>9.7.1</b> Using categorical predictors in R</a></li>
+<li class="chapter" data-level="9.7.2" data-path="multiple-regression.html"><a href="multiple-regression.html#reviewing-the-output"><i class="fa fa-check"></i><b>9.7.2</b> Reviewing the output</a></li>
+<li class="chapter" data-level="9.7.3" data-path="multiple-regression.html"><a href="multiple-regression.html#all-predictors-at-once-testing-interactions"><i class="fa fa-check"></i><b>9.7.3</b> All predictors at once (testing interactions)</a></li>
+<li class="chapter" data-level="9.7.4" data-path="multiple-regression.html"><a href="multiple-regression.html#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><i class="fa fa-check"></i><b>9.7.4</b> Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
+<li class="chapter" data-level="9.7.5" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-computational-selection-of-predictors"><i class="fa fa-check"></i><b>9.7.5</b> Stepwise multiple regression: computational selection of predictors</a></li>
+<li class="chapter" data-level="9.7.6" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><i class="fa fa-check"></i><b>9.7.6</b> Stepwise multiple regression: loading the MASS package and run the full model</a></li>
+<li class="chapter" data-level="9.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>9.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
+<li class="chapter" data-level="9.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>9.7.8</b> Stepwise multiple regression: Display the best model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>9.8</b> Using regression with categorical predictors (more information)</a><ul>
+<li class="chapter" data-level="9.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>9.8.1</b> ANOVA Approach</a></li>
+<li class="chapter" data-level="9.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>9.8.2</b> Regression approach</a></li>
+<li class="chapter" data-level="9.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>9.8.3</b> Interpreting regression output</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>9</b> Moderation and mediation</a></li>
+<li class="chapter" data-level="10" data-path="mediation-analysis.html"><a href="mediation-analysis.html"><i class="fa fa-check"></i><b>10</b> Mediation analysis</a></li>
+<li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -315,11 +319,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="multiple-regression" class="section level1">
-<h1><span class="header-section-number">Section 8</span> Multiple Regression</h1>
+<h1><span class="header-section-number">Section 9</span> Multiple Regression</h1>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ba877fd1-de67-46b0-b395-ac3100e8b86b&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
 <div id="by-the-end-of-this-session-you-will-be-able-to" class="section level2">
-<h2><span class="header-section-number">8.1</span> By the end of this session, you will be able to:</h2>
+<h2><span class="header-section-number">9.1</span> By the end of this session, you will be able to:</h2>
 <ul>
 <li>Compare multiple regression to simple regression</li>
 <li>Describe the assumptions of multiple regression</li>
@@ -330,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="what-is-multiple-regression" class="section level2">
-<h2><span class="header-section-number">8.2</span> What is multiple regression?</h2>
+<h2><span class="header-section-number">9.2</span> What is multiple regression?</h2>
 <ul>
 <li>An extension of simple regression</li>
 <li>Same format as simple regression but adding each predictor:</li>
@@ -339,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>(The constant can be referred to in the equation as <strong>c</strong> or <strong>b0</strong> )</p>
 </div>
 <div id="what-are-the-assumptions-of-multiple-regression" class="section level2">
-<h2><span class="header-section-number">8.3</span> What are the assumptions of Multiple Regression?</h2>
+<h2><span class="header-section-number">9.3</span> What are the assumptions of Multiple Regression?</h2>
 <ul>
 <li>They are primarily the same as simple regression</li>
 <li>The additional assumption of no <strong>multicollinearity</strong> (due to having multiple predictors)
@@ -349,7 +353,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="what-is-multicollinearity" class="section level2">
-<h2><span class="header-section-number">8.4</span> What is multicollinearity?</h2>
+<h2><span class="header-section-number">9.4</span> What is multicollinearity?</h2>
 <ul>
 <li>Multicollinearity = predictors correlated highly with each other.</li>
 <li>This is not good because:
@@ -361,14 +365,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="testing-multicollinearity" class="section level2">
-<h2><span class="header-section-number">8.5</span> Testing multicollinearity</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="multiple-regression.html#cb1-1"></a><span class="co">## use the mctest package</span></span>
-<span id="cb1-2"><a href="multiple-regression.html#cb1-2"></a><span class="co"># install.packages(‘mctest’)o</span></span>
-<span id="cb1-3"><a href="multiple-regression.html#cb1-3"></a><span class="kw">library</span>(mctest)</span>
-<span id="cb1-4"><a href="multiple-regression.html#cb1-4"></a></span>
-<span id="cb1-5"><a href="multiple-regression.html#cb1-5"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(aggression_level <span class="op">~</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>trust_score, <span class="dt">data=</span>regression_data)</span>
-<span id="cb1-6"><a href="multiple-regression.html#cb1-6"></a></span>
-<span id="cb1-7"><a href="multiple-regression.html#cb1-7"></a><span class="kw">mctest</span>(m1) </span></code></pre></div>
+<h2><span class="header-section-number">9.5</span> Testing multicollinearity</h2>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="multiple-regression.html#cb147-1"></a><span class="co">## use the mctest package</span></span>
+<span id="cb147-2"><a href="multiple-regression.html#cb147-2"></a><span class="co"># install.packages(‘mctest’)o</span></span>
+<span id="cb147-3"><a href="multiple-regression.html#cb147-3"></a><span class="kw">library</span>(mctest)</span></code></pre></div>
+<pre><code>## Warning: package &#39;mctest&#39; was built under R version 4.0.2</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="multiple-regression.html#cb149-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(aggression_level <span class="op">~</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>trust_score, <span class="dt">data=</span>regression_data)</span>
+<span id="cb149-2"><a href="multiple-regression.html#cb149-2"></a></span>
+<span id="cb149-3"><a href="multiple-regression.html#cb149-3"></a><span class="kw">mctest</span>(m1) </span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## omcdiag(mod = mod, Inter = TRUE, detr = detr, red = red, conf = conf, 
@@ -394,7 +398,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="sample-size-for-multiple-regression" class="section level2">
-<h2><span class="header-section-number">8.6</span> Sample size for multiple regression</h2>
+<h2><span class="header-section-number">9.6</span> Sample size for multiple regression</h2>
 <ul>
 <li>Is based on the number of predictors</li>
 <li>More predictors = more participants needed</li>
@@ -403,11 +407,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="approaches-to-multiple-regression-all-predictors-at-once" class="section level2">
-<h2><span class="header-section-number">8.7</span> Approaches to multiple regression: All predictors at once</h2>
+<h2><span class="header-section-number">9.7</span> Approaches to multiple regression: All predictors at once</h2>
 <blockquote>
 <p>Research question: Do a client’s treatment duration and treatment group predict aggression level?</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="multiple-regression.html#cb3-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="multiple-regression.html#cb151-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group)</span></code></pre></div>
 <ul>
 <li>Here we are including all of the predictors at the same time</li>
 <li>Note that we are using a plus sign + between each predictor
@@ -416,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <div id="using-categorical-predictors-in-r" class="section level3">
-<h3><span class="header-section-number">8.7.1</span> Using categorical predictors in R</h3>
+<h3><span class="header-section-number">9.7.1</span> Using categorical predictors in R</h3>
 <ul>
 <li>Treatment group is a categorical (also called “nominal” or “factor”) variable</li>
 <li>No special “dummy coding” is required in R to use categorical predictors in regression</li>
@@ -424,12 +428,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>R chooses the reference group based on numerical value or alphabetical order</li>
 <li>If you want you can change the reference category or “force” it using the relevel function:</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="multiple-regression.html#cb4-1"></a>regression_data<span class="op">$</span>treatment_group &lt;-<span class="st"> </span><span class="kw">relevel</span>(regression_data<span class="op">$</span>treatment_group, <span class="dt">ref =</span> <span class="st">&quot;therapy1&quot;</span>)</span></code></pre></div>
-<p><strong>More information in categorical predictors in section <a href="multiple-regression.html#catreg">8.8</a> </strong></p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="multiple-regression.html#cb152-1"></a>regression_data<span class="op">$</span>treatment_group &lt;-<span class="st"> </span><span class="kw">relevel</span>(regression_data<span class="op">$</span>treatment_group, <span class="dt">ref =</span> <span class="st">&quot;therapy1&quot;</span>)</span></code></pre></div>
+<p><strong>More information in categorical predictors in section <a href="multiple-regression.html#catreg">9.8</a> </strong></p>
 </div>
 <div id="reviewing-the-output" class="section level3">
-<h3><span class="header-section-number">8.7.2</span> Reviewing the output</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="multiple-regression.html#cb5-1"></a><span class="kw">summary</span>(model1)</span></code></pre></div>
+<h3><span class="header-section-number">9.7.2</span> Reviewing the output</h3>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="multiple-regression.html#cb153-1"></a><span class="kw">summary</span>(model1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration + treatment_group, 
@@ -461,13 +465,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="all-predictors-at-once-testing-interactions" class="section level3">
-<h3><span class="header-section-number">8.7.3</span> All predictors at once (testing interactions)</h3>
+<h3><span class="header-section-number">9.7.3</span> All predictors at once (testing interactions)</h3>
 <blockquote>
 <p>Research questions:
 - Do a client’s treatment duration and treatment group predict aggression level
 - Do the predictors interact?</p>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="multiple-regression.html#cb7-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">*</span><span class="st"> </span>treatment_group)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="multiple-regression.html#cb155-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">*</span><span class="st"> </span>treatment_group)</span></code></pre></div>
 <ul>
 <li>Here we are including all of the predictors at the same time</li>
 <li>Note that we are using an asterisk * between each predictor
@@ -477,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Reviewing the output</p>
 <p><code style="font-size: 1em; width=100%;"></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="multiple-regression.html#cb8-1"></a><span class="kw">summary</span>(model2) <span class="op">%&gt;%</span><span class="st"> </span>coefficients</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="multiple-regression.html#cb156-1"></a><span class="kw">summary</span>(model2) <span class="op">%&gt;%</span><span class="st"> </span>coefficients</span></code></pre></div>
 <pre><code>##                                              Estimate Std. Error    t value     Pr(&gt;|t|)
 ## (Intercept)                                12.3529190  1.1006127 11.2236751 3.599000e-19
 ## treatment_duration                         -0.7334435  0.1033086 -7.0995381 2.166226e-10
@@ -493,7 +497,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="hierarchical-multiple-regression-theory-driven-blocks-of-variables" class="section level3">
-<h3><span class="header-section-number">8.7.4</span> Hierarchical multiple regression: Theory driven “blocks” of variables</h3>
+<h3><span class="header-section-number">9.7.4</span> Hierarchical multiple regression: Theory driven “blocks” of variables</h3>
 <ul>
 <li>It might be the case that we have previous research or theory to guide how we run the analysis</li>
 <li>For example, we might know that treatment duration and therapy group are likely to predict the outcome</li>
@@ -517,13 +521,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><strong>Hierarchical multiple regression: Running and comparing 2 models</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="multiple-regression.html#cb10-1"></a><span class="co">## run regression using the same method as above</span></span>
-<span id="cb10-2"><a href="multiple-regression.html#cb10-2"></a>model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span><span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="multiple-regression.html#cb10-3"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group)</span>
-<span id="cb10-4"><a href="multiple-regression.html#cb10-4"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>trust_score)</span>
-<span id="cb10-5"><a href="multiple-regression.html#cb10-5"></a></span>
-<span id="cb10-6"><a href="multiple-regression.html#cb10-6"></a><span class="co">## use the aov() command to compare the models</span></span>
-<span id="cb10-7"><a href="multiple-regression.html#cb10-7"></a><span class="kw">anova</span>(model0,model1,model2)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="multiple-regression.html#cb158-1"></a><span class="co">## run regression using the same method as above</span></span>
+<span id="cb158-2"><a href="multiple-regression.html#cb158-2"></a>model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb158-3"><a href="multiple-regression.html#cb158-3"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group)</span>
+<span id="cb158-4"><a href="multiple-regression.html#cb158-4"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>trust_score)</span>
+<span id="cb158-5"><a href="multiple-regression.html#cb158-5"></a></span>
+<span id="cb158-6"><a href="multiple-regression.html#cb158-6"></a><span class="co">## use the aov() command to compare the models</span></span>
+<span id="cb158-7"><a href="multiple-regression.html#cb158-7"></a><span class="kw">anova</span>(model0,model1,model2)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Model 1: aggression_level ~ 1
@@ -544,7 +548,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="stepwise-multiple-regression-computational-selection-of-predictors" class="section level3">
-<h3><span class="header-section-number">8.7.5</span> Stepwise multiple regression: computational selection of predictors</h3>
+<h3><span class="header-section-number">9.7.5</span> Stepwise multiple regression: computational selection of predictors</h3>
 <ul>
 <li>Stepwise multiple regression is controversial because:
 <ul>
@@ -554,7 +558,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <blockquote>
-<h3 id="whats-the-problem"><span class="header-section-number">8.7.5</span> What’s the problem?</h3>
+<h3 id="whats-the-problem"><span class="header-section-number">9.7.5</span> What’s the problem?</h3>
 <ul>
 <li>This selection is not based on any underlying theory or understanding of the real-life relationship between the variables</li>
 </ul>
@@ -562,20 +566,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model" class="section level3">
-<h3><span class="header-section-number">8.7.6</span> Stepwise multiple regression: loading the MASS package and run the full model</h3>
+<h3><span class="header-section-number">9.7.6</span> Stepwise multiple regression: loading the MASS package and run the full model</h3>
 <ol style="list-style-type: decimal">
 <li><strong>install and load the MASS package</strong></li>
 <li><strong>run a regression model with all of the variables</strong></li>
 <li>use the <em>stepAIC()</em> command on the full model to run stepwise regression</li>
 <li>View the best model</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="multiple-regression.html#cb12-1"></a><span class="kw">library</span>(MASS)</span>
-<span id="cb12-2"><a href="multiple-regression.html#cb12-2"></a></span>
-<span id="cb12-3"><a href="multiple-regression.html#cb12-3"></a><span class="co"># Run the full model </span></span>
-<span id="cb12-4"><a href="multiple-regression.html#cb12-4"></a>full.model &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>trust_score)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="multiple-regression.html#cb160-1"></a><span class="kw">library</span>(MASS)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="multiple-regression.html#cb163-1"></a><span class="co"># Run the full model </span></span>
+<span id="cb163-2"><a href="multiple-regression.html#cb163-2"></a>full.model &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>trust_score)</span></code></pre></div>
 </div>
 <div id="stepwise-multiple-regression-use-stepaic-with-options" class="section level3">
-<h3><span class="header-section-number">8.7.7</span> Stepwise multiple regression: Use stepAIC( ) with options</h3>
+<h3><span class="header-section-number">9.7.7</span> Stepwise multiple regression: Use stepAIC( ) with options</h3>
 <ul>
 <li><strong>Trace</strong> <em>(TRUE or FALSE)</em>: do we want to see the steps that were involved in selecting the best model ?</li>
 <li><strong>Direction</strong> <em>(“forward”, “backward” or “both”)</em>:
@@ -586,8 +594,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><code style="font-size: 1em; width=100%;"></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="multiple-regression.html#cb13-1"></a><span class="co"># Run stepwise</span></span>
-<span id="cb13-2"><a href="multiple-regression.html#cb13-2"></a>step.model &lt;-<span class="st"> </span><span class="kw">stepAIC</span>(full.model, <span class="dt">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="dt">trace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="multiple-regression.html#cb164-1"></a><span class="co"># Run stepwise</span></span>
+<span id="cb164-2"><a href="multiple-regression.html#cb164-2"></a>step.model &lt;-<span class="st"> </span><span class="kw">stepAIC</span>(full.model, <span class="dt">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="dt">trace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## Start:  AIC=85.87
 ## aggression_level ~ treatment_duration + treatment_group + trust_score
 ## 
@@ -608,15 +616,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></code></p>
 </div>
 <div id="stepwise-multiple-regression-display-the-best-model" class="section level3">
-<h3><span class="header-section-number">8.7.8</span> Stepwise multiple regression: Display the best model</h3>
+<h3><span class="header-section-number">9.7.8</span> Stepwise multiple regression: Display the best model</h3>
 <ol style="list-style-type: decimal">
 <li>install and load the MASS package</li>
 <li>run a regression model with all of the variables</li>
 <li><strong>use the <em>stepAIC()</em> command on the full model to run stepwise regression</strong></li>
 <li><strong>View best model</strong></li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="multiple-regression.html#cb15-1"></a><span class="co">#view the stepwise output</span></span>
-<span id="cb15-2"><a href="multiple-regression.html#cb15-2"></a><span class="kw">summary</span>(step.model)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="multiple-regression.html#cb166-1"></a><span class="co">#view the stepwise output</span></span>
+<span id="cb166-2"><a href="multiple-regression.html#cb166-2"></a><span class="kw">summary</span>(step.model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration + treatment_group, 
@@ -640,11 +648,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="catreg" class="section level2">
-<h2><span class="header-section-number">8.8</span> Using regression with categorical predictors (more information)</h2>
+<h2><span class="header-section-number">9.8</span> Using regression with categorical predictors (more information)</h2>
 <p>People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
 <p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
 <div id="anova-approach" class="section level3">
-<h3><span class="header-section-number">8.8.1</span> ANOVA Approach</h3>
+<h3><span class="header-section-number">9.8.1</span> ANOVA Approach</h3>
 <p>ANOVA asks the question in the following way:</p>
 <blockquote>
 <p>Is there a difference in reading comprehension scores between teaching groups?</p>
@@ -777,7 +785,7 @@ NA
 <p>Notice that the ANOVA output tells us that the difference between groups is significant (p &lt; 0.05) but we cannot tell yet which of the 3 groups are significantly different from each other.</p>
 </div>
 <div id="regression-approach" class="section level3">
-<h3><span class="header-section-number">8.8.2</span> Regression approach</h3>
+<h3><span class="header-section-number">9.8.2</span> Regression approach</h3>
 <p>Regression asks the question the following way:</p>
 <blockquote>
 <p>Does teaching group predict reading comprehension score?</p>
@@ -947,7 +955,7 @@ groupStrat
 </table>
 </div>
 <div id="interpreting-regression-output" class="section level3">
-<h3><span class="header-section-number">8.8.3</span> Interpreting regression output</h3>
+<h3><span class="header-section-number">9.8.3</span> Interpreting regression output</h3>
 <p>If we look at the coefficient (estimate) for the intercept (see regression output above), we can see that the value is the same as the mean of the Basal group in the previous section (See table of mean and sd, above).</p>
 <p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So we can see whether DTRA and STRAT groups are significantly different from the BASAL group.</p>
 <p>If we wanted to compare the groups differently (e.g. using Strat as the reference point), we can use the relevel function and run the regression analysis again (See <a href="multiple-regression.html#using-categorical-predictors-in-r">Using categorical predictors in R</a>)</p>
@@ -960,8 +968,8 @@ groupStrat
           </div>
         </div>
       </div>
-<a href="correlation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="moderation-and-mediation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="simple-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mediation-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
