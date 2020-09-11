@@ -92,6 +92,7 @@ model1 <- lm(data = regression_data, aggression_level ~ treatment_duration + tre
 regression_data$treatment_group <- relevel(regression_data$treatment_group, ref = "therapy1")
 ```
 
+**More information in categorical predictors in section \@ref(catreg) **
 
 ### Reviewing the output
 
@@ -219,7 +220,7 @@ step.model <- stepAIC(full.model, direction = "both", trace = TRUE)
 summary(step.model)
 ```
 
-## Using regression with categorical predictors (more information)
+## Using regression with categorical predictors (more information) {#catreg}
 
 People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA. 
 
@@ -252,7 +253,7 @@ Baumann %>% group_by(group) %>% summarise(mean = mean(post.test.1), sd = sd(post
 
 ```
 
-In the table above can see that the mean scores are different and highest in the DRTA group.
+In the table above we can see that the mean scores are different and highest in the DRTA group.
 
 If we were to run an ANOVA on the data, we might present it in the following way:
 
@@ -296,4 +297,7 @@ Model1 %>% tidy() %>% knitr::kable()
 
 If we look at the coefficient (estimate) for the intercept (see regression output above), we can see that the value is the same as the mean of the Basal group in the previous section  (See table of mean and sd, above). 
 
-Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So the regression table is already comparing the 3 groups.
+Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So we can see whether DTRA and STRAT groups are significantly different from the BASAL group.
+
+If we wanted to compare the groups differently (e.g. using Strat as the reference point), we can use the relevel function and run the regression analysis again (See [Using categorical predictors in R])
+

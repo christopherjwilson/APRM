@@ -287,7 +287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>8.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
 <li class="chapter" data-level="8.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>8.7.8</b> Stepwise multiple regression: Display the best model</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="multiple-regression.html"><a href="multiple-regression.html#using-regression-with-categorical-predictors-more-information"><i class="fa fa-check"></i><b>8.8</b> Using regression with categorical predictors (more information)</a><ul>
+<li class="chapter" data-level="8.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>8.8</b> Using regression with categorical predictors (more information)</a><ul>
 <li class="chapter" data-level="8.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>8.8.1</b> ANOVA Approach</a></li>
 <li class="chapter" data-level="8.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>8.8.2</b> Regression approach</a></li>
 <li class="chapter" data-level="8.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.8.3</b> Interpreting regression output</a></li>
@@ -425,6 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you want you can change the reference category or “force” it using the relevel function:</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="multiple-regression.html#cb4-1"></a>regression_data<span class="op">$</span>treatment_group &lt;-<span class="st"> </span><span class="kw">relevel</span>(regression_data<span class="op">$</span>treatment_group, <span class="dt">ref =</span> <span class="st">&quot;therapy1&quot;</span>)</span></code></pre></div>
+<p><strong>More information in categorical predictors in section <a href="multiple-regression.html#catreg">8.8</a> </strong></p>
 </div>
 <div id="reviewing-the-output" class="section level3">
 <h3><span class="header-section-number">8.7.2</span> Reviewing the output</h3>
@@ -477,16 +478,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Reviewing the output</p>
 <p><code style="font-size: 1em; width=100%;"></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="multiple-regression.html#cb8-1"></a><span class="kw">summary</span>(model2) <span class="op">%&gt;%</span><span class="st"> </span>coefficients</span></code></pre></div>
-<pre><code>##                                              Estimate Std. Error    t value
-## (Intercept)                                12.3529190  1.1006127 11.2236751
-## treatment_duration                         -0.7334435  0.1033086 -7.0995381
-## treatment_grouptherapy2                    -0.5615517  1.4753596 -0.3806202
-## treatment_duration:treatment_grouptherapy2  0.1394649  0.1425977  0.9780305
-##                                                Pr(&gt;|t|)
-## (Intercept)                                3.599000e-19
-## treatment_duration                         2.166226e-10
-## treatment_grouptherapy2                    7.043260e-01
-## treatment_duration:treatment_grouptherapy2 3.305175e-01</code></pre>
+<pre><code>##                                              Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept)                                12.3529190  1.1006127 11.2236751 3.599000e-19
+## treatment_duration                         -0.7334435  0.1033086 -7.0995381 2.166226e-10
+## treatment_grouptherapy2                    -0.5615517  1.4753596 -0.3806202 7.043260e-01
+## treatment_duration:treatment_grouptherapy2  0.1394649  0.1425977  0.9780305 3.305175e-01</code></pre>
 <p></code></p>
 <ul>
 <li>We get additional information in the coefficients table about the interaction between variables
@@ -643,7 +639,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 </div>
 </div>
-<div id="using-regression-with-categorical-predictors-more-information" class="section level2">
+<div id="catreg" class="section level2">
 <h2><span class="header-section-number">8.8</span> Using regression with categorical predictors (more information)</h2>
 <p>People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
 <p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
@@ -710,7 +706,7 @@ Strat
 </tr>
 </tbody>
 </table>
-<p>In the table above can see that the mean scores are different and highest in the DRTA group.</p>
+<p>In the table above we can see that the mean scores are different and highest in the DRTA group.</p>
 <p>If we were to run an ANOVA on the data, we might present it in the following way:</p>
 <table>
 <thead>
@@ -953,7 +949,8 @@ groupStrat
 <div id="interpreting-regression-output" class="section level3">
 <h3><span class="header-section-number">8.8.3</span> Interpreting regression output</h3>
 <p>If we look at the coefficient (estimate) for the intercept (see regression output above), we can see that the value is the same as the mean of the Basal group in the previous section (See table of mean and sd, above).</p>
-<p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So the regression table is already comparing the 3 groups.</p>
+<p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So we can see whether DTRA and STRAT groups are significantly different from the BASAL group.</p>
+<p>If we wanted to compare the groups differently (e.g. using Strat as the reference point), we can use the relevel function and run the regression analysis again (See <a href="multiple-regression.html#using-categorical-predictors-in-r">Using categorical predictors in R</a>)</p>
 
 </div>
 </div>
