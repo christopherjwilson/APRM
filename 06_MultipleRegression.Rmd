@@ -219,13 +219,81 @@ step.model <- stepAIC(full.model, direction = "both", trace = TRUE)
 summary(step.model)
 ```
 
-## Summary
+## Using regression with categorical predictors (more information)
+
+People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA. 
+
+However, it might be difficult to understand how this is, so let's look at an example. The dataset **Baumann** compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.
 
 
-- Multiple regression is an extension of simple regression
-- We need to check the same assumptions + multicolinearity
-- When entering multiple predictors:
-  - Heirarchical: we have a theoretical basis for the models
-  - Stepwise: the computer selects the best model
-- Comparing multiple models using Akaike information criterion (AIC)
+### ANOVA Approach
 
+ANOVA asks the question in the following way: 
+
+> Is there a difference in reading comprehension scores between teaching groups?
+
+The analysis takes the following approach:
+
+- What are the means of groups 1,2 and 3?
+- Are the means of groups 1,2 and 3 different?
+- Is the difference in means of groups 1,2 and 3 statistically significant?
+
+If we were to summarise the data, we might present it in the following way:
+
+```{r data_summary, echo=FALSE, message=FALSE, warning=FALSE}
+data("Baumann")
+knitr::kable(
+
+
+
+Baumann %>% group_by(group) %>% summarise(mean = mean(post.test.1), sd = sd(post.test.1))
+)
+
+
+```
+
+In the table above can see that the mean scores are different and highest in the DRTA group.
+
+If we were to run an ANOVA on the data, we might present it in the following way:
+
+```{r anova_approach, echo=FALSE, message=FALSE, warning=FALSE}
+require(broom) # for tidy()
+require(knitr) # for kable()
+aov(post.test.1 ~ group, data = Baumann) %>% tidy() %>% knitr::kable()
+
+```
+
+Notice that the ANOVA output tells us that the difference between groups is significant (p < 0.05) but we cannot tell yet which of the 3 groups are significantly different from each other.
+
+### Regression approach
+
+Regression asks the question the following way:
+
+> Does teaching group predict reading comprehension score?
+
+The analysis takes the following approach:
+
+- Let's use the mean of group 1 as a reference point (i.e. the intercept).
+- What's the difference between the intercept and the mean scores of the other groups (i.e. the coefficients)?
+- Are any of the coefficients statistically significant?
+
+If we run a regression analysis, we might present the results like this:
+
+```{r regression_approach, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+Model1 <- lm(post.test.1 ~ group, data = Baumann)
+
+c(summary(Model1)$r.squared) %>% kable(col.names = "R2")
+
+
+
+Model1 %>% aov() %>% tidy() %>% kable()
+Model1 %>% tidy() %>% knitr::kable()
+
+
+```
+
+### Interpreting regression output
+
+If we look at the coefficient (estimate) for the intercept (see regression output above), we can see that the value is the same as the mean of the Basal group in the previous section  (See table of mean and sd, above). 
+
+Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So the regression table is already comparing the 3 groups.

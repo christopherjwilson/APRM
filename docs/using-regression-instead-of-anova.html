@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 8 Multiple Regression | Advanced Psychological Research Methods (PSY4034)</title>
+  <title>Section 9 Using regression instead of ANOVA | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 8 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
+  <meta property="og:title" content="Section 9 Using regression instead of ANOVA | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 8 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
+  <meta name="twitter:title" content="Section 9 Using regression instead of ANOVA | Advanced Psychological Research Methods (PSY4034)" />
   
   <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="correlation.html"/>
+<link rel="prev" href="multiple-regression.html"/>
 <link rel="next" href="moderation-and-mediation.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -287,13 +287,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>8.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
 <li class="chapter" data-level="8.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>8.7.8</b> Stepwise multiple regression: Display the best model</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="multiple-regression.html"><a href="multiple-regression.html#using-regression-with-categorical-predictors-more-information"><i class="fa fa-check"></i><b>8.8</b> Using regression with categorical predictors (more information)</a><ul>
-<li class="chapter" data-level="8.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>8.8.1</b> ANOVA Approach</a></li>
-<li class="chapter" data-level="8.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>8.8.2</b> Regression approach</a></li>
-<li class="chapter" data-level="8.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.8.3</b> Interpreting regression output</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html"><i class="fa fa-check"></i><b>9</b> Using regression instead of ANOVA</a><ul>
+<li class="chapter" data-level="9.0.1" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#anova-approach"><i class="fa fa-check"></i><b>9.0.1</b> ANOVA Approach</a></li>
+<li class="chapter" data-level="9.0.2" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#regression-approach"><i class="fa fa-check"></i><b>9.0.2</b> Regression approach</a></li>
+<li class="chapter" data-level="9.1" data-path="using-regression-instead-of-anova.html"><a href="using-regression-instead-of-anova.html#interpreting-regression-output"><i class="fa fa-check"></i><b>9.1</b> Interpreting regression output</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>9</b> Moderation and mediation</a></li>
+<li class="chapter" data-level="10" data-path="moderation-and-mediation.html"><a href="moderation-and-mediation.html"><i class="fa fa-check"></i><b>10</b> Moderation and mediation</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -314,341 +314,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multiple-regression" class="section level1">
-<h1><span class="header-section-number">Section 8</span> Multiple Regression</h1>
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ba877fd1-de67-46b0-b395-ac3100e8b86b&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
-</iframe>
-<div id="by-the-end-of-this-session-you-will-be-able-to" class="section level2">
-<h2><span class="header-section-number">8.1</span> By the end of this session, you will be able to:</h2>
-<ul>
-<li>Compare multiple regression to simple regression</li>
-<li>Describe the assumptions of multiple regression</li>
-<li>Consider sample size in regression</li>
-<li>Use categorical predictors in regression in R</li>
-<li>Conduct different types of multiple regression</li>
-<li>Interpret the output of Multiple regression</li>
-</ul>
-</div>
-<div id="what-is-multiple-regression" class="section level2">
-<h2><span class="header-section-number">8.2</span> What is multiple regression?</h2>
-<ul>
-<li>An extension of simple regression</li>
-<li>Same format as simple regression but adding each predictor:</li>
-</ul>
-<p><span class="math display">\[ Y = b_1X_1 + b_2X_2 + b_0 \]</span></p>
-<p>(The constant can be referred to in the equation as <strong>c</strong> or <strong>b0</strong> )</p>
-</div>
-<div id="what-are-the-assumptions-of-multiple-regression" class="section level2">
-<h2><span class="header-section-number">8.3</span> What are the assumptions of Multiple Regression?</h2>
-<ul>
-<li>They are primarily the same as simple regression</li>
-<li>The additional assumption of no <strong>multicollinearity</strong> (due to having multiple predictors)
-<ul>
-<li>i.e. predictors should not be highly correlated</li>
-</ul></li>
-</ul>
-</div>
-<div id="what-is-multicollinearity" class="section level2">
-<h2><span class="header-section-number">8.4</span> What is multicollinearity?</h2>
-<ul>
-<li>Multicollinearity = predictors correlated highly with each other.</li>
-<li>This is not good because:
-<ul>
-<li>It makes it difficult to determine the role of individual predictors</li>
-<li>Increases the error of the model (higher standard errors)</li>
-<li>Difficult to identify significant predictors - wider confidence interval</li>
-</ul></li>
-</ul>
-</div>
-<div id="testing-multicollinearity" class="section level2">
-<h2><span class="header-section-number">8.5</span> Testing multicollinearity</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="multiple-regression.html#cb1-1"></a><span class="co">## use the mctest package</span></span>
-<span id="cb1-2"><a href="multiple-regression.html#cb1-2"></a><span class="co"># install.packages(‘mctest’)o</span></span>
-<span id="cb1-3"><a href="multiple-regression.html#cb1-3"></a><span class="kw">library</span>(mctest)</span>
-<span id="cb1-4"><a href="multiple-regression.html#cb1-4"></a></span>
-<span id="cb1-5"><a href="multiple-regression.html#cb1-5"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(aggression_level <span class="op">~</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>trust_score, <span class="dt">data=</span>regression_data)</span>
-<span id="cb1-6"><a href="multiple-regression.html#cb1-6"></a></span>
-<span id="cb1-7"><a href="multiple-regression.html#cb1-7"></a><span class="kw">mctest</span>(m1) </span></code></pre></div>
-<pre><code>## 
-## Call:
-## omcdiag(mod = mod, Inter = TRUE, detr = detr, red = red, conf = conf, 
-##     theil = theil, cn = cn)
-## 
-## 
-## Overall Multicollinearity Diagnostics
-## 
-##                        MC Results detection
-## Determinant |X&#39;X|:         0.9229         0
-## Farrar Chi-Square:         7.7960         0
-## Red Indicator:             0.1547         0
-## Sum of Lambda Inverse:     3.1728         0
-## Theil&#39;s Method:           -0.8800         0
-## Condition Number:         13.6549         0
-## 
-## 1 --&gt; COLLINEARITY is detected by the test 
-## 0 --&gt; COLLINEARITY is not detected by the test</code></pre>
-<ul>
-<li><p>The format of <em>mctest()</em> is:</p>
-<p>mctest(predictors, outcome)</p></li>
-<li><p>In the above example we used the <em>cbind()</em> function to bind 3 columns of data together (the predictors)</p></li>
-</ul>
-</div>
-<div id="sample-size-for-multiple-regression" class="section level2">
-<h2><span class="header-section-number">8.6</span> Sample size for multiple regression</h2>
-<ul>
-<li>Is based on the number of predictors</li>
-<li>More predictors = more participants needed</li>
-<li><strong>Do a power analysis</strong></li>
-<li>Loose “rule of thumb” = 10-15 participants per predictor</li>
-</ul>
-</div>
-<div id="approaches-to-multiple-regression-all-predictors-at-once" class="section level2">
-<h2><span class="header-section-number">8.7</span> Approaches to multiple regression: All predictors at once</h2>
-<blockquote>
-<p>Research question: Do a client’s treatment duration and treatment group predict aggression level?</p>
-</blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="multiple-regression.html#cb3-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group)</span></code></pre></div>
-<ul>
-<li>Here we are including all of the predictors at the same time</li>
-<li>Note that we are using a plus sign + between each predictor
-<ul>
-<li>This means that no interactions will be tested</li>
-</ul></li>
-</ul>
-<div id="using-categorical-predictors-in-r" class="section level3">
-<h3><span class="header-section-number">8.7.1</span> Using categorical predictors in R</h3>
-<ul>
-<li>Treatment group is a categorical (also called “nominal” or “factor”) variable</li>
-<li>No special “dummy coding” is required in R to use categorical predictors in regression</li>
-<li>R will use the first group as the reference category and test whether being in another group shows a significant difference</li>
-<li>R chooses the reference group based on numerical value or alphabetical order</li>
-<li>If you want you can change the reference category or “force” it using the relevel function:</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="multiple-regression.html#cb4-1"></a>regression_data<span class="op">$</span>treatment_group &lt;-<span class="st"> </span><span class="kw">relevel</span>(regression_data<span class="op">$</span>treatment_group, <span class="dt">ref =</span> <span class="st">&quot;therapy1&quot;</span>)</span></code></pre></div>
-</div>
-<div id="reviewing-the-output" class="section level3">
-<h3><span class="header-section-number">8.7.2</span> Reviewing the output</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="multiple-regression.html#cb5-1"></a><span class="kw">summary</span>(model1)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = aggression_level ~ treatment_duration + treatment_group, 
-##     data = regression_data)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -2.9468 -1.1104  0.0205  0.9621  3.4481 
-## 
-## Coefficients:
-##                         Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)             11.58713    0.77331  14.984  &lt; 2e-16 ***
-## treatment_duration      -0.66024    0.07119  -9.274 4.96e-15 ***
-## treatment_grouptherapy2  0.85032    0.30449   2.793   0.0063 ** 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 1.5 on 97 degrees of freedom
-## Multiple R-squared:  0.5206, Adjusted R-squared:  0.5107 
-## F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
-<ul>
-<li>Multiple R^2 = Total variance in outcome that is explained by the model</li>
-<li>p-value = Statistical significance of the model</li>
-<li>Coefficients = Contribution of each predictor to the model
-<ul>
-<li>Pr = Significance of the individual predictor</li>
-<li>Estimate = Change in the outcome level that occurs when the predictor increases by 1 unit of measurement</li>
-</ul></li>
-</ul>
-</div>
-<div id="all-predictors-at-once-testing-interactions" class="section level3">
-<h3><span class="header-section-number">8.7.3</span> All predictors at once (testing interactions)</h3>
-<blockquote>
-<p>Research questions:
-- Do a client’s treatment duration and treatment group predict aggression level
-- Do the predictors interact?</p>
-</blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="multiple-regression.html#cb7-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">*</span><span class="st"> </span>treatment_group)</span></code></pre></div>
-<ul>
-<li>Here we are including all of the predictors at the same time</li>
-<li>Note that we are using an asterisk * between each predictor
-<ul>
-<li>This means that interactions will be tested</li>
-</ul></li>
-</ul>
-<p>Reviewing the output</p>
-<p><code style="font-size: 1em; width=100%;"></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="multiple-regression.html#cb8-1"></a><span class="kw">summary</span>(model2) <span class="op">%&gt;%</span><span class="st"> </span>coefficients</span></code></pre></div>
-<pre><code>##                                              Estimate Std. Error    t value
-## (Intercept)                                12.3529190  1.1006127 11.2236751
-## treatment_duration                         -0.7334435  0.1033086 -7.0995381
-## treatment_grouptherapy2                    -0.5615517  1.4753596 -0.3806202
-## treatment_duration:treatment_grouptherapy2  0.1394649  0.1425977  0.9780305
-##                                                Pr(&gt;|t|)
-## (Intercept)                                3.599000e-19
-## treatment_duration                         2.166226e-10
-## treatment_grouptherapy2                    7.043260e-01
-## treatment_duration:treatment_grouptherapy2 3.305175e-01</code></pre>
-<p></code></p>
-<ul>
-<li>We get additional information in the coefficients table about the interaction between variables
-<ul>
-<li>e.g. does the interaction between level of trust and treatment duration predict the outcome (aggression level)?</li>
-</ul></li>
-<li>We can see from the output that none of the interactions are significant</li>
-</ul>
-</div>
-<div id="hierarchical-multiple-regression-theory-driven-blocks-of-variables" class="section level3">
-<h3><span class="header-section-number">8.7.4</span> Hierarchical multiple regression: Theory driven “blocks” of variables</h3>
-<ul>
-<li>It might be the case that we have previous research or theory to guide how we run the analysis</li>
-<li>For example, we might know that treatment duration and therapy group are likely to predict the outcome</li>
-<li>We might want to check whether client’s level of trust in the clinician has any <strong>additional</strong> impact on our ability to predict the outcome (aggression level)</li>
-</ul>
-<blockquote>
-<ul>
-<li>To do this, we run three regression models
-<ul>
-<li>Model 0: the constant (baseline)</li>
-<li>Model 1: treatment duration and therapy group</li>
-<li>Model 2: treatment duration and therapy group and trust score</li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li>We then compare the two regression models to see if:
-<ul>
-<li>Model 1 is better than Model 0 (the constant)</li>
-<li>Model 2 is better than Model 1</li>
-</ul></li>
-</ul>
-<p><strong>Hierarchical multiple regression: Running and comparing 2 models</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="multiple-regression.html#cb10-1"></a><span class="co">## run regression using the same method as above</span></span>
-<span id="cb10-2"><a href="multiple-regression.html#cb10-2"></a>model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span><span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="multiple-regression.html#cb10-3"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group)</span>
-<span id="cb10-4"><a href="multiple-regression.html#cb10-4"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>trust_score)</span>
-<span id="cb10-5"><a href="multiple-regression.html#cb10-5"></a></span>
-<span id="cb10-6"><a href="multiple-regression.html#cb10-6"></a><span class="co">## use the aov() command to compare the models</span></span>
-<span id="cb10-7"><a href="multiple-regression.html#cb10-7"></a><span class="kw">anova</span>(model0,model1,model2)</span></code></pre></div>
-<pre><code>## Analysis of Variance Table
-## 
-## Model 1: aggression_level ~ 1
-## Model 2: aggression_level ~ treatment_duration + treatment_group
-## Model 3: aggression_level ~ treatment_duration + treatment_group + trust_score
-##   Res.Df    RSS Df Sum of Sq       F    Pr(&gt;F)    
-## 1     99 455.27                                   
-## 2     97 218.26  2   237.013 52.2195 4.507e-16 ***
-## 3     96 217.86  1     0.399  0.1757     0.676    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<ul>
-<li>We can see that:
-<ul>
-<li>Model 1 (treatment duration and treatment group) is significant relative to the constant (Model 0)</li>
-<li>Model 2 (treatment duration, treatment group and trust score) shows no significant change compared to Model 1</li>
-</ul></li>
-</ul>
-</div>
-<div id="stepwise-multiple-regression-computational-selection-of-predictors" class="section level3">
-<h3><span class="header-section-number">8.7.5</span> Stepwise multiple regression: computational selection of predictors</h3>
-<ul>
-<li>Stepwise multiple regression is controversial because:
-<ul>
-<li>The computer selects which predictors to include based on Akaike information criterion (AIC)
-<ul>
-<li>This is a calculation of the quality of statistical models when they are compared to each other</li>
-</ul></li>
-</ul>
-<blockquote>
-<h3 id="whats-the-problem"><span class="header-section-number">8.7.5</span> What’s the problem?</h3>
-<ul>
-<li>This selection is not based on any underlying theory or understanding of the real-life relationship between the variables</li>
-</ul>
-</blockquote></li>
-</ul>
-</div>
-<div id="stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model" class="section level3">
-<h3><span class="header-section-number">8.7.6</span> Stepwise multiple regression: loading the MASS package and run the full model</h3>
-<ol style="list-style-type: decimal">
-<li><strong>install and load the MASS package</strong></li>
-<li><strong>run a regression model with all of the variables</strong></li>
-<li>use the <em>stepAIC()</em> command on the full model to run stepwise regression</li>
-<li>View the best model</li>
-</ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="multiple-regression.html#cb12-1"></a><span class="kw">library</span>(MASS)</span>
-<span id="cb12-2"><a href="multiple-regression.html#cb12-2"></a></span>
-<span id="cb12-3"><a href="multiple-regression.html#cb12-3"></a><span class="co"># Run the full model </span></span>
-<span id="cb12-4"><a href="multiple-regression.html#cb12-4"></a>full.model &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> regression_data, aggression_level <span class="op">~</span><span class="st"> </span>treatment_duration <span class="op">+</span><span class="st"> </span>treatment_group <span class="op">+</span><span class="st"> </span>trust_score)</span></code></pre></div>
-</div>
-<div id="stepwise-multiple-regression-use-stepaic-with-options" class="section level3">
-<h3><span class="header-section-number">8.7.7</span> Stepwise multiple regression: Use stepAIC( ) with options</h3>
-<ul>
-<li><strong>Trace</strong> <em>(TRUE or FALSE)</em>: do we want to see the steps that were involved in selecting the best model ?</li>
-<li><strong>Direction</strong> <em>(“forward”, “backward” or “both”)</em>:
-<ul>
-<li>start with no variables and add them <em>(forward)</em></li>
-<li>start with all variables and subtract them <em>(backward)</em></li>
-<li>use both approaches <em>(both)</em></li>
-</ul></li>
-</ul>
-<p><code style="font-size: 1em; width=100%;"></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="multiple-regression.html#cb13-1"></a><span class="co"># Run stepwise</span></span>
-<span id="cb13-2"><a href="multiple-regression.html#cb13-2"></a>step.model &lt;-<span class="st"> </span><span class="kw">stepAIC</span>(full.model, <span class="dt">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="dt">trace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## Start:  AIC=85.87
-## aggression_level ~ treatment_duration + treatment_group + trust_score
-## 
-##                      Df Sum of Sq    RSS     AIC
-## - trust_score         1     0.399 218.26  84.052
-## &lt;none&gt;                            217.86  85.869
-## - treatment_group     1    17.877 235.74  91.755
-## - treatment_duration  1   188.709 406.57 146.259
-## 
-## Step:  AIC=84.05
-## aggression_level ~ treatment_duration + treatment_group
-## 
-##                      Df Sum of Sq    RSS     AIC
-## &lt;none&gt;                            218.26  84.052
-## + trust_score         1     0.399 217.86  85.869
-## - treatment_group     1    17.547 235.81  89.785
-## - treatment_duration  1   193.515 411.78 145.531</code></pre>
-<p></code></p>
-</div>
-<div id="stepwise-multiple-regression-display-the-best-model" class="section level3">
-<h3><span class="header-section-number">8.7.8</span> Stepwise multiple regression: Display the best model</h3>
-<ol style="list-style-type: decimal">
-<li>install and load the MASS package</li>
-<li>run a regression model with all of the variables</li>
-<li><strong>use the <em>stepAIC()</em> command on the full model to run stepwise regression</strong></li>
-<li><strong>View best model</strong></li>
-</ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="multiple-regression.html#cb15-1"></a><span class="co">#view the stepwise output</span></span>
-<span id="cb15-2"><a href="multiple-regression.html#cb15-2"></a><span class="kw">summary</span>(step.model)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = aggression_level ~ treatment_duration + treatment_group, 
-##     data = regression_data)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -2.9468 -1.1104  0.0205  0.9621  3.4481 
-## 
-## Coefficients:
-##                         Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)             11.58713    0.77331  14.984  &lt; 2e-16 ***
-## treatment_duration      -0.66024    0.07119  -9.274 4.96e-15 ***
-## treatment_grouptherapy2  0.85032    0.30449   2.793   0.0063 ** 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 1.5 on 97 degrees of freedom
-## Multiple R-squared:  0.5206, Adjusted R-squared:  0.5107 
-## F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
-</div>
-</div>
-<div id="using-regression-with-categorical-predictors-more-information" class="section level2">
-<h2><span class="header-section-number">8.8</span> Using regression with categorical predictors (more information)</h2>
+<div id="using-regression-instead-of-anova" class="section level1">
+<h1><span class="header-section-number">Section 9</span> Using regression instead of ANOVA</h1>
 <p>People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
 <p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
 <div id="anova-approach" class="section level3">
-<h3><span class="header-section-number">8.8.1</span> ANOVA Approach</h3>
+<h3><span class="header-section-number">9.0.1</span> ANOVA Approach</h3>
 <p>ANOVA asks the question in the following way:</p>
 <blockquote>
 <p>Is there a difference in reading comprehension scores between teaching groups?</p>
@@ -781,7 +452,7 @@ NA
 <p>Notice that the ANOVA output tells us that the difference between groups is significant (p &lt; 0.05) but we cannot tell yet which of the 3 groups are significantly different from each other.</p>
 </div>
 <div id="regression-approach" class="section level3">
-<h3><span class="header-section-number">8.8.2</span> Regression approach</h3>
+<h3><span class="header-section-number">9.0.2</span> Regression approach</h3>
 <p>Regression asks the question the following way:</p>
 <blockquote>
 <p>Does teaching group predict reading comprehension score?</p>
@@ -950,12 +621,11 @@ groupStrat
 </tbody>
 </table>
 </div>
-<div id="interpreting-regression-output" class="section level3">
-<h3><span class="header-section-number">8.8.3</span> Interpreting regression output</h3>
+<div id="interpreting-regression-output" class="section level2">
+<h2><span class="header-section-number">9.1</span> Interpreting regression output</h2>
 <p>If we look at the coefficient (estimate) for the intercept (see regression output above), we can see that the value is the same as the mean of the Basal group in the previous section (See table of mean and sd, above).</p>
 <p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So the regression table is already comparing the 3 groups.</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -963,7 +633,7 @@ groupStrat
           </div>
         </div>
       </div>
-<a href="correlation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multiple-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="moderation-and-mediation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
