@@ -22,7 +22,7 @@ css: style.css
 > - Refresh this page (hit F5 on your keyboard).
 > - You should now be able to play all of the video content.
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6a77475e-a7df-4106-90af-ac330096b331&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe width="720" height="405" style="border: 1px solid #464646;" src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6a77475e-a7df-4106-90af-ac330096b331&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" allowfullscreen="" allow="autoplay"></iframe>
 
 ## Module Overview
 
