@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-11" />
+<meta name="date" content="2020-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,10 @@
 
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -297,7 +301,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="mediation-analysis.html"><a href="mediation-analysis.html"><i class="fa fa-check"></i><b>10</b> Mediation analysis</a></li>
-<li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a></li>
+<li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a><ul>
+<li class="chapter" data-level="11.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
+<li class="chapter" data-level="11.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>11.5</b> Moderation: step-by-step</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>11.5.1</b> Step 1: Grand Mean Centering</a></li>
+<li class="chapter" data-level="11.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering-2"><i class="fa fa-check"></i><b>11.5.2</b> Step 1: Grand Mean Centering #2</a></li>
+<li class="chapter" data-level="11.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>11.5.3</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="11.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>11.5.4</b> Step 3: Moderation Analysis</a></li>
+<li class="chapter" data-level="11.5.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>11.5.5</b> Step 4: Bootstrapping</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -323,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="working-example---record-sales-data" class="section level2">
 <h2><span class="header-section-number">5.1</span> Working example - record sales data</h2>
 <p>Let’s import the data {.smaller}</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb45-1"></a>Album_Sales &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Datasets/album_sales.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb42-1"></a>Album_Sales &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Datasets/album_sales.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Adverts = col_double(),
@@ -333,7 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   Genre = col_character()
 ## )</code></pre>
 <p>Let’s look at the data {.smaller}</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb47-1"></a><span class="kw">head</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb44-1"></a><span class="kw">head</span>(Album_Sales)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 5
 ##   Adverts Sales Airplay Attract Genre  
 ##     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  
@@ -349,14 +365,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>This variable is currently stored as charcters, not as a factor / category variable</li>
 </ul>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb49-1"></a><span class="kw">str</span>(Album_Sales<span class="op">$</span>Genre) </span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb46-1"></a><span class="kw">str</span>(Album_Sales<span class="op">$</span>Genre) </span></code></pre></div>
 <pre><code>##  chr [1:200] &quot;Country&quot; &quot;Pop&quot; &quot;HipHop&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Country&quot; &quot;Pop&quot; &quot;Pop&quot; &quot;Metal&quot; &quot;HipHop&quot; ...</code></pre>
 <ul>
 <li>We can save it as a factor</li>
 </ul>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb51-1"></a>Album_Sales<span class="op">$</span>Genre &lt;-<span class="st"> </span><span class="kw">as.factor</span>(Album_Sales<span class="op">$</span>Genre)</span>
-<span id="cb51-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb51-2"></a></span>
-<span id="cb51-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb51-3"></a><span class="kw">str</span>(Album_Sales<span class="op">$</span>Genre) </span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb48-1"></a>Album_Sales<span class="op">$</span>Genre &lt;-<span class="st"> </span><span class="kw">as.factor</span>(Album_Sales<span class="op">$</span>Genre)</span>
+<span id="cb48-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb48-2"></a></span>
+<span id="cb48-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb48-3"></a><span class="kw">str</span>(Album_Sales<span class="op">$</span>Genre) </span></code></pre></div>
 <pre><code>##  Factor w/ 4 levels &quot;Country&quot;,&quot;HipHop&quot;,..: 1 4 2 2 3 1 4 4 3 2 ...</code></pre>
 </div>
 <div id="measures-of-central-tendency" class="section level2">
@@ -368,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="mean" class="section level3 smaller">
 <h3><span class="header-section-number">5.3.1</span> Mean</h3>
 <p>“What is the mean of album sales?”</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb53-1"></a><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb50-1"></a><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## [1] 193.2</code></pre>
 </div>
 <div id="trimmed-mean" class="section level3 smaller">
@@ -376,13 +392,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The trimmed mean is used to reduce the influence of outliers on the summary</li>
 </ul>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb55-1"></a><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Sales, <span class="dt">trim =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb52-1"></a><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Sales, <span class="dt">trim =</span> <span class="fl">0.05</span>)</span></code></pre></div>
 <pre><code>## [1] 192.6667</code></pre>
 </div>
 <div id="median" class="section level3 smaller">
 <h3><span class="header-section-number">5.3.3</span> Median</h3>
 <p>“What is the median amount of Airplay?”</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb57-1"></a><span class="kw">median</span>(Album_Sales<span class="op">$</span>Airplay)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb54-1"></a><span class="kw">median</span>(Album_Sales<span class="op">$</span>Airplay)</span></code></pre></div>
 <pre><code>## [1] 28</code></pre>
 </div>
 <div id="mode" class="section level3 smaller">
@@ -391,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The easiest way to get the mode in R is to generate a frequency table</li>
 </ul>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb59-1"></a><span class="kw">table</span>(Album_Sales<span class="op">$</span>Attract)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb56-1"></a><span class="kw">table</span>(Album_Sales<span class="op">$</span>Attract)</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3  4  5  6  7  8  9 10 
 ##  3  1  1  4 17 44 73 44 12  1</code></pre>
@@ -408,12 +424,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>You can calculate it using these values</li>
 </ul>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb61-1"></a><span class="kw">max</span>(Album_Sales<span class="op">$</span>Airplay) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(Album_Sales<span class="op">$</span>Airplay)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb58-1"></a><span class="kw">max</span>(Album_Sales<span class="op">$</span>Airplay) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(Album_Sales<span class="op">$</span>Airplay)</span></code></pre></div>
 <pre><code>## [1] 63</code></pre>
 <ul>
 <li>Or you can use the range command to get the min and max values in one go</li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb63-1"></a><span class="kw">range</span>(Album_Sales<span class="op">$</span>Airplay)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb60-1"></a><span class="kw">range</span>(Album_Sales<span class="op">$</span>Airplay)</span></code></pre></div>
 <pre><code>## [1]  0 63</code></pre>
 </div>
 <div id="interquartile-range" class="section level3 smaller">
@@ -422,7 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We know that the median is the “middle” of the data = 50th percentile</li>
 <li>The interquatile range is the difference between the values at the 25th and 75th percentiles</li>
 </ul>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb65-1"></a><span class="kw">quantile</span>( <span class="dt">x =</span> Album_Sales<span class="op">$</span>Airplay, <span class="dt">probs =</span> <span class="kw">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>) )</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb62-1"></a><span class="kw">quantile</span>( <span class="dt">x =</span> Album_Sales<span class="op">$</span>Airplay, <span class="dt">probs =</span> <span class="kw">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>) )</span></code></pre></div>
 <pre><code>##   25%   75% 
 ## 19.75 36.00</code></pre>
 <ul>
@@ -432,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The difference between each value and the mean value, squared, and then summed together</li>
 </ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb67-1"></a><span class="kw">sum</span>( (Album_Sales<span class="op">$</span>Adverts <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Adverts))<span class="op">^</span><span class="dv">2</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb64-1"></a><span class="kw">sum</span>( (Album_Sales<span class="op">$</span>Adverts <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Adverts))<span class="op">^</span><span class="dv">2</span> )</span></code></pre></div>
 <pre><code>## [1] 46936335</code></pre>
 </div>
 <div id="variance" class="section level3 smaller">
@@ -440,23 +456,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Variance: Sum of sqaures divided by n-1</li>
 </ul>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb69-1"></a><span class="co"># variance calculation</span></span>
-<span id="cb69-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb69-2"></a>varianceAdverts &lt;-<span class="st"> </span><span class="kw">sum</span>( (Album_Sales<span class="op">$</span>Adverts <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Adverts))<span class="op">^</span><span class="dv">2</span> ) <span class="op">/</span><span class="st"> </span><span class="dv">199</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb66-1"></a><span class="co"># variance calculation</span></span>
+<span id="cb66-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb66-2"></a>varianceAdverts &lt;-<span class="st"> </span><span class="kw">sum</span>( (Album_Sales<span class="op">$</span>Adverts <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(Album_Sales<span class="op">$</span>Adverts))<span class="op">^</span><span class="dv">2</span> ) <span class="op">/</span><span class="st"> </span><span class="dv">199</span></span></code></pre></div>
 </div>
 <div id="standard-deviation" class="section level3 smaller">
 <h3><span class="header-section-number">5.4.4</span> Standard deviation</h3>
 <ul>
 <li>Standard deviation is square root of the variance</li>
 </ul>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb70-1"></a><span class="co"># sd calculation</span></span>
-<span id="cb70-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb70-2"></a></span>
-<span id="cb70-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb70-3"></a></span>
-<span id="cb70-4"><a href="exploratory-and-descriptive-analysis-with-r.html#cb70-4"></a><span class="kw">sqrt</span>(varianceAdverts)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb67-1"></a><span class="co"># sd calculation</span></span>
+<span id="cb67-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb67-2"></a></span>
+<span id="cb67-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb67-3"></a></span>
+<span id="cb67-4"><a href="exploratory-and-descriptive-analysis-with-r.html#cb67-4"></a><span class="kw">sqrt</span>(varianceAdverts)</span></code></pre></div>
 <pre><code>## [1] 485.6552</code></pre>
 <ul>
 <li>Can be calculated using the sd() command</li>
 </ul>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb72-1"></a><span class="kw">sd</span>(Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb69-1"></a><span class="kw">sd</span>(Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
 <pre><code>## [1] 485.6552</code></pre>
 </div>
 </div>
@@ -468,7 +484,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>It is possible to use graphs to view the distribution</li>
 <li>We will focus on graphic presentation of data next week</li>
 </ul>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb74-1"></a><span class="kw">hist</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb71-1"></a><span class="kw">hist</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 </div>
 <div id="assessing-skewness-of-distribution-2" class="section level3 smaller">
@@ -476,16 +492,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We can check raw skewness value using the <em>skew()</em> command in the <strong>psych</strong> package</li>
 </ul>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb75-1"></a><span class="kw">library</span>(psych)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;psych&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:car&#39;:
-## 
-##     logit</code></pre>
-<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
-## 
-##     %+%, alpha</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb79-1"></a><span class="kw">skew</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb72-1"></a><span class="kw">library</span>(psych)</span>
+<span id="cb72-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb72-2"></a><span class="kw">skew</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## [1] 0.0432729</code></pre>
 </div>
 <div id="kurtosis" class="section level3 smaller">
@@ -516,7 +524,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb81-1"></a><span class="kw">kurtosi</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb74-1"></a><span class="kw">kurtosi</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## [1] -0.7157339</code></pre>
 </div>
 <div id="assessing-normality-of-distribution" class="section level3 smaller">
@@ -525,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We can use the shapiro-wilk test of normality</li>
 <li>This is part of “base” r (no package needed)</li>
 </ul>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb83-1"></a><span class="kw">shapiro.test</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb76-1"></a><span class="kw">shapiro.test</span>(Album_Sales<span class="op">$</span>Sales)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
@@ -537,7 +545,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.6</span> Getting and overall summary</h2>
 <div id="summary---in-base-r" class="section level3 smaller">
 <h3><span class="header-section-number">5.6.1</span> summary() - in “base R”</h3>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb85-1"></a><span class="kw">summary</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb78-1"></a><span class="kw">summary</span>(Album_Sales)</span></code></pre></div>
 <pre><code>##     Adverts             Sales          Airplay         Attract          Genre   
 ##  Min.   :   9.104   Min.   : 10.0   Min.   : 0.00   Min.   : 1.00   Country:46  
 ##  1st Qu.: 215.918   1st Qu.:137.5   1st Qu.:19.75   1st Qu.: 6.00   HipHop :53  
@@ -548,7 +556,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="describe---in-the-psych-package-1" class="section level3 smaller">
 <h3><span class="header-section-number">5.6.2</span> describe() - in the “psych” package #1</h3>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb87-1"></a><span class="kw">describe</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb80-1"></a><span class="kw">describe</span>(Album_Sales)</span></code></pre></div>
 <pre><code>##         vars   n   mean     sd median trimmed    mad  min     max   range  skew kurtosis    se
 ## Adverts    1 200 614.41 485.66 531.92  560.81 489.09  9.1 2271.86 2262.76  0.84     0.17 34.34
 ## Sales      2 200 193.20  80.70 200.00  192.69  88.96 10.0  360.00  350.00  0.04    -0.72  5.71
@@ -561,7 +569,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We can describe by factor variables</li>
 </ul>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb89-1"></a><span class="kw">describeBy</span>(Album_Sales, <span class="dt">group =</span> Album_Sales<span class="op">$</span>Genre)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb82-1"></a><span class="kw">describeBy</span>(Album_Sales, <span class="dt">group =</span> Album_Sales<span class="op">$</span>Genre)</span></code></pre></div>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: Country
@@ -605,13 +613,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb91-1"></a><span class="kw">plot</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb84-1"></a><span class="kw">plot</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <p>“Is there a relationship between advert spend and sales?”</p>
 <ul>
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb92-1"></a><span class="kw">cor.test</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb85-1"></a><span class="kw">cor.test</span>(Album_Sales<span class="op">$</span>Sales,Album_Sales<span class="op">$</span>Adverts)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -630,9 +638,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We would use a t-test to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb94-1"></a>myTtestData &lt;-<span class="st"> </span>Album_Sales <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Genre <span class="op">==</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Country&quot;</span>, <span class="st">&quot;HipHop&quot;</span>))</span>
-<span id="cb94-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb94-2"></a></span>
-<span id="cb94-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb94-3"></a><span class="kw">t.test</span>(myTtestData<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>myTtestData<span class="op">$</span>Genre)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb87-1"></a>myTtestData &lt;-<span class="st"> </span>Album_Sales <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Genre <span class="op">==</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Country&quot;</span>, <span class="st">&quot;HipHop&quot;</span>))</span>
+<span id="cb87-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb87-2"></a></span>
+<span id="cb87-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb87-3"></a><span class="kw">t.test</span>(myTtestData<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>myTtestData<span class="op">$</span>Genre)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -651,8 +659,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>We would use an ANOVA to answer this question</li>
 </ul>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb96-1"></a>myAnova &lt;-<span class="st"> </span><span class="kw">aov</span>(Album_Sales<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>Album_Sales<span class="op">$</span>Genre)</span>
-<span id="cb96-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb96-2"></a><span class="kw">summary</span>(myAnova)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb89-1"></a>myAnova &lt;-<span class="st"> </span><span class="kw">aov</span>(Album_Sales<span class="op">$</span>Sales <span class="op">~</span><span class="st"> </span>Album_Sales<span class="op">$</span>Genre)</span>
+<span id="cb89-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb89-2"></a><span class="kw">summary</span>(myAnova)</span></code></pre></div>
 <pre><code>##                    Df  Sum Sq Mean Sq F value Pr(&gt;F)
 ## Album_Sales$Genre   3   23530    7843   1.208  0.308
 ## Residuals         196 1272422    6492</code></pre>
