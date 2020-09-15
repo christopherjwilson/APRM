@@ -191,9 +191,13 @@ med_graph %>% render_graph(title = " ")
 
 
     library(mediation) #Mediation package
+    
     library(multilevel) #Sobel Test
+    
     library(bda) #Another Sobel Test option
+    
     library(gvlma) #Testing Model Assumptions 
+    
     library(stargazer) #Handy regression tables
     
     
@@ -283,15 +287,23 @@ library(multilevel)
 sobel(Meddata$X, Meddata$M, Meddata$Y)
 ```
 
+However, the above code only gives us to information we need to test the significance of the indirect effect, not the significance itself. Thereore, we can use the following, to get the actual significance of the indirect effect:
+
+```{r}
+library(bda)
+mediation.test(Meddata$M, Meddata$X, Meddata$Y)
+```
+
+
 ## Mediation analysis (the Mediation package)
 
 ### Preacher & Hayes (2004) mediation approach
 
 - Mediation package in R uses the  Preacher & Hayes (2004) bootstrapping approach
-- They argue that few people test the signficance of the indirect effect
+- They argue that few people test the significance of the indirect effect
 
 >> "Baron and Kenny simply state that perfect mediation has occurred if c' becomes nonsignificant after controlling for
-M, so researchers have focused on that requirement." (Preacer & Hayes, 2004, p. 719)
+M, so researchers have focused on that requirement." (Preacher & Hayes, 2004, p. 719)
 
 - Sobel test has low power (requires larger sample sizes)
 - Sobel test assumes normality (often violated)
@@ -376,6 +388,7 @@ gvlma(fitY)
 
 
 The mediate function gives us:  
+
 - Average Causal Mediation Effects (ACME)
 - Average Direct Effects (ADE) 
 - combined indirect and direct effects (Total Effect) 
@@ -396,10 +409,11 @@ The plot below reiterates what was on the previous slide:
 - The confidence intervals of Total Effect and ACME are significant
 - The confidence interval of ADE is not significant
 
-> **Translation:**
-> - Total effect is signficant: there is a relationship between X and Y (direct and indirect)
-> - ADE is not significant: the relationship between X and Y is not direct
-> - ACME is significant: the relationship between X and Y is mediated by M
+ **Translation:**
+
+ - Total effect is signficant: there is a relationship between X and Y (direct and indirect)
+ - ADE is not significant: the relationship between X and Y is not direct
+ - ACME is significant: the relationship between X and Y is mediated by M
 
 ```{r}
 plot(fitMed)
@@ -413,10 +427,13 @@ The plot below changes our interpretation slightly:
 - The confidence interval ACME is significant
 - The confidence interval of Total Effect and ADE are not significant
 
-> **Translation:**
-> - Total effect is not signficant: the relationship between X and Y is not significant when we combine direct and indirect effects
-> - ADE is not significant: the relationship between X and Y is not direct
-> - ACME is significant: the relationship between X and Y is mediated by M
+ **Translation:**
+
+- Total effect is not signficant: the relationship between X and Y is not significant when we combine direct and indirect effects
+
+- ADE is not significant: the relationship between X and Y is not direct
+
+- ACME is significant: the relationship between X and Y is mediated by M
 
 ```{r}
 fitMedBoot <- mediate(fitM, fitY, boot=TRUE, sims=999, treat="X", mediator="M")

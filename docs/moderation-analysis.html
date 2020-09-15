@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 10 Moderation analysis | Advanced Psychological Research Methods (PSY4034)</title>
+  <title>Topic 11 Moderation analysis | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 10 Moderation analysis | Advanced Psychological Research Methods (PSY4034)" />
+  <meta property="og:title" content="Topic 11 Moderation analysis | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 10 Moderation analysis | Advanced Psychological Research Methods (PSY4034)" />
+  <meta name="twitter:title" content="Topic 11 Moderation analysis | Advanced Psychological Research Methods (PSY4034)" />
   
   <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Christopher J. Wilson" />
 
 
-<meta name="date" content="2020-09-14" />
+<meta name="date" content="2020-09-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,8 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -241,10 +243,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.11" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-axis-labels-and-title-on-a-plot"><i class="fa fa-check"></i><b>6.11</b> Changing the axis labels and title on a plot</a></li>
 <li class="chapter" data-level="6.12" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-legend-on-a-plot"><i class="fa fa-check"></i><b>6.12</b> Changing the legend on a plot</a></li>
 <li class="chapter" data-level="6.13" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#storing-plots-to-be-recalled-later"><i class="fa fa-check"></i><b>6.13</b> Storing plots to be recalled later</a></li>
-<li class="chapter" data-level="6.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#create-plot-and-store-it-as-myplot-object"><i class="fa fa-check"></i><b>6.14</b> Create plot and store it as “myPlot” object</a></li>
-<li class="chapter" data-level="6.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>6.15</b> Recalling a stored plot</a></li>
-<li class="chapter" data-level="6.16" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>6.16</b> Saving plots # 1</a></li>
-<li class="chapter" data-level="6.17" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>6.17</b> Plots can also be saved using code</a></li>
+<li class="chapter" data-level="6.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>6.14</b> Recalling a stored plot</a></li>
+<li class="chapter" data-level="6.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>6.15</b> Saving plots # 1</a></li>
+<li class="chapter" data-level="6.16" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>6.16</b> Plots can also be saved using code</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a><ul>
 <li class="chapter" data-level="7.1" data-path="correlation.html"><a href="correlation.html#what-is-correlation"><i class="fa fa-check"></i><b>7.1</b> What is Correlation?</a></li>
@@ -258,61 +259,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.6" data-path="correlation.html"><a href="correlation.html#check-r-value-correlation-value"><i class="fa fa-check"></i><b>7.3.6</b> Check r Value (correlation value)</a></li>
 <li class="chapter" data-level="7.3.7" data-path="correlation.html"><a href="correlation.html#check-the-significance-of-the-correlation"><i class="fa fa-check"></i><b>7.3.7</b> Check the significance of the correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="correlation.html"><a href="correlation.html#what-is-regression"><i class="fa fa-check"></i><b>7.4</b> What is regression?</a></li>
-<li class="chapter" data-level="7.5" data-path="correlation.html"><a href="correlation.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>7.5</b> How is regression calculated?</a></li>
-<li class="chapter" data-level="7.6" data-path="correlation.html"><a href="correlation.html#the-regression-equation"><i class="fa fa-check"></i><b>7.6</b> The regression equation</a></li>
-<li class="chapter" data-level="7.7" data-path="correlation.html"><a href="correlation.html#running-regression-in-r"><i class="fa fa-check"></i><b>7.7</b> Running regression in R</a></li>
-<li class="chapter" data-level="7.8" data-path="correlation.html"><a href="correlation.html#run-regression"><i class="fa fa-check"></i><b>7.8</b> Run regression</a></li>
-<li class="chapter" data-level="7.9" data-path="correlation.html"><a href="correlation.html#what-are-residuals"><i class="fa fa-check"></i><b>7.9</b> What are residuals?</a></li>
-<li class="chapter" data-level="7.10" data-path="correlation.html"><a href="correlation.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>7.10</b> Check assumptions: distribution</a></li>
-<li class="chapter" data-level="7.11" data-path="correlation.html"><a href="correlation.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>7.11</b> Check assumptions: linearity</a></li>
-<li class="chapter" data-level="7.12" data-path="correlation.html"><a href="correlation.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>7.12</b> Check assumptions: Homogeneity of Variance #1</a></li>
-<li class="chapter" data-level="7.13" data-path="correlation.html"><a href="correlation.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>7.13</b> Check assumptions: Influential cases</a></li>
-<li class="chapter" data-level="7.14" data-path="correlation.html"><a href="correlation.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>7.14</b> Check the r squared value</a></li>
-<li class="chapter" data-level="7.15" data-path="correlation.html"><a href="correlation.html#check-model-significance"><i class="fa fa-check"></i><b>7.15</b> Check model significance</a></li>
-<li class="chapter" data-level="7.16" data-path="correlation.html"><a href="correlation.html#check-coefficient-values"><i class="fa fa-check"></i><b>7.16</b> Check coefficient values</a></li>
-<li class="chapter" data-level="7.17" data-path="correlation.html"><a href="correlation.html#the-regression-equation-1"><i class="fa fa-check"></i><b>7.17</b> The regression equation</a></li>
-<li class="chapter" data-level="7.18" data-path="correlation.html"><a href="correlation.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>7.18</b> Accounting for error in predictions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#by-the-end-of-this-session-you-will-be-able-to"><i class="fa fa-check"></i><b>8.1</b> By the end of this session, you will be able to:</a></li>
-<li class="chapter" data-level="8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>8.2</b> What is multiple regression?</a></li>
-<li class="chapter" data-level="8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#what-are-the-assumptions-of-multiple-regression"><i class="fa fa-check"></i><b>8.3</b> What are the assumptions of Multiple Regression?</a></li>
-<li class="chapter" data-level="8.4" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multicollinearity"><i class="fa fa-check"></i><b>8.4</b> What is multicollinearity?</a></li>
-<li class="chapter" data-level="8.5" data-path="multiple-regression.html"><a href="multiple-regression.html#testing-multicollinearity"><i class="fa fa-check"></i><b>8.5</b> Testing multicollinearity</a></li>
-<li class="chapter" data-level="8.6" data-path="multiple-regression.html"><a href="multiple-regression.html#sample-size-for-multiple-regression"><i class="fa fa-check"></i><b>8.6</b> Sample size for multiple regression</a></li>
-<li class="chapter" data-level="8.7" data-path="multiple-regression.html"><a href="multiple-regression.html#approaches-to-multiple-regression-all-predictors-at-once"><i class="fa fa-check"></i><b>8.7</b> Approaches to multiple regression: All predictors at once</a><ul>
-<li class="chapter" data-level="8.7.1" data-path="multiple-regression.html"><a href="multiple-regression.html#using-categorical-predictors-in-r"><i class="fa fa-check"></i><b>8.7.1</b> Using categorical predictors in R</a></li>
-<li class="chapter" data-level="8.7.2" data-path="multiple-regression.html"><a href="multiple-regression.html#reviewing-the-output"><i class="fa fa-check"></i><b>8.7.2</b> Reviewing the output</a></li>
-<li class="chapter" data-level="8.7.3" data-path="multiple-regression.html"><a href="multiple-regression.html#all-predictors-at-once-testing-interactions"><i class="fa fa-check"></i><b>8.7.3</b> All predictors at once (testing interactions)</a></li>
-<li class="chapter" data-level="8.7.4" data-path="multiple-regression.html"><a href="multiple-regression.html#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><i class="fa fa-check"></i><b>8.7.4</b> Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
-<li class="chapter" data-level="8.7.5" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-computational-selection-of-predictors"><i class="fa fa-check"></i><b>8.7.5</b> Stepwise multiple regression: computational selection of predictors</a></li>
-<li class="chapter" data-level="8.7.6" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><i class="fa fa-check"></i><b>8.7.6</b> Stepwise multiple regression: loading the MASS package and run the full model</a></li>
-<li class="chapter" data-level="8.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>8.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
-<li class="chapter" data-level="8.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>8.7.8</b> Stepwise multiple regression: Display the best model</a></li>
+<li class="chapter" data-level="8" data-path="simple-regression.html"><a href="simple-regression.html"><i class="fa fa-check"></i><b>8</b> Simple Regression</a><ul>
+<li class="chapter" data-level="8.1" data-path="simple-regression.html"><a href="simple-regression.html#what-is-regression"><i class="fa fa-check"></i><b>8.1</b> What is regression?</a></li>
+<li class="chapter" data-level="8.2" data-path="simple-regression.html"><a href="simple-regression.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>8.2</b> How is regression calculated?</a></li>
+<li class="chapter" data-level="8.3" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation"><i class="fa fa-check"></i><b>8.3</b> The regression equation</a></li>
+<li class="chapter" data-level="8.4" data-path="simple-regression.html"><a href="simple-regression.html#running-regression-in-r"><i class="fa fa-check"></i><b>8.4</b> Running regression in R</a></li>
+<li class="chapter" data-level="8.5" data-path="simple-regression.html"><a href="simple-regression.html#run-regression"><i class="fa fa-check"></i><b>8.5</b> Run regression</a></li>
+<li class="chapter" data-level="8.6" data-path="simple-regression.html"><a href="simple-regression.html#what-are-residuals"><i class="fa fa-check"></i><b>8.6</b> What are residuals?</a></li>
+<li class="chapter" data-level="8.7" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>8.7</b> Check assumptions: distribution</a></li>
+<li class="chapter" data-level="8.8" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>8.8</b> Check assumptions: linearity</a></li>
+<li class="chapter" data-level="8.9" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>8.9</b> Check assumptions: Homogeneity of Variance #1</a></li>
+<li class="chapter" data-level="8.10" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>8.10</b> Check assumptions: Influential cases</a></li>
+<li class="chapter" data-level="8.11" data-path="simple-regression.html"><a href="simple-regression.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>8.11</b> Check the r squared value</a></li>
+<li class="chapter" data-level="8.12" data-path="simple-regression.html"><a href="simple-regression.html#check-model-significance"><i class="fa fa-check"></i><b>8.12</b> Check model significance</a></li>
+<li class="chapter" data-level="8.13" data-path="simple-regression.html"><a href="simple-regression.html#check-coefficient-values"><i class="fa fa-check"></i><b>8.13</b> Check coefficient values</a></li>
+<li class="chapter" data-level="8.14" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation-1"><i class="fa fa-check"></i><b>8.14</b> The regression equation</a></li>
+<li class="chapter" data-level="8.15" data-path="simple-regression.html"><a href="simple-regression.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>8.15</b> Accounting for error in predictions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>8.8</b> Using regression with categorical predictors (more information)</a><ul>
-<li class="chapter" data-level="8.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>8.8.1</b> ANOVA Approach</a></li>
-<li class="chapter" data-level="8.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>8.8.2</b> Regression approach</a></li>
-<li class="chapter" data-level="8.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.8.3</b> Interpreting regression output</a></li>
+<li class="chapter" data-level="9" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>9</b> Multiple Regression</a><ul>
+<li class="chapter" data-level="9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#by-the-end-of-this-session-you-will-be-able-to"><i class="fa fa-check"></i><b>9.1</b> By the end of this session, you will be able to:</a></li>
+<li class="chapter" data-level="9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>9.2</b> What is multiple regression?</a></li>
+<li class="chapter" data-level="9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#what-are-the-assumptions-of-multiple-regression"><i class="fa fa-check"></i><b>9.3</b> What are the assumptions of Multiple Regression?</a></li>
+<li class="chapter" data-level="9.4" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multicollinearity"><i class="fa fa-check"></i><b>9.4</b> What is multicollinearity?</a></li>
+<li class="chapter" data-level="9.5" data-path="multiple-regression.html"><a href="multiple-regression.html#testing-multicollinearity"><i class="fa fa-check"></i><b>9.5</b> Testing multicollinearity</a></li>
+<li class="chapter" data-level="9.6" data-path="multiple-regression.html"><a href="multiple-regression.html#sample-size-for-multiple-regression"><i class="fa fa-check"></i><b>9.6</b> Sample size for multiple regression</a></li>
+<li class="chapter" data-level="9.7" data-path="multiple-regression.html"><a href="multiple-regression.html#approaches-to-multiple-regression-all-predictors-at-once"><i class="fa fa-check"></i><b>9.7</b> Approaches to multiple regression: All predictors at once</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="multiple-regression.html"><a href="multiple-regression.html#using-categorical-predictors-in-r"><i class="fa fa-check"></i><b>9.7.1</b> Using categorical predictors in R</a></li>
+<li class="chapter" data-level="9.7.2" data-path="multiple-regression.html"><a href="multiple-regression.html#reviewing-the-output"><i class="fa fa-check"></i><b>9.7.2</b> Reviewing the output</a></li>
+<li class="chapter" data-level="9.7.3" data-path="multiple-regression.html"><a href="multiple-regression.html#all-predictors-at-once-testing-interactions"><i class="fa fa-check"></i><b>9.7.3</b> All predictors at once (testing interactions)</a></li>
+<li class="chapter" data-level="9.7.4" data-path="multiple-regression.html"><a href="multiple-regression.html#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><i class="fa fa-check"></i><b>9.7.4</b> Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
+<li class="chapter" data-level="9.7.5" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-computational-selection-of-predictors"><i class="fa fa-check"></i><b>9.7.5</b> Stepwise multiple regression: computational selection of predictors</a></li>
+<li class="chapter" data-level="9.7.6" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><i class="fa fa-check"></i><b>9.7.6</b> Stepwise multiple regression: loading the MASS package and run the full model</a></li>
+<li class="chapter" data-level="9.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>9.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
+<li class="chapter" data-level="9.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>9.7.8</b> Stepwise multiple regression: Display the best model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>9.8</b> Using regression with categorical predictors (more information)</a><ul>
+<li class="chapter" data-level="9.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>9.8.1</b> ANOVA Approach</a></li>
+<li class="chapter" data-level="9.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>9.8.2</b> Regression approach</a></li>
+<li class="chapter" data-level="9.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>9.8.3</b> Interpreting regression output</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="mediation-analysis.html"><a href="mediation-analysis.html"><i class="fa fa-check"></i><b>9</b> Mediation analysis</a></li>
-<li class="chapter" data-level="10" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>10</b> Moderation analysis</a><ul>
-<li class="chapter" data-level="10.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a></li>
-<li class="chapter" data-level="10.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>10.2</b> What is moderation?</a></li>
-<li class="chapter" data-level="10.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>10.3</b> What packages do we need?</a></li>
-<li class="chapter" data-level="10.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>10.4</b> What is moderation?</a></li>
-<li class="chapter" data-level="10.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>10.5</b> Moderation: step-by-step</a><ul>
-<li class="chapter" data-level="10.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>10.5.1</b> Step 1: Grand Mean Centering</a></li>
-<li class="chapter" data-level="10.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>10.5.2</b> Step 2: Check assumptions</a></li>
-<li class="chapter" data-level="10.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>10.5.3</b> Step 3: Moderation Analysis</a></li>
-<li class="chapter" data-level="10.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>10.5.4</b> Step 4: Bootstrapping</a></li>
+<li class="chapter" data-level="10" data-path="mediation-analysis.html"><a href="mediation-analysis.html"><i class="fa fa-check"></i><b>10</b> Mediation analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a></li>
+<li class="chapter" data-level="10.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-mediation"><i class="fa fa-check"></i><b>10.2</b> What is mediation?</a></li>
+<li class="chapter" data-level="10.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>10.3</b> What is moderation?</a></li>
+<li class="chapter" data-level="10.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#why-different-models"><i class="fa fa-check"></i><b>10.4</b> Why different models?</a></li>
+<li class="chapter" data-level="10.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-1"><i class="fa fa-check"></i><b>10.5</b> Mediation analysis</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-a-mediation-design"><i class="fa fa-check"></i><b>10.5.1</b> What is a mediation design?</a></li>
+<li class="chapter" data-level="10.5.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-mediation-analysis"><i class="fa fa-check"></i><b>10.5.2</b> What is mediation analysis?</a></li>
+<li class="chapter" data-level="10.5.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>10.5.3</b> What packages do we need?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-the-baron-and-kenny-approach"><i class="fa fa-check"></i><b>10.6</b> Mediation analysis (the Baron and Kenny Approach)</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#conducting-mediation-analysis-the-baron-and-kenny-approach"><i class="fa fa-check"></i><b>10.6.1</b> Conducting mediation analysis (the Baron and Kenny Approach)</a></li>
+<li class="chapter" data-level="10.6.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-1-total-effect"><i class="fa fa-check"></i><b>10.6.2</b> Step 1: Total Effect</a></li>
+<li class="chapter" data-level="10.6.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-path-a-x-on-m"><i class="fa fa-check"></i><b>10.6.3</b> Step 2: Path A (X on M)</a></li>
+<li class="chapter" data-level="10.6.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3-path-b-m-on-y-controlling-for-x"><i class="fa fa-check"></i><b>10.6.4</b> Step 3: Path B (M on Y, controlling for X)</a></li>
+<li class="chapter" data-level="10.6.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-4-reversed-path-c-y-on-x-controlling-for-m"><i class="fa fa-check"></i><b>10.6.5</b> Step 4: Reversed Path C (Y on X, controlling for M)</a></li>
+<li class="chapter" data-level="10.6.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#viewing-output"><i class="fa fa-check"></i><b>10.6.6</b> Viewing output</a></li>
+<li class="chapter" data-level="10.6.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#interpreting-baron-and-kenny-approach"><i class="fa fa-check"></i><b>10.6.7</b> Interpreting Baron and Kenny approach</a></li>
+<li class="chapter" data-level="10.6.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#running-the-sobel-test"><i class="fa fa-check"></i><b>10.6.8</b> Running the Sobel test</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-the-mediation-package"><i class="fa fa-check"></i><b>10.7</b> Mediation analysis (the Mediation package)</a><ul>
+<li class="chapter" data-level="10.7.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#preacher-hayes-2004-mediation-approach"><i class="fa fa-check"></i><b>10.7.1</b> Preacher &amp; Hayes (2004) mediation approach</a></li>
+<li class="chapter" data-level="10.7.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-bootstrapping"><i class="fa fa-check"></i><b>10.7.2</b> What is bootstrapping?</a></li>
+<li class="chapter" data-level="10.7.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-example"><i class="fa fa-check"></i><b>10.7.3</b> Mediation example</a></li>
+<li class="chapter" data-level="10.7.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-1-run-the-models"><i class="fa fa-check"></i><b>10.7.4</b> Step 1: Run the models</a></li>
+<li class="chapter" data-level="10.7.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>10.7.5</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="10.7.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3.1-run-the-mediation-analysis-on-the-models"><i class="fa fa-check"></i><b>10.7.6</b> Step 3.1: Run the mediation analysis on the models</a></li>
+<li class="chapter" data-level="10.7.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3.2-plot-the-mediation-analysis-of-the-models"><i class="fa fa-check"></i><b>10.7.7</b> Step 3.2: Plot the mediation analysis of the models</a></li>
+<li class="chapter" data-level="10.7.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-4-bootstrap-the-mediation-model"><i class="fa fa-check"></i><b>10.7.8</b> Step 4: Bootstrap the mediation model</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#references"><i class="fa fa-check"></i><b>10.8</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a><ul>
+<li class="chapter" data-level="11.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview-1"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
+<li class="chapter" data-level="11.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need-1"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-2"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>11.5</b> Moderation: step-by-step</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>11.5.1</b> Step 1: Grand Mean Centering</a></li>
+<li class="chapter" data-level="11.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions-1"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="11.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>11.5.3</b> Step 3: Moderation Analysis</a></li>
+<li class="chapter" data-level="11.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>11.5.4</b> Step 4: Bootstrapping</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -331,11 +364,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="moderation-analysis" class="section level1">
-<h1><span class="header-section-number">Section 10</span> Moderation analysis</h1>
+<h1><span class="header-section-number">Topic 11</span> Moderation analysis</h1>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=09a0be72-eb78-4740-a5f2-ac3600b4db58&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">10.1</span> Overview</h2>
+<div id="overview-1" class="section level2">
+<h2><span class="header-section-number">11.1</span> Overview</h2>
 <ul>
 <li>What is moderation?</li>
 <li>Moderation analysis in more detail</li>
@@ -345,15 +378,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Bootstrapping Moderation</li>
 </ul>
 </div>
-<div id="what-is-moderation" class="section level2">
-<h2><span class="header-section-number">10.2</span> What is moderation?</h2>
+<div id="what-is-moderation-1" class="section level2">
+<h2><span class="header-section-number">11.2</span> What is moderation?</h2>
 <p>There is a direct relationship between X and Y but it is affected by a moderator (M)</p>
-<div id="htmlwidget-896c652887804f75c1e7" style="width:672px;height:75%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-896c652887804f75c1e7">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \" \",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"SES\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"1,1!\"] \n  \"2\" [label = \"Educational \n opportunities\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,2!\"] \n  \"3\" [label = \"\", shape = \"point\", width = \"0\", height = \"0\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,1!\"] \n  \"4\" [label = \"Future prospects\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"5,1!\"] \n\"1\"->\"4\" [color = \"black\", fontsize = \"16\"] \n\"2\"->\"3\" [color = \"black\", fontsize = \"16\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-87fe30de44a6954bec89" style="width:672px;height:75%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-87fe30de44a6954bec89">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \" \",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"SES\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"1,1!\"] \n  \"2\" [label = \"Educational \n opportunities\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,2!\"] \n  \"3\" [label = \"\", shape = \"point\", width = \"0\", height = \"0\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,1!\"] \n  \"4\" [label = \"Future prospects\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"5,1!\"] \n\"1\"->\"4\" [color = \"black\", fontsize = \"16\"] \n\"2\"->\"3\" [color = \"black\", fontsize = \"16\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>In the above model, we theorise that socio-economic status predicts future prospects but the strength of the relationship is changed by education level</p>
 </div>
-<div id="what-packages-do-we-need" class="section level2">
-<h2><span class="header-section-number">10.3</span> What packages do we need?</h2>
+<div id="what-packages-do-we-need-1" class="section level2">
+<h2><span class="header-section-number">11.3</span> What packages do we need?</h2>
 <ul>
 <li><strong>gvlma</strong> (for checking assumptions)</li>
 <li><strong>interactions</strong> (for generating interaction plot)</li>
@@ -361,15 +394,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>car</strong> (includes a <strong>Boot()</strong> function to bootstrap regression models )</li>
 </ul>
 </div>
-<div id="what-is-moderation-1" class="section level2">
-<h2><span class="header-section-number">10.4</span> What is moderation?</h2>
+<div id="what-is-moderation-2" class="section level2">
+<h2><span class="header-section-number">11.4</span> What is moderation?</h2>
 <ul>
 <li>The relationship between a predictor (X) and outcome (Y) is affected by another variable (M)</li>
 <li>This is referred to as an interaction (similar to interaction in standard regression)</li>
 <li>A moderator can effect the direction and/or strength of a relationship between X and Y</li>
 </ul>
-<div id="htmlwidget-4d8bd9477e2807b8c833" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4d8bd9477e2807b8c833">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \" \",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"SES\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"1,1!\"] \n  \"2\" [label = \"Educational \n opportunities\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,2!\"] \n  \"3\" [label = \"\", shape = \"point\", width = \"0\", height = \"0\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,1!\"] \n  \"4\" [label = \"Future prospects\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"5,1!\"] \n\"1\"->\"4\" [color = \"black\", fontsize = \"16\"] \n\"2\"->\"3\" [color = \"black\", fontsize = \"16\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bddcdd7bc0f92e8d46be" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bddcdd7bc0f92e8d46be">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \" \",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"SES\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"1,1!\"] \n  \"2\" [label = \"Educational \n opportunities\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,2!\"] \n  \"3\" [label = \"\", shape = \"point\", width = \"0\", height = \"0\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"3,1!\"] \n  \"4\" [label = \"Future prospects\", shape = \"rectangle\", width = \"1.5\", height = \"1\", fontsize = \"12\", color = \"black\", fontcolor = \"black\", fillcolor = \"#FFFFFF\", pos = \"5,1!\"] \n\"1\"->\"4\" [color = \"black\", fontsize = \"16\"] \n\"2\"->\"3\" [color = \"black\", fontsize = \"16\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Here we might find that the relationship between SES and employment prospects is strong for those who do not spend a lot of time in education and weak for those who spend a lot of time in education.</p>
 <ul>
 <li><p>Very similar to multiple regression</p>
@@ -377,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Moderation analysis includes X, Z and the interaction between X and Z</p></li>
 <li><p>If we find a moderation effect it becomes the focus of our analysis (the independent role of X and Z becomes less important)</p></li>
 </ul>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-3-1.png" width="60%" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-119-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>In the plot above:</p>
 <ul>
 <li>The blue line is the “standard” regression line</li>
@@ -386,9 +419,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="moderation-step-by-step" class="section level2">
-<h2><span class="header-section-number">10.5</span> Moderation: step-by-step</h2>
+<h2><span class="header-section-number">11.5</span> Moderation: step-by-step</h2>
 <div id="step-1-grand-mean-centering" class="section level3">
-<h3><span class="header-section-number">10.5.1</span> Step 1: Grand Mean Centering</h3>
+<h3><span class="header-section-number">11.5.1</span> Step 1: Grand Mean Centering</h3>
 <ul>
 <li>Regression coefficients (b values) are based on predicting Y when X = 0</li>
 <li>Not all measures actually have a zero value</li>
@@ -399,13 +432,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>This is similar to z-score (i.e. a standardised score)</li>
 </ul>
 <p>To do this in R, we can use the <strong>scale()</strong> function:</p>
-<pre><code>Xc    &lt;- scale(X, center=TRUE, scale=FALSE) #Centering X; 
-Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="moderation-analysis.html#cb181-1"></a>    Xc    &lt;-<span class="st"> </span><span class="kw">scale</span>(X, <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">FALSE</span>) <span class="co">#Centering X; </span></span>
+<span id="cb181-2"><a href="moderation-analysis.html#cb181-2"></a>    Mc    &lt;-<span class="st"> </span><span class="kw">scale</span>(M,  <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">FALSE</span>) <span class="co">#Centering M;</span></span></code></pre></div>
 <p>We then use the centred data in our analysis</p>
 <p>We can see that the difference between the original data is the mean of the data.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="moderation-analysis.html#cb2-1"></a>  Xc    &lt;-<span class="st"> </span><span class="kw">scale</span>(X, <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">FALSE</span>) <span class="co">#Centering X; </span></span>
-<span id="cb2-2"><a href="moderation-analysis.html#cb2-2"></a>  </span>
-<span id="cb2-3"><a href="moderation-analysis.html#cb2-3"></a>  X</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="moderation-analysis.html#cb182-1"></a>  Xc    &lt;-<span class="st"> </span><span class="kw">scale</span>(X, <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">FALSE</span>) <span class="co">#Centering X; </span></span>
+<span id="cb182-2"><a href="moderation-analysis.html#cb182-2"></a>  </span>
+<span id="cb182-3"><a href="moderation-analysis.html#cb182-3"></a>  X</span></code></pre></div>
 <pre><code>##   [1]  3.7580974  5.0792900 12.2348333  6.2820336  6.5171509 12.8602599  7.8436648  0.9397551
 ##   [9]  3.2525886  4.2173521 10.8963272  7.4392553  7.6030858  6.4427309  3.7766355 13.1476525
 ##  [17]  7.9914019  1.8664686  8.8054236  4.1088344  1.7287052  5.1281003  1.8959822  3.0844351
@@ -419,120 +452,24 @@ Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
 ##  [81]  6.0230567  7.5411216  4.5173599  8.5775062  5.1180538  7.3271279 10.3873561  7.7407260
 ##  [89]  4.6962737 10.5952305  9.9740154  8.1935878  6.9549269  3.4883757 11.4426098  3.5989617
 ##  [97] 14.7493320 12.1304425  5.0571986  1.8943164</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="moderation-analysis.html#cb4-1"></a>  Xc</span></code></pre></div>
-<pre><code>##               [,1]
-##   [1,] -2.72442479
-##   [2,] -1.40323216
-##   [3,]  5.75231105
-##   [4,] -0.20048864
-##   [5,]  0.03462873
-##   [6,]  6.37773774
-##   [7,]  1.36114262
-##   [8,] -5.54276714
-##   [9,] -3.22993361
-##  [10,] -2.26517009
-##  [11,]  4.41380498
-##  [12,]  0.95673310
-##  [13,]  1.12056360
-##  [14,] -0.03979134
-##  [15,] -2.70588675
-##  [16,]  6.66513034
-##  [17,]  1.50887971
-##  [18,] -4.61605358
-##  [19,]  2.32290140
-##  [20,] -2.37368784
-##  [21,] -4.75381703
-##  [22,] -1.35442186
-##  [23,] -4.58654000
-##  [24,] -3.39808712
-##  [25,] -2.98267928
-##  [26,] -5.73574896
-##  [27,]  2.86862597
-##  [28,]  0.13097027
-##  [29,] -5.03506995
-##  [30,]  4.53273748
-##  [31,]  1.22333468
-##  [32,] -1.66280814
-##  [33,]  3.09798044
-##  [34,]  3.03001174
-##  [35,]  2.80380212
-##  [36,]  2.27203881
-##  [37,]  1.73314841
-##  [38,] -0.73016905
-##  [39,] -1.70637286
-##  [40,] -2.00440621
-##  [41,] -3.26135012
-##  [42,] -1.31419132
-##  [43,] -5.54410761
-##  [44,]  8.19330166
-##  [45,]  4.34932579
-##  [46,] -4.97495654
-##  [47,] -2.09406155
-##  [48,] -2.34914362
-##  [49,]  2.63733827
-##  [50,] -0.81599847
-##  [51,]  0.53075185
-##  [52,] -0.59670923
-##  [53,] -0.65400404
-##  [54,]  4.99188693
-##  [55,] -1.38560615
-##  [56,]  5.58336021
-##  [57,] -6.28751099
-##  [58,]  1.85593279
-##  [59,]  0.01289477
-##  [60,]  0.38124407
-##  [61,]  1.03603572
-##  [62,] -2.49181602
-##  [63,] -1.81535174
-##  [64,] -4.55682374
-##  [65,] -4.76968711
-##  [66,]  0.73159236
-##  [67,]  1.31031691
-##  [68,] -0.27050530
-##  [69,]  3.20654767
-##  [70,]  7.71781654
-##  [71,] -2.44664687
-##  [72,] -3.24584670
-##  [73,]  3.54043189
-##  [74,] -3.31932526
-##  [75,] -3.23455667
-##  [76,]  3.61976327
-##  [77,] -1.62161423
-##  [78,] -5.36539306
-##  [79,]  0.24269171
-##  [80,] -1.03808766
-##  [81,] -0.45946546
-##  [82,]  1.05859940
-##  [83,] -1.96516233
-##  [84,]  2.09498399
-##  [85,] -1.36446845
-##  [86,]  0.84460565
-##  [87,]  3.90483385
-##  [88,]  1.25820376
-##  [89,] -1.78624855
-##  [90,]  4.11270827
-##  [91,]  3.49149322
-##  [92,]  1.71106563
-##  [93,]  0.47240473
-##  [94,] -2.99414651
-##  [95,]  4.96008759
-##  [96,] -2.88356055
-##  [97,]  8.26680977
-##  [98,]  5.64792030
-##  [99,] -1.42532364
-## [100,] -4.58820581
-## attr(,&quot;scaled:center&quot;)
-## [1] 6.482522</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="moderation-analysis.html#cb6-1"></a>   <span class="kw">mean</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="moderation-analysis.html#cb184-1"></a>  <span class="kw">head</span>(Xc)</span></code></pre></div>
+<pre><code>##             [,1]
+## [1,] -2.72442479
+## [2,] -1.40323216
+## [3,]  5.75231105
+## [4,] -0.20048864
+## [5,]  0.03462873
+## [6,]  6.37773774</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="moderation-analysis.html#cb186-1"></a>   <span class="kw">mean</span>(X)</span></code></pre></div>
 <pre><code>## [1] 6.482522</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="moderation-analysis.html#cb8-1"></a>  X[<span class="dv">1</span>]<span class="op">-</span>Xc[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="moderation-analysis.html#cb188-1"></a>  X[<span class="dv">1</span>]<span class="op">-</span>Xc[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 6.482522</code></pre>
 </div>
-<div id="step-2-check-assumptions" class="section level3">
-<h3><span class="header-section-number">10.5.2</span> Step 2: Check assumptions</h3>
+<div id="step-2-check-assumptions-1" class="section level3">
+<h3><span class="header-section-number">11.5.2</span> Step 2: Check assumptions</h3>
 <p>We can use the gvlma function to check regression assumptions</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="moderation-analysis.html#cb10-1"></a><span class="kw">library</span>(gvlma)</span>
-<span id="cb10-2"><a href="moderation-analysis.html#cb10-2"></a><span class="kw">gvlma</span>(fitMod)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="moderation-analysis.html#cb190-1"></a><span class="kw">library</span>(gvlma)</span>
+<span id="cb190-2"><a href="moderation-analysis.html#cb190-2"></a><span class="kw">gvlma</span>(fitMod)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Y ~ Xc + Mc + Xc * Mc, data = Moddata)
@@ -558,9 +495,9 @@ Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
 <p>The data looks skewed, we should transform it or perhaps use bootstrapping</p>
 </div>
 <div id="step-3-moderation-analysis" class="section level3">
-<h3><span class="header-section-number">10.5.3</span> Step 3: Moderation Analysis</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="moderation-analysis.html#cb12-1"></a>fitMod &lt;-<span class="st"> </span><span class="kw">lm</span>(Y <span class="op">~</span><span class="st"> </span>Xc <span class="op">+</span><span class="st"> </span>Mc <span class="op">+</span><span class="st"> </span>Xc<span class="op">*</span>Mc, <span class="dt">data =</span> Moddata) <span class="co">#Model interacts IV &amp; moderator</span></span>
-<span id="cb12-2"><a href="moderation-analysis.html#cb12-2"></a><span class="kw">summary</span>(fitMod)</span></code></pre></div>
+<h3><span class="header-section-number">11.5.3</span> Step 3: Moderation Analysis</h3>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="moderation-analysis.html#cb192-1"></a>fitMod &lt;-<span class="st"> </span><span class="kw">lm</span>(Y <span class="op">~</span><span class="st"> </span>Xc <span class="op">+</span><span class="st"> </span>Mc <span class="op">+</span><span class="st"> </span>Xc<span class="op">*</span>Mc, <span class="dt">data =</span> Moddata) <span class="co">#Model interacts IV &amp; moderator</span></span>
+<span id="cb192-2"><a href="moderation-analysis.html#cb192-2"></a><span class="kw">summary</span>(fitMod)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Y ~ Xc + Mc + Xc * Mc, data = Moddata)
@@ -583,15 +520,15 @@ Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
 ## F-statistic: 13.13 on 3 and 96 DF,  p-value: 2.97e-07</code></pre>
 <p>The results above show that there is a moderated effect</p>
 <div id="visualising-the-moderation-effect" class="section level4">
-<h4><span class="header-section-number">10.5.3.1</span> Visualising the moderation effect</h4>
+<h4><span class="header-section-number">11.5.3.1</span> Visualising the moderation effect</h4>
 <p>We use an approach called <strong>simple slopes</strong> to visualise the moderation effect</p>
-<pre><code>interact_plot(fitMod, pred = Xc, modx = Mc)</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>interact_plot(fitMod, pred = Xc, modx = Mc)</p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-124-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>The <strong>rockchalk</strong> package includes useful functions for visualising simple slopes</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="moderation-analysis.html#cb15-1"></a><span class="kw">library</span>(rockchalk)</span>
-<span id="cb15-2"><a href="moderation-analysis.html#cb15-2"></a></span>
-<span id="cb15-3"><a href="moderation-analysis.html#cb15-3"></a>mod1 &lt;-<span class="st"> </span><span class="kw">lm</span>(Y <span class="op">~</span>Mc<span class="op">*</span>Xc, <span class="dt">data =</span> Moddata)</span>
-<span id="cb15-4"><a href="moderation-analysis.html#cb15-4"></a><span class="kw">summary</span>(fitMod)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="moderation-analysis.html#cb194-1"></a><span class="kw">library</span>(rockchalk)</span>
+<span id="cb194-2"><a href="moderation-analysis.html#cb194-2"></a></span>
+<span id="cb194-3"><a href="moderation-analysis.html#cb194-3"></a>mod1 &lt;-<span class="st"> </span><span class="kw">lm</span>(Y <span class="op">~</span>Mc<span class="op">*</span>Xc, <span class="dt">data =</span> Moddata)</span>
+<span id="cb194-4"><a href="moderation-analysis.html#cb194-4"></a><span class="kw">summary</span>(fitMod)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Y ~ Xc + Mc + Xc * Mc, data = Moddata)
@@ -612,31 +549,31 @@ Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
 ## Residual standard error: 11.93 on 96 degrees of freedom
 ## Multiple R-squared:  0.2909, Adjusted R-squared:  0.2687 
 ## F-statistic: 13.13 on 3 and 96 DF,  p-value: 2.97e-07</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="moderation-analysis.html#cb17-1"></a>slopes &lt;-<span class="st"> </span><span class="kw">plotSlopes</span>(fitMod, <span class="dt">modx =</span> <span class="st">&quot;Mc&quot;</span>, <span class="dt">plotx =</span> <span class="st">&quot;Xc&quot;</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="moderation-analysis.html#cb18-1"></a>testSlopes &lt;-<span class="st"> </span><span class="kw">testSlopes</span>(slopes)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="moderation-analysis.html#cb196-1"></a>slopes &lt;-<span class="st"> </span><span class="kw">plotSlopes</span>(fitMod, <span class="dt">modx =</span> <span class="st">&quot;Mc&quot;</span>, <span class="dt">plotx =</span> <span class="st">&quot;Xc&quot;</span>)</span></code></pre></div>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-125-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="moderation-analysis.html#cb197-1"></a>testSlopes &lt;-<span class="st"> </span><span class="kw">testSlopes</span>(slopes)</span></code></pre></div>
 <pre><code>## Values of Mc OUTSIDE this interval:
 ##           lo           hi 
 ## -2210.011369     7.290036 
 ## cause the slope of (b1 + b2*Mc)Xc to be statistically significant</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="moderation-analysis.html#cb20-1"></a><span class="kw">plot</span>(testSlopes)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="moderation-analysis.html#cb199-1"></a><span class="kw">plot</span>(testSlopes)</span></code></pre></div>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-125-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="step-4-bootstrapping" class="section level3">
-<h3><span class="header-section-number">10.5.4</span> Step 4: Bootstrapping</h3>
+<h3><span class="header-section-number">11.5.4</span> Step 4: Bootstrapping</h3>
 <p>The <strong>car</strong> package includes a function to bootstrap regression</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="moderation-analysis.html#cb21-1"></a><span class="kw">library</span>(car)</span>
-<span id="cb21-2"><a href="moderation-analysis.html#cb21-2"></a></span>
-<span id="cb21-3"><a href="moderation-analysis.html#cb21-3"></a>bootstrapModel &lt;-<span class="st"> </span><span class="kw">Boot</span>(fitMod, <span class="dt">R=</span><span class="dv">999</span>)</span>
-<span id="cb21-4"><a href="moderation-analysis.html#cb21-4"></a></span>
-<span id="cb21-5"><a href="moderation-analysis.html#cb21-5"></a><span class="kw">confint</span>(fitMod)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="moderation-analysis.html#cb200-1"></a><span class="kw">library</span>(car)</span>
+<span id="cb200-2"><a href="moderation-analysis.html#cb200-2"></a></span>
+<span id="cb200-3"><a href="moderation-analysis.html#cb200-3"></a>bootstrapModel &lt;-<span class="st"> </span><span class="kw">Boot</span>(fitMod, <span class="dt">R=</span><span class="dv">999</span>)</span>
+<span id="cb200-4"><a href="moderation-analysis.html#cb200-4"></a></span>
+<span id="cb200-5"><a href="moderation-analysis.html#cb200-5"></a><span class="kw">confint</span>(fitMod)</span></code></pre></div>
 <pre><code>##                  2.5 %        97.5 %
 ## (Intercept) 30.7650397 35.5363842663
 ## Xc          -0.9550230  0.4635440922
 ## Mc          -1.2681029 -0.6360294935
 ## Xc:Mc       -0.1683425 -0.0001632251</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="moderation-analysis.html#cb23-1"></a><span class="kw">confint</span>(bootstrapModel)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="moderation-analysis.html#cb202-1"></a><span class="kw">confint</span>(bootstrapModel)</span></code></pre></div>
 <pre><code>## Bootstrap bca confidence intervals
 ## 
 ##                  2.5 %      97.5 %
@@ -644,7 +581,7 @@ Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
 ## Xc          -0.9351717  0.38542382
 ## Mc          -1.2381687 -0.66465099
 ## Xc:Mc       -0.1749438 -0.01361759</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="moderation-analysis.html#cb25-1"></a><span class="kw">summary</span>(bootstrapModel)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="moderation-analysis.html#cb204-1"></a><span class="kw">summary</span>(bootstrapModel)</span></code></pre></div>
 <pre><code>## 
 ## Number of bootstrap replications R = 999 
 ##              original    bootBias  bootSE   bootMed
@@ -652,8 +589,8 @@ Mc    &lt;- scale(M,  center=TRUE, scale=FALSE) #Centering M;</code></pre>
 ## Xc          -0.245739  0.01004465 0.34117 -0.233827
 ## Mc          -0.952066  0.00608159 0.14915 -0.941268
 ## Xc:Mc       -0.084253 -0.00086089 0.03861 -0.083022</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="moderation-analysis.html#cb27-1"></a><span class="kw">hist</span>(bootstrapModel)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="moderation-analysis.html#cb206-1"></a><span class="kw">hist</span>(bootstrapModel)</span></code></pre></div>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-126-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -681,8 +618,8 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
-"twitter": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
@@ -714,6 +651,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -136,8 +136,12 @@ In the plot above:
 
 To do this in R, we can use the **scale()** function:
 
+```{r}
     Xc    <- scale(X, center=TRUE, scale=FALSE) #Centering X; 
     Mc    <- scale(M,  center=TRUE, scale=FALSE) #Centering M;
+```
+
+
     
 We then use the centred data in our analysis
 
@@ -148,7 +152,8 @@ We can see that the difference between the original data is the mean of the data
   
   X
  
-  Xc
+  head(Xc)
+  
    mean(X)
   X[1]-Xc[1]
   
