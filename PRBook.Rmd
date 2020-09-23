@@ -1,3 +1,74 @@
+--- 
+title: "Advanced Psychological Research Methods (PSY4034)"
+author: "Christopher J. Wilson"
+date: 'September 2020'
+description: This is a handbook for postgraduate research methods courses in the psychology department at Teesside University.
+documentclass: book
+link-citations: yes
+bibliography:
+- book.bib
+- packages.bib
+site: bookdown::bookdown_site
+biblio-style: apalike
+css: style.css
+---
+
+# Welcome to the module
+
+Placeholder
+
+
+## Module Overview
+## Module timetable and delivery for 2020/2021
+### Learning and Teaching Strategies
+### How will the online sessions work?
+## Assessment
+### Formative assessment
+### Summative Assessments 
+### Word limits for assessment
+### Submitting work
+### A note about referencing
+## Statistical analysis software
+### Downloading R and R Studio
+## Academic Support and Guidance
+### Module Team Contact Details
+## Considering your thesis
+
+<!--chapter:end:index.Rmd-->
+
+
+# Research Methods Concepts Revision
+
+Placeholder
+
+
+## Basic concepts that you should already know
+## Probability and hypothesis testing
+## Variance in sample data influences our confidence in population estimates
+## We can use confidence intervals to make educated guesses about the population mean
+## We can also make confidence intervals of differences between means
+## The null hypothesis and statistical significance
+
+<!--chapter:end:01_Research_Methods_Revision.Rmd-->
+
+
+# Introduction to R and R Studio
+
+Placeholder
+
+
+## By the end of this section, you should be able to:
+## Why learn / use R?
+### Some information about R
+### Moving from other software to R
+## R has many advantages
+## Download R and R Studio
+## The R Studio environment
+## Working with a script
+## Installing and loading packages
+
+<!--chapter:end:02_introductiontoR.Rmd-->
+
 
 # Working with data in R
 
@@ -232,4 +303,184 @@ We could do the following:
 ```{r}
 happinessSample %>% mutate(difference = happiness - mean(happiness))
 ```
+
+
+<!--chapter:end:02_workingWithData.Rmd-->
+
+
+# Exploratory and descriptive analysis with R 
+
+Placeholder
+
+
+## Working example - record sales data
+## Let's make sure our data types are correct #1 {.smaller}
+## Measures of central tendency
+### Mean {.smaller}
+### Trimmed mean {.smaller}
+### Median {.smaller}
+### Mode {.smaller}
+## Measures of dispresion or variance {.smaller}
+### Range  {.smaller}
+### Interquartile range {.smaller}
+### Variance {.smaller}
+### Standard deviation {.smaller}
+## Skewness and Kurtosis {.smaller}
+### Assessing skewness of distribution #1
+### Assessing skewness of distribution #2 {.smaller}
+### Kurtosis {.smaller}
+### Assessing normality of distribution {.smaller}
+## Getting and overall summary {.smaller}
+### summary() - in "base R" {.smaller}
+### describe() - in the "psych" package #1 {.smaller}
+### describe() - in the "psych" package #2 {.smaller}
+## Basic statistical tests (more detail in later sections)
+### Corrleation {.smaller}
+### Tests of difference - t-test {.smaller}
+### Tests of difference - ANOVA {.smaller}
+
+<!--chapter:end:03_descriptives.Rmd-->
+
+
+# Graphing and data visualisation with R
+
+Placeholder
+
+
+## Presenting data visually
+## By the end of this section, you will be able to:
+## The "grammar of visualisation"
+## How to code a graph
+## The graph output
+## Changing the geoms leads to different visualisations
+## It is possible to represent more variables on the plot
+## It is possible to represent more variables on the plot #2
+## It is possible to represent more variables on the plot #3
+## Plotting summaries of data
+## Changing the axis labels and title on a plot
+## Changing the legend on a plot
+## Storing plots to be recalled later
+## Create plot and store it as "myPlot" object
+## Recalling a stored plot
+## Saving plots # 1
+## Plots can also be saved using code
+
+<!--chapter:end:04_graphing.Rmd-->
+
+
+# Correlation
+
+Placeholder
+
+
+## What is Correlation?
+## How is correlation calculated?
+## Running correlation in R
+### Check assumptions: data
+### Check assumptions: distribution 
+### Check assumptions: distribution #2
+### Checking assumptions: linearity
+### Run correlation
+### Check r Value (correlation value)
+### Check the significance of the correlation
+## What is regression?
+## How is regression calculated?
+## The regression equation 
+## Running regression in R
+## Run regression
+## What are residuals?
+## Check assumptions: distribution
+## Check assumptions: linearity
+## Check assumptions: Homogeneity of Variance #1
+## Check assumptions: Influential cases 
+## Check the r squared value
+## Check model significance
+## Check coefficient values 
+## The regression equation
+## Accounting for error in predictions
+
+<!--chapter:end:05_correlation.Rmd-->
+
+
+# Multiple Regression
+
+Placeholder
+
+
+## By the end of this session, you will be able to:
+## What is multiple regression?
+## What are the assumptions of Multiple Regression?
+## What is multicollinearity?
+## Testing multicollinearity  
+## Sample size for multiple regression
+## Approaches to multiple regression: All predictors at once
+### Using categorical predictors in R
+### Reviewing the output
+### All predictors at once (testing interactions)
+### Hierarchical multiple regression: Theory driven "blocks" of variables
+### Stepwise multiple regression: computational selection of predictors
+### Stepwise multiple regression: loading the MASS package and run the full model
+### Stepwise multiple regression: Use stepAIC( ) with options
+### Stepwise multiple regression: Display the best model
+## Using regression with categorical predictors (more information) {#catreg}
+### ANOVA Approach
+### Regression approach
+### Interpreting regression output
+
+<!--chapter:end:06_MultipleRegression.Rmd-->
+
+
+# Mediation analysis
+
+Placeholder
+
+
+## Overview
+## What is mediation?
+## What is moderation?
+## Why different models?
+## Mediation analysis
+### What is a mediation design?
+### What is mediation analysis?
+### What packages do we need?
+## Mediation analysis (the Baron and Kenny Approach)
+### Conducting mediation analysis (the Baron and Kenny Approach)
+### Step 1: Total Effect
+### Step 2: Path A (X on M)
+### Step 3: Path B (M on Y, controlling for X)
+### Step 4: Reversed Path C (Y on X, controlling for M)
+### Viewing output
+### Interpreting Baron and Kenny approach
+### Running the Sobel test
+## Mediation analysis (the Mediation package)
+### Preacher & Hayes (2004) mediation approach
+### What is bootstrapping?
+### Mediation example
+### Step 1: Run the models 
+### Step 2: Check assumptions
+### Step 3.1: Run the mediation analysis on the models
+### Step 3.2: Plot the mediation analysis of the models
+### Step 4: Bootstrap the mediation model
+## References
+
+<!--chapter:end:07_Mediation.Rmd-->
+
+
+# Moderation analysis
+
+Placeholder
+
+
+## Overview
+## What is moderation?
+## What packages do we need?
+## What is moderation?
+## Moderation: step-by-step
+### Step 1: Grand Mean Centering
+### Step 2: Check assumptions
+### Step 3: Moderation Analysis
+#### Visualising the moderation effect
+### Step 4: Bootstrapping
+
+<!--chapter:end:08_Moderation.Rmd-->
 
