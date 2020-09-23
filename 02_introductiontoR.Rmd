@@ -118,11 +118,18 @@ For example, TidyR is a package that contains functions for sorting and organisi
 
 or use the code:
 
-    install.packages(“tidyr”)
 
+      install.packages(“tidyr”)
+
+
+  
 Once a package is has been installed, you need tp load it using the *library()* command.
 For example:
 
-    library(“tidyr”)
+```{r eval=F}
+   library(“tidyr”)
+```
+
+ 
 
 
