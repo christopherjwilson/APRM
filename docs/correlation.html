@@ -452,13 +452,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Parametric tests require normally distributed data</li>
 </ul>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="correlation.html#cb121-1"></a><span class="kw">shapiro.test</span>(regression_data<span class="op">$</span>treatment_duration)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="correlation.html#cb117-1"></a><span class="kw">shapiro.test</span>(regression_data<span class="op">$</span>treatment_duration)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  regression_data$treatment_duration
 ## W = 0.94971, p-value = 0.0007939</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="correlation.html#cb123-1"></a><span class="kw">shapiro.test</span>(regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="correlation.html#cb119-1"></a><span class="kw">shapiro.test</span>(regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
@@ -471,8 +471,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="checking-assumptions-linearity" class="section level3">
 <h3><span class="header-section-number">7.3.4</span> Checking assumptions: linearity</h3>
 <p><img src="img/curvilinear.jpg" width="863" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="correlation.html#cb125-1"></a>regression_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>treatment_duration,<span class="dt">y=</span>aggression_level)) <span class="op">+</span></span>
-<span id="cb125-2"><a href="correlation.html#cb125-2"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="correlation.html#cb121-1"></a>regression_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>treatment_duration,<span class="dt">y=</span>aggression_level)) <span class="op">+</span></span>
+<span id="cb121-2"><a href="correlation.html#cb121-2"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-71-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Here we are looking to see if the relationship is linear</li>
@@ -483,7 +483,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>R can run correlations using the <em>cor.test()</em> command</li>
 </ul>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="correlation.html#cb126-1"></a><span class="kw">cor.test</span>(regression_data<span class="op">$</span>treatment_duration,regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="correlation.html#cb122-1"></a><span class="kw">cor.test</span>(regression_data<span class="op">$</span>treatment_duration,regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -502,7 +502,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The r value tells us the strength and direction of the relationship</li>
 <li>In the output it is labelled as “cor” (short for correlation)</li>
 </ul>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="correlation.html#cb128-1"></a><span class="kw">cor.test</span>(regression_data<span class="op">$</span>treatment_duration,regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="correlation.html#cb124-1"></a><span class="kw">cor.test</span>(regression_data<span class="op">$</span>treatment_duration,regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -525,7 +525,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>Therefore p value &lt; 0.05</li>
 </ul>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="correlation.html#cb130-1"></a><span class="kw">cor.test</span>(regression_data<span class="op">$</span>treatment_duration,regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="correlation.html#cb126-1"></a><span class="kw">cor.test</span>(regression_data<span class="op">$</span>treatment_duration,regression_data<span class="op">$</span>aggression_level)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
