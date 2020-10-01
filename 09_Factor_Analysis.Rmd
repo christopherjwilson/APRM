@@ -1,0 +1,406 @@
+# Factor Analysis
+
+```{r echo = F}
+library(tidyverse)
+raq <- read_table2("Datasets/raq.csv")
+```
+
+
+
+## Overview
+
+- What is factor analysis
+- CFA versus PCA
+- Variance in factor analysis
+- Considertations for factor analysis
+- Identifying / extracting factors
+- Rotation
+- Cronbach's alpha
+
+
+## Exploratory Factor analysis 
+
+
+- Identify the relational structure between a set of variables in order to reduce them to a smaller set of factors
+  - The process of **dimension reduction** (identify new variables) or **data summarisation** (summarise what is already there)
+
+
+### Dimension reducton
+
+
+- **Latent Variables**: Not directly observable. Rather they are inferred from other responses
+  - Many psychological constructs (e.g. anxiety) are latent variables that we cannot directly measure. 
+  - Rather, we can measure behaviours, cognitions and other variables that are related to the construct.
+
+> We might concptualise this as: "Responses to the questions are indicative of levels of underlying anxiety"
+
+
+```{r  out.width = "100%", echo=F}
+
+knitr::include_graphics("img/cfas.png") 
+```
+
+### Data summarisation
+
+
+- **Index Variables** or **Components**: A weighted summary of measured variables that contribute to the component variable
+
+- "Principal components are variables of maximal variance constructed from linear combinations of the input features"
+
+> We might conceptualise this as: "We can reduce these measures/questions to a smaller set of higher order, independent, composite variables"  
+
+
+## Variance in exploratory factor analysis
+
+There are two common methods of exploratory factor analysis: **Common Factor analysis** and **Principal Component Analysis**
+
+
+- CFA assumes that there are two types of variance: common and unique
+
+```{r  out.width = "90%", echo=F}
+
+knitr::include_graphics("img/cfavariance.png") 
+```
+
+
+### Variance in PCA
+
+
+- PCA only assumes common variance
+
+
+```{r  out.width = "100%", echo=F}
+
+knitr::include_graphics("img/pcavariance.png") 
+```
+
+### Variance in CFA
+
+
+- Due to these different approaches, PCA is considered to be reflective of the current sample but not generalisable to the wider population
+- Whereas, CFA is considered appropriate for hypothesis testing and making inferences to the population
+
+
+## What is factor analysis?
+
+- If we measure several variables (or questions), we can examine the correlation between sets of these variables
+  - Such a correlation matrix is known as an **R Matrix** (*r* because correlation)
+- If there are clusters of correlations between a number of the variables (or questions), this indicates that they might be linked to the same underlying dimension (or latent variable)
+- The researcher should use informed judgement when assessing the appropriateness of variables for inclusion
+
+
+```{r  out.height = "100%", echo=F}
+
+knitr::include_graphics("img/rmatrix.png") 
+```
+An r matrix example
+
+## Considerations with factor analysis 
+
+- Sample size: 
+  - Must be more data points than variables being measured
+  - A common rule of thumb is at least 10 per variable
+  - There are tests to assess sample size adequacy (e.g. Kaiser-Meyer test should be greater than 0.5)
+
+- Inter-correlation:
+  - There must be sufficient correlation between the variables being measured
+  - A high number of correlations over 0.3
+  - Can be tested using Bartlett test of sphericity (sig. result means factor analysis can be used)
+  
+**Other things to check (see Field, 2018) **
+
+- The quality of analysis depends upon the quality of the data (GI/GO).
+- Avoid multicollinearity:
+  - several variables highly correlated, r > .80.
+  - Determinent: should be greater than 0.00001
+- Avoid singularity:
+  - some variables perfectly correlated, r = 1.
+- Screen the correlation matrix, eliminate any variables that obviously cause concern.
+
+
+## Representing factor analysis
+
+> We can represent factors visually based on the strength of their inter-correlations 
+- Here, the axis of the graph represents a factor or latent variable
+
+```{r  out.width = "100%", echo=F}
+
+knitr::include_graphics("img/efaplot.png") 
+```
+
+
+> We can also represent factor analysis using a regression equation
+- Here the beta values represent the extent to which the variable "loads onto" a particular factor
+
+```{r  out.width = "100%", echo=F}
+
+knitr::include_graphics("img/efaeq1.png") 
+knitr::include_graphics("img/efaeq2.png") 
+```
+
+**Example: Statistics anxiety** 
+
+
+- Many people get anxious about statistics
+- We can ask them about their experience in a number of ways (e.g. questions compiled by students in a stats class)
+
+- Their responses might indicate that stats anxiety has a number of dimensions
+  - i.e. it is a multi-dimensional construct, as opposed to a unitary construct
+
+
+```{r  out.height = "100%", echo=F}
+
+knitr::include_graphics("img/raq.png") 
+```
+
+## Step 1: Create a correlation matrix
+
+```{r}
+raq.matrix <- cor(raq)
+
+raq.matrix
+
+```
+
+## Step 2: Let's check for Inter-correlation <good>
+
+
+
+```{r}
+
+library(corrplot)
+corrplot(raq.matrix, method = "number")
+```
+
+- We can use bartlett's test from the psych package
+
+```{r}
+library(psych)
+
+cortest.bartlett(raq.matrix, n=2571)
+```
+
+
+## Step 3: Check sampling adequacy
+
+- Overall should be > 0.5
+
+```{r}
+KMO(raq)
+```
+
+## Step 4: Identify number of factors
+
+
+- Based on Eigenvalues:
+  - Kaiser (1960) – retain factors with eigen values > 1.
+  - Joliffe (1972) – retain factors with eigen values > .70. 
+
+- Use a scree plot: Cattell (1966): use ‘point of inflexion’. 
+
+### Which rule?
+
+- Use Kaiser’s extraction when
+  - Less than 30 variables, communalities after extraction > 0.7
+  - Sample size > 250 and mean communality ≥ 0.6
+- Scree plot is good if sample size is > 200
+
+### Scree plot
+
+
+```{r}
+scree(raq)
+```
+
+- We are looking for the point of inflection
+- Where there is a drop-off
+
+> One approach:
+> See how many factors we can draw a line through
+
+### Parallel analysis 
+
+> How many dimensions of stats anxiety are captured in the questionnaire?
+
+- We can run a **parallel analysis** to get an indication of the number of factors contained within the data
+- Parallel Analysis:
+   - Simulates data within the same range of values as our data set
+   - Suggests that we retain, at maximum, the factors with eigenvalues larger than those extracted from simulated data.
+
+
+```{r  out.height = "100%", echo=F}
+
+knitr::include_graphics("img/raq.png") 
+
+```
+
+```{r}
+library(psych)
+
+ parallel_analysis <- fa.parallel(raq)
+
+```
+
+
+```{r}
+parallel_analysis
+```
+
+## Step 5: Perform factor analysis (with initial recommended # factors)
+
+
+```{r}
+paf <- fa(raq,
+nfactors = 6,
+fm="pa",
+max.iter = 100,
+rotate = "none")
+
+```
+
+```{r}
+paf
+```
+
+
+### Check the factor matrix
+
+
+- We are looking high levels of variance explained with SS loadings > 1
+
+```{r}
+print(paf$loadings, cutoff=0, digits=3)
+```
+
+### Check the structure matrix
+
+
+```{r}
+print(paf$Structure, cutoff=0, digits=3)
+```
+
+
+### Check eigenvalues
+
+```{r}
+paf$e.values[1:6]
+```
+
+### Check communalities
+
+
+- Communality for each variable: the percentage of variance that can be explained by the retained factors.
+- Retained factors should explain more of the variance in each variable.
+
+```{r}
+paf$communality
+```
+
+
+## Step 6: Perform factor analysis (with reduced number of factors)
+
+```{r}
+paf1 <- fa(raq,
+nfactors = 2,
+fm="pa",
+max.iter = 100,
+rotate = "none")
+
+paf1
+
+
+
+```
+
+```{r}
+plot(paf1)
+```
+
+
+## Factor analysis rotation
+
+**What is rotation?**
+
+- It is possible that variables load "highly" onto one factor and "medium" onto another
+- By rotating the factor axes, the variables are aligned with the factors that they load onto most
+- This helps us  discriminate between factors
+
+**There are different methods of rotation**
+
+- **Orthogonal rotation:** Assumes that factors are unrelated and keeps them that way
+- **Oblique rotation:** Assumes that factors might be related and allows them to be correlated after rotation
+
+> Are factors related?
+> -Theoretical: Do we have logical reason for thinking they could be connected?
+> -Based on data: Does the factor plot suggest independence or relatedness?
+
+
+## Step 7: Rotation
+
+ - Perform factor analysis (with rotation)
+
+```{r}
+paf2 <- fa(raq,
+nfactors = 2,
+fm="pa",
+max.iter = 100,
+rotate = "oblimin")
+
+paf2
+
+```
+
+
+```{r}
+plot(paf1)
+
+
+```
+
+```{r}
+plot(paf2)
+```
+
+## Reliability / internal consistency
+
+### Cronbach's Alpha
+
+- An expansion of the split-half reliability concept
+- Alpha takes all possible combination of items and assesses their relationship to each other
+- High values above 0.7 suggest internal consistency among items
+
+### Chronbach's Alpha in R
+
+
+-  We can use the *alpha()* function in the psych package
+```{r}
+library(psych)
+
+alpha(raq)
+
+
+```
+
+- Here we get a warning that some of the items are negatively correlated and we should probably reverse them.
+- The decision to do so should be based on the logic of the questions themselves - check first
+- However, since cronbach's alpha is designed to check internal consistency related to a single construct, we would expect that negative correlations would only result from:
+  - Items that are designed to be reverse-scored
+  - Questions that are related to another factor or construct
+
+
+- Let's check the questionnaire
+  - (Q02, Q03, Q09, Q19, Q22, Q23):
+
+```{r  out.height = "100%", echo=F}
+
+knitr::include_graphics("img/raq.png") 
+```
+
+
+
+- It is possible to run the analysis with automatic reversal of negatively-correlated items
+
+```{r}
+alpha(raq, check.keys=TRUE)
+```
+

@@ -68,7 +68,7 @@ In R, an **object** is anything that is saved to memory. For example, we might d
      
 However, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object: 
 
-```{r eval=F}
+```{r eval=T}
 happinessMean <- mean(happiness)
 ```
 
