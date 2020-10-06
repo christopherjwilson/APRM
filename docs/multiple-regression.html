@@ -562,11 +562,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Reviewing the output</p>
 <p><code style="font-size: 1em; width=100%;"></p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="multiple-regression.html#cb153-1"></a><span class="kw">summary</span>(model2) <span class="op">%&gt;%</span><span class="st"> </span>coefficients</span></code></pre></div>
-<pre><code>##                                              Estimate Std. Error    t value     Pr(&gt;|t|)
-## (Intercept)                                12.3529190  1.1006127 11.2236751 3.599000e-19
-## treatment_duration                         -0.7334435  0.1033086 -7.0995381 2.166226e-10
-## treatment_grouptherapy2                    -0.5615517  1.4753596 -0.3806202 7.043260e-01
-## treatment_duration:treatment_grouptherapy2  0.1394649  0.1425977  0.9780305 3.305175e-01</code></pre>
+<pre><code>##                                              Estimate Std. Error    t value
+## (Intercept)                                12.3529190  1.1006127 11.2236751
+## treatment_duration                         -0.7334435  0.1033086 -7.0995381
+## treatment_grouptherapy2                    -0.5615517  1.4753596 -0.3806202
+## treatment_duration:treatment_grouptherapy2  0.1394649  0.1425977  0.9780305
+##                                                Pr(&gt;|t|)
+## (Intercept)                                3.599000e-19
+## treatment_duration                         2.166226e-10
+## treatment_grouptherapy2                    7.043260e-01
+## treatment_duration:treatment_grouptherapy2 3.305175e-01</code></pre>
 <p></code></p>
 <ul>
 <li>We get additional information in the coefficients table about the interaction between variables

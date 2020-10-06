@@ -49,78 +49,8 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -242,9 +172,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.11" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-axis-labels-and-title-on-a-plot"><i class="fa fa-check"></i><b>6.11</b> Changing the axis labels and title on a plot</a></li>
 <li class="chapter" data-level="6.12" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#changing-the-legend-on-a-plot"><i class="fa fa-check"></i><b>6.12</b> Changing the legend on a plot</a></li>
 <li class="chapter" data-level="6.13" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#storing-plots-to-be-recalled-later"><i class="fa fa-check"></i><b>6.13</b> Storing plots to be recalled later</a></li>
-<li class="chapter" data-level="6.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>6.14</b> Recalling a stored plot</a></li>
-<li class="chapter" data-level="6.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>6.15</b> Saving plots # 1</a></li>
-<li class="chapter" data-level="6.16" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>6.16</b> Plots can also be saved using code</a></li>
+<li class="chapter" data-level="6.14" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#create-plot-and-store-it-as-myplot-object"><i class="fa fa-check"></i><b>6.14</b> Create plot and store it as “myPlot” object</a></li>
+<li class="chapter" data-level="6.15" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot"><i class="fa fa-check"></i><b>6.15</b> Recalling a stored plot</a></li>
+<li class="chapter" data-level="6.16" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#saving-plots-1"><i class="fa fa-check"></i><b>6.16</b> Saving plots # 1</a></li>
+<li class="chapter" data-level="6.17" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#plots-can-also-be-saved-using-code"><i class="fa fa-check"></i><b>6.17</b> Plots can also be saved using code</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a><ul>
 <li class="chapter" data-level="7.1" data-path="correlation.html"><a href="correlation.html#what-is-correlation"><i class="fa fa-check"></i><b>7.1</b> What is Correlation?</a></li>
@@ -258,124 +189,122 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.6" data-path="correlation.html"><a href="correlation.html#check-r-value-correlation-value"><i class="fa fa-check"></i><b>7.3.6</b> Check r Value (correlation value)</a></li>
 <li class="chapter" data-level="7.3.7" data-path="correlation.html"><a href="correlation.html#check-the-significance-of-the-correlation"><i class="fa fa-check"></i><b>7.3.7</b> Check the significance of the correlation</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="correlation.html"><a href="correlation.html#what-is-regression"><i class="fa fa-check"></i><b>7.4</b> What is regression?</a></li>
+<li class="chapter" data-level="7.5" data-path="correlation.html"><a href="correlation.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>7.5</b> How is regression calculated?</a></li>
+<li class="chapter" data-level="7.6" data-path="correlation.html"><a href="correlation.html#the-regression-equation"><i class="fa fa-check"></i><b>7.6</b> The regression equation</a></li>
+<li class="chapter" data-level="7.7" data-path="correlation.html"><a href="correlation.html#running-regression-in-r"><i class="fa fa-check"></i><b>7.7</b> Running regression in R</a></li>
+<li class="chapter" data-level="7.8" data-path="correlation.html"><a href="correlation.html#run-regression"><i class="fa fa-check"></i><b>7.8</b> Run regression</a></li>
+<li class="chapter" data-level="7.9" data-path="correlation.html"><a href="correlation.html#what-are-residuals"><i class="fa fa-check"></i><b>7.9</b> What are residuals?</a></li>
+<li class="chapter" data-level="7.10" data-path="correlation.html"><a href="correlation.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>7.10</b> Check assumptions: distribution</a></li>
+<li class="chapter" data-level="7.11" data-path="correlation.html"><a href="correlation.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>7.11</b> Check assumptions: linearity</a></li>
+<li class="chapter" data-level="7.12" data-path="correlation.html"><a href="correlation.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>7.12</b> Check assumptions: Homogeneity of Variance #1</a></li>
+<li class="chapter" data-level="7.13" data-path="correlation.html"><a href="correlation.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>7.13</b> Check assumptions: Influential cases</a></li>
+<li class="chapter" data-level="7.14" data-path="correlation.html"><a href="correlation.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>7.14</b> Check the r squared value</a></li>
+<li class="chapter" data-level="7.15" data-path="correlation.html"><a href="correlation.html#check-model-significance"><i class="fa fa-check"></i><b>7.15</b> Check model significance</a></li>
+<li class="chapter" data-level="7.16" data-path="correlation.html"><a href="correlation.html#check-coefficient-values"><i class="fa fa-check"></i><b>7.16</b> Check coefficient values</a></li>
+<li class="chapter" data-level="7.17" data-path="correlation.html"><a href="correlation.html#the-regression-equation-1"><i class="fa fa-check"></i><b>7.17</b> The regression equation</a></li>
+<li class="chapter" data-level="7.18" data-path="correlation.html"><a href="correlation.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>7.18</b> Accounting for error in predictions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="simple-regression.html"><a href="simple-regression.html"><i class="fa fa-check"></i><b>8</b> Simple Regression</a><ul>
-<li class="chapter" data-level="8.1" data-path="simple-regression.html"><a href="simple-regression.html#what-is-regression"><i class="fa fa-check"></i><b>8.1</b> What is regression?</a></li>
-<li class="chapter" data-level="8.2" data-path="simple-regression.html"><a href="simple-regression.html#how-is-regression-calculated"><i class="fa fa-check"></i><b>8.2</b> How is regression calculated?</a></li>
-<li class="chapter" data-level="8.3" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation"><i class="fa fa-check"></i><b>8.3</b> The regression equation</a></li>
-<li class="chapter" data-level="8.4" data-path="simple-regression.html"><a href="simple-regression.html#running-regression-in-r"><i class="fa fa-check"></i><b>8.4</b> Running regression in R</a></li>
-<li class="chapter" data-level="8.5" data-path="simple-regression.html"><a href="simple-regression.html#run-regression"><i class="fa fa-check"></i><b>8.5</b> Run regression</a></li>
-<li class="chapter" data-level="8.6" data-path="simple-regression.html"><a href="simple-regression.html#what-are-residuals"><i class="fa fa-check"></i><b>8.6</b> What are residuals?</a></li>
-<li class="chapter" data-level="8.7" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-distribution-1"><i class="fa fa-check"></i><b>8.7</b> Check assumptions: distribution</a></li>
-<li class="chapter" data-level="8.8" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-linearity"><i class="fa fa-check"></i><b>8.8</b> Check assumptions: linearity</a></li>
-<li class="chapter" data-level="8.9" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-homogeneity-of-variance-1"><i class="fa fa-check"></i><b>8.9</b> Check assumptions: Homogeneity of Variance #1</a></li>
-<li class="chapter" data-level="8.10" data-path="simple-regression.html"><a href="simple-regression.html#check-assumptions-influential-cases"><i class="fa fa-check"></i><b>8.10</b> Check assumptions: Influential cases</a></li>
-<li class="chapter" data-level="8.11" data-path="simple-regression.html"><a href="simple-regression.html#check-the-r-squared-value"><i class="fa fa-check"></i><b>8.11</b> Check the r squared value</a></li>
-<li class="chapter" data-level="8.12" data-path="simple-regression.html"><a href="simple-regression.html#check-model-significance"><i class="fa fa-check"></i><b>8.12</b> Check model significance</a></li>
-<li class="chapter" data-level="8.13" data-path="simple-regression.html"><a href="simple-regression.html#check-coefficient-values"><i class="fa fa-check"></i><b>8.13</b> Check coefficient values</a></li>
-<li class="chapter" data-level="8.14" data-path="simple-regression.html"><a href="simple-regression.html#the-regression-equation-1"><i class="fa fa-check"></i><b>8.14</b> The regression equation</a></li>
-<li class="chapter" data-level="8.15" data-path="simple-regression.html"><a href="simple-regression.html#accounting-for-error-in-predictions"><i class="fa fa-check"></i><b>8.15</b> Accounting for error in predictions</a></li>
+<li class="chapter" data-level="8" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Regression</a><ul>
+<li class="chapter" data-level="8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#by-the-end-of-this-session-you-will-be-able-to"><i class="fa fa-check"></i><b>8.1</b> By the end of this session, you will be able to:</a></li>
+<li class="chapter" data-level="8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>8.2</b> What is multiple regression?</a></li>
+<li class="chapter" data-level="8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#what-are-the-assumptions-of-multiple-regression"><i class="fa fa-check"></i><b>8.3</b> What are the assumptions of Multiple Regression?</a></li>
+<li class="chapter" data-level="8.4" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multicollinearity"><i class="fa fa-check"></i><b>8.4</b> What is multicollinearity?</a></li>
+<li class="chapter" data-level="8.5" data-path="multiple-regression.html"><a href="multiple-regression.html#testing-multicollinearity"><i class="fa fa-check"></i><b>8.5</b> Testing multicollinearity</a></li>
+<li class="chapter" data-level="8.6" data-path="multiple-regression.html"><a href="multiple-regression.html#sample-size-for-multiple-regression"><i class="fa fa-check"></i><b>8.6</b> Sample size for multiple regression</a></li>
+<li class="chapter" data-level="8.7" data-path="multiple-regression.html"><a href="multiple-regression.html#approaches-to-multiple-regression-all-predictors-at-once"><i class="fa fa-check"></i><b>8.7</b> Approaches to multiple regression: All predictors at once</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="multiple-regression.html"><a href="multiple-regression.html#using-categorical-predictors-in-r"><i class="fa fa-check"></i><b>8.7.1</b> Using categorical predictors in R</a></li>
+<li class="chapter" data-level="8.7.2" data-path="multiple-regression.html"><a href="multiple-regression.html#reviewing-the-output"><i class="fa fa-check"></i><b>8.7.2</b> Reviewing the output</a></li>
+<li class="chapter" data-level="8.7.3" data-path="multiple-regression.html"><a href="multiple-regression.html#all-predictors-at-once-testing-interactions"><i class="fa fa-check"></i><b>8.7.3</b> All predictors at once (testing interactions)</a></li>
+<li class="chapter" data-level="8.7.4" data-path="multiple-regression.html"><a href="multiple-regression.html#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><i class="fa fa-check"></i><b>8.7.4</b> Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
+<li class="chapter" data-level="8.7.5" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-computational-selection-of-predictors"><i class="fa fa-check"></i><b>8.7.5</b> Stepwise multiple regression: computational selection of predictors</a></li>
+<li class="chapter" data-level="8.7.6" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><i class="fa fa-check"></i><b>8.7.6</b> Stepwise multiple regression: loading the MASS package and run the full model</a></li>
+<li class="chapter" data-level="8.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>8.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
+<li class="chapter" data-level="8.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>8.7.8</b> Stepwise multiple regression: Display the best model</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>9</b> Multiple Regression</a><ul>
-<li class="chapter" data-level="9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#by-the-end-of-this-session-you-will-be-able-to"><i class="fa fa-check"></i><b>9.1</b> By the end of this session, you will be able to:</a></li>
-<li class="chapter" data-level="9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>9.2</b> What is multiple regression?</a></li>
-<li class="chapter" data-level="9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#what-are-the-assumptions-of-multiple-regression"><i class="fa fa-check"></i><b>9.3</b> What are the assumptions of Multiple Regression?</a></li>
-<li class="chapter" data-level="9.4" data-path="multiple-regression.html"><a href="multiple-regression.html#what-is-multicollinearity"><i class="fa fa-check"></i><b>9.4</b> What is multicollinearity?</a></li>
-<li class="chapter" data-level="9.5" data-path="multiple-regression.html"><a href="multiple-regression.html#testing-multicollinearity"><i class="fa fa-check"></i><b>9.5</b> Testing multicollinearity</a></li>
-<li class="chapter" data-level="9.6" data-path="multiple-regression.html"><a href="multiple-regression.html#sample-size-for-multiple-regression"><i class="fa fa-check"></i><b>9.6</b> Sample size for multiple regression</a></li>
-<li class="chapter" data-level="9.7" data-path="multiple-regression.html"><a href="multiple-regression.html#approaches-to-multiple-regression-all-predictors-at-once"><i class="fa fa-check"></i><b>9.7</b> Approaches to multiple regression: All predictors at once</a><ul>
-<li class="chapter" data-level="9.7.1" data-path="multiple-regression.html"><a href="multiple-regression.html#using-categorical-predictors-in-r"><i class="fa fa-check"></i><b>9.7.1</b> Using categorical predictors in R</a></li>
-<li class="chapter" data-level="9.7.2" data-path="multiple-regression.html"><a href="multiple-regression.html#reviewing-the-output"><i class="fa fa-check"></i><b>9.7.2</b> Reviewing the output</a></li>
-<li class="chapter" data-level="9.7.3" data-path="multiple-regression.html"><a href="multiple-regression.html#all-predictors-at-once-testing-interactions"><i class="fa fa-check"></i><b>9.7.3</b> All predictors at once (testing interactions)</a></li>
-<li class="chapter" data-level="9.7.4" data-path="multiple-regression.html"><a href="multiple-regression.html#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><i class="fa fa-check"></i><b>9.7.4</b> Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
-<li class="chapter" data-level="9.7.5" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-computational-selection-of-predictors"><i class="fa fa-check"></i><b>9.7.5</b> Stepwise multiple regression: computational selection of predictors</a></li>
-<li class="chapter" data-level="9.7.6" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><i class="fa fa-check"></i><b>9.7.6</b> Stepwise multiple regression: loading the MASS package and run the full model</a></li>
-<li class="chapter" data-level="9.7.7" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-use-stepaic-with-options"><i class="fa fa-check"></i><b>9.7.7</b> Stepwise multiple regression: Use stepAIC( ) with options</a></li>
-<li class="chapter" data-level="9.7.8" data-path="multiple-regression.html"><a href="multiple-regression.html#stepwise-multiple-regression-display-the-best-model"><i class="fa fa-check"></i><b>9.7.8</b> Stepwise multiple regression: Display the best model</a></li>
-</ul></li>
-<li class="chapter" data-level="9.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>9.8</b> Using regression with categorical predictors (more information)</a><ul>
-<li class="chapter" data-level="9.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>9.8.1</b> ANOVA Approach</a></li>
-<li class="chapter" data-level="9.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>9.8.2</b> Regression approach</a></li>
-<li class="chapter" data-level="9.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>9.8.3</b> Interpreting regression output</a></li>
+<li class="chapter" data-level="8.8" data-path="multiple-regression.html"><a href="multiple-regression.html#catreg"><i class="fa fa-check"></i><b>8.8</b> Using regression with categorical predictors (more information)</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#anova-approach"><i class="fa fa-check"></i><b>8.8.1</b> ANOVA Approach</a></li>
+<li class="chapter" data-level="8.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#regression-approach"><i class="fa fa-check"></i><b>8.8.2</b> Regression approach</a></li>
+<li class="chapter" data-level="8.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.8.3</b> Interpreting regression output</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="mediation-analysis.html"><a href="mediation-analysis.html"><i class="fa fa-check"></i><b>10</b> Mediation analysis</a><ul>
-<li class="chapter" data-level="10.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a></li>
-<li class="chapter" data-level="10.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-mediation"><i class="fa fa-check"></i><b>10.2</b> What is mediation?</a></li>
-<li class="chapter" data-level="10.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>10.3</b> What is moderation?</a></li>
-<li class="chapter" data-level="10.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#why-different-models"><i class="fa fa-check"></i><b>10.4</b> Why different models?</a></li>
-<li class="chapter" data-level="10.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-1"><i class="fa fa-check"></i><b>10.5</b> Mediation analysis</a><ul>
-<li class="chapter" data-level="10.5.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-a-mediation-design"><i class="fa fa-check"></i><b>10.5.1</b> What is a mediation design?</a></li>
-<li class="chapter" data-level="10.5.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-mediation-analysis"><i class="fa fa-check"></i><b>10.5.2</b> What is mediation analysis?</a></li>
-<li class="chapter" data-level="10.5.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>10.5.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="9" data-path="mediation-analysis.html"><a href="mediation-analysis.html"><i class="fa fa-check"></i><b>9</b> Mediation analysis</a><ul>
+<li class="chapter" data-level="9.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-mediation"><i class="fa fa-check"></i><b>9.2</b> What is mediation?</a></li>
+<li class="chapter" data-level="9.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>9.3</b> What is moderation?</a></li>
+<li class="chapter" data-level="9.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#why-different-models"><i class="fa fa-check"></i><b>9.4</b> Why different models?</a></li>
+<li class="chapter" data-level="9.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-1"><i class="fa fa-check"></i><b>9.5</b> Mediation analysis</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-a-mediation-design"><i class="fa fa-check"></i><b>9.5.1</b> What is a mediation design?</a></li>
+<li class="chapter" data-level="9.5.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-mediation-analysis"><i class="fa fa-check"></i><b>9.5.2</b> What is mediation analysis?</a></li>
+<li class="chapter" data-level="9.5.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>9.5.3</b> What packages do we need?</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-the-baron-and-kenny-approach"><i class="fa fa-check"></i><b>10.6</b> Mediation analysis (the Baron and Kenny Approach)</a><ul>
-<li class="chapter" data-level="10.6.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#conducting-mediation-analysis-the-baron-and-kenny-approach"><i class="fa fa-check"></i><b>10.6.1</b> Conducting mediation analysis (the Baron and Kenny Approach)</a></li>
-<li class="chapter" data-level="10.6.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-1-total-effect"><i class="fa fa-check"></i><b>10.6.2</b> Step 1: Total Effect</a></li>
-<li class="chapter" data-level="10.6.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-path-a-x-on-m"><i class="fa fa-check"></i><b>10.6.3</b> Step 2: Path A (X on M)</a></li>
-<li class="chapter" data-level="10.6.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3-path-b-m-on-y-controlling-for-x"><i class="fa fa-check"></i><b>10.6.4</b> Step 3: Path B (M on Y, controlling for X)</a></li>
-<li class="chapter" data-level="10.6.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-4-reversed-path-c-y-on-x-controlling-for-m"><i class="fa fa-check"></i><b>10.6.5</b> Step 4: Reversed Path C (Y on X, controlling for M)</a></li>
-<li class="chapter" data-level="10.6.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#viewing-output"><i class="fa fa-check"></i><b>10.6.6</b> Viewing output</a></li>
-<li class="chapter" data-level="10.6.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#interpreting-baron-and-kenny-approach"><i class="fa fa-check"></i><b>10.6.7</b> Interpreting Baron and Kenny approach</a></li>
-<li class="chapter" data-level="10.6.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#running-the-sobel-test"><i class="fa fa-check"></i><b>10.6.8</b> Running the Sobel test</a></li>
+<li class="chapter" data-level="9.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-the-baron-and-kenny-approach"><i class="fa fa-check"></i><b>9.6</b> Mediation analysis (the Baron and Kenny Approach)</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#conducting-mediation-analysis-the-baron-and-kenny-approach"><i class="fa fa-check"></i><b>9.6.1</b> Conducting mediation analysis (the Baron and Kenny Approach)</a></li>
+<li class="chapter" data-level="9.6.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-1-total-effect"><i class="fa fa-check"></i><b>9.6.2</b> Step 1: Total Effect</a></li>
+<li class="chapter" data-level="9.6.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-path-a-x-on-m"><i class="fa fa-check"></i><b>9.6.3</b> Step 2: Path A (X on M)</a></li>
+<li class="chapter" data-level="9.6.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3-path-b-m-on-y-controlling-for-x"><i class="fa fa-check"></i><b>9.6.4</b> Step 3: Path B (M on Y, controlling for X)</a></li>
+<li class="chapter" data-level="9.6.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-4-reversed-path-c-y-on-x-controlling-for-m"><i class="fa fa-check"></i><b>9.6.5</b> Step 4: Reversed Path C (Y on X, controlling for M)</a></li>
+<li class="chapter" data-level="9.6.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#viewing-output"><i class="fa fa-check"></i><b>9.6.6</b> Viewing output</a></li>
+<li class="chapter" data-level="9.6.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#interpreting-baron-and-kenny-approach"><i class="fa fa-check"></i><b>9.6.7</b> Interpreting Baron and Kenny approach</a></li>
+<li class="chapter" data-level="9.6.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#running-the-sobel-test"><i class="fa fa-check"></i><b>9.6.8</b> Running the Sobel test</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-the-mediation-package"><i class="fa fa-check"></i><b>10.7</b> Mediation analysis (the Mediation package)</a><ul>
-<li class="chapter" data-level="10.7.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#preacher-hayes-2004-mediation-approach"><i class="fa fa-check"></i><b>10.7.1</b> Preacher &amp; Hayes (2004) mediation approach</a></li>
-<li class="chapter" data-level="10.7.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-bootstrapping"><i class="fa fa-check"></i><b>10.7.2</b> What is bootstrapping?</a></li>
-<li class="chapter" data-level="10.7.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-example"><i class="fa fa-check"></i><b>10.7.3</b> Mediation example</a></li>
-<li class="chapter" data-level="10.7.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-1-run-the-models"><i class="fa fa-check"></i><b>10.7.4</b> Step 1: Run the models</a></li>
-<li class="chapter" data-level="10.7.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>10.7.5</b> Step 2: Check assumptions</a></li>
-<li class="chapter" data-level="10.7.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3.1-run-the-mediation-analysis-on-the-models"><i class="fa fa-check"></i><b>10.7.6</b> Step 3.1: Run the mediation analysis on the models</a></li>
-<li class="chapter" data-level="10.7.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3.2-plot-the-mediation-analysis-of-the-models"><i class="fa fa-check"></i><b>10.7.7</b> Step 3.2: Plot the mediation analysis of the models</a></li>
-<li class="chapter" data-level="10.7.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-4-bootstrap-the-mediation-model"><i class="fa fa-check"></i><b>10.7.8</b> Step 4: Bootstrap the mediation model</a></li>
+<li class="chapter" data-level="9.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-analysis-the-mediation-package"><i class="fa fa-check"></i><b>9.7</b> Mediation analysis (the Mediation package)</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#preacher-hayes-2004-mediation-approach"><i class="fa fa-check"></i><b>9.7.1</b> Preacher &amp; Hayes (2004) mediation approach</a></li>
+<li class="chapter" data-level="9.7.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-bootstrapping"><i class="fa fa-check"></i><b>9.7.2</b> What is bootstrapping?</a></li>
+<li class="chapter" data-level="9.7.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#mediation-example"><i class="fa fa-check"></i><b>9.7.3</b> Mediation example</a></li>
+<li class="chapter" data-level="9.7.4" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-1-run-the-models"><i class="fa fa-check"></i><b>9.7.4</b> Step 1: Run the models</a></li>
+<li class="chapter" data-level="9.7.5" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>9.7.5</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="9.7.6" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3.1-run-the-mediation-analysis-on-the-models"><i class="fa fa-check"></i><b>9.7.6</b> Step 3.1: Run the mediation analysis on the models</a></li>
+<li class="chapter" data-level="9.7.7" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-3.2-plot-the-mediation-analysis-of-the-models"><i class="fa fa-check"></i><b>9.7.7</b> Step 3.2: Plot the mediation analysis of the models</a></li>
+<li class="chapter" data-level="9.7.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-4-bootstrap-the-mediation-model"><i class="fa fa-check"></i><b>9.7.8</b> Step 4: Bootstrap the mediation model</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#references"><i class="fa fa-check"></i><b>10.8</b> References</a></li>
+<li class="chapter" data-level="9.8" data-path="mediation-analysis.html"><a href="mediation-analysis.html#references"><i class="fa fa-check"></i><b>9.8</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a><ul>
-<li class="chapter" data-level="11.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview-1"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
-<li class="chapter" data-level="11.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
-<li class="chapter" data-level="11.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need-1"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
-<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-2"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
-<li class="chapter" data-level="11.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>11.5</b> Moderation: step-by-step</a><ul>
-<li class="chapter" data-level="11.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>11.5.1</b> Step 1: Grand Mean Centering</a></li>
-<li class="chapter" data-level="11.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions-1"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
-<li class="chapter" data-level="11.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>11.5.3</b> Step 3: Moderation Analysis</a></li>
-<li class="chapter" data-level="11.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>11.5.4</b> Step 4: Bootstrapping</a></li>
+<li class="chapter" data-level="10" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>10</b> Moderation analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview-1"><i class="fa fa-check"></i><b>10.1</b> Overview</a></li>
+<li class="chapter" data-level="10.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>10.2</b> What is moderation?</a></li>
+<li class="chapter" data-level="10.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need-1"><i class="fa fa-check"></i><b>10.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="10.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-2"><i class="fa fa-check"></i><b>10.4</b> What is moderation?</a></li>
+<li class="chapter" data-level="10.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>10.5</b> Moderation: step-by-step</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>10.5.1</b> Step 1: Grand Mean Centering</a></li>
+<li class="chapter" data-level="10.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions-1"><i class="fa fa-check"></i><b>10.5.2</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="10.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>10.5.3</b> Step 3: Moderation Analysis</a></li>
+<li class="chapter" data-level="10.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>10.5.4</b> Step 4: Bootstrapping</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="factor-analysis.html"><a href="factor-analysis.html"><i class="fa fa-check"></i><b>12</b> Factor Analysis</a><ul>
-<li class="chapter" data-level="12.1" data-path="factor-analysis.html"><a href="factor-analysis.html#overview-2"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
-<li class="chapter" data-level="12.2" data-path="factor-analysis.html"><a href="factor-analysis.html#exploratory-factor-analysis"><i class="fa fa-check"></i><b>12.2</b> Exploratory Factor analysis</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="factor-analysis.html"><a href="factor-analysis.html#dimension-reducton"><i class="fa fa-check"></i><b>12.2.1</b> Dimension reducton</a></li>
-<li class="chapter" data-level="12.2.2" data-path="factor-analysis.html"><a href="factor-analysis.html#data-summarisation"><i class="fa fa-check"></i><b>12.2.2</b> Data summarisation</a></li>
+<li class="chapter" data-level="11" data-path="factor-analysis.html"><a href="factor-analysis.html"><i class="fa fa-check"></i><b>11</b> Factor Analysis</a><ul>
+<li class="chapter" data-level="11.1" data-path="factor-analysis.html"><a href="factor-analysis.html#overview-2"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
+<li class="chapter" data-level="11.2" data-path="factor-analysis.html"><a href="factor-analysis.html#exploratory-factor-analysis"><i class="fa fa-check"></i><b>11.2</b> Exploratory Factor analysis</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="factor-analysis.html"><a href="factor-analysis.html#dimension-reducton"><i class="fa fa-check"></i><b>11.2.1</b> Dimension reducton</a></li>
+<li class="chapter" data-level="11.2.2" data-path="factor-analysis.html"><a href="factor-analysis.html#data-summarisation"><i class="fa fa-check"></i><b>11.2.2</b> Data summarisation</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="factor-analysis.html"><a href="factor-analysis.html#variance-in-exploratory-factor-analysis"><i class="fa fa-check"></i><b>12.3</b> Variance in exploratory factor analysis</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="factor-analysis.html"><a href="factor-analysis.html#variance-in-pca"><i class="fa fa-check"></i><b>12.3.1</b> Variance in PCA</a></li>
-<li class="chapter" data-level="12.3.2" data-path="factor-analysis.html"><a href="factor-analysis.html#variance-in-cfa"><i class="fa fa-check"></i><b>12.3.2</b> Variance in CFA</a></li>
+<li class="chapter" data-level="11.3" data-path="factor-analysis.html"><a href="factor-analysis.html#variance-in-exploratory-factor-analysis"><i class="fa fa-check"></i><b>11.3</b> Variance in exploratory factor analysis</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="factor-analysis.html"><a href="factor-analysis.html#variance-in-pca"><i class="fa fa-check"></i><b>11.3.1</b> Variance in PCA</a></li>
+<li class="chapter" data-level="11.3.2" data-path="factor-analysis.html"><a href="factor-analysis.html#variance-in-cfa"><i class="fa fa-check"></i><b>11.3.2</b> Variance in CFA</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="factor-analysis.html"><a href="factor-analysis.html#what-is-factor-analysis"><i class="fa fa-check"></i><b>12.4</b> What is factor analysis?</a></li>
-<li class="chapter" data-level="12.5" data-path="factor-analysis.html"><a href="factor-analysis.html#considerations-with-factor-analysis"><i class="fa fa-check"></i><b>12.5</b> Considerations with factor analysis</a></li>
-<li class="chapter" data-level="12.6" data-path="factor-analysis.html"><a href="factor-analysis.html#representing-factor-analysis"><i class="fa fa-check"></i><b>12.6</b> Representing factor analysis</a></li>
-<li class="chapter" data-level="12.7" data-path="factor-analysis.html"><a href="factor-analysis.html#step-1-create-a-correlation-matrix"><i class="fa fa-check"></i><b>12.7</b> Step 1: Create a correlation matrix</a></li>
-<li class="chapter" data-level="12.8" data-path="factor-analysis.html"><a href="factor-analysis.html#step-2-lets-check-for-inter-correlation"><i class="fa fa-check"></i><b>12.8</b> Step 2: Let’s check for Inter-correlation <good></a></li>
-<li class="chapter" data-level="12.9" data-path="factor-analysis.html"><a href="factor-analysis.html#step-3-check-sampling-adequacy"><i class="fa fa-check"></i><b>12.9</b> Step 3: Check sampling adequacy</a></li>
-<li class="chapter" data-level="12.10" data-path="factor-analysis.html"><a href="factor-analysis.html#step-4-identify-number-of-factors"><i class="fa fa-check"></i><b>12.10</b> Step 4: Identify number of factors</a><ul>
-<li class="chapter" data-level="12.10.1" data-path="factor-analysis.html"><a href="factor-analysis.html#which-rule"><i class="fa fa-check"></i><b>12.10.1</b> Which rule?</a></li>
-<li class="chapter" data-level="12.10.2" data-path="factor-analysis.html"><a href="factor-analysis.html#scree-plot"><i class="fa fa-check"></i><b>12.10.2</b> Scree plot</a></li>
-<li class="chapter" data-level="12.10.3" data-path="factor-analysis.html"><a href="factor-analysis.html#parallel-analysis"><i class="fa fa-check"></i><b>12.10.3</b> Parallel analysis</a></li>
+<li class="chapter" data-level="11.4" data-path="factor-analysis.html"><a href="factor-analysis.html#what-is-factor-analysis"><i class="fa fa-check"></i><b>11.4</b> What is factor analysis?</a></li>
+<li class="chapter" data-level="11.5" data-path="factor-analysis.html"><a href="factor-analysis.html#considerations-with-factor-analysis"><i class="fa fa-check"></i><b>11.5</b> Considerations with factor analysis</a></li>
+<li class="chapter" data-level="11.6" data-path="factor-analysis.html"><a href="factor-analysis.html#representing-factor-analysis"><i class="fa fa-check"></i><b>11.6</b> Representing factor analysis</a></li>
+<li class="chapter" data-level="11.7" data-path="factor-analysis.html"><a href="factor-analysis.html#step-1-create-a-correlation-matrix"><i class="fa fa-check"></i><b>11.7</b> Step 1: Create a correlation matrix</a></li>
+<li class="chapter" data-level="11.8" data-path="factor-analysis.html"><a href="factor-analysis.html#step-2-lets-check-for-inter-correlation"><i class="fa fa-check"></i><b>11.8</b> Step 2: Let’s check for Inter-correlation <good></a></li>
+<li class="chapter" data-level="11.9" data-path="factor-analysis.html"><a href="factor-analysis.html#step-3-check-sampling-adequacy"><i class="fa fa-check"></i><b>11.9</b> Step 3: Check sampling adequacy</a></li>
+<li class="chapter" data-level="11.10" data-path="factor-analysis.html"><a href="factor-analysis.html#step-4-identify-number-of-factors"><i class="fa fa-check"></i><b>11.10</b> Step 4: Identify number of factors</a><ul>
+<li class="chapter" data-level="11.10.1" data-path="factor-analysis.html"><a href="factor-analysis.html#which-rule"><i class="fa fa-check"></i><b>11.10.1</b> Which rule?</a></li>
+<li class="chapter" data-level="11.10.2" data-path="factor-analysis.html"><a href="factor-analysis.html#scree-plot"><i class="fa fa-check"></i><b>11.10.2</b> Scree plot</a></li>
+<li class="chapter" data-level="11.10.3" data-path="factor-analysis.html"><a href="factor-analysis.html#parallel-analysis"><i class="fa fa-check"></i><b>11.10.3</b> Parallel analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="12.11" data-path="factor-analysis.html"><a href="factor-analysis.html#step-5-perform-factor-analysis-with-initial-recommended-factors"><i class="fa fa-check"></i><b>12.11</b> Step 5: Perform factor analysis (with initial recommended # factors)</a><ul>
-<li class="chapter" data-level="12.11.1" data-path="factor-analysis.html"><a href="factor-analysis.html#check-the-factor-matrix"><i class="fa fa-check"></i><b>12.11.1</b> Check the factor matrix</a></li>
-<li class="chapter" data-level="12.11.2" data-path="factor-analysis.html"><a href="factor-analysis.html#check-the-structure-matrix"><i class="fa fa-check"></i><b>12.11.2</b> Check the structure matrix</a></li>
-<li class="chapter" data-level="12.11.3" data-path="factor-analysis.html"><a href="factor-analysis.html#check-eigenvalues"><i class="fa fa-check"></i><b>12.11.3</b> Check eigenvalues</a></li>
-<li class="chapter" data-level="12.11.4" data-path="factor-analysis.html"><a href="factor-analysis.html#check-communalities"><i class="fa fa-check"></i><b>12.11.4</b> Check communalities</a></li>
+<li class="chapter" data-level="11.11" data-path="factor-analysis.html"><a href="factor-analysis.html#step-5-perform-factor-analysis-with-initial-recommended-factors"><i class="fa fa-check"></i><b>11.11</b> Step 5: Perform factor analysis (with initial recommended # factors)</a><ul>
+<li class="chapter" data-level="11.11.1" data-path="factor-analysis.html"><a href="factor-analysis.html#check-the-factor-matrix"><i class="fa fa-check"></i><b>11.11.1</b> Check the factor matrix</a></li>
+<li class="chapter" data-level="11.11.2" data-path="factor-analysis.html"><a href="factor-analysis.html#check-the-structure-matrix"><i class="fa fa-check"></i><b>11.11.2</b> Check the structure matrix</a></li>
+<li class="chapter" data-level="11.11.3" data-path="factor-analysis.html"><a href="factor-analysis.html#check-eigenvalues"><i class="fa fa-check"></i><b>11.11.3</b> Check eigenvalues</a></li>
+<li class="chapter" data-level="11.11.4" data-path="factor-analysis.html"><a href="factor-analysis.html#check-communalities"><i class="fa fa-check"></i><b>11.11.4</b> Check communalities</a></li>
 </ul></li>
-<li class="chapter" data-level="12.12" data-path="factor-analysis.html"><a href="factor-analysis.html#step-6-perform-factor-analysis-with-reduced-number-of-factors"><i class="fa fa-check"></i><b>12.12</b> Step 6: Perform factor analysis (with reduced number of factors)</a></li>
-<li class="chapter" data-level="12.13" data-path="factor-analysis.html"><a href="factor-analysis.html#factor-analysis-rotation"><i class="fa fa-check"></i><b>12.13</b> Factor analysis rotation</a></li>
-<li class="chapter" data-level="12.14" data-path="factor-analysis.html"><a href="factor-analysis.html#step-7-rotation"><i class="fa fa-check"></i><b>12.14</b> Step 7: Rotation</a></li>
-<li class="chapter" data-level="12.15" data-path="factor-analysis.html"><a href="factor-analysis.html#reliability-internal-consistency"><i class="fa fa-check"></i><b>12.15</b> Reliability / internal consistency</a><ul>
-<li class="chapter" data-level="12.15.1" data-path="factor-analysis.html"><a href="factor-analysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>12.15.1</b> Cronbach’s Alpha</a></li>
-<li class="chapter" data-level="12.15.2" data-path="factor-analysis.html"><a href="factor-analysis.html#chronbachs-alpha-in-r"><i class="fa fa-check"></i><b>12.15.2</b> Chronbach’s Alpha in R</a></li>
+<li class="chapter" data-level="11.12" data-path="factor-analysis.html"><a href="factor-analysis.html#step-6-perform-factor-analysis-with-reduced-number-of-factors"><i class="fa fa-check"></i><b>11.12</b> Step 6: Perform factor analysis (with reduced number of factors)</a></li>
+<li class="chapter" data-level="11.13" data-path="factor-analysis.html"><a href="factor-analysis.html#factor-analysis-rotation"><i class="fa fa-check"></i><b>11.13</b> Factor analysis rotation</a></li>
+<li class="chapter" data-level="11.14" data-path="factor-analysis.html"><a href="factor-analysis.html#step-7-rotation"><i class="fa fa-check"></i><b>11.14</b> Step 7: Rotation</a></li>
+<li class="chapter" data-level="11.15" data-path="factor-analysis.html"><a href="factor-analysis.html#reliability-internal-consistency"><i class="fa fa-check"></i><b>11.15</b> Reliability / internal consistency</a><ul>
+<li class="chapter" data-level="11.15.1" data-path="factor-analysis.html"><a href="factor-analysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>11.15.1</b> Cronbach’s Alpha</a></li>
+<li class="chapter" data-level="11.15.2" data-path="factor-analysis.html"><a href="factor-analysis.html#chronbachs-alpha-in-r"><i class="fa fa-check"></i><b>11.15.2</b> Chronbach’s Alpha in R</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -609,20 +538,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

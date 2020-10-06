@@ -3,21 +3,21 @@
 
 ## Working example - record sales data
 
- Let's import the data {.smaller}
+ Let's import the data 
 
 ```{r}
 Album_Sales <- read_csv("Datasets/album_sales.csv")
 
 ```
 
-  Let's look at the data {.smaller}
+  Let's look at the data 
 
 ```{r}
 
 head(Album_Sales)
 ```
 
-## Let's make sure our data types are correct #1 {.smaller}
+## Let's make sure our data types are correct #1 
 
 - This variable is currently stored as charcters, not as a factor / category variable
 ```{r}
@@ -41,7 +41,7 @@ The main measures of central tendency are:
 - Median
 - Mode
 
-### Mean {.smaller}
+### Mean 
 
 "What is the mean of album sales?"
   
@@ -50,7 +50,7 @@ mean(Album_Sales$Sales)
 
 ```
 
-### Trimmed mean {.smaller}
+### Trimmed mean 
 
 - The trimmed mean is used to reduce the influence of outliers on the summary
 
@@ -59,7 +59,7 @@ mean(Album_Sales$Sales, trim = 0.05)
 
 ```
 
-### Median {.smaller}
+### Median 
 
 "What is the median amount of Airplay?"
 
@@ -68,7 +68,7 @@ mean(Album_Sales$Sales, trim = 0.05)
 median(Album_Sales$Airplay)
 
 ```
-### Mode {.smaller}
+### Mode 
 
 "What is the most common attractiveness rating of bands?"
 
@@ -80,9 +80,9 @@ table(Album_Sales$Attract)
 ```
 - We can then look for the most frequently occuring response
 
-## Measures of dispresion or variance {.smaller}
+## Measures of dispresion or variance 
 
-### Range  {.smaller}
+### Range  
 
 The range is the difference between the lowest and highest values
 
@@ -101,7 +101,7 @@ range(Album_Sales$Airplay)
 
 ```
 
-### Interquartile range {.smaller}
+### Interquartile range 
 
 - We know that the median is the "middle" of the data = 50th percentile
 - The interquatile range is the difference between the values at the 25th and 75th percentiles
@@ -113,7 +113,7 @@ quantile( x = Album_Sales$Airplay, probs = c(.25,.75) )
 
 - Interquartile range = 36 - 19.75 = 16.25
 
-Sum of squares {.smaller}
+Sum of squares 
 
 - The difference between each value and the mean value, squared, and then summed together
 
@@ -122,7 +122,7 @@ sum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 )
 ```
 
 
-### Variance {.smaller}
+### Variance 
 
 - Variance: Sum of sqaures divided by n-1
 
@@ -134,7 +134,7 @@ varianceAdverts <- sum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 ) / 
 ```
 
 
-### Standard deviation {.smaller}
+### Standard deviation 
 
 - Standard deviation is square root of the variance
 
@@ -152,7 +152,7 @@ sqrt(varianceAdverts)
 sd(Album_Sales$Adverts)
 ```
 
-## Skewness and Kurtosis {.smaller}
+## Skewness and Kurtosis 
 
 ### Assessing skewness of distribution #1
 - It is possible to use graphs to view the distribution
@@ -163,7 +163,7 @@ hist(Album_Sales$Sales)
 
 ```
 
-### Assessing skewness of distribution #2 {.smaller}
+### Assessing skewness of distribution #2 
 
 - We can check raw skewness value using the *skew()* command in the **psych** package
 
@@ -173,7 +173,7 @@ skew(Album_Sales$Sales)
 
 ```
 
-### Kurtosis {.smaller}
+### Kurtosis 
 
 | informal term |technical name|   kurtosis value |
 |--:|--:|--:|
@@ -185,7 +185,7 @@ skew(Album_Sales$Sales)
 kurtosi(Album_Sales$Sales)
 ```
 
-### Assessing normality of distribution {.smaller}
+### Assessing normality of distribution 
  
 - We can use the shapiro-wilk test of normality
 - This is part of "base" r (no package needed)
@@ -194,21 +194,21 @@ kurtosi(Album_Sales$Sales)
 shapiro.test(Album_Sales$Sales)
 ```
 
-## Getting and overall summary {.smaller}
+## Getting and overall summary 
 
-### summary() - in "base R" {.smaller}
+### summary() - in "base R" 
 
 ```{r}
 summary(Album_Sales)
 ```
 
 
-### describe() - in the "psych" package #1 {.smaller}
+### describe() - in the "psych" package #1 
 ```{r}
 describe(Album_Sales)
 ```
 
-### describe() - in the "psych" package #2 {.smaller}
+### describe() - in the "psych" package #2 
 
 - We can describe by factor variables 
 ```{r}
@@ -218,7 +218,7 @@ describeBy(Album_Sales, group = Album_Sales$Genre)
 
 ## Basic statistical tests (more detail in later sections)
 
-### Corrleation {.smaller}
+### Corrleation 
 
 "Is there a relationship between advert spend and sales?"
 
@@ -241,7 +241,7 @@ cor.test(Album_Sales$Sales,Album_Sales$Adverts)
 
 ```
 
-### Tests of difference - t-test {.smaller}
+### Tests of difference - t-test 
 
 "Is there a significant difference in sales between the Country and Hip-hop musical genres?"
 
@@ -253,7 +253,7 @@ myTtestData <- Album_Sales %>% filter(Genre == c("Country", "HipHop"))
 t.test(myTtestData$Sales ~ myTtestData$Genre)
 
 ```
-### Tests of difference - ANOVA {.smaller}
+### Tests of difference - ANOVA 
 
 "Is there a significant difference in sales between all musical genres?"
 

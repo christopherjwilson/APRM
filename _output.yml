@@ -1,5 +1,4 @@
 bookdown::gitbook:
-  css: style.css
   config:
     sharing:
       facebook: false
@@ -12,3 +11,8 @@ bookdown::gitbook:
     toolbar:
       position: fixed
     download: no        
+  css: style.css
+bookdown::word_document2:
+    toc: true
+bookdown::pdf_document2:
+    toc: true

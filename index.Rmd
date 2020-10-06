@@ -1,9 +1,7 @@
 --- 
 title: "Advanced Psychological Research Methods (PSY4034)"
 author: "Christopher J. Wilson"
-date: 'September 2020'
-description: This is a handbook for postgraduate research methods courses in the psychology department at Teesside University.
-documentclass: book
+date: "September 2020"
 link-citations: yes
 bibliography:
 - book.bib
@@ -11,6 +9,10 @@ bibliography:
 site: bookdown::bookdown_site
 biblio-style: apalike
 css: style.css
+description: This is a handbook for postgraduate research methods courses in the psychology
+  department at Teesside University.
+documentclass: book
+always_allow_html: true
 ---
 
 # Welcome to the module

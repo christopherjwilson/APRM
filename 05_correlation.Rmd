@@ -20,7 +20,7 @@ regression_data <- read.csv("Datasets/regression_data.csv")
 
 ```{r out.width = "100%", echo=F}
 
-knitr::include_graphics("img/correlation.gif") 
+knitr::include_graphics("img/correlation.png") 
 ```
 
 

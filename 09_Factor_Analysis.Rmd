@@ -202,7 +202,7 @@ KMO(raq)
 
 - Use Kaiser’s extraction when
   - Less than 30 variables, communalities after extraction > 0.7
-  - Sample size > 250 and mean communality ≥ 0.6
+  - Sample size > 250 and mean communality > 0.6
 - Scree plot is good if sample size is > 200
 
 ### Scree plot
