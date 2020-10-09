@@ -1,0 +1,10 @@
+name: app1
+title:
+username:
+account: christopherjwilson
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 393101
+bundleId: 1511345
+url: https://christopherjwilson.shinyapps.io/app1/
+when: 1533121264.29327

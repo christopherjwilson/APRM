@@ -165,6 +165,41 @@ You can obtain R and R Studio from the following links:
 
 [https://rstudio.com/](https://rstudio.com/)
 
+## Texbooks that can be accessed online
+
+e-books can be accessed from the library website: [https://www.tees.ac.uk/depts/lis/](https://www.tees.ac.uk/depts/lis/)
+
+### Research Methods and Statistics
+
+[Coolican, 2019. Research Methods and Statistics in Psychology. Taylor & Francis Group](https://ebookcentral.proquest.com/lib/tees/detail.action?docID=5584239)
+
+
+[Barker, C., Pistrang, N., & Elliott, R. (2015). Research methods in clinical psychology: An introduction for students and practitioners (3rd ed.). Chichester, West Sussex: Wiley Blackwell.](https://ebookcentral.proquest.com/lib/tees/reader.action?docID=4038573)
+
+[Weiner, I. B., Schinka, J. A., & Velicer, W. F. (2012). Handbook of psychology, research methods in psychology (2. Aufl. ed.). Somerset: Wiley.](https://ebookcentral.proquest.com/lib/tees/detail.action?docID=918179)
+
+### Working with R and RStudio to do analysis
+
+[Navarro, D. (2017) Learning statistics with R.](https://learningstatisticswithr.com/book/)
+
+[Phillips N. D. (2018) YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/)
+
+[Horton, Pruim and Kaplan (2015) A Student's Guide to R](https://cran.r-project.org/doc/contrib/Horton+Pruim+Kaplan_MOSAIC-StudentGuide.pdf)
+
+[Mather, M. (2019) R for Academics](https://bookdown.org/marius_mather/Rad/)
+
+[Wickham and Grolemund (2019). R For Data Science](https://r4ds.had.co.nz/)
+
+[Allaire and Grolemund (2019). R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+[Basics of RStudio](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+
+[Data Import](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf)
+
+[Data Transformation](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+
+[Data Visualisation with GGPlot](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+
 ## Academic Support and Guidance
 
 Please contact the module team if you have any questions, concerns or any other areas you wish to discuss.

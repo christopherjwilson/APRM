@@ -1,0 +1,97 @@
+  ---
+title: "Summarising Data"
+author: "Christopher Wilson"
+date: "7/25/2018"
+output: ioslides_presentation
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(kableExtra)
+library(sn)
+```
+
+# Summarising data: Frequencies
+
+## One way to examine data is to look at the frequency distribution
+
+- Frequencies = counting the frequency of a particular response.
+- For example: We ask 100 people whether they like marmite.
+
+```{r frequencies1}
+
+N <- matrix(c(30,60,10),ncol=3, nrow = 1 )
+kable(N, col.names = c("Yes","No","Not Sure"))
+
+
+```
+
+## Let's imagine we ask 100 people the question “How much time do you spend online each week?”
+
+```{r online table}
+
+Participant <- 1:250
+Hours_Online <- rnorm(250, 8, 2.5)
+kable(cbind(Participant, Hours_Online), "html", col.names = c("Participant", "Hours"))
+
+
+```
+
+## We can calculate the frequency of each response on a histogram
+
+```{r online histogram}
+library(ggplot2)
+library(tidyr)
+
+cbind.data.frame(Participant,Hours_Online) %>% ggplot(aes(x=Hours_Online)) + geom_histogram(bins=20, fill = "blue", colour="blue") # + geom_vline(aes(xintercept=mean(Hours_Online)),  color="red", linetype="dashed", size=1)
+```
+
+## The shape of disributions
+
+``` {r }
+ hist( rbeta(250, 5, 5), xlab = "Frequency", ylab = "Time spent online", main = "Normal distribution" )
+
+
+```
+
+
+## The shape of disributions
+
+``` {r }
+
+ hist( rbeta(250, 5, 2), xlab = "Frequency", ylab = "Time spent online", main = "Left-skewed distribution" )
+
+
+```
+
+## The shape of disributions
+
+``` {r }
+   hist( rbeta(250, 2, 5), xlab = "Frequency", ylab = "Time spent online", main = "Right-skewed distribution" )
+
+```
+
+
+
+
+## Interactive Plot
+
+```{r eruptions}
+inputPanel(
+  selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20),
+  
+  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+)
+
+renderPlot({
+  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+  
+  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+  lines(dens, col = "blue")
+})
+```

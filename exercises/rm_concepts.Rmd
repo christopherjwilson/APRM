@@ -1,0 +1,42 @@
+---
+title: "Research Methods Concepts"
+author: "Christopher Wilson"
+output: 
+  ioslides_presentation:
+     incremental: true
+     logo: logo.jpg 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+# As we move through each concept, "raise your hand" if you feel you could explain the concept
+
+## Some research terms you should know
+
+- Variables
+- Theory
+- Theory testing
+- Hypotheses
+- Descriptive and inferential analysis
+
+## Research design
+
+- A sufficiently0sized, representative sample
+- An independent measures design
+- A factorial design
+- A covariate
+
+## Data analysis
+
+- Variance and standard deviation
+- Statistical significance
+- Effect size
+- Power
+
+# Lesson for today:
+## Let's talk about the relationship between sample size, effect size and significance
+
+- [ https://christopherjwilson.shinyapps.io/app1/]( https://christopherjwilson.shinyapps.io/app1/)
+
+- Remember: Cohen's d = $$ M_1 - M_2 / \sqrt(s_1^2 + s_2^2/2)$$
