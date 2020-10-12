@@ -1,0 +1,7 @@
+# Course videos
+
+If you have trouble accessing the embedded videos, please try using this link:
+
+https://teesside.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=efba294e-fa08-4156-8347-ac2f00b25bc9
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/EmbeddedList.aspx?folderID=efba294e-fa08-4156-8347-ac2f00b25bc9&embedded=1" height="405" width="720" style="border: 0;" ></iframe>

@@ -24,7 +24,7 @@ always_allow_html: true
 > - Refresh this page (hit F5 on your keyboard).
 > - You should now be able to play all of the video content.
 
-<iframe width="720" height="405" style="border: 1px solid #464646;" src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6a77475e-a7df-4106-90af-ac330096b331&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" allowfullscreen="" allow="autoplay"></iframe>
+<iframe width="720" height="405" style="border: 1px solid #464646;" src="https://teesside.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6a77475e-a7df-4106-90af-ac330096b331&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" allowfullscreen="" allow="autoplay"></iframe>
 
 ## Module Overview
 
@@ -68,7 +68,7 @@ All presentations (with added annotations) are available, along with additional 
 
 The video below explains how online sessions will work:
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=156dcb6f-e48c-4efb-a87d-ac2b00ab921c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=156dcb6f-e48c-4efb-a87d-ac2b00ab921c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Assessment
 
@@ -157,7 +157,7 @@ You may be familiar with SPSS from your undergraduate statistics teaching. Pleas
 
 ### Downloading R and R Studio software
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=57425cb0-4364-4af1-b9ae-ac2f00b28010&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=57425cb0-4364-4af1-b9ae-ac2f00b28010&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 You can obtain R and R Studio from the following links:
 
@@ -220,7 +220,6 @@ You are advised to read around the area of your thesis topic on a continuing bas
 It is also advised that you consider research governance and ethics as you develop your project. Please speak to your academic supervisor about this as they will be able to advise or direct you to someone with appropriate expertise to address queries.  
 
 As specified in the Research Handbook, **please note that a revised version of your research proposal forms one of your year two summative assignments**. The deadline for this assignment is **early on in the start of second year** and it is therefore advised that you work on your revised proposal as soon as you receive feedback from the panels and have discussed this with your academic supervisor.
-
 
 
 

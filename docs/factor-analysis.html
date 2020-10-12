@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="moderation-analysis.html"/>
-
+<link rel="next" href="course-videos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#a-note-about-referencing"><i class="fa fa-check"></i><b>1.3.5</b> A note about referencing</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#statistical-analysis-software"><i class="fa fa-check"></i><b>1.4</b> Statistical analysis software</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#downloading-r-and-r-studio"><i class="fa fa-check"></i><b>1.4.1</b> Downloading R and R Studio</a></li>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#downloading-r-and-r-studio-software"><i class="fa fa-check"></i><b>1.4.1</b> Downloading R and R Studio software</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#texbooks-that-can-be-accessed-online"><i class="fa fa-check"></i><b>1.5</b> Texbooks that can be accessed online</a><ul>
 <li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#research-methods-and-statistics"><i class="fa fa-check"></i><b>1.5.1</b> Research Methods and Statistics</a></li>
@@ -385,6 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.15.2" data-path="factor-analysis.html"><a href="factor-analysis.html#chronbachs-alpha-in-r"><i class="fa fa-check"></i><b>12.15.2</b> Chronbach’s Alpha in R</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="course-videos.html"><a href="course-videos.html"><i class="fa fa-check"></i><b>13</b> Course videos</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -548,9 +549,9 @@ An r matrix example</p>
 </div>
 <div id="step-1-create-a-correlation-matrix" class="section level2">
 <h2><span class="header-section-number">12.7</span> Step 1: Create a correlation matrix</h2>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="factor-analysis.html#cb237-1"></a>raq.matrix &lt;-<span class="st"> </span><span class="kw">cor</span>(raq)</span>
-<span id="cb237-2"><a href="factor-analysis.html#cb237-2"></a></span>
-<span id="cb237-3"><a href="factor-analysis.html#cb237-3"></a>raq.matrix</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="factor-analysis.html#cb222-1"></a>raq.matrix &lt;-<span class="st"> </span><span class="kw">cor</span>(raq)</span>
+<span id="cb222-2"><a href="factor-analysis.html#cb222-2"></a></span>
+<span id="cb222-3"><a href="factor-analysis.html#cb222-3"></a>raq.matrix</span></code></pre></div>
 <pre><code>##              Q01         Q02        Q03         Q04         Q05         Q06         Q07
 ## Q01  1.000000000 -0.09872403 -0.3366489  0.43586018  0.40243992  0.21673399  0.30536514
 ## Q02 -0.098724032  1.00000000  0.3183902 -0.11185965 -0.11934658 -0.07420968 -0.15917448
@@ -650,16 +651,15 @@ An r matrix example</p>
 </div>
 <div id="step-2-lets-check-for-inter-correlation" class="section level2">
 <h2><span class="header-section-number">12.8</span> Step 2: Let’s check for Inter-correlation <good></h2>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="factor-analysis.html#cb239-1"></a><span class="kw">library</span>(corrplot)</span></code></pre></div>
-<pre><code>## corrplot 0.84 loaded</code></pre>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="factor-analysis.html#cb241-1"></a><span class="kw">corrplot</span>(raq.matrix, <span class="dt">method =</span> <span class="st">&quot;number&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="factor-analysis.html#cb224-1"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb224-2"><a href="factor-analysis.html#cb224-2"></a><span class="kw">corrplot</span>(raq.matrix, <span class="dt">method =</span> <span class="st">&quot;number&quot;</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-141-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We can use bartlett’s test from the psych package</li>
 </ul>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="factor-analysis.html#cb242-1"></a><span class="kw">library</span>(psych)</span>
-<span id="cb242-2"><a href="factor-analysis.html#cb242-2"></a></span>
-<span id="cb242-3"><a href="factor-analysis.html#cb242-3"></a><span class="kw">cortest.bartlett</span>(raq.matrix, <span class="dt">n=</span><span class="dv">2571</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="factor-analysis.html#cb225-1"></a><span class="kw">library</span>(psych)</span>
+<span id="cb225-2"><a href="factor-analysis.html#cb225-2"></a></span>
+<span id="cb225-3"><a href="factor-analysis.html#cb225-3"></a><span class="kw">cortest.bartlett</span>(raq.matrix, <span class="dt">n=</span><span class="dv">2571</span>)</span></code></pre></div>
 <pre><code>## $chisq
 ## [1] 19334.49
 ## 
@@ -674,7 +674,7 @@ An r matrix example</p>
 <ul>
 <li>Overall should be &gt; 0.5</li>
 </ul>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="factor-analysis.html#cb244-1"></a><span class="kw">KMO</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="factor-analysis.html#cb227-1"></a><span class="kw">KMO</span>(raq)</span></code></pre></div>
 <pre><code>## Kaiser-Meyer-Olkin factor adequacy
 ## Call: KMO(r = raq)
 ## Overall MSA =  0.93
@@ -707,7 +707,7 @@ An r matrix example</p>
 </div>
 <div id="scree-plot" class="section level3">
 <h3><span class="header-section-number">12.10.2</span> Scree plot</h3>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="factor-analysis.html#cb246-1"></a><span class="kw">scree</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="factor-analysis.html#cb229-1"></a><span class="kw">scree</span>(raq)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-144-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We are looking for the point of inflection</li>
@@ -732,12 +732,12 @@ See how many factors we can draw a line through</p>
 </ul></li>
 </ul>
 <p><img src="img/raq.png" width="223" height="100%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="factor-analysis.html#cb247-1"></a><span class="kw">library</span>(psych)</span>
-<span id="cb247-2"><a href="factor-analysis.html#cb247-2"></a></span>
-<span id="cb247-3"><a href="factor-analysis.html#cb247-3"></a> parallel_analysis &lt;-<span class="st"> </span><span class="kw">fa.parallel</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="factor-analysis.html#cb230-1"></a><span class="kw">library</span>(psych)</span>
+<span id="cb230-2"><a href="factor-analysis.html#cb230-2"></a></span>
+<span id="cb230-3"><a href="factor-analysis.html#cb230-3"></a> parallel_analysis &lt;-<span class="st"> </span><span class="kw">fa.parallel</span>(raq)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-146-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre><code>## Parallel analysis suggests that the number of factors =  6  and the number of components =  4</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="factor-analysis.html#cb249-1"></a>parallel_analysis</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="factor-analysis.html#cb232-1"></a>parallel_analysis</span></code></pre></div>
 <pre><code>## Call: fa.parallel(x = raq)
 ## Parallel analysis suggests that the number of factors =  6  and the number of components =  4 
 ## 
@@ -760,12 +760,12 @@ See how many factors we can draw a line through</p>
 </div>
 <div id="step-5-perform-factor-analysis-with-initial-recommended-factors" class="section level2">
 <h2><span class="header-section-number">12.11</span> Step 5: Perform factor analysis (with initial recommended # factors)</h2>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="factor-analysis.html#cb251-1"></a>paf &lt;-<span class="st"> </span><span class="kw">fa</span>(raq,</span>
-<span id="cb251-2"><a href="factor-analysis.html#cb251-2"></a><span class="dt">nfactors =</span> <span class="dv">6</span>,</span>
-<span id="cb251-3"><a href="factor-analysis.html#cb251-3"></a><span class="dt">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
-<span id="cb251-4"><a href="factor-analysis.html#cb251-4"></a><span class="dt">max.iter =</span> <span class="dv">100</span>,</span>
-<span id="cb251-5"><a href="factor-analysis.html#cb251-5"></a><span class="dt">rotate =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="factor-analysis.html#cb252-1"></a>paf</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="factor-analysis.html#cb234-1"></a>paf &lt;-<span class="st"> </span><span class="kw">fa</span>(raq,</span>
+<span id="cb234-2"><a href="factor-analysis.html#cb234-2"></a><span class="dt">nfactors =</span> <span class="dv">6</span>,</span>
+<span id="cb234-3"><a href="factor-analysis.html#cb234-3"></a><span class="dt">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
+<span id="cb234-4"><a href="factor-analysis.html#cb234-4"></a><span class="dt">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb234-5"><a href="factor-analysis.html#cb234-5"></a><span class="dt">rotate =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="factor-analysis.html#cb235-1"></a>paf</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 6, rotate = &quot;none&quot;, max.iter = 100, fm = &quot;pa&quot;)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
@@ -827,7 +827,7 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>We are looking high levels of variance explained with SS loadings &gt; 1</li>
 </ul>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="factor-analysis.html#cb254-1"></a><span class="kw">print</span>(paf<span class="op">$</span>loadings, <span class="dt">cutoff=</span><span class="dv">0</span>, <span class="dt">digits=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="factor-analysis.html#cb237-1"></a><span class="kw">print</span>(paf<span class="op">$</span>loadings, <span class="dt">cutoff=</span><span class="dv">0</span>, <span class="dt">digits=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## 
 ## Loadings:
 ##     PA1    PA2    PA3    PA4    PA5    PA6   
@@ -862,7 +862,7 @@ See how many factors we can draw a line through</p>
 </div>
 <div id="check-the-structure-matrix" class="section level3">
 <h3><span class="header-section-number">12.11.2</span> Check the structure matrix</h3>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="factor-analysis.html#cb256-1"></a><span class="kw">print</span>(paf<span class="op">$</span>Structure, <span class="dt">cutoff=</span><span class="dv">0</span>, <span class="dt">digits=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="factor-analysis.html#cb239-1"></a><span class="kw">print</span>(paf<span class="op">$</span>Structure, <span class="dt">cutoff=</span><span class="dv">0</span>, <span class="dt">digits=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## 
 ## Loadings:
 ##     PA1    PA2    PA3    PA4    PA5    PA6   
@@ -897,7 +897,7 @@ See how many factors we can draw a line through</p>
 </div>
 <div id="check-eigenvalues" class="section level3">
 <h3><span class="header-section-number">12.11.3</span> Check eigenvalues</h3>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="factor-analysis.html#cb258-1"></a>paf<span class="op">$</span>e.values[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="factor-analysis.html#cb241-1"></a>paf<span class="op">$</span>e.values[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span></code></pre></div>
 <pre><code>## [1] 7.2900471 1.7388287 1.3167515 1.2271982 0.9878779 0.8953304</code></pre>
 </div>
 <div id="check-communalities" class="section level3">
@@ -906,7 +906,7 @@ See how many factors we can draw a line through</p>
 <li>Communality for each variable: the percentage of variance that can be explained by the retained factors.</li>
 <li>Retained factors should explain more of the variance in each variable.</li>
 </ul>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="factor-analysis.html#cb260-1"></a>paf<span class="op">$</span>communality</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="factor-analysis.html#cb243-1"></a>paf<span class="op">$</span>communality</span></code></pre></div>
 <pre><code>##       Q01       Q02       Q03       Q04       Q05       Q06       Q07       Q08       Q09 
 ## 0.5170176 0.2585136 0.4643374 0.4196524 0.3341637 0.5720655 0.5042725 0.6649413 0.3542281 
 ##       Q10       Q11       Q12       Q13       Q14       Q15       Q16       Q17       Q18 
@@ -917,13 +917,13 @@ See how many factors we can draw a line through</p>
 </div>
 <div id="step-6-perform-factor-analysis-with-reduced-number-of-factors" class="section level2">
 <h2><span class="header-section-number">12.12</span> Step 6: Perform factor analysis (with reduced number of factors)</h2>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="factor-analysis.html#cb262-1"></a>paf1 &lt;-<span class="st"> </span><span class="kw">fa</span>(raq,</span>
-<span id="cb262-2"><a href="factor-analysis.html#cb262-2"></a><span class="dt">nfactors =</span> <span class="dv">2</span>,</span>
-<span id="cb262-3"><a href="factor-analysis.html#cb262-3"></a><span class="dt">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
-<span id="cb262-4"><a href="factor-analysis.html#cb262-4"></a><span class="dt">max.iter =</span> <span class="dv">100</span>,</span>
-<span id="cb262-5"><a href="factor-analysis.html#cb262-5"></a><span class="dt">rotate =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb262-6"><a href="factor-analysis.html#cb262-6"></a></span>
-<span id="cb262-7"><a href="factor-analysis.html#cb262-7"></a>paf1</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="factor-analysis.html#cb245-1"></a>paf1 &lt;-<span class="st"> </span><span class="kw">fa</span>(raq,</span>
+<span id="cb245-2"><a href="factor-analysis.html#cb245-2"></a><span class="dt">nfactors =</span> <span class="dv">2</span>,</span>
+<span id="cb245-3"><a href="factor-analysis.html#cb245-3"></a><span class="dt">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
+<span id="cb245-4"><a href="factor-analysis.html#cb245-4"></a><span class="dt">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb245-5"><a href="factor-analysis.html#cb245-5"></a><span class="dt">rotate =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb245-6"><a href="factor-analysis.html#cb245-6"></a></span>
+<span id="cb245-7"><a href="factor-analysis.html#cb245-7"></a>paf1</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 2, rotate = &quot;none&quot;, max.iter = 100, fm = &quot;pa&quot;)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
@@ -980,7 +980,7 @@ See how many factors we can draw a line through</p>
 ## Correlation of (regression) scores with factors   0.96 0.78
 ## Multiple R square of scores with factors          0.92 0.61
 ## Minimum correlation of possible factor scores     0.83 0.23</code></pre>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="factor-analysis.html#cb264-1"></a><span class="kw">plot</span>(paf1)</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="factor-analysis.html#cb247-1"></a><span class="kw">plot</span>(paf1)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-155-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="factor-analysis-rotation" class="section level2">
@@ -1007,13 +1007,13 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>Perform factor analysis (with rotation)</li>
 </ul>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="factor-analysis.html#cb265-1"></a>paf2 &lt;-<span class="st"> </span><span class="kw">fa</span>(raq,</span>
-<span id="cb265-2"><a href="factor-analysis.html#cb265-2"></a><span class="dt">nfactors =</span> <span class="dv">2</span>,</span>
-<span id="cb265-3"><a href="factor-analysis.html#cb265-3"></a><span class="dt">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
-<span id="cb265-4"><a href="factor-analysis.html#cb265-4"></a><span class="dt">max.iter =</span> <span class="dv">100</span>,</span>
-<span id="cb265-5"><a href="factor-analysis.html#cb265-5"></a><span class="dt">rotate =</span> <span class="st">&quot;oblimin&quot;</span>)</span></code></pre></div>
-<pre><code>## Loading required namespace: GPArotation</code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="factor-analysis.html#cb267-1"></a>paf2</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="factor-analysis.html#cb248-1"></a>paf2 &lt;-<span class="st"> </span><span class="kw">fa</span>(raq,</span>
+<span id="cb248-2"><a href="factor-analysis.html#cb248-2"></a><span class="dt">nfactors =</span> <span class="dv">2</span>,</span>
+<span id="cb248-3"><a href="factor-analysis.html#cb248-3"></a><span class="dt">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
+<span id="cb248-4"><a href="factor-analysis.html#cb248-4"></a><span class="dt">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb248-5"><a href="factor-analysis.html#cb248-5"></a><span class="dt">rotate =</span> <span class="st">&quot;oblimin&quot;</span>)</span>
+<span id="cb248-6"><a href="factor-analysis.html#cb248-6"></a></span>
+<span id="cb248-7"><a href="factor-analysis.html#cb248-7"></a>paf2</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 2, rotate = &quot;oblimin&quot;, max.iter = 100, 
 ##     fm = &quot;pa&quot;)
@@ -1076,9 +1076,9 @@ See how many factors we can draw a line through</p>
 ## Correlation of (regression) scores with factors   0.96 0.81
 ## Multiple R square of scores with factors          0.91 0.65
 ## Minimum correlation of possible factor scores     0.82 0.30</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="factor-analysis.html#cb269-1"></a><span class="kw">plot</span>(paf1)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="factor-analysis.html#cb250-1"></a><span class="kw">plot</span>(paf1)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-157-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="factor-analysis.html#cb270-1"></a><span class="kw">plot</span>(paf2)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="factor-analysis.html#cb251-1"></a><span class="kw">plot</span>(paf2)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-158-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="reliability-internal-consistency" class="section level2">
@@ -1096,9 +1096,9 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>We can use the <em>alpha()</em> function in the psych package</li>
 </ul>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="factor-analysis.html#cb271-1"></a><span class="kw">library</span>(psych)</span>
-<span id="cb271-2"><a href="factor-analysis.html#cb271-2"></a></span>
-<span id="cb271-3"><a href="factor-analysis.html#cb271-3"></a><span class="kw">alpha</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="factor-analysis.html#cb252-1"></a><span class="kw">library</span>(psych)</span>
+<span id="cb252-2"><a href="factor-analysis.html#cb252-2"></a></span>
+<span id="cb252-3"><a href="factor-analysis.html#cb252-3"></a><span class="kw">alpha</span>(raq)</span></code></pre></div>
 <pre><code>## Warning in alpha(raq): Some items were negatively correlated with the total scale and probably 
 ## should be reversed.  
 ## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
@@ -1209,7 +1209,7 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>It is possible to run the analysis with automatic reversal of negatively-correlated items</li>
 </ul>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="factor-analysis.html#cb275-1"></a><span class="kw">alpha</span>(raq, <span class="dt">check.keys=</span><span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="factor-analysis.html#cb256-1"></a><span class="kw">alpha</span>(raq, <span class="dt">check.keys=</span><span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## Warning in alpha(raq, check.keys = TRUE): Some items were negatively correlated with total scale and were automatically reversed.
 ##  This is indicated by a negative sign for the variable name.</code></pre>
 <pre><code>## 
@@ -1308,8 +1308,8 @@ See how many factors we can draw a line through</p>
           </div>
         </div>
       </div>
-<a href="moderation-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="moderation-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="course-videos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
