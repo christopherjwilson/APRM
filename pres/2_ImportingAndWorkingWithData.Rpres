@@ -36,7 +36,7 @@ Importing .csv data into R
 library(readr)
 studentData <- read_csv("Datasets/studentData.csv")
 ```
-![](img/Import_data.png){ width=70% }
+![](img/Import_data.png)
 
 Importing SPSS data files into R
 ======
@@ -55,7 +55,7 @@ R can store many different data types
 - Arrays, Lists etc...
 
 A data matrix:
-![](img/Matrix.png){ width=70% }
+![](img/Matrix.png)
 
 The data frame
 ======
@@ -202,4 +202,4 @@ Importing and Working with data in R
 5. What is the mean __salary__ ?
 6. Filter the data to only display customers who are __married__ (1 = married, 2 = not married)
 7. Create a summary of the data to compare the mean and standard deviation of __sales__ for married and non-married customers (1 = married, 2 = not married)
-8. Create a new variable called __VIP__ and label customers who spent over £500 as "VIP" and other customers as "Non-VIP"
+8. Create a new variable called __VIP__ and label customers who spent over ?500 as "VIP" and other customers as "Non-VIP"

@@ -1,0 +1,6 @@
+Reproducable documents in R Studio
+========================================================
+author: Christopher Wilson
+date: 
+height:720
+css: custom.css

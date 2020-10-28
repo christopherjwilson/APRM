@@ -59,11 +59,7 @@ type: section
 Possible Workflow
 ======
 
-```{r  out.width = "100%", echo=FALSE}
-library(png)
-library(knitr)
-knitr::include_graphics("img/WORKFLOW.png") 
-```
+<img src="img/WORKFLOW.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="100%" />
 
 
 Workflow using R and RStudio
@@ -166,7 +162,8 @@ Objects and variables
 ======
 
 - Objects can be stored in the following way:
-```{r object storage}
+
+```r
 # Notice that the "<-" arrow is how you store objects in R
 
 x <- 25
@@ -181,12 +178,55 @@ Objects and variables
 
 - Objects can be recalled by typing their name
 
-```{r object recall}
+
+```r
 x 
+```
+
+```
+[1] 25
+```
+
+```r
 y
+```
+
+```
+[1] 11
+```
+
+```r
 z
+```
+
+```
+[1]  1  2  3  4  6 45
+```
+
+```r
 myData
+```
+
+```
+[1] 4.338339 1.717308 6.447710 7.397194 4.920445 4.283359
+```
+
+```r
 myCor
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  myData and z
+t = -0.20107, df = 4, p-value = 0.8505
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.8431444  0.7743973
+sample estimates:
+       cor 
+-0.1000298 
 ```
 
 The Environment and History
@@ -205,13 +245,32 @@ Basic functions
 
 - R has many built-in functions. 
 For example, Mean, Standard Deviation, Sum, Min/Max
-```{r built-in functions}
+
+```r
 # A set of values like this is called a vector
 someData <- c(1,2,3,4,6,45, 98, 1021) 
 
 mean(someData)
+```
+
+```
+[1] 147.5
+```
+
+```r
 sd(someData)
+```
+
+```
+[1] 354.5794
+```
+
+```r
 min(someData)
+```
+
+```
+[1] 1
 ```
 
 Packages in R

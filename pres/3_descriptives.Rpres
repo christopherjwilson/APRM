@@ -1,0 +1,259 @@
+Descriptive Statistics with R
+========================================================
+author: Dr Christopher Wilson
+date: 2020
+autosize: true
+width:1290
+height: 1080
+css: custom.css
+
+
+Let's import the data
+======
+
+```{r}
+library("tidyverse")
+Album_Sales <- read_csv("Datasets/album_sales.csv")
+
+```
+
+Let's look at the data
+======
+
+```{r}
+
+head(Album_Sales)
+```
+
+Let's make sure our data types are correct #1
+======
+
+- This variable is currently stored as charcters, not as a factor / category variable
+
+```{r}
+
+str(Album_Sales$Genre) 
+
+```
+
+Let's make sure our data types are correct #2
+======
+
+- We can  save it as a factor
+
+```{r}
+Album_Sales$Genre <- as.factor(Album_Sales$Genre)
+
+str(Album_Sales$Genre) 
+```
+
+Summarising data: Central tendency
+======
+type: section
+
+Measures of central tendency
+======
+The main measures of central tendency are:
+- Mean
+- Median
+- Mode
+
+Mean
+======
+
+"What is the mean of album sales?"
+  
+```{r}
+mean(Album_Sales$Sales)
+
+```
+
+Trimmed mean
+======
+- The trimmed mean is used to reduce the influence of outliers on the summary
+
+```{r}
+mean(Album_Sales$Sales, trim = 0.05)
+
+```
+
+Median
+=======
+
+"What is the median amount of Airplay?"
+
+```{r}
+
+median(Album_Sales$Airplay)
+
+```
+Mode
+======
+
+"What is the most common attractiveness rating of bands?"
+
+- The easiest way to get the mode in R is to generate a frequency table
+
+```{r}
+
+table(Album_Sales$Attract)
+```
+- We can then look for the most frequently occuring response
+
+Measures of dispersion or variance
+======
+type: section
+
+Range 
+======
+The range is the difference between the lowest and highest values
+
+- You can calculate it using these values
+
+```{r}
+
+max(Album_Sales$Airplay) - min(Album_Sales$Airplay)
+
+```
+ - Or you can use the range command to get the min and max values in one go
+
+```{r}
+
+range(Album_Sales$Airplay)
+
+```
+
+Interquartile range
+======
+- We know that the median is the "middle" of the data = 50th percentile
+- The interquatile range is the difference between the values at the 25th and 75th percentiles
+```{r}
+quantile( x = Album_Sales$Airplay, probs = c(.25,.75) )
+
+
+```
+
+- Interquartile range = 36 - 19.75 = 16.25
+
+Sum of squares
+======
+
+- The difference between each value and the mean value, squared, and then summed together
+
+```{r}
+sum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 )
+```
+
+
+Variance
+======
+- Variance: Sum of sqaures divided by n-1
+
+```{r}
+
+# variance calculation
+varianceAdverts <- sum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 ) / 199
+
+```
+
+
+Standard deviation
+======
+
+- Standard deviation is square root of the variance
+
+```{r}
+# sd calculation
+
+
+sqrt(varianceAdverts)
+
+
+```
+- Can be calculated using the sd() command
+
+```{r}
+sd(Album_Sales$Adverts)
+```
+
+The *psych* package includes a lot of useful descriptive stats
+======
+
+```{r}
+library("psych")
+```
+
+Skewness and Kurtosis
+======
+type: section
+
+Assessing skewness of distribution #1
+======
+- It is possible to use graphs to view the distribution
+- We will focus on graphic presentation of data next week
+
+```{r}
+hist(Album_Sales$Sales)
+
+```
+
+Assessing skewness of distribution #2
+======
+
+- We can check raw skewness value using the *skew()* command in the **psych** package
+
+```{r}
+skew(Album_Sales$Sales)
+
+```
+
+Kurtosis
+======
+
+| informal term |technical name|   kurtosis value |
+|--:|--:|--:|
+|"too flat"|platykurtic|   negative|
+|  "just pointy enough"|  mesokurtic|  zero|
+| "too pointy" |leptokurtic |positive |
+
+```{r}
+kurtosi(Album_Sales$Sales)
+```
+
+Assessing normality of distribution
+====== 
+- We can use the shapiro-wilk test of normality
+- This is part of "base" r (no package needed)
+
+```{r}
+shapiro.test(Album_Sales$Sales)
+```
+
+Getting an overall summary
+=======
+type: section
+
+summary() - in "base R"
+======
+
+```{r}
+summary(Album_Sales)
+```
+
+
+describe() - in the "psych" package #1
+======
+
+```{r}
+describe(Album_Sales)
+```
+
+describe() - in the "psych" package #2
+======
+
+- We can describe by factor variables 
+```{r}
+describeBy(Album_Sales, group = Album_Sales$Genre)
+```
+
+
