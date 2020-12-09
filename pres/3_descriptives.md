@@ -2,9 +2,8 @@ Descriptive Statistics with R
 ========================================================
 author: Dr Christopher Wilson
 date: 2020
-autosize: true
-width:1290
-height: 1080
+width:1280
+height: 720
 css: custom.css
 
 

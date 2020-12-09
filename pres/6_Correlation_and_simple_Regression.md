@@ -10,12 +10,7 @@ css: custom.css
 
 Overview
 ======
-```{r setup, include=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE, fig.align="center")
-library(tidyverse)
-regression_data <- read.csv("../Datasets/regression_data.csv")
-```
 
 Correlation
 ======
@@ -26,18 +21,12 @@ Correlation
 How is correlation calculated?
 ======
 
-```{r out.width = "100%", echo=F}
-
-knitr::include_graphics("img/correlation.gif") 
-```
+<img src="img/correlation.gif" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="100%" style="display: block; margin: auto;" />
 
 How is correlation calculated?
 ======
 
-```{r out.height = "100%", echo=F}
-
-knitr::include_graphics("img/corcalc.png") 
-```
+<img src="img/corcalc.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" height="100%" style="display: block; margin: auto;" />
 - Think of this as covariance divided by individual variance
 - If the changes are consistent with both variables, the final value will be higher
 
@@ -63,28 +52,38 @@ Check assumptions: distribution #1
 - Parametric tests require normally distributed data
 
 
-```{r echo=F}
-hist(regression_data$treatment_duration)
-
-```
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
 ***
-```{r, echo=F}
-hist(regression_data$aggression_level)
-
-```
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
 
 Check assumptions: distribution #2
 ======
 - Parametric tests require normally distributed data
 
 
-```{r echo=T}
+
+```r
 shapiro.test(regression_data$treatment_duration)
+```
 
 ```
-```{r, echo=T}
-shapiro.test(regression_data$aggression_level)
 
+	Shapiro-Wilk normality test
+
+data:  regression_data$treatment_duration
+W = 0.94971, p-value = 0.0007939
+```
+
+```r
+shapiro.test(regression_data$aggression_level)
+```
+
+```
+
+	Shapiro-Wilk normality test
+
+data:  regression_data$aggression_level
+W = 0.9928, p-value = 0.8756
 ```
  - The normality assumption is less of an issue when sample size is > 30
 
@@ -92,19 +91,19 @@ shapiro.test(regression_data$aggression_level)
 Checking assumptions: linearity
 ======
 
-```{r echo=F}
-
-knitr::include_graphics("img/curvilinear.jpg") 
-```
+<img src="img/curvilinear.jpg" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" />
 
 
 Checking assumptions: linearity
 ======
 
-```{r}
+
+```r
 regression_data %>% ggplot(aes(x=treatment_duration,y=aggression_level)) +
   geom_point()
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" />
 
 - Here we are looking to see if the relationship is linear
 
@@ -112,16 +111,46 @@ Run correlation
 ======
 - R can run correlations using the *cor.test()* command
 
-```{r}
+
+```r
 cor.test(regression_data$treatment_duration,regression_data$aggression_level)
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  regression_data$treatment_duration and regression_data$aggression_level
+t = -9.5503, df = 98, p-value = 1.146e-15
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.7838251 -0.5765006
+sample estimates:
+       cor 
+-0.6942996 
 ```
 Check r Value (correlation value)
 ======
 - The r value tells us the strength and direction of the relationship
 - In the output it is labelled as "cor" (short for correlation)
 
-```{r}
+
+```r
 cor.test(regression_data$treatment_duration,regression_data$aggression_level)
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  regression_data$treatment_duration and regression_data$aggression_level
+t = -9.5503, df = 98, p-value = 1.146e-15
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.7838251 -0.5765006
+sample estimates:
+       cor 
+-0.6942996 
 ```
 
 Check the significance of the correlation
@@ -130,8 +159,23 @@ Check the significance of the correlation
   - The significance is 1.146^-15
   - This means: 0.0000000000000001146
 - Therefore p value < 0.05
-```{r}
+
+```r
 cor.test(regression_data$treatment_duration,regression_data$aggression_level)
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  regression_data$treatment_duration and regression_data$aggression_level
+t = -9.5503, df = 98, p-value = 1.146e-15
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.7838251 -0.5765006
+sample estimates:
+       cor 
+-0.6942996 
 ```
 
 ======
@@ -154,10 +198,7 @@ What is regression?
 How is regression calculated?
 ======
 
-```{r echo=F}
-
-knitr::include_graphics("img/bestfit.png") 
-```
+<img src="img/bestfit.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" />
 - When we run a regression analysis, a calculation is done to select the "line of best fit"
 - This is a "prediction line" that minimises the overall amount of error
   - Error = difference between the data points and the line 
@@ -165,10 +206,7 @@ knitr::include_graphics("img/bestfit.png")
 
 The regression equation #1
 ======
-```{r echo=F}
-
-knitr::include_graphics("img/bestfit.png") 
-```
+<img src="img/bestfit.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" />
 - Once the line of best fit is calculated, predictions are based on this line
 - To make predictions we need the **intercept** and **slope** of the line
   - **Intercept** or **constant**= where the line crosses the y axis
@@ -206,10 +244,31 @@ Run regression
 - We use the *lm()* command to run regression while saving the results 
 - We then use the *summary()* function to check the results
 
-```{r}
+
+```r
 model1 <- lm(formula= aggression_level ~ treatment_duration ,data=regression_data)
 summary(model1)
+```
 
+```
+
+Call:
+lm(formula = aggression_level ~ treatment_duration, data = regression_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4251 -1.1493 -0.0593  0.8814  3.4542 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         12.3300     0.7509   16.42  < 2e-16 ***
+treatment_duration  -0.6933     0.0726   -9.55 1.15e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.551 on 98 degrees of freedom
+Multiple R-squared:  0.4821,	Adjusted R-squared:  0.4768 
+F-statistic: 91.21 on 1 and 98 DF,  p-value: 1.146e-15
 ```
 
 
@@ -218,30 +277,31 @@ What are residuals?
 - In regression, the assumptions apply to the residuals, not the data themselves
 - Residual just means the difference between the data point and the regression line
 
-```{r echo=F, width= '100%'}
-
-knitr::include_graphics("img/residuals1.png") 
-```
+<img src="img/residuals1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" />
 
 
 Check assumptions: distribution
 ====
 - Using the *plot()* command on our regression model will give us some useful diagnostic plots
 - The second plot that it outputs shows the normality
-```{r}
 
+```r
 plot(model1, which=2)
-
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" style="display: block; margin: auto;" />
 
 Check assumptions: distribution
 ======
 - We could also use a histogram to check the distribution
 - Notice how we can use the $ sign to get the residuals from the model
 
-```{r}
+
+```r
 hist(model1$residuals)
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" style="display: block; margin: auto;" />
 
 
 Check assumptions: linearity
@@ -249,11 +309,12 @@ Check assumptions: linearity
 - Using the *plot()* command on our regression model will give us some useful diagnostic plots
 - The first plot that it outputs shows the residuals vs the fitted values
 - Here, we want to see them spread out, with the line being horizontal and straight 
-```{r}
 
+```r
 plot(model1, which=1)
-
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-18-1.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" style="display: block; margin: auto;" />
 
 - There is a slight amount of curvilinearity here but nothing to be worried about
 
@@ -263,20 +324,18 @@ Check assumptions: Homogeneity of Variance #1
 - We want the variance to be constant across the data set. We do not want the variance to change at different points in the data 
 
 
-```{r}
 
+```r
 plot(model1, which=1)
-
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" style="display: block; margin: auto;" />
 
 Check assumptions: Homogeneity of Variance #2
 ======
 - A violation of Homogeneity of Variance would usually look like a funnel, with the data narrowing 
 
-```{r echo=F, out.height= "100%"}
-
-knitr::include_graphics("img/biasedresiduals.png") 
-```
+<img src="img/biasedresiduals.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" height="100%" style="display: block; margin: auto;" />
 
 Check assumptions: Influential cases #1
 ======
@@ -286,11 +345,12 @@ Check assumptions: Influential cases #1
   - Some guidance suggests anything higher than 1 is an influential case 
   - Others suggest 4/n is the cut off point (4 divided by number of participants)
 
-```{r  out.width= "30%"}
 
+```r
 plot(model1, which=4)
-
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="30%" style="display: block; margin: auto;" />
 
 Check assumptions: Influential cases #2
 ======
@@ -299,23 +359,45 @@ Check assumptions: Influential cases #2
   - No cases over 1
   - Many are over 0.04 (4/n = 0.04)
 
-```{r  out.width= "40%"}
 
+```r
 plot(model1, which=5)
-
 ```
+
+<img src="6_Correlation_and_simple_Regression-figure/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="40%" style="display: block; margin: auto;" />
 
 Check the r squared value
 ========
 
 -  r^2 = the amount of variance in the **outcome** that is explained by the **predictor(s)**
 - The closer this value is to 1, the more useful our regression model is for predicting the outcome
-```{r}
+
+```r
 modelSummary <- summary(model1)
 modelSummary
+```
 
 ```
-- The r^2 of `r modelSummary$r.squared` means that 48% of the variance in **aggression level** is explained by **treatment duration**
+
+Call:
+lm(formula = aggression_level ~ treatment_duration, data = regression_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4251 -1.1493 -0.0593  0.8814  3.4542 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         12.3300     0.7509   16.42  < 2e-16 ***
+treatment_duration  -0.6933     0.0726   -9.55 1.15e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.551 on 98 degrees of freedom
+Multiple R-squared:  0.4821,	Adjusted R-squared:  0.4768 
+F-statistic: 91.21 on 1 and 98 DF,  p-value: 1.146e-15
+```
+- The r^2 of 0.482052 means that 48% of the variance in **aggression level** is explained by **treatment duration**
 
 Check model significance
 ======
@@ -323,10 +405,30 @@ Check model significance
   - *p-value: 1.146e-15* 
   - As p < 0.05, the model is significant
   
-```{r}
 
+```r
 modelSummary
+```
 
+```
+
+Call:
+lm(formula = aggression_level ~ treatment_duration, data = regression_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4251 -1.1493 -0.0593  0.8814  3.4542 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         12.3300     0.7509   16.42  < 2e-16 ***
+treatment_duration  -0.6933     0.0726   -9.55 1.15e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.551 on 98 degrees of freedom
+Multiple R-squared:  0.4821,	Adjusted R-squared:  0.4768 
+F-statistic: 91.21 on 1 and 98 DF,  p-value: 1.146e-15
 ```
 
 
@@ -335,10 +437,15 @@ Check coefficient values #1
 - The coefficient values are displayed in the coefficients table
 - If we have more than one predictor, they are all listed here
 
-```{r}
 
+```r
 modelSummary$coefficients
+```
 
+```
+                     Estimate Std. Error   t value     Pr(>|t|)
+(Intercept)        12.3300211 0.75087601 16.420848 6.840516e-30
+treatment_duration -0.6933201 0.07259671 -9.550297 1.145898e-15
 ```
 - The **beta coefficient** for treatment duration is in the *Estimate* column
 - For every unit increase in treatment duration, aggression level decreases by 0.69
@@ -356,10 +463,15 @@ The regression equation
 ### Aggression level = treatment duration * -0.69 + 12.33 
 
 
-```{r}
 
+```r
 modelSummary$coefficients
+```
 
+```
+                     Estimate Std. Error   t value     Pr(>|t|)
+(Intercept)        12.3300211 0.75087601 16.420848 6.840516e-30
+treatment_duration -0.6933201 0.07259671 -9.550297 1.145898e-15
 ```
 
 Accounting for error in predictions
@@ -367,8 +479,28 @@ Accounting for error in predictions
 - We also know that the accruracy of predictions will be within a certain margin of error
 - This is known as **standard error of the estimate** or **residual standard error**
   
-```{r}
 
+```r
 modelSummary
+```
 
+```
+
+Call:
+lm(formula = aggression_level ~ treatment_duration, data = regression_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4251 -1.1493 -0.0593  0.8814  3.4542 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         12.3300     0.7509   16.42  < 2e-16 ***
+treatment_duration  -0.6933     0.0726   -9.55 1.15e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.551 on 98 degrees of freedom
+Multiple R-squared:  0.4821,	Adjusted R-squared:  0.4768 
+F-statistic: 91.21 on 1 and 98 DF,  p-value: 1.146e-15
 ```
