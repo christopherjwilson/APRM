@@ -54,6 +54,10 @@ Once the data are imported, it will be visible in the environment:
 
 ![Imported data in the environment](images/environment.png)
 
+## Restructuring and reorganising data in R (long versus wide data)
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=59c0876a-8047-401c-826a-aaec00cbb220&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Understanding objects in R
 
 In R, an **object** is anything that is saved to memory. For example, we might do some analysis:

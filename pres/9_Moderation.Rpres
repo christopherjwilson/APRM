@@ -1,4 +1,4 @@
-Questions before we start? Ask in chat or raise your hand!
+Q&A Session will start at 10am. If you have any questions, you can hold on to them until then!
 ========================================================
 author: Christopher Wilson
 width: 1920
