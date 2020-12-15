@@ -1,4 +1,4 @@
-Any questions before we  start? Raise your hand or type in the chat
+Reorganising data in R (wide and long data)
 ========================================================
 author: Christopher Wilson
 css: custom.css
