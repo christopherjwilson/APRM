@@ -2,6 +2,10 @@
 
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9ecb2696-88e3-408b-93ab-abdb00e20628&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" width=720 height=405 style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
+### Overview of RStudio.cloud
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9ced34cd-afea-469c-ac4b-ac6200a21e76&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## By the end of this section, you should be able to:
 
 - Download R and R studio
