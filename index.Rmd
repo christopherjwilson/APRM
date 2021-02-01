@@ -131,6 +131,23 @@ The following criteria will be used to assess the assignment:
 - Demonstrate a detailed and critical understanding of the data analysis required for the proposed study. 
 - Adhere to the American Psychological Association (APA) guidelines for presentation and referencing. 
 
+**Suggested structure for ECA**
+
+This assessment is a research proposal and should be structured to describe the research aims and how the methodological approach suggested will address these aims. The previous assessment will have raised certain critiques of the research paper discussed, and these issues might inform the proposed project. However, it is important that this assessment stands alone as a written piece of work, so there should be sufficient information and reference to literature for the reader to understand the basis of the research question and methodological choices that are made (similar to when someone reads a dissertation or research paper method).
+
+In terms of strucutre, there are some elements that it would be logical to include:
+
+- A brief introduction
+- A statement of the research question(s) and (if appropriate) hypotheses
+- Information about planned sampling approach / participant inclusion and exclusion criteria
+- An overview of the proposed method, including information about measures and techniques that would be used
+- An overview of the planned analysis
+
+It would also be useful to include, though not necessarily in an independent section information about:
+
+- the clinical relevance/impact of the research 
+- ethical considerations that need to be taken into account.
+
 ### Word limits for assessment
 
 Word limits are as stated above (note that there is no allowance of +10%).  The word count refers to the assignment itself and does not include the reference list or tables/graphs.  The references cited in the main body of text are included in the word count.  
