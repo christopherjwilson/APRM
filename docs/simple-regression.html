@@ -518,8 +518,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We use the <em>lm()</em> command to run regression while saving the results</li>
 <li>We then use the <em>summary()</em> function to check the results</li>
 </ul>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="simple-regression.html#cb139-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula=</span> aggression_level <span class="sc">~</span> treatment_duration ,<span class="at">data=</span>regression_data)</span>
-<span id="cb139-2"><a href="simple-regression.html#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="simple-regression.html#cb131-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula=</span> aggression_level <span class="sc">~</span> treatment_duration ,<span class="at">data=</span>regression_data)</span>
+<span id="cb131-2"><a href="simple-regression.html#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -553,13 +553,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Using the <em>plot()</em> command on our regression model will give us some useful diagnostic plots</li>
 <li>The second plot that it outputs shows the normality</li>
 </ul>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="simple-regression.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="simple-regression.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-79-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We could also use a histogram to check the distribution</li>
 <li>Notice how we can use the $ sign to get the residuals from the model</li>
 </ul>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="simple-regression.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(model1<span class="sc">$</span>residuals)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="simple-regression.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(model1<span class="sc">$</span>residuals)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-80-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="check-assumptions-linearity" class="section level2" number="8.8">
@@ -569,7 +569,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The first plot that it outputs shows the residuals vs the fitted values</li>
 <li>Here, we want to see them spread out, with the line being horizontal and straight</li>
 </ul>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="simple-regression.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="simple-regression.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-81-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>There is a slight amount of curvilinearity here but nothing to be worried about</li>
@@ -581,7 +581,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We can use the sample plot to check Homogeneity of Variance</li>
 <li>We want the variance to be constant across the data set. We do not want the variance to change at different points in the data</li>
 </ul>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="simple-regression.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="simple-regression.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-82-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>A violation of Homogeneity of Variance would usually look like a funnel, with the data narrowing</li>
@@ -598,7 +598,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Others suggest 4/n is the cut off point (4 divided by number of participants)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="simple-regression.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="simple-regression.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">4</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-84-1.png" width="30%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We are looking for participants that have high rediduals + high leverage
@@ -607,7 +607,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Many are over 0.04 (4/n = 0.04)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="simple-regression.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="simple-regression.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-85-1.png" width="40%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="check-the-r-squared-value" class="section level2" number="8.11">
@@ -616,8 +616,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>r^2 = the amount of variance in the <strong>outcome</strong> that is explained by the <strong>predictor(s)</strong></li>
 <li>The closer this value is to 1, the more useful our regression model is for predicting the outcome</li>
 </ul>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="simple-regression.html#cb147-1" aria-hidden="true" tabindex="-1"></a>modelSummary <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)</span>
-<span id="cb147-2"><a href="simple-regression.html#cb147-2" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="simple-regression.html#cb139-1" aria-hidden="true" tabindex="-1"></a>modelSummary <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)</span>
+<span id="cb139-2"><a href="simple-regression.html#cb139-2" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -649,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>As p &lt; 0.05, the model is significant</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="simple-regression.html#cb149-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="simple-regression.html#cb141-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -675,7 +675,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The coefficient values are displayed in the coefficients table</li>
 <li>If we have more than one predictor, they are all listed here</li>
 </ul>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="simple-regression.html#cb151-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="simple-regression.html#cb143-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
 <pre><code>##                      Estimate Std. Error   t value     Pr(&gt;|t|)
 ## (Intercept)        12.3300211 0.75087601 16.420848 6.840516e-30
 ## treatment_duration -0.6933201 0.07259671 -9.550297 1.145898e-15</code></pre>
@@ -694,7 +694,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>For this model, that is:</li>
 </ul>
 <p>Aggression level = treatment duration * -0.69 + 12.33</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="simple-regression.html#cb153-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="simple-regression.html#cb145-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
 <pre><code>##                      Estimate Std. Error   t value     Pr(&gt;|t|)
 ## (Intercept)        12.3300211 0.75087601 16.420848 6.840516e-30
 ## treatment_duration -0.6933201 0.07259671 -9.550297 1.145898e-15</code></pre>
@@ -705,7 +705,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We also know that the accuracy of predictions will be within a certain margin of error</li>
 <li>This is known as <strong>standard error of the estimate</strong> or <strong>residual standard error</strong></li>
 </ul>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="simple-regression.html#cb155-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="simple-regression.html#cb147-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
