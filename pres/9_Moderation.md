@@ -1,8 +1,9 @@
-Q&A Session will start at 10am. If you have any questions, you can hold on to them until then!
+Moderation analysis
 ========================================================
 author: Christopher Wilson
 width: 1920
 height:1080
+autosize: true
 css: custom.css
 
 Overview
@@ -15,7 +16,7 @@ Overview
 - Interpreting Moderation
 - Bootstrapping Moderation
 
-Revision: What are mediation and moderation?
+What are mediation and moderation?
 ========================================================
 type: section
 
@@ -24,37 +25,13 @@ type: section
 What is moderation?
 ======
 
+
 There is a direct relationship between X and Y but it is affected by a moderator (M)
 
 <img src="9_Moderation-figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" height="75%" />
 
-In the above model, we theorise that socio-economic status predicts future prospects but the strength of the relationship is changed by education level
+In the above model, we theorise that Time in counselling predicts General Wellbeing but the strength of the relationship is affected by the level of Rapport with counsellor
 
-What is mediation?
-========================================================
-Where the relationship between a predictor (X) and an outcome (Y) is mediated by another variable (M). 
-
-<img src="9_Moderation-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" height="75%" />
-
-In the above model, we theorise that socio-economic status predicts education level, which predicts future prospects.
-
-
-Why different models?
-======
-
-
-![plot of chunk unnamed-chunk-3](9_Moderation-figure/unnamed-chunk-3-1.png)
-
-This might be more appropriate if higher education costs money
-
-
-Why different models?
-======
-
-
-![plot of chunk unnamed-chunk-4](9_Moderation-figure/unnamed-chunk-4-1.png)
-
-This might be more appopriate if access to higher education is free 
 
 
 What packages do we need?
@@ -72,9 +49,11 @@ What is moderation?
 - This is referred to as an interaction (similar to interaction in standard regression)
 - A moderator can effect the direction and/or strength of a relationship between X and Y
 
-![plot of chunk unnamed-chunk-5](9_Moderation-figure/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-2](9_Moderation-figure/unnamed-chunk-2-1.png)
 
-Here we might find that the relationship between SES and employment prospects is strong for those who do not spend a lot of time in education and weak for those who spend a lot of time in education.
+
+Here we might find that the relationship between Time in counselling and General Wellbeing is strong for those who have a strong rapport with their counselling psychologist and weak for those who do not have good rapport with their counselling psychologist.
+
 
 What is moderation? #2
 ====
@@ -91,7 +70,7 @@ What is moderation? #2
 
 What is moderation? #3
 ======
-<img src="9_Moderation-figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="60%" />
+<img src="9_Moderation-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="60%" />
 
 In the plot above:
 - The blue line is the "standard" regression line
@@ -128,157 +107,37 @@ Step 1: Grand Mean Centering #2
 ## We can see that the difference between the original data is the mean of the data.
 
 
-```r
-  Xc    <- scale(X, center=TRUE, scale=FALSE) #Centering X; 
-  
-  X
-```
-
-```
-  [1]  3.7580974  5.0792900 12.2348333  6.2820336  6.5171509 12.8602599
-  [7]  7.8436648  0.9397551  3.2525886  4.2173521 10.8963272  7.4392553
- [13]  7.6030858  6.4427309  3.7766355 13.1476525  7.9914019  1.8664686
- [19]  8.8054236  4.1088344  1.7287052  5.1281003  1.8959822  3.0844351
- [25]  3.4998429  0.7467732  9.3511482  6.6134925  1.4474523 11.0152597
- [31]  7.7058569  4.8197141  9.5805026  9.5125340  9.2863243  8.7545610
- [37]  8.2156706  5.7523532  4.7761493  4.4781160  3.2211721  5.1683309
- [43]  0.9384146 14.6758239 10.8318480  1.5075657  4.3884607  4.1333786
- [49]  9.1198605  5.6665237  7.0132741  5.8858130  5.8285182 11.4744091
- [55]  5.0969161 12.0658824  0.1950112  8.3384550  6.4954170  6.8637663
- [61]  7.5185579  3.9907062  4.6671705  1.9256985  1.7128351  7.2141146
- [67]  7.7928391  6.2120169  9.6890699 14.2003387  4.0358753  3.2366755
- [73] 10.0229541  3.1631969  3.2479655 10.1022855  4.8609080  1.1171292
- [79]  6.7252139  5.4444346  6.0230567  7.5411216  4.5173599  8.5775062
- [85]  5.1180538  7.3271279 10.3873561  7.7407260  4.6962737 10.5952305
- [91]  9.9740154  8.1935878  6.9549269  3.4883757 11.4426098  3.5989617
- [97] 14.7493320 12.1304425  5.0571986  1.8943164
-```
 
 ```r
-  Xc
+#Centering Data
+Moddata$timeInCounselling_centred    <- c(scale(timeInCounselling, center=TRUE, scale=FALSE)) 
+
+#Centering IV; 
+Moddata$rapportLevel_centred    <- c(scale(rapportLevel,  center=TRUE, scale=FALSE)) #Centering moderator; 
+
+#Moderation "By Hand" with centred data
+library(gvlma)
+fitMod <- lm(generalWellbeing ~ timeInCounselling_centred *rapportLevel_centred  , data = Moddata) #Model interacts IV & moderator
+
+library(interactions)
+ ip <- interact_plot(fitMod, pred = timeInCounselling_centred, modx = rapportLevel_centred)
+ ip
 ```
 
-```
-              [,1]
-  [1,] -2.72442479
-  [2,] -1.40323216
-  [3,]  5.75231105
-  [4,] -0.20048864
-  [5,]  0.03462873
-  [6,]  6.37773774
-  [7,]  1.36114262
-  [8,] -5.54276714
-  [9,] -3.22993361
- [10,] -2.26517009
- [11,]  4.41380498
- [12,]  0.95673310
- [13,]  1.12056360
- [14,] -0.03979134
- [15,] -2.70588675
- [16,]  6.66513034
- [17,]  1.50887971
- [18,] -4.61605358
- [19,]  2.32290140
- [20,] -2.37368784
- [21,] -4.75381703
- [22,] -1.35442186
- [23,] -4.58654000
- [24,] -3.39808712
- [25,] -2.98267928
- [26,] -5.73574896
- [27,]  2.86862597
- [28,]  0.13097027
- [29,] -5.03506995
- [30,]  4.53273748
- [31,]  1.22333468
- [32,] -1.66280814
- [33,]  3.09798044
- [34,]  3.03001174
- [35,]  2.80380212
- [36,]  2.27203881
- [37,]  1.73314841
- [38,] -0.73016905
- [39,] -1.70637286
- [40,] -2.00440621
- [41,] -3.26135012
- [42,] -1.31419132
- [43,] -5.54410761
- [44,]  8.19330166
- [45,]  4.34932579
- [46,] -4.97495654
- [47,] -2.09406155
- [48,] -2.34914362
- [49,]  2.63733827
- [50,] -0.81599847
- [51,]  0.53075185
- [52,] -0.59670923
- [53,] -0.65400404
- [54,]  4.99188693
- [55,] -1.38560615
- [56,]  5.58336021
- [57,] -6.28751099
- [58,]  1.85593279
- [59,]  0.01289477
- [60,]  0.38124407
- [61,]  1.03603572
- [62,] -2.49181602
- [63,] -1.81535174
- [64,] -4.55682374
- [65,] -4.76968711
- [66,]  0.73159236
- [67,]  1.31031691
- [68,] -0.27050530
- [69,]  3.20654767
- [70,]  7.71781654
- [71,] -2.44664687
- [72,] -3.24584670
- [73,]  3.54043189
- [74,] -3.31932526
- [75,] -3.23455667
- [76,]  3.61976327
- [77,] -1.62161423
- [78,] -5.36539306
- [79,]  0.24269171
- [80,] -1.03808766
- [81,] -0.45946546
- [82,]  1.05859940
- [83,] -1.96516233
- [84,]  2.09498399
- [85,] -1.36446845
- [86,]  0.84460565
- [87,]  3.90483385
- [88,]  1.25820376
- [89,] -1.78624855
- [90,]  4.11270827
- [91,]  3.49149322
- [92,]  1.71106563
- [93,]  0.47240473
- [94,] -2.99414651
- [95,]  4.96008759
- [96,] -2.88356055
- [97,]  8.26680977
- [98,]  5.64792030
- [99,] -1.42532364
-[100,] -4.58820581
-attr(,"scaled:center")
-[1] 6.482522
-```
+![plot of chunk unnamed-chunk-4](9_Moderation-figure/unnamed-chunk-4-1.png)
 
-```r
-   mean(X)
-```
+Do I need to mean centre my data?
+======
+It is worth noting:
 
-```
-[1] 6.482522
-```
+- It does not change the results of your interaction (coefficient, standard error or significance tests).
+- It will change the results of the direct effects (the individual predictors in your model).
+- It is a step that tries to ensure that the coefficients of the predictor and moderator are meaningful in relation to each other.
+- In some cases, it might not be necessary to mean centre at all. However, there is no harm in doing so, and it could potentially be helpful.
 
-```r
-  X[1]-Xc[1]
-```
+Hayes (2013) discusses mean centering, pp. 282-290. 
 
-```
-[1] 6.482522
-```
+McClelland, G. H., Irwin, J. R., Disatnik, D., & Sivan, L. (2017). Multicollinearity is a red herring in the search for moderator variables: A guide to interpreting moderated multiple regression models and a critique of Iacobucci, Schneider, Popovich, and Bakamitsos (2016). Behavior research methods, 49(1), 394-402.
 
 
 
@@ -296,11 +155,18 @@ gvlma(fitMod)
 ```
 
 Call:
-lm(formula = Y ~ Xc + Mc + Xc * Mc, data = Moddata)
+lm(formula = generalWellbeing ~ timeInCounselling_centred * rapportLevel_centred, 
+    data = Moddata)
 
 Coefficients:
-(Intercept)           Xc           Mc        Xc:Mc  
-   33.15071     -0.24574     -0.95207     -0.08425  
+                                   (Intercept)  
+                                       21.1851  
+                     timeInCounselling_centred  
+                                        0.8971  
+                          rapportLevel_centred  
+                                        0.5842  
+timeInCounselling_centred:rapportLevel_centred  
+                                        0.1495  
 
 
 ASSESSMENT OF THE LINEAR MODEL ASSUMPTIONS
@@ -310,15 +176,20 @@ Level of Significance =  0.05
 Call:
  gvlma(x = fitMod) 
 
-                      Value  p-value                   Decision
-Global Stat        16.25835 0.002691 Assumptions NOT satisfied!
-Skewness            9.69478 0.001848 Assumptions NOT satisfied!
-Kurtosis            6.42028 0.011282 Assumptions NOT satisfied!
-Link Function       0.01433 0.904712    Assumptions acceptable.
-Heteroscedasticity  0.12895 0.719519    Assumptions acceptable.
+                    Value p-value                   Decision
+Global Stat        9.6949 0.04589 Assumptions NOT satisfied!
+Skewness           7.7571 0.00535 Assumptions NOT satisfied!
+Kurtosis           1.2182 0.26972    Assumptions acceptable.
+Link Function      0.5287 0.46716    Assumptions acceptable.
+Heteroscedasticity 0.1910 0.66207    Assumptions acceptable.
 ```
 
+The "global stat" is an attempt to check multiple assumptions of linear model: Pena, E. A., & Slate, E. H. (2006). Global validation of linear model assumptions. Journal of the American Statistical Association, 101(473), 341-354.
+
+Since one of the underlying assumptions is violated, the overall stat is also not acceptable.
+
 The data looks skewed, we should transform it or perhaps use bootstrapping
+
 
 
 
@@ -327,31 +198,38 @@ Step 3: Moderation Analysis
 
 
 ```r
-fitMod <- lm(Y ~ Xc + Mc + Xc*Mc, data = Moddata) #Model interacts IV & moderator
+fitMod <- lm(generalWellbeing ~ timeInCounselling_centred *rapportLevel_centred  , data = Moddata) #Model interacts IV & moderator
+ #Model interacts IV & moderator
 summary(fitMod)
 ```
 
 ```
 
 Call:
-lm(formula = Y ~ Xc + Mc + Xc * Mc, data = Moddata)
+lm(formula = generalWellbeing ~ timeInCounselling_centred * rapportLevel_centred, 
+    data = Moddata)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--22.193  -8.184  -0.445   5.670  44.161 
+-18.121  -8.938  -0.670   5.840  37.396 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 33.15071    1.20186  27.583  < 2e-16 ***
-Xc          -0.24574    0.35732  -0.688   0.4933    
-Mc          -0.95207    0.15921  -5.980 3.81e-08 ***
-Xc:Mc       -0.08425    0.04236  -1.989   0.0496 *  
+                                               Estimate Std. Error t value
+(Intercept)                                    21.18508    1.14115  18.565
+timeInCounselling_centred                       0.89707    0.33927   2.644
+rapportLevel_centred                            0.58416    0.15117   3.864
+timeInCounselling_centred:rapportLevel_centred  0.14948    0.04022   3.716
+                                               Pr(>|t|)    
+(Intercept)                                     < 2e-16 ***
+timeInCounselling_centred                      0.009569 ** 
+rapportLevel_centred                           0.000203 ***
+timeInCounselling_centred:rapportLevel_centred 0.000340 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 11.93 on 96 degrees of freedom
-Multiple R-squared:  0.2909,	Adjusted R-squared:  0.2687 
-F-statistic: 13.13 on 3 and 96 DF,  p-value: 2.97e-07
+Residual standard error: 11.33 on 96 degrees of freedom
+Multiple R-squared:  0.2737,	Adjusted R-squared:  0.251 
+F-statistic: 12.06 on 3 and 96 DF,  p-value: 9.12e-07
 ```
 
 The results above show that there is a moderated effect
@@ -364,9 +242,9 @@ Step 3: Moderation analysis #2
 We use an approach called **simple slopes** to visualise the moderation effect
 
 
-    interact_plot(fitMod, pred = Xc, modx = Mc)
+        interact_plot(fitMod, pred = timeInCounselling_centred, modx = rapportLevel_centred)
     
-![plot of chunk unnamed-chunk-10](9_Moderation-figure/unnamed-chunk-10-1.png)
+![plot of chunk unnamed-chunk-7](9_Moderation-figure/unnamed-chunk-7-1.png)
 
 Step 3: Moderation analysis #3
 ======
@@ -377,55 +255,56 @@ The **rockchalk** package includes useful functions for visualising simple slope
 ```r
 library(rockchalk)
 
-mod1 <- lm(Y ~Mc*Xc, data = Moddata)
+fitMod <- lm(generalWellbeing ~ timeInCounselling *rapportLevel  , data = Moddata)
 summary(fitMod)
 ```
 
 ```
 
 Call:
-lm(formula = Y ~ Xc + Mc + Xc * Mc, data = Moddata)
+lm(formula = generalWellbeing ~ timeInCounselling * rapportLevel, 
+    data = Moddata)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--22.193  -8.184  -0.445   5.670  44.161 
+-18.121  -8.938  -0.670   5.840  37.396 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 33.15071    1.20186  27.583  < 2e-16 ***
-Xc          -0.24574    0.35732  -0.688   0.4933    
-Mc          -0.95207    0.15921  -5.980 3.81e-08 ***
-Xc:Mc       -0.08425    0.04236  -1.989   0.0496 *  
+                               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    17.28006    3.17944   5.435 4.15e-07 ***
+timeInCounselling               0.15510    0.42033   0.369  0.71296    
+rapportLevel                   -0.38484    0.29916  -1.286  0.20140    
+timeInCounselling:rapportLevel  0.14948    0.04022   3.716  0.00034 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 11.93 on 96 degrees of freedom
-Multiple R-squared:  0.2909,	Adjusted R-squared:  0.2687 
-F-statistic: 13.13 on 3 and 96 DF,  p-value: 2.97e-07
+Residual standard error: 11.33 on 96 degrees of freedom
+Multiple R-squared:  0.2737,	Adjusted R-squared:  0.251 
+F-statistic: 12.06 on 3 and 96 DF,  p-value: 9.12e-07
 ```
 
 ```r
-slopes <- plotSlopes(fitMod, modx = "Mc", plotx = "Xc")
+slopes <- plotSlopes(fitMod, modx = "rapportLevel", plotx = "timeInCounselling")
 ```
 
-![plot of chunk unnamed-chunk-11](9_Moderation-figure/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-8](9_Moderation-figure/unnamed-chunk-8-1.png)
 
 ```r
 testSlopes <- testSlopes(slopes)
 ```
 
 ```
-Values of Mc OUTSIDE this interval:
-          lo           hi 
--2210.011369     7.290036 
-cause the slope of (b1 + b2*Mc)Xc to be statistically significant
+Values of rapportLevel OUTSIDE this interval:
+        lo         hi 
+-11.580166   3.634439 
+cause the slope of (b1 + b2*rapportLevel)timeInCounselling to be statistically significant
 ```
 
 ```r
 plot(testSlopes)
 ```
 
-![plot of chunk unnamed-chunk-11](9_Moderation-figure/unnamed-chunk-11-2.png)
+![plot of chunk unnamed-chunk-8](9_Moderation-figure/unnamed-chunk-8-2.png)
 
 
 Step 4: Bootstrapping
@@ -443,11 +322,11 @@ confint(fitMod)
 ```
 
 ```
-                 2.5 %        97.5 %
-(Intercept) 30.7650397 35.5363842663
-Xc          -0.9550230  0.4635440922
-Mc          -1.2681029 -0.6360294935
-Xc:Mc       -0.1683425 -0.0001632251
+                                     2.5 %     97.5 %
+(Intercept)                    10.96891826 23.5912086
+timeInCounselling              -0.67926290  0.9894532
+rapportLevel                   -0.97866229  0.2089882
+timeInCounselling:rapportLevel  0.06963667  0.2293205
 ```
 
 ```r
@@ -457,11 +336,11 @@ confint(bootstrapModel)
 ```
 Bootstrap bca confidence intervals
 
-                 2.5 %      97.5 %
-(Intercept) 30.8778236 35.41771485
-Xc          -0.9351717  0.38542382
-Mc          -1.2381687 -0.66465099
-Xc:Mc       -0.1749438 -0.01361759
+                                     2.5 %     97.5 %
+(Intercept)                    11.57230420 23.7222700
+timeInCounselling              -0.61780918  1.0397199
+rapportLevel                   -0.90786799  0.2558502
+timeInCounselling:rapportLevel  0.05806412  0.2146814
 ```
 
 ```r
@@ -471,18 +350,18 @@ summary(bootstrapModel)
 ```
 
 Number of bootstrap replications R = 999 
-             original    bootBias  bootSE   bootMed
-(Intercept) 33.150712  0.02697380 1.20072 33.165894
-Xc          -0.245739  0.01004465 0.34117 -0.233827
-Mc          -0.952066  0.00608159 0.14915 -0.941268
-Xc:Mc       -0.084253 -0.00086089 0.03861 -0.083022
+                               original    bootBias   bootSE  bootMed
+(Intercept)                    17.28006 -0.13667103 3.165301 17.05431
+timeInCounselling               0.15510  0.01637117 0.399550  0.15929
+rapportLevel                   -0.38484  0.00716631 0.294061 -0.38218
+timeInCounselling:rapportLevel  0.14948 -0.00052838 0.038516  0.14974
 ```
 
 ```r
 hist(bootstrapModel)
 ```
 
-![plot of chunk unnamed-chunk-12](9_Moderation-figure/unnamed-chunk-12-1.png)
+![plot of chunk unnamed-chunk-9](9_Moderation-figure/unnamed-chunk-9-1.png)
 
 Summary
 ========================================================

@@ -692,7 +692,7 @@ An r matrix example</p>
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="factor-analysis.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code></pre></div>
 <pre><code>## corrplot 0.84 loaded</code></pre>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="factor-analysis.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(raq.matrix, <span class="at">method =</span> <span class="st">&quot;number&quot;</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-141-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-146-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We can use bartlett’s test from the psych package</li>
 </ul>
@@ -718,10 +718,10 @@ An r matrix example</p>
 ## Call: KMO(r = raq)
 ## Overall MSA =  0.93
 ## MSA for each item = 
-##  Q01  Q02  Q03  Q04  Q05  Q06  Q07  Q08  Q09  Q10  Q11  Q12  Q13  Q14  Q15  Q16 
-## 0.93 0.87 0.95 0.96 0.96 0.89 0.94 0.87 0.83 0.95 0.91 0.95 0.95 0.97 0.94 0.93 
-##  Q17  Q18  Q19  Q20  Q21  Q22  Q23 
-## 0.93 0.95 0.94 0.89 0.93 0.88 0.77</code></pre>
+##  Q01  Q02  Q03  Q04  Q05  Q06  Q07  Q08  Q09  Q10  Q11  Q12  Q13  Q14  Q15  Q16  Q17 
+## 0.93 0.87 0.95 0.96 0.96 0.89 0.94 0.87 0.83 0.95 0.91 0.95 0.95 0.97 0.94 0.93 0.93 
+##  Q18  Q19  Q20  Q21  Q22  Q23 
+## 0.95 0.94 0.89 0.93 0.88 0.77</code></pre>
 </div>
 <div id="step-4-identify-number-of-factors" class="section level2" number="12.10">
 <h2><span class="header-section-number">12.10</span> Step 4: Identify number of factors</h2>
@@ -747,7 +747,7 @@ An r matrix example</p>
 <div id="scree-plot" class="section level3" number="12.10.2">
 <h3><span class="header-section-number">12.10.2</span> Scree plot</h3>
 <div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="factor-analysis.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scree</span>(raq)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-144-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-149-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We are looking for the point of inflection</li>
 <li>Where there is a drop-off</li>
@@ -774,7 +774,7 @@ See how many factors we can draw a line through</p>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="factor-analysis.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
 <span id="cb256-2"><a href="factor-analysis.html#cb256-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb256-3"><a href="factor-analysis.html#cb256-3" aria-hidden="true" tabindex="-1"></a> parallel_analysis <span class="ot">&lt;-</span> <span class="fu">fa.parallel</span>(raq)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-146-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-151-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre><code>## Parallel analysis suggests that the number of factors =  6  and the number of components =  4</code></pre>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="factor-analysis.html#cb258-1" aria-hidden="true" tabindex="-1"></a>parallel_analysis</span></code></pre></div>
 <pre><code>## Call: fa.parallel(x = raq)
@@ -1020,7 +1020,7 @@ See how many factors we can draw a line through</p>
 ## Multiple R square of scores with factors          0.92 0.61
 ## Minimum correlation of possible factor scores     0.83 0.23</code></pre>
 <div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="factor-analysis.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf1)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-155-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-160-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="factor-analysis-rotation" class="section level2" number="12.13">
 <h2><span class="header-section-number">12.13</span> Factor analysis rotation</h2>
@@ -1116,9 +1116,9 @@ See how many factors we can draw a line through</p>
 ## Multiple R square of scores with factors          0.91 0.65
 ## Minimum correlation of possible factor scores     0.82 0.30</code></pre>
 <div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="factor-analysis.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf1)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-157-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-162-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="factor-analysis.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf2)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-158-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-163-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="reliability-internal-consistency" class="section level2" number="12.15">
 <h2><span class="header-section-number">12.15</span> Reliability / internal consistency</h2>

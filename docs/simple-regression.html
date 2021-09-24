@@ -554,13 +554,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The second plot that it outputs shows the normality</li>
 </ul>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="simple-regression.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-79-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-83-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We could also use a histogram to check the distribution</li>
 <li>Notice how we can use the $ sign to get the residuals from the model</li>
 </ul>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="simple-regression.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(model1<span class="sc">$</span>residuals)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-80-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-84-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="check-assumptions-linearity" class="section level2" number="8.8">
 <h2><span class="header-section-number">8.8</span> Check assumptions: linearity</h2>
@@ -570,7 +570,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Here, we want to see them spread out, with the line being horizontal and straight</li>
 </ul>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="simple-regression.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-81-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-85-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>There is a slight amount of curvilinearity here but nothing to be worried about</li>
 </ul>
@@ -582,7 +582,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We want the variance to be constant across the data set. We do not want the variance to change at different points in the data</li>
 </ul>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="simple-regression.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-82-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-86-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>A violation of Homogeneity of Variance would usually look like a funnel, with the data narrowing</li>
 </ul>
@@ -599,7 +599,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="simple-regression.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">4</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-84-1.png" width="30%" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-88-1.png" width="30%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We are looking for participants that have high rediduals + high leverage
 <ul>
@@ -608,7 +608,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="simple-regression.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">5</span>)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-85-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-89-1.png" width="40%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="check-the-r-squared-value" class="section level2" number="8.11">
 <h2><span class="header-section-number">8.11</span> Check the r squared value</h2>

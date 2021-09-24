@@ -491,7 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="graphing-and-data-visualisation-with-r.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb106-2"><a href="graphing-and-data-visualisation-with-r.html#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-3"><a href="graphing-and-data-visualisation-with-r.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
 <div id="changing-the-geoms-leads-to-different-visualisations" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Changing the geoms leads to different visualisations</h2>
@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="graphing-and-data-visualisation-with-r.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb107-2"><a href="graphing-and-data-visualisation-with-r.html#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb107-3"><a href="graphing-and-data-visualisation-with-r.html#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> It is possible to represent more variables on the plot</h2>
@@ -511,7 +511,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="graphing-and-data-visualisation-with-r.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb108-2"><a href="graphing-and-data-visualisation-with-r.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb108-3"><a href="graphing-and-data-visualisation-with-r.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route))</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot-2" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> It is possible to represent more variables on the plot #2</h2>
@@ -522,7 +522,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb109-2"><a href="graphing-and-data-visualisation-with-r.html#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb109-3"><a href="graphing-and-data-visualisation-with-r.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot-3" class="section level2" number="6.9">
 <h2><span class="header-section-number">6.9</span> It is possible to represent more variables on the plot #3</h2>
@@ -533,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb111-2"><a href="graphing-and-data-visualisation-with-r.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb111-3"><a href="graphing-and-data-visualisation-with-r.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 <div id="plotting-summaries-of-data" class="section level2" number="6.10">
 <h2><span class="header-section-number">6.10</span> Plotting summaries of data</h2>
@@ -543,7 +543,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="graphing-and-data-visualisation-with-r.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>route, <span class="at">y=</span> grades, <span class="at">fill=</span>route)) <span class="sc">+</span> <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
 <div id="changing-the-axis-labels-and-title-on-a-plot" class="section level2" number="6.11">
 <h2><span class="header-section-number">6.11</span> Changing the axis labels and title on a plot</h2>
@@ -553,7 +553,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb116-2"><a href="graphing-and-data-visualisation-with-r.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb116-3"><a href="graphing-and-data-visualisation-with-r.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
 </div>
 <div id="changing-the-legend-on-a-plot" class="section level2" number="6.12">
 <h2><span class="header-section-number">6.12</span> Changing the legend on a plot</h2>
@@ -565,7 +565,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb119-4"><a href="graphing-and-data-visualisation-with-r.html#cb119-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
 <span id="cb119-5"><a href="graphing-and-data-visualisation-with-r.html#cb119-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
 </div>
 <div id="storing-plots-to-be-recalled-later" class="section level2" number="6.13">
 <h2><span class="header-section-number">6.13</span> Storing plots to be recalled later</h2>
@@ -585,7 +585,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="graphing-and-data-visualisation-with-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Recall myPlot</span></span>
 <span id="cb122-2"><a href="graphing-and-data-visualisation-with-r.html#cb122-2" aria-hidden="true" tabindex="-1"></a>myPlot</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 </div>
 <div id="saving-plots-1" class="section level2" number="6.15">
 <h2><span class="header-section-number">6.15</span> Saving plots # 1</h2>

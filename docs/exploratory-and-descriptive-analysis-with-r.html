@@ -595,7 +595,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We will focus on graphic presentation of data next week</li>
 </ul>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
 </div>
 <div id="assessing-skewness-of-distribution-2" class="section level3" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> Assessing skewness of distribution #2</h3>
@@ -710,21 +710,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Airplay    -0.10  1.55
 ## Attract     3.54  0.24
 ## Genre*       NaN  0.00
-## -------------------------------------------------------------- 
+## ---------------------------------------------------------------- 
 ## group: HipHop
-##         vars  n   mean     sd median trimmed    mad   min  max   range  skew
-## Adverts    1 53 606.32 452.84 601.43  568.33 501.36 10.65 2000 1989.35  0.70
-## Sales      2 53 199.62  92.71 200.00  200.70 103.78 10.00  360  350.00 -0.10
-## Airplay    3 53  28.09  13.86  30.00   28.33  14.83  0.00   55   55.00 -0.14
-## Attract    4 53   6.96   1.13   7.00    7.00   1.48  3.00    9    6.00 -0.80
-## Genre*     5 53   2.00   0.00   2.00    2.00   0.00  2.00    2    0.00   NaN
-##         kurtosis    se
-## Adverts     0.05 62.20
-## Sales      -0.91 12.74
-## Airplay    -0.83  1.90
-## Attract     2.03  0.15
-## Genre*       NaN  0.00
-## -------------------------------------------------------------- 
+##         vars  n   mean     sd median trimmed    mad   min  max   range  skew kurtosis
+## Adverts    1 53 606.32 452.84 601.43  568.33 501.36 10.65 2000 1989.35  0.70     0.05
+## Sales      2 53 199.62  92.71 200.00  200.70 103.78 10.00  360  350.00 -0.10    -0.91
+## Airplay    3 53  28.09  13.86  30.00   28.33  14.83  0.00   55   55.00 -0.14    -0.83
+## Attract    4 53   6.96   1.13   7.00    7.00   1.48  3.00    9    6.00 -0.80     2.03
+## Genre*     5 53   2.00   0.00   2.00    2.00   0.00  2.00    2    0.00   NaN      NaN
+##            se
+## Adverts 62.20
+## Sales   12.74
+## Airplay  1.90
+## Attract  0.15
+## Genre*   0.00
+## ---------------------------------------------------------------- 
 ## group: Metal
 ##         vars  n   mean     sd median trimmed    mad  min     max   range  skew
 ## Adverts    1 48 693.45 534.06  593.0  640.19 521.34 45.3 2271.86 2226.56  0.92
@@ -738,7 +738,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Airplay    -0.26  1.64
 ## Attract     1.74  0.19
 ## Genre*       NaN  0.00
-## -------------------------------------------------------------- 
+## ---------------------------------------------------------------- 
 ## group: Pop
 ##         vars  n   mean     sd median trimmed    mad   min     max   range  skew
 ## Adverts    1 53 514.63 446.04  429.5  453.85 438.01 15.31 1789.66 1774.35  1.01
@@ -763,7 +763,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Album_Sales<span class="sc">$</span>Sales,Album_Sales<span class="sc">$</span>Adverts)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>“Is there a relationship between advert spend and sales?”</p>
 <ul>
 <li>We would use an correlational analysis to answer this question</li>
