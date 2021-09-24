@@ -2,11 +2,11 @@
 
 ## Basic concepts that you should already know
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8e6af012-9d1d-411b-81a7-ac2c00d35e1f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d669a837-fef2-496d-95ef-adaa008fd4da&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Probability and hypothesis testing
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f496c1dc-d3a2-4358-aff3-ac3000b4139c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6bdac652-8c7d-4b8e-abee-adaa008ff961&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 One of the most important things to remember about hypothesis testing in statistics is why we use the approaches we do. That is, we need statistical approaches to test hypotheses because we can only collect data from samples of the population but our research questions and hypotheses apply to whole populations. For that reason, we need a way to estimate how well the *sample* reflects the *population.*
 

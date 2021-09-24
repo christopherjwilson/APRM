@@ -5,7 +5,7 @@ library(tidyverse)
 regression_data <- read.csv("Datasets/regression_data.csv")
 ```
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=49a33d36-4527-4956-89ad-ac3100a85594&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=c13b5ceb-47c7-4001-8a56-adaa008f19a2&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## What is Correlation?
 
@@ -124,7 +124,7 @@ cor.test(regression_data$treatment_duration,regression_data$aggression_level)
 
 # Simple Regression
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=33e1d61d-e476-4416-aaee-ac3100b94da4&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=5e657c9f-3a06-4a74-b259-adaa0090242b&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## What is regression?
 

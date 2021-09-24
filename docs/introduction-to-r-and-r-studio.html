@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 3 Introduction to R and R Studio | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 3 Introduction to R and R Studio | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="research-methods-concepts-revision.html"/>
 <link rel="next" href="working-with-data-in-r.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +50,11 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -124,6 +124,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -146,7 +147,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2020/2021</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>1.2.1</b> Learning and Teaching Strategies</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#how-will-the-online-sessions-work"><i class="fa fa-check"></i><b>1.2.2</b> How will the online sessions work?</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i><b>1.3</b> Assessment</a>
 <ul>
@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html"><i class="fa fa-check"></i><b>6</b> Graphing and data visualisation with R</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#presenting-data-visually"><i class="fa fa-check"></i><b>6.1</b> Presenting data visually</a></li>
-<li class="chapter" data-level="6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>6.2</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="6.2" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#by-the-end-of-this-section-you-will-be-able-to-1"><i class="fa fa-check"></i><b>6.2</b> By the end of this section, you will be able to:</a></li>
 <li class="chapter" data-level="6.3" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-grammar-of-visualisation"><i class="fa fa-check"></i><b>6.3</b> The “grammar of visualisation”</a></li>
 <li class="chapter" data-level="6.4" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#how-to-code-a-graph"><i class="fa fa-check"></i><b>6.4</b> How to code a graph</a></li>
 <li class="chapter" data-level="6.5" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-graph-output"><i class="fa fa-check"></i><b>6.5</b> The graph output</a></li>
@@ -370,21 +370,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
-<li class="chapter" data-level="11.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
-<li class="chapter" data-level="11.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
-<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview-1"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
+<li class="chapter" data-level="11.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need-1"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-2"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
 <li class="chapter" data-level="11.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>11.5</b> Moderation: step-by-step</a>
 <ul>
 <li class="chapter" data-level="11.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>11.5.1</b> Step 1: Grand Mean Centering</a></li>
-<li class="chapter" data-level="11.5.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="11.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions-1"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
 <li class="chapter" data-level="11.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>11.5.3</b> Step 3: Moderation Analysis</a></li>
 <li class="chapter" data-level="11.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>11.5.4</b> Step 4: Bootstrapping</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="factor-analysis.html"><a href="factor-analysis.html"><i class="fa fa-check"></i><b>12</b> Factor Analysis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
+<li class="chapter" data-level="12.1" data-path="factor-analysis.html"><a href="factor-analysis.html#overview-2"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
 <li class="chapter" data-level="12.2" data-path="factor-analysis.html"><a href="factor-analysis.html#exploratory-factor-analysis"><i class="fa fa-check"></i><b>12.2</b> Exploratory Factor analysis</a>
 <ul>
 <li class="chapter" data-level="12.2.1" data-path="factor-analysis.html"><a href="factor-analysis.html#dimension-reducton"><i class="fa fa-check"></i><b>12.2.1</b> Dimension reducton</a></li>
@@ -446,11 +446,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introduction-to-r-and-r-studio" class="section level1" number="3">
 <h1><span class="header-section-number">Topic 3</span> Introduction to R and R Studio</h1>
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9ecb2696-88e3-408b-93ab-abdb00e20628&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" width="720" height="405" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=3e9ba1ce-ceeb-491f-9170-adaa008f1944&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
 <div id="overview-of-rstudio.cloud" class="section level3" number="3.0.1">
 <h3><span class="header-section-number">3.0.1</span> Overview of RStudio.cloud</h3>
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9ced34cd-afea-469c-ac4b-ac6200a21e76&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a385013c-f6a8-4f6f-a7ac-adaa008f196d&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
 </div>
 <div id="by-the-end-of-this-section-you-should-be-able-to" class="section level2" number="3.1">
@@ -601,7 +601,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>  install.packages(“tidyr”)</code></pre>
 <p>Once a package is has been installed, you need tp load it using the <em>library()</em> command.
 For example:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introduction-to-r-and-r-studio.html#cb26-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">library</span>(“tidyr”)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introduction-to-r-and-r-studio.html#cb27-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">library</span>(“tidyr”)</span></code></pre></div>
 
 </div>
 </div>
@@ -634,6 +634,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

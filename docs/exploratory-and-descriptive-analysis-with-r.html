@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 5 Exploratory and descriptive analysis with R | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 5 Exploratory and descriptive analysis with R | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="working-with-data-in-r.html"/>
 <link rel="next" href="graphing-and-data-visualisation-with-r.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +50,11 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -124,6 +124,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -146,7 +147,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2020/2021</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>1.2.1</b> Learning and Teaching Strategies</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#how-will-the-online-sessions-work"><i class="fa fa-check"></i><b>1.2.2</b> How will the online sessions work?</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i><b>1.3</b> Assessment</a>
 <ul>
@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html"><i class="fa fa-check"></i><b>6</b> Graphing and data visualisation with R</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#presenting-data-visually"><i class="fa fa-check"></i><b>6.1</b> Presenting data visually</a></li>
-<li class="chapter" data-level="6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>6.2</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="6.2" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#by-the-end-of-this-section-you-will-be-able-to-1"><i class="fa fa-check"></i><b>6.2</b> By the end of this section, you will be able to:</a></li>
 <li class="chapter" data-level="6.3" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-grammar-of-visualisation"><i class="fa fa-check"></i><b>6.3</b> The “grammar of visualisation”</a></li>
 <li class="chapter" data-level="6.4" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#how-to-code-a-graph"><i class="fa fa-check"></i><b>6.4</b> How to code a graph</a></li>
 <li class="chapter" data-level="6.5" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-graph-output"><i class="fa fa-check"></i><b>6.5</b> The graph output</a></li>
@@ -370,21 +370,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
-<li class="chapter" data-level="11.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
-<li class="chapter" data-level="11.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
-<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview-1"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
+<li class="chapter" data-level="11.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need-1"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-2"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
 <li class="chapter" data-level="11.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>11.5</b> Moderation: step-by-step</a>
 <ul>
 <li class="chapter" data-level="11.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>11.5.1</b> Step 1: Grand Mean Centering</a></li>
-<li class="chapter" data-level="11.5.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="11.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions-1"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
 <li class="chapter" data-level="11.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>11.5.3</b> Step 3: Moderation Analysis</a></li>
 <li class="chapter" data-level="11.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>11.5.4</b> Step 4: Bootstrapping</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="factor-analysis.html"><a href="factor-analysis.html"><i class="fa fa-check"></i><b>12</b> Factor Analysis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
+<li class="chapter" data-level="12.1" data-path="factor-analysis.html"><a href="factor-analysis.html#overview-2"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
 <li class="chapter" data-level="12.2" data-path="factor-analysis.html"><a href="factor-analysis.html#exploratory-factor-analysis"><i class="fa fa-check"></i><b>12.2</b> Exploratory Factor analysis</a>
 <ul>
 <li class="chapter" data-level="12.2.1" data-path="factor-analysis.html"><a href="factor-analysis.html#dimension-reducton"><i class="fa fa-check"></i><b>12.2.1</b> Dimension reducton</a></li>
@@ -450,7 +450,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> Working example - record sales data</h2>
 <p>Let’s import the data</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb52-1" aria-hidden="true" tabindex="-1"></a>Album_Sales <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Datasets/album_sales.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Parsed with column specification:
+<pre><code>## 
+## -- Column specification -------------------------------------------------------------------------------------------------
 ## cols(
 ##   Adverts = col_double(),
 ##   Sales = col_double(),
@@ -476,7 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>This variable is currently stored as charcters, not as a factor / category variable</li>
 </ul>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Album_Sales<span class="sc">$</span>Genre) </span></code></pre></div>
-<pre><code>##  chr [1:200] &quot;Country&quot; &quot;Pop&quot; &quot;HipHop&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Country&quot; &quot;Pop&quot; &quot;Pop&quot; ...</code></pre>
+<pre><code>##  chr [1:200] &quot;Country&quot; &quot;Pop&quot; &quot;HipHop&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Country&quot; &quot;Pop&quot; &quot;Pop&quot; &quot;Metal&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Metal&quot; ...</code></pre>
 <ul>
 <li>We can save it as a factor</li>
 </ul>
@@ -595,7 +596,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We will focus on graphic presentation of data next week</li>
 </ul>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 </div>
 <div id="assessing-skewness-of-distribution-2" class="section level3" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> Assessing skewness of distribution #2</h3>
@@ -603,7 +604,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We can check raw skewness value using the <em>skew()</em> command in the <strong>psych</strong> package</li>
 </ul>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code></pre></div>
-<pre><code>## Warning: package &#39;psych&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Warning: package &#39;psych&#39; was built under R version 4.0.5</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;psych&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:car&#39;:
@@ -654,7 +655,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
 <pre><code>## 
-## 	Shapiro-Wilk normality test
+##  Shapiro-Wilk normality test
 ## 
 ## data:  Album_Sales$Sales
 ## W = 0.98479, p-value = 0.02965</code></pre>
@@ -676,18 +677,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="describe---in-the-psych-package-1" class="section level3" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> describe() - in the “psych” package #1</h3>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(Album_Sales)</span></code></pre></div>
-<pre><code>##         vars   n   mean     sd median trimmed    mad  min     max   range  skew
-## Adverts    1 200 614.41 485.66 531.92  560.81 489.09  9.1 2271.86 2262.76  0.84
-## Sales      2 200 193.20  80.70 200.00  192.69  88.96 10.0  360.00  350.00  0.04
-## Airplay    3 200  27.50  12.27  28.00   27.46  11.86  0.0   63.00   63.00  0.06
-## Attract    4 200   6.77   1.40   7.00    6.88   1.48  1.0   10.00    9.00 -1.27
-## Genre*     5 200   2.54   1.12   3.00    2.55   1.48  1.0    4.00    3.00 -0.02
-##         kurtosis    se
-## Adverts     0.17 34.34
-## Sales      -0.72  5.71
-## Airplay    -0.09  0.87
-## Attract     3.56  0.10
-## Genre*     -1.37  0.08</code></pre>
+<pre><code>##         vars   n   mean     sd median trimmed    mad  min     max   range  skew kurtosis    se
+## Adverts    1 200 614.41 485.66 531.92  560.81 489.09  9.1 2271.86 2262.76  0.84     0.17 34.34
+## Sales      2 200 193.20  80.70 200.00  192.69  88.96 10.0  360.00  350.00  0.04    -0.72  5.71
+## Airplay    3 200  27.50  12.27  28.00   27.46  11.86  0.0   63.00   63.00  0.06    -0.09  0.87
+## Attract    4 200   6.77   1.40   7.00    6.88   1.48  1.0   10.00    9.00 -1.27     3.56  0.10
+## Genre*     5 200   2.54   1.12   3.00    2.55   1.48  1.0    4.00    3.00 -0.02    -1.37  0.08</code></pre>
 </div>
 <div id="describe---in-the-psych-package-2" class="section level3" number="5.6.3">
 <h3><span class="header-section-number">5.6.3</span> describe() - in the “psych” package #2</h3>
@@ -698,60 +693,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: Country
-##         vars  n   mean     sd median trimmed    mad  min     max   range  skew
-## Adverts    1 46 656.22 507.96 574.14  620.40 581.96  9.1 1985.12 1976.01  0.51
-## Sales      2 46 201.74  73.64 210.00  200.79  66.72 60.0  360.00  300.00  0.03
-## Airplay    3 46  29.07  10.53  28.00   28.50  11.12  9.0   54.00   45.00  0.44
-## Attract    4 46   6.52   1.63   7.00    6.71   1.48  1.0   10.00    9.00 -1.49
-## Genre*     5 46   1.00   0.00   1.00    1.00   0.00  1.0    1.00    0.00   NaN
-##         kurtosis    se
-## Adverts    -0.65 74.89
-## Sales      -0.52 10.86
-## Airplay    -0.10  1.55
-## Attract     3.54  0.24
-## Genre*       NaN  0.00
-## ---------------------------------------------------------------- 
+##         vars  n   mean     sd median trimmed    mad  min     max   range  skew kurtosis    se
+## Adverts    1 46 656.22 507.96 574.14  620.40 581.96  9.1 1985.12 1976.01  0.51    -0.65 74.89
+## Sales      2 46 201.74  73.64 210.00  200.79  66.72 60.0  360.00  300.00  0.03    -0.52 10.86
+## Airplay    3 46  29.07  10.53  28.00   28.50  11.12  9.0   54.00   45.00  0.44    -0.10  1.55
+## Attract    4 46   6.52   1.63   7.00    6.71   1.48  1.0   10.00    9.00 -1.49     3.54  0.24
+## Genre*     5 46   1.00   0.00   1.00    1.00   0.00  1.0    1.00    0.00   NaN      NaN  0.00
+## ------------------------------------------------------------------------------------------ 
 ## group: HipHop
-##         vars  n   mean     sd median trimmed    mad   min  max   range  skew kurtosis
-## Adverts    1 53 606.32 452.84 601.43  568.33 501.36 10.65 2000 1989.35  0.70     0.05
-## Sales      2 53 199.62  92.71 200.00  200.70 103.78 10.00  360  350.00 -0.10    -0.91
-## Airplay    3 53  28.09  13.86  30.00   28.33  14.83  0.00   55   55.00 -0.14    -0.83
-## Attract    4 53   6.96   1.13   7.00    7.00   1.48  3.00    9    6.00 -0.80     2.03
-## Genre*     5 53   2.00   0.00   2.00    2.00   0.00  2.00    2    0.00   NaN      NaN
-##            se
-## Adverts 62.20
-## Sales   12.74
-## Airplay  1.90
-## Attract  0.15
-## Genre*   0.00
-## ---------------------------------------------------------------- 
+##         vars  n   mean     sd median trimmed    mad   min  max   range  skew kurtosis    se
+## Adverts    1 53 606.32 452.84 601.43  568.33 501.36 10.65 2000 1989.35  0.70     0.05 62.20
+## Sales      2 53 199.62  92.71 200.00  200.70 103.78 10.00  360  350.00 -0.10    -0.91 12.74
+## Airplay    3 53  28.09  13.86  30.00   28.33  14.83  0.00   55   55.00 -0.14    -0.83  1.90
+## Attract    4 53   6.96   1.13   7.00    7.00   1.48  3.00    9    6.00 -0.80     2.03  0.15
+## Genre*     5 53   2.00   0.00   2.00    2.00   0.00  2.00    2    0.00   NaN      NaN  0.00
+## ------------------------------------------------------------------------------------------ 
 ## group: Metal
-##         vars  n   mean     sd median trimmed    mad  min     max   range  skew
-## Adverts    1 48 693.45 534.06  593.0  640.19 521.34 45.3 2271.86 2226.56  0.92
-## Sales      2 48 197.71  75.18  200.0  198.25  88.96 40.0  340.00  300.00 -0.07
-## Airplay    3 48  27.96  11.37   27.5   28.00  11.12  2.0   57.00   55.00  0.02
-## Attract    4 48   6.85   1.34    7.0    6.90   1.48  2.0    9.00    7.00 -0.84
-## Genre*     5 48   3.00   0.00    3.0    3.00   0.00  3.0    3.00    0.00   NaN
-##         kurtosis    se
-## Adverts     0.21 77.08
-## Sales      -0.94 10.85
-## Airplay    -0.26  1.64
-## Attract     1.74  0.19
-## Genre*       NaN  0.00
-## ---------------------------------------------------------------- 
+##         vars  n   mean     sd median trimmed    mad  min     max   range  skew kurtosis    se
+## Adverts    1 48 693.45 534.06  593.0  640.19 521.34 45.3 2271.86 2226.56  0.92     0.21 77.08
+## Sales      2 48 197.71  75.18  200.0  198.25  88.96 40.0  340.00  300.00 -0.07    -0.94 10.85
+## Airplay    3 48  27.96  11.37   27.5   28.00  11.12  2.0   57.00   55.00  0.02    -0.26  1.64
+## Attract    4 48   6.85   1.34    7.0    6.90   1.48  2.0    9.00    7.00 -0.84     1.74  0.19
+## Genre*     5 48   3.00   0.00    3.0    3.00   0.00  3.0    3.00    0.00   NaN      NaN  0.00
+## ------------------------------------------------------------------------------------------ 
 ## group: Pop
-##         vars  n   mean     sd median trimmed    mad   min     max   range  skew
-## Adverts    1 53 514.63 446.04  429.5  453.85 438.01 15.31 1789.66 1774.35  1.01
-## Sales      2 53 175.28  77.92  160.0  171.86  88.96 40.00  360.00  320.00  0.34
-## Airplay    3 53  25.13  12.75   26.0   25.02  11.86  1.00   63.00   62.00  0.25
-## Attract    4 53   6.72   1.47    7.0    6.81   1.48  1.00    9.00    8.00 -1.11
-## Genre*     5 53   4.00   0.00    4.0    4.00   0.00  4.00    4.00    0.00   NaN
-##         kurtosis    se
-## Adverts     0.27 61.27
-## Sales      -0.67 10.70
-## Airplay     0.46  1.75
-## Attract     2.51  0.20
-## Genre*       NaN  0.00</code></pre>
+##         vars  n   mean     sd median trimmed    mad   min     max   range  skew kurtosis    se
+## Adverts    1 53 514.63 446.04  429.5  453.85 438.01 15.31 1789.66 1774.35  1.01     0.27 61.27
+## Sales      2 53 175.28  77.92  160.0  171.86  88.96 40.00  360.00  320.00  0.34    -0.67 10.70
+## Airplay    3 53  25.13  12.75   26.0   25.02  11.86  1.00   63.00   62.00  0.25     0.46  1.75
+## Attract    4 53   6.72   1.47    7.0    6.81   1.48  1.00    9.00    8.00 -1.11     2.51  0.20
+## Genre*     5 53   4.00   0.00    4.0    4.00   0.00  4.00    4.00    0.00   NaN      NaN  0.00</code></pre>
 </div>
 </div>
 <div id="basic-statistical-tests-more-detail-in-later-sections" class="section level2" number="5.7">
@@ -763,14 +734,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Album_Sales<span class="sc">$</span>Sales,Album_Sales<span class="sc">$</span>Adverts)</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <p>“Is there a relationship between advert spend and sales?”</p>
 <ul>
 <li>We would use an correlational analysis to answer this question</li>
 </ul>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(Album_Sales<span class="sc">$</span>Sales,Album_Sales<span class="sc">$</span>Adverts)</span></code></pre></div>
 <pre><code>## 
-## 	Pearson&#39;s product-moment correlation
+##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  Album_Sales$Sales and Album_Sales$Adverts
 ## t = 9.9793, df = 198, p-value &lt; 2.2e-16
@@ -791,7 +762,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb102-2"><a href="exploratory-and-descriptive-analysis-with-r.html#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-3"><a href="exploratory-and-descriptive-analysis-with-r.html#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(myTtestData<span class="sc">$</span>Sales <span class="sc">~</span> myTtestData<span class="sc">$</span>Genre)</span></code></pre></div>
 <pre><code>## 
-## 	Welch Two Sample t-test
+##  Welch Two Sample t-test
 ## 
 ## data:  myTtestData$Sales by myTtestData$Genre
 ## t = 0.80489, df = 40.62, p-value = 0.4256
@@ -846,6 +817,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

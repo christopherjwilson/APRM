@@ -1,7 +1,7 @@
 --- 
 title: "Advanced Psychological Research Methods (PSY4034)"
 author: "Christopher J. Wilson"
-date: "September 2020"
+date: "September 2021"
 link-citations: yes
 bibliography:
 - book.bib
@@ -17,14 +17,14 @@ always_allow_html: true
 
 # Welcome to the module
 
- > Note: You should be able to see a video immediately below this text. To watch the video, you will need to be logged into Teesside University's Blackboard site and be a part of this course. If you are on the course:
+ > Note:To watch the embedded videos on this site, you will need to be logged into Teesside University's Blackboard site and be a part of this course. If you are on the course:
 > 
-> - Press *Ctrl* + *T* to open a new tab (keeping this one open) and go to [https://eat.tees.ac.uk](https://eat.tees.ac.uk). 
+> - Press *Ctrl* + *T* to open a new tab (keeping this one open) and go to [https://bb.tees.ac.uk](https://bb.tees.ac.uk). 
 > - Login to Blackboard. Keep the blackboard tab open and switch back to this page.
 > - Refresh this page (hit F5 on your keyboard).
 > - You should now be able to play all of the video content.
 
-<iframe width="720" height="405" style="border: 1px solid #464646;" src="https://teesside.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6a77475e-a7df-4106-90af-ac330096b331&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" allowfullscreen="" allow="autoplay"></iframe>
+
 
 ## Module Overview
 
@@ -53,7 +53,6 @@ The module is taught using a variety of techniques to best enhance your knowledg
 The timetable for this module appears on the Clinical Psychology Programme Site/Timetables.
 The majority of the sessions will take place on Monday mornings. Please note that the timetable should be checked on a regular basis.
 
-**Due to COVID19 pandemic, the sessions for this module will be delivered online in 2020/21**
 
 
 ### Learning and Teaching Strategies
@@ -63,12 +62,6 @@ The module is taught using a variety of techniques to best enhance your knowledg
 You will be provided with two papers for critical review at the start of the module and asked to decide which one you will use for your summative critical review assignment; one of these papers is from a quantitative research tradition and the other is from a qualitative research tradition. 
 
 All presentations (with added annotations) are available, along with additional support materials, via an e-learning@tees on the VLE.  E-learning is enabled through group activities on the VLE or Microsoft Teams where discussion and problem solving is undertaken in relation to tasks set during teaching sessions. The discussion boards or Microsoft Teams site will be used to ask and answer questions that arise from the taught material and also your independent work.
-
-### How will the online sessions work?
-
-The video below explains how online sessions will work:
-
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=156dcb6f-e48c-4efb-a87d-ac2b00ab921c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Assessment
 
@@ -81,7 +74,7 @@ By the end of year one, trainees are expected to have identified a thesis topic 
 The required format for thesis research proposals can be found in Appendix 2 of the DClinPsy
 Programme Research Handbook.
 
-**The formal formative assessment is of a presentation of the thesis research proposal to be presented during the research panels, which take place on 20, 21 and 22 July 2020.** The presentation will be 20 minutes’ long and will outline the thesis project that the trainee will develop in Years 2 and 3. There will also be 10 minutes allotted for questions from the panel which will have two academic members and one clinical member. This formative assessment is intended as a starting point for the Year 2 and 3 research methods modules. The timing is important as it should enable trainees to start the process of ethics approval for their dissertation. earlier. The trainees will hand in a printed copy of their slides with explanatory notes and references.
+**The formal formative assessment is of a presentation of the thesis research proposal to be presented during the research panels, which take place in July 2022.** The presentation will be 20 minutes’ long and will outline the thesis project that the trainee will develop in Years 2 and 3. There will also be 10 minutes allotted for questions from the panel which will have two academic members and one clinical member. This formative assessment is intended as a starting point for the Year 2 and 3 research methods modules. The timing is important as it should enable trainees to start the process of ethics approval for their dissertation. earlier. The trainees will hand in a printed copy of their slides with explanatory notes and references.
 
 
 **Formative Assessment Criteria**
@@ -94,7 +87,7 @@ The following criteria will be used to assess the assignment:
 -	Realistic research design. 
 -	Effective consideration of ethical issues. 
 -	Clear plan for writing up and dissemination. 
--	Fulfilment of professional research ethics requirements. 
+-	Fulfillment of professional research ethics requirements. 
 -	Adherence to the relevant guidance for presentation as advised by the Module Tutor. 
 
 
@@ -174,7 +167,7 @@ You may be familiar with SPSS from your undergraduate statistics teaching. Pleas
 
 ### Downloading R and R Studio software
 
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=57425cb0-4364-4af1-b9ae-ac2f00b28010&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=be09e643-e5f8-4f23-8c5d-adaa008f1916&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 You can obtain R and R Studio from the following links:
 

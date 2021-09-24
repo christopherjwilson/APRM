@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 6 Graphing and data visualisation with R | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 6 Graphing and data visualisation with R | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="exploratory-and-descriptive-analysis-with-r.html"/>
 <link rel="next" href="correlation.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +50,11 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -124,6 +124,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -146,7 +147,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2020/2021</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>1.2.1</b> Learning and Teaching Strategies</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#how-will-the-online-sessions-work"><i class="fa fa-check"></i><b>1.2.2</b> How will the online sessions work?</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i><b>1.3</b> Assessment</a>
 <ul>
@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html"><i class="fa fa-check"></i><b>6</b> Graphing and data visualisation with R</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#presenting-data-visually"><i class="fa fa-check"></i><b>6.1</b> Presenting data visually</a></li>
-<li class="chapter" data-level="6.2" data-path="working-with-data-in-r.html"><a href="working-with-data-in-r.html#by-the-end-of-this-section-you-will-be-able-to"><i class="fa fa-check"></i><b>6.2</b> By the end of this section, you will be able to:</a></li>
+<li class="chapter" data-level="6.2" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#by-the-end-of-this-section-you-will-be-able-to-1"><i class="fa fa-check"></i><b>6.2</b> By the end of this section, you will be able to:</a></li>
 <li class="chapter" data-level="6.3" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-grammar-of-visualisation"><i class="fa fa-check"></i><b>6.3</b> The “grammar of visualisation”</a></li>
 <li class="chapter" data-level="6.4" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#how-to-code-a-graph"><i class="fa fa-check"></i><b>6.4</b> How to code a graph</a></li>
 <li class="chapter" data-level="6.5" data-path="graphing-and-data-visualisation-with-r.html"><a href="graphing-and-data-visualisation-with-r.html#the-graph-output"><i class="fa fa-check"></i><b>6.5</b> The graph output</a></li>
@@ -370,21 +370,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="moderation-analysis.html"><a href="moderation-analysis.html"><i class="fa fa-check"></i><b>11</b> Moderation analysis</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
-<li class="chapter" data-level="11.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-is-moderation"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
-<li class="chapter" data-level="11.3" data-path="mediation-analysis.html"><a href="mediation-analysis.html#what-packages-do-we-need"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
-<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#overview-1"><i class="fa fa-check"></i><b>11.1</b> Overview</a></li>
+<li class="chapter" data-level="11.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-1"><i class="fa fa-check"></i><b>11.2</b> What is moderation?</a></li>
+<li class="chapter" data-level="11.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-packages-do-we-need-1"><i class="fa fa-check"></i><b>11.3</b> What packages do we need?</a></li>
+<li class="chapter" data-level="11.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#what-is-moderation-2"><i class="fa fa-check"></i><b>11.4</b> What is moderation?</a></li>
 <li class="chapter" data-level="11.5" data-path="moderation-analysis.html"><a href="moderation-analysis.html#moderation-step-by-step"><i class="fa fa-check"></i><b>11.5</b> Moderation: step-by-step</a>
 <ul>
 <li class="chapter" data-level="11.5.1" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-1-grand-mean-centering"><i class="fa fa-check"></i><b>11.5.1</b> Step 1: Grand Mean Centering</a></li>
-<li class="chapter" data-level="11.5.2" data-path="mediation-analysis.html"><a href="mediation-analysis.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="11.5.2" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-2-check-assumptions-1"><i class="fa fa-check"></i><b>11.5.2</b> Step 2: Check assumptions</a></li>
 <li class="chapter" data-level="11.5.3" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-3-moderation-analysis"><i class="fa fa-check"></i><b>11.5.3</b> Step 3: Moderation Analysis</a></li>
 <li class="chapter" data-level="11.5.4" data-path="moderation-analysis.html"><a href="moderation-analysis.html#step-4-bootstrapping"><i class="fa fa-check"></i><b>11.5.4</b> Step 4: Bootstrapping</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="factor-analysis.html"><a href="factor-analysis.html"><i class="fa fa-check"></i><b>12</b> Factor Analysis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="mediation-analysis.html"><a href="mediation-analysis.html#overview"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
+<li class="chapter" data-level="12.1" data-path="factor-analysis.html"><a href="factor-analysis.html#overview-2"><i class="fa fa-check"></i><b>12.1</b> Overview</a></li>
 <li class="chapter" data-level="12.2" data-path="factor-analysis.html"><a href="factor-analysis.html#exploratory-factor-analysis"><i class="fa fa-check"></i><b>12.2</b> Exploratory Factor analysis</a>
 <ul>
 <li class="chapter" data-level="12.2.1" data-path="factor-analysis.html"><a href="factor-analysis.html#dimension-reducton"><i class="fa fa-check"></i><b>12.2.1</b> Dimension reducton</a></li>
@@ -448,10 +448,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Topic 6</span> Graphing and data visualisation with R</h1>
 <div id="presenting-data-visually" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Presenting data visually</h2>
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6637feb6-88dd-440e-a72a-ac3000f4ab8d&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=1e941396-d607-40cb-8a4e-adaa008f9c64&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
 </div>
-<div id="by-the-end-of-this-section-you-will-be-able-to" class="section level2" number="6.2">
+<div id="by-the-end-of-this-section-you-will-be-able-to-1" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> By the end of this section, you will be able to:</h2>
 <ul>
 <li>Describe the ggplot “grammar of visualisation”: coordinates and geoms</li>
@@ -491,7 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="graphing-and-data-visualisation-with-r.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb106-2"><a href="graphing-and-data-visualisation-with-r.html#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-3"><a href="graphing-and-data-visualisation-with-r.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 </div>
 <div id="changing-the-geoms-leads-to-different-visualisations" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Changing the geoms leads to different visualisations</h2>
@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="graphing-and-data-visualisation-with-r.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb107-2"><a href="graphing-and-data-visualisation-with-r.html#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb107-3"><a href="graphing-and-data-visualisation-with-r.html#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> It is possible to represent more variables on the plot</h2>
@@ -511,7 +511,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="graphing-and-data-visualisation-with-r.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb108-2"><a href="graphing-and-data-visualisation-with-r.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb108-3"><a href="graphing-and-data-visualisation-with-r.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route))</span></code></pre></div>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot-2" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> It is possible to represent more variables on the plot #2</h2>
@@ -522,7 +522,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb109-2"><a href="graphing-and-data-visualisation-with-r.html#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb109-3"><a href="graphing-and-data-visualisation-with-r.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot-3" class="section level2" number="6.9">
 <h2><span class="header-section-number">6.9</span> It is possible to represent more variables on the plot #3</h2>
@@ -533,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb111-2"><a href="graphing-and-data-visualisation-with-r.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb111-3"><a href="graphing-and-data-visualisation-with-r.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
 <div id="plotting-summaries-of-data" class="section level2" number="6.10">
 <h2><span class="header-section-number">6.10</span> Plotting summaries of data</h2>
@@ -543,7 +543,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="graphing-and-data-visualisation-with-r.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>route, <span class="at">y=</span> grades, <span class="at">fill=</span>route)) <span class="sc">+</span> <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 <div id="changing-the-axis-labels-and-title-on-a-plot" class="section level2" number="6.11">
 <h2><span class="header-section-number">6.11</span> Changing the axis labels and title on a plot</h2>
@@ -553,7 +553,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb116-2"><a href="graphing-and-data-visualisation-with-r.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb116-3"><a href="graphing-and-data-visualisation-with-r.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 </div>
 <div id="changing-the-legend-on-a-plot" class="section level2" number="6.12">
 <h2><span class="header-section-number">6.12</span> Changing the legend on a plot</h2>
@@ -565,7 +565,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb119-4"><a href="graphing-and-data-visualisation-with-r.html#cb119-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
 <span id="cb119-5"><a href="graphing-and-data-visualisation-with-r.html#cb119-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 </div>
 <div id="storing-plots-to-be-recalled-later" class="section level2" number="6.13">
 <h2><span class="header-section-number">6.13</span> Storing plots to be recalled later</h2>
@@ -585,7 +585,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="graphing-and-data-visualisation-with-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Recall myPlot</span></span>
 <span id="cb122-2"><a href="graphing-and-data-visualisation-with-r.html#cb122-2" aria-hidden="true" tabindex="-1"></a>myPlot</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="PRBook_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p><img src="PRBook_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
 <div id="saving-plots-1" class="section level2" number="6.15">
 <h2><span class="header-section-number">6.15</span> Saving plots # 1</h2>
@@ -636,6 +636,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
