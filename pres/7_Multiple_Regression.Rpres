@@ -1,4 +1,4 @@
-Reorganising data in R (wide and long data)
+Multiple Regression
 ========================================================
 author: Christopher Wilson
 css: custom.css
@@ -6,6 +6,15 @@ width: 1280
 height: 720
 
 Advanced Psychological Research Methods
+
+Note from last week:
+=====
+
+## What do we do if our assumptions are violated?
+
+- Normalilty: transformation or bootstrapping
+- Linearity: Consider alternatives such as non-linear regression or polynomial approaches 
+- Homogeneity of variance or influential cases: Robust regression can reduce standard errors  
 
 Overview
 ======
@@ -68,7 +77,12 @@ mctest(m1)
     
     mctest(model)
 
+What to do if multicollinearity exists:
+====
 
+- Remove some of the highly correlated predictors
+- Linearly combine some predictors.
+- Perform an analysis designed for highly correlated variables (e.g. PCA or partial least squares regression)
   
   
 Sample size for multiple regression

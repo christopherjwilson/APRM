@@ -222,6 +222,9 @@ summary(step.model)
 
 ## Using regression with categorical predictors (more information) {#catreg}
 
+
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=01cdd2e6-c7dd-4677-a5b9-ae1b00caa8b7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA. 
 
 However, it might be difficult to understand how this is, so let's look at an example. The dataset **Baumann** compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.

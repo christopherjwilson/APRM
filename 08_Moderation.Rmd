@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 # Moderation analysis
 
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b944446e-b7fa-41ea-9d87-adaa008f4984&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -133,9 +138,9 @@ In the plot above:
 
 To do this in R, we can use the **scale()** function:
 
-```{r}
-    Xc    <- scale(X, center=TRUE, scale=FALSE) #Centering X; 
-    Mc    <- scale(M,  center=TRUE, scale=FALSE) #Centering M;
+```{r eval=F}
+    timeInCounselling_centred    <- scale(timeInCounselling, center=TRUE, scale=FALSE) #Centering X; 
+    rapportLevel_centred    <- scale(rapportLevel,  center=TRUE, scale=FALSE) #Centering M;
 ```
 
 
@@ -145,14 +150,14 @@ We then use the centred data in our analysis
 We can see that the difference between the original data is the mean of the data.
 
 ```{r echo=T}
-  Xc    <- scale(X, center=TRUE, scale=FALSE) #Centering X; 
+  timeInCounselling_centred    <- scale(timeInCounselling, center=TRUE, scale=FALSE) #Centering X; 
   
-  X
+  timeInCounselling
  
-  head(Xc)
+  head(timeInCounselling_centred)
   
-   mean(X)
-  X[1]-Xc[1]
+   mean(timeInCounselling)
+  timeInCounselling[1]-timeInCounselling_centred[1]
   
 
 ```
@@ -184,7 +189,7 @@ It is worth noting:
 
 Hayes (2013) discusses mean centering, pp. 282-290. 
 
-McClelland, G. H., Irwin, J. R., Disatnik, D., & Sivan, L. (2017). Multicollinearity is a red herring in the search for moderator variables: A guide to interpreting moderated multiple regression models and a critique of Iacobucci, Schneider, Popovich, and Bakamitsos (2016). Behavior research methods, 49(1), 394-402.
+rapportLevel_centredClelland, G. H., Irwin, J. R., Disatnik, D., & Sivan, L. (2017). Multicollinearity is a red herring in the search for moderator variables: A guide to interpreting moderated multiple regression models and a critique of Iacobucci, Schneider, Popovich, and Bakamitsos (2016). Behavior research methods, 49(1), 394-402.
 
 ### Step 2: Check assumptions
 
