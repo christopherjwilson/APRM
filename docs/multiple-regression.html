@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 9 Multiple Regression | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 9 Multiple Regression | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="simple-regression.html"/>
 <link rel="next" href="mediation-analysis.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,12 +50,11 @@
 
 
 
-
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -64,6 +64,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -144,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to the module</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#module-overview"><i class="fa fa-check"></i><b>1.1</b> Module Overview</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2020/2021</a>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20212022"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2021/2022</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>1.2.1</b> Learning and Teaching Strategies</a></li>
 </ul></li>
@@ -492,13 +493,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="testing-multicollinearity" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> Testing multicollinearity</h2>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="multiple-regression.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="do">## use the mctest package</span></span>
-<span id="cb149-2"><a href="multiple-regression.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(‘mctest’)o</span></span>
-<span id="cb149-3"><a href="multiple-regression.html#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mctest)</span>
-<span id="cb149-4"><a href="multiple-regression.html#cb149-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-5"><a href="multiple-regression.html#cb149-5" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(aggression_level <span class="sc">~</span> treatment_group <span class="sc">+</span> treatment_duration <span class="sc">+</span> trust_score, <span class="at">data=</span>regression_data)</span>
-<span id="cb149-6"><a href="multiple-regression.html#cb149-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-7"><a href="multiple-regression.html#cb149-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mctest</span>(m1) </span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="multiple-regression.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="do">## use the mctest package</span></span>
+<span id="cb151-2"><a href="multiple-regression.html#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(‘mctest’)o</span></span>
+<span id="cb151-3"><a href="multiple-regression.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mctest)</span>
+<span id="cb151-4"><a href="multiple-regression.html#cb151-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-5"><a href="multiple-regression.html#cb151-5" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(aggression_level <span class="sc">~</span> treatment_group <span class="sc">+</span> treatment_duration <span class="sc">+</span> trust_score, <span class="at">data=</span>regression_data)</span>
+<span id="cb151-6"><a href="multiple-regression.html#cb151-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-7"><a href="multiple-regression.html#cb151-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mctest</span>(m1) </span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## omcdiag(mod = mod, Inter = TRUE, detr = detr, red = red, conf = conf, 
@@ -537,7 +538,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Research question: Do a client’s treatment duration and treatment group predict aggression level?</p>
 </blockquote>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="multiple-regression.html#cb151-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="multiple-regression.html#cb153-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span></code></pre></div>
 <ul>
 <li>Here we are including all of the predictors at the same time</li>
 <li>Note that we are using a plus sign + between each predictor
@@ -554,12 +555,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>R chooses the reference group based on numerical value or alphabetical order</li>
 <li>If you want you can change the reference category or “force” it using the relevel function:</li>
 </ul>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="multiple-regression.html#cb152-1" aria-hidden="true" tabindex="-1"></a>regression_data<span class="sc">$</span>treatment_group <span class="ot">&lt;-</span> <span class="fu">relevel</span>(regression_data<span class="sc">$</span>treatment_group, <span class="at">ref =</span> <span class="st">&quot;therapy1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="multiple-regression.html#cb154-1" aria-hidden="true" tabindex="-1"></a>regression_data<span class="sc">$</span>treatment_group <span class="ot">&lt;-</span> <span class="fu">relevel</span>(regression_data<span class="sc">$</span>treatment_group, <span class="at">ref =</span> <span class="st">&quot;therapy1&quot;</span>)</span></code></pre></div>
 <p><strong>More information in categorical predictors in section <a href="multiple-regression.html#catreg">9.8</a> </strong></p>
 </div>
 <div id="reviewing-the-output" class="section level3" number="9.7.2">
 <h3><span class="header-section-number">9.7.2</span> Reviewing the output</h3>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="multiple-regression.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="multiple-regression.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration + treatment_group, 
@@ -597,7 +598,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - Do a client’s treatment duration and treatment group predict aggression level
 - Do the predictors interact?</p>
 </blockquote>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="multiple-regression.html#cb155-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">*</span> treatment_group)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="multiple-regression.html#cb157-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">*</span> treatment_group)</span></code></pre></div>
 <ul>
 <li>Here we are including all of the predictors at the same time</li>
 <li>Note that we are using an asterisk * between each predictor
@@ -607,7 +608,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Reviewing the output</p>
 <p><code style="font-size: 1em; width=100%;"></p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="multiple-regression.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2) <span class="sc">%&gt;%</span> coefficients</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="multiple-regression.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2) <span class="sc">%&gt;%</span> coefficients</span></code></pre></div>
 <pre><code>##                                              Estimate Std. Error    t value     Pr(&gt;|t|)
 ## (Intercept)                                12.3529190  1.1006127 11.2236751 3.599000e-19
 ## treatment_duration                         -0.7334435  0.1033086 -7.0995381 2.166226e-10
@@ -647,13 +648,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><strong>Hierarchical multiple regression: Running and comparing 2 models</strong></p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="multiple-regression.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="do">## run regression using the same method as above</span></span>
-<span id="cb158-2"><a href="multiple-regression.html#cb158-2" aria-hidden="true" tabindex="-1"></a>model0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> <span class="dv">1</span>)</span>
-<span id="cb158-3"><a href="multiple-regression.html#cb158-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span>
-<span id="cb158-4"><a href="multiple-regression.html#cb158-4" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span>
-<span id="cb158-5"><a href="multiple-regression.html#cb158-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-6"><a href="multiple-regression.html#cb158-6" aria-hidden="true" tabindex="-1"></a><span class="do">## use the aov() command to compare the models</span></span>
-<span id="cb158-7"><a href="multiple-regression.html#cb158-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(model0,model1,model2)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="multiple-regression.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="do">## run regression using the same method as above</span></span>
+<span id="cb160-2"><a href="multiple-regression.html#cb160-2" aria-hidden="true" tabindex="-1"></a>model0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> <span class="dv">1</span>)</span>
+<span id="cb160-3"><a href="multiple-regression.html#cb160-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span>
+<span id="cb160-4"><a href="multiple-regression.html#cb160-4" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span>
+<span id="cb160-5"><a href="multiple-regression.html#cb160-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb160-6"><a href="multiple-regression.html#cb160-6" aria-hidden="true" tabindex="-1"></a><span class="do">## use the aov() command to compare the models</span></span>
+<span id="cb160-7"><a href="multiple-regression.html#cb160-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(model0,model1,model2)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Model 1: aggression_level ~ 1
@@ -699,10 +700,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>use the <em>stepAIC()</em> command on the full model to run stepwise regression</li>
 <li>View the best model</li>
 </ol>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="multiple-regression.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb160-2"><a href="multiple-regression.html#cb160-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-3"><a href="multiple-regression.html#cb160-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the full model </span></span>
-<span id="cb160-4"><a href="multiple-regression.html#cb160-4" aria-hidden="true" tabindex="-1"></a>full.model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="multiple-regression.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb162-2"><a href="multiple-regression.html#cb162-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-3"><a href="multiple-regression.html#cb162-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the full model </span></span>
+<span id="cb162-4"><a href="multiple-regression.html#cb162-4" aria-hidden="true" tabindex="-1"></a>full.model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span></code></pre></div>
 </div>
 <div id="stepwise-multiple-regression-use-stepaic-with-options" class="section level3" number="9.7.7">
 <h3><span class="header-section-number">9.7.7</span> Stepwise multiple regression: Use stepAIC( ) with options</h3>
@@ -716,8 +717,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><code style="font-size: 1em; width=100%;"></p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="multiple-regression.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run stepwise</span></span>
-<span id="cb161-2"><a href="multiple-regression.html#cb161-2" aria-hidden="true" tabindex="-1"></a>step.model <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(full.model, <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="at">trace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="multiple-regression.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run stepwise</span></span>
+<span id="cb163-2"><a href="multiple-regression.html#cb163-2" aria-hidden="true" tabindex="-1"></a>step.model <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(full.model, <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="at">trace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Start:  AIC=85.87
 ## aggression_level ~ treatment_duration + treatment_group + trust_score
 ## 
@@ -745,8 +746,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>use the <em>stepAIC()</em> command on the full model to run stepwise regression</strong></li>
 <li><strong>View best model</strong></li>
 </ol>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="multiple-regression.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view the stepwise output</span></span>
-<span id="cb163-2"><a href="multiple-regression.html#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(step.model)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="multiple-regression.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view the stepwise output</span></span>
+<span id="cb165-2"><a href="multiple-regression.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(step.model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration + treatment_group, 
@@ -771,6 +772,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="catreg" class="section level2" number="9.8">
 <h2><span class="header-section-number">9.8</span> Using regression with categorical predictors (more information)</h2>
+<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=01cdd2e6-c7dd-4677-a5b9-ae1b00caa8b7&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
+</iframe>
 <p>People are often taught to use ANOVA to compare groups (i.e. if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
 <p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
 <div id="anova-approach" class="section level3" number="9.8.1">
@@ -1095,7 +1098,6 @@ groupStrat
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1135,6 +1137,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 },

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 12 Factor Analysis | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 12 Factor Analysis | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="moderation-analysis.html"/>
 <link rel="next" href="course-videos.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,12 +50,11 @@
 
 
 
-
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -64,6 +64,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -144,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to the module</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#module-overview"><i class="fa fa-check"></i><b>1.1</b> Module Overview</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20202021"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2020/2021</a>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#module-timetable-and-delivery-for-20212022"><i class="fa fa-check"></i><b>1.2</b> Module timetable and delivery for 2021/2022</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#learning-and-teaching-strategies"><i class="fa fa-check"></i><b>1.2.1</b> Learning and Teaching Strategies</a></li>
 </ul></li>
@@ -446,8 +447,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="factor-analysis" class="section level1" number="12">
 <h1><span class="header-section-number">Topic 12</span> Factor Analysis</h1>
+<pre><code>## Warning: `read_table2()` was deprecated in readr 2.0.0.
+## Please use `read_table()` instead.</code></pre>
 <pre><code>## 
-## -- Column specification -------------------------------------------------------------------------------------------------
+## -- Column specification ------------------------------------------------------------------
 ## cols(
 ##   .default = col_double()
 ## )
@@ -588,93 +591,117 @@ An r matrix example</p>
 </div>
 <div id="step-1-create-a-correlation-matrix" class="section level2" number="12.7">
 <h2><span class="header-section-number">12.7</span> Step 1: Create a correlation matrix</h2>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="factor-analysis.html#cb221-1" aria-hidden="true" tabindex="-1"></a>raq.matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(raq)</span>
-<span id="cb221-2"><a href="factor-analysis.html#cb221-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb221-3"><a href="factor-analysis.html#cb221-3" aria-hidden="true" tabindex="-1"></a>raq.matrix</span></code></pre></div>
-<pre><code>##              Q01         Q02        Q03         Q04         Q05         Q06         Q07         Q08         Q09
-## Q01  1.000000000 -0.09872403 -0.3366489  0.43586018  0.40243992  0.21673399  0.30536514  0.33073761 -0.09233946
-## Q02 -0.098724032  1.00000000  0.3183902 -0.11185965 -0.11934658 -0.07420968 -0.15917448 -0.04962257  0.31464054
-## Q03 -0.336648879  0.31839020  1.0000000 -0.38046016 -0.31030879 -0.22674048 -0.38195325 -0.25863421  0.29980362
-## Q04  0.435860179 -0.11185965 -0.3804602  1.00000000  0.40067225  0.27820154  0.40861502  0.34942939 -0.12454637
-## Q05  0.402439917 -0.11934658 -0.3103088  0.40067225  1.00000000  0.25746014  0.33939179  0.26862697 -0.09570151
-## Q06  0.216733985 -0.07420968 -0.2267405  0.27820154  0.25746014  1.00000000  0.51358048  0.22283175 -0.11264384
-## Q07  0.305365139 -0.15917448 -0.3819533  0.40861502  0.33939179  0.51358048  1.00000000  0.29749696 -0.12829828
-## Q08  0.330737608 -0.04962257 -0.2586342  0.34942939  0.26862697  0.22283175  0.29749696  1.00000000  0.01573316
-## Q09 -0.092339458  0.31464054  0.2998036 -0.12454637 -0.09570151 -0.11264384 -0.12829828  0.01573316  1.00000000
-## Q10  0.213681706 -0.08400316 -0.1933887  0.21581010  0.25820925  0.32223023  0.28372299  0.15860850 -0.13418658
-## Q11  0.356786290 -0.14382984 -0.3506397  0.36865655  0.29782882  0.32807072  0.34474770  0.62929768 -0.11552479
-## Q12  0.345381133 -0.19486946 -0.4099513  0.44164706  0.34674325  0.31250937  0.42298591  0.25198582 -0.16739436
-## Q13  0.354646283 -0.14274026 -0.3179193  0.34429168  0.30182159  0.46640487  0.44211926  0.31424716 -0.16743882
-## Q14  0.337879655 -0.16469991 -0.3707551  0.35080964  0.31533810  0.40224407  0.44070276  0.28058958 -0.12150197
-## Q15  0.245752635 -0.16499581 -0.3123968  0.33423089  0.26137190  0.35989309  0.39136675  0.29968600 -0.18657099
-## Q16  0.498618057 -0.16755228 -0.4186478  0.41586725  0.39491795  0.24433888  0.38854534  0.32149420 -0.18886556
-## Q17  0.370550512 -0.08699527 -0.3273715  0.38273945  0.31041722  0.28226121  0.39074283  0.59014022 -0.03681556
-## Q18  0.347118037 -0.16389415 -0.3752329  0.38200149  0.32209148  0.51332164  0.50086685  0.27974433 -0.14957782
-## Q19 -0.189011027  0.20329748  0.3415737 -0.18597751 -0.16532210 -0.16675017 -0.26912031 -0.15947671  0.24931170
-## Q20  0.213897945 -0.20159437 -0.3248338  0.24291796  0.19966945  0.10092489  0.22095420  0.17515089 -0.15864747
-## Q21  0.329153138 -0.20461730 -0.4171878  0.41029317  0.33461494  0.27233273  0.48300388  0.29571756 -0.13594310
-## Q22 -0.104408664  0.23087487  0.2036569 -0.09838349 -0.13253593 -0.16513541 -0.16820488 -0.07917265  0.25684622
-## Q23 -0.004480593  0.09967828  0.1502065 -0.03381815 -0.04165684 -0.06868743 -0.07029016 -0.05023839  0.17077441
-##             Q10         Q11         Q12         Q13         Q14         Q15         Q16         Q17         Q18
-## Q01  0.21368171  0.35678629  0.34538113  0.35464628  0.33787966  0.24575263  0.49861806  0.37055051  0.34711804
-## Q02 -0.08400316 -0.14382984 -0.19486946 -0.14274026 -0.16469991 -0.16499581 -0.16755228 -0.08699527 -0.16389415
-## Q03 -0.19338871 -0.35063969 -0.40995127 -0.31791928 -0.37075510 -0.31239678 -0.41864780 -0.32737145 -0.37523290
-## Q04  0.21581010  0.36865655  0.44164706  0.34429168  0.35080964  0.33423089  0.41586725  0.38273945  0.38200149
-## Q05  0.25820925  0.29782882  0.34674325  0.30182159  0.31533810  0.26137190  0.39491795  0.31041722  0.32209148
-## Q06  0.32223023  0.32807072  0.31250937  0.46640487  0.40224407  0.35989309  0.24433888  0.28226121  0.51332164
-## Q07  0.28372299  0.34474770  0.42298591  0.44211926  0.44070276  0.39136675  0.38854534  0.39074283  0.50086685
-## Q08  0.15860850  0.62929768  0.25198582  0.31424716  0.28058958  0.29968600  0.32149420  0.59014022  0.27974433
-## Q09 -0.13418658 -0.11552479 -0.16739436 -0.16743882 -0.12150197 -0.18657099 -0.18886556 -0.03681556 -0.14957782
-## Q10  1.00000000  0.27143657  0.24582591  0.30196707  0.25468730  0.29523438  0.29058576  0.21832214  0.29250304
-## Q11  0.27143657  1.00000000  0.33529466  0.42316548  0.32532025  0.36482687  0.36907763  0.58683495  0.37341373
-## Q12  0.24582591  0.33529466  1.00000000  0.48871303  0.43270398  0.33179910  0.40805908  0.33269383  0.49296482
-## Q13  0.30196707  0.42316548  0.48871303  1.00000000  0.44978632  0.34219704  0.35837775  0.40837657  0.53293713
-## Q14  0.25468730  0.32532025  0.43270398  0.44978632  1.00000000  0.38011484  0.41841820  0.35374183  0.49830615
-## Q15  0.29523438  0.36482687  0.33179910  0.34219704  0.38011484  1.00000000  0.45427861  0.37310235  0.34287045
-## Q16  0.29058576  0.36907763  0.40805908  0.35837775  0.41841820  0.45427861  1.00000000  0.40976309  0.42197911
-## Q17  0.21832214  0.58683495  0.33269383  0.40837657  0.35374183  0.37310235  0.40976309  1.00000000  0.37560681
-## Q18  0.29250304  0.37341373  0.49296482  0.53293713  0.49830615  0.34287045  0.42197911  0.37560681  1.00000000
-## Q19 -0.12723487 -0.19965203 -0.26665953 -0.22697105 -0.25405813 -0.20980230 -0.26704702 -0.16288096 -0.25663183
-## Q20  0.08406520  0.25533736  0.29802585  0.20396327  0.22592173  0.20625622  0.26514025  0.20523013  0.23518040
-## Q21  0.19313633  0.34643407  0.44063832  0.37443078  0.39938896  0.29971557  0.42054273  0.36349147  0.43010427
-## Q22 -0.13090831 -0.16198921 -0.16728557 -0.19535632 -0.16983754 -0.16790617 -0.15579385 -0.12629066 -0.15982631
-## Q23 -0.06191796 -0.08637256 -0.04642506 -0.05298304 -0.04847418 -0.06200665 -0.08152195 -0.09167243 -0.08041698
-##            Q19         Q20         Q21         Q22          Q23
-## Q01 -0.1890110  0.21389794  0.32915314 -0.10440866 -0.004480593
-## Q02  0.2032975 -0.20159437 -0.20461730  0.23087487  0.099678285
-## Q03  0.3415737 -0.32483385 -0.41718781  0.20365686  0.150206522
-## Q04 -0.1859775  0.24291796  0.41029317 -0.09838349 -0.033818152
-## Q05 -0.1653221  0.19966945  0.33461494 -0.13253593 -0.041656841
-## Q06 -0.1667502  0.10092489  0.27233273 -0.16513541 -0.068687430
-## Q07 -0.2691203  0.22095420  0.48300388 -0.16820488 -0.070290157
-## Q08 -0.1594767  0.17515089  0.29571756 -0.07917265 -0.050238392
-## Q09  0.2493117 -0.15864747 -0.13594310  0.25684622  0.170774410
-## Q10 -0.1272349  0.08406520  0.19313633 -0.13090831 -0.061917956
-## Q11 -0.1996520  0.25533736  0.34643407 -0.16198921 -0.086372565
-## Q12 -0.2666595  0.29802585  0.44063832 -0.16728557 -0.046425059
-## Q13 -0.2269710  0.20396327  0.37443078 -0.19535632 -0.052983042
-## Q14 -0.2540581  0.22592173  0.39938896 -0.16983754 -0.048474181
-## Q15 -0.2098023  0.20625622  0.29971557 -0.16790617 -0.062006650
-## Q16 -0.2670470  0.26514025  0.42054273 -0.15579385 -0.081521950
-## Q17 -0.1628810  0.20523013  0.36349147 -0.12629066 -0.091672426
-## Q18 -0.2566318  0.23518040  0.43010427 -0.15982631 -0.080416984
-## Q19  1.0000000 -0.24859386 -0.27489793  0.23392259  0.122434401
-## Q20 -0.2485939  1.00000000  0.46770448 -0.09970186 -0.034665293
-## Q21 -0.2748979  0.46770448  1.00000000 -0.12902148 -0.067664367
-## Q22  0.2339226 -0.09970186 -0.12902148  1.00000000  0.230369402
-## Q23  0.1224344 -0.03466529 -0.06766437  0.23036940  1.000000000</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="factor-analysis.html#cb224-1" aria-hidden="true" tabindex="-1"></a>raq.matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(raq)</span>
+<span id="cb224-2"><a href="factor-analysis.html#cb224-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-3"><a href="factor-analysis.html#cb224-3" aria-hidden="true" tabindex="-1"></a>raq.matrix</span></code></pre></div>
+<pre><code>##              Q01         Q02        Q03         Q04         Q05         Q06         Q07
+## Q01  1.000000000 -0.09872403 -0.3366489  0.43586018  0.40243992  0.21673399  0.30536514
+## Q02 -0.098724032  1.00000000  0.3183902 -0.11185965 -0.11934658 -0.07420968 -0.15917448
+## Q03 -0.336648879  0.31839020  1.0000000 -0.38046016 -0.31030879 -0.22674048 -0.38195325
+## Q04  0.435860179 -0.11185965 -0.3804602  1.00000000  0.40067225  0.27820154  0.40861502
+## Q05  0.402439917 -0.11934658 -0.3103088  0.40067225  1.00000000  0.25746014  0.33939179
+## Q06  0.216733985 -0.07420968 -0.2267405  0.27820154  0.25746014  1.00000000  0.51358048
+## Q07  0.305365139 -0.15917448 -0.3819533  0.40861502  0.33939179  0.51358048  1.00000000
+## Q08  0.330737608 -0.04962257 -0.2586342  0.34942939  0.26862697  0.22283175  0.29749696
+## Q09 -0.092339458  0.31464054  0.2998036 -0.12454637 -0.09570151 -0.11264384 -0.12829828
+## Q10  0.213681706 -0.08400316 -0.1933887  0.21581010  0.25820925  0.32223023  0.28372299
+## Q11  0.356786290 -0.14382984 -0.3506397  0.36865655  0.29782882  0.32807072  0.34474770
+## Q12  0.345381133 -0.19486946 -0.4099513  0.44164706  0.34674325  0.31250937  0.42298591
+## Q13  0.354646283 -0.14274026 -0.3179193  0.34429168  0.30182159  0.46640487  0.44211926
+## Q14  0.337879655 -0.16469991 -0.3707551  0.35080964  0.31533810  0.40224407  0.44070276
+## Q15  0.245752635 -0.16499581 -0.3123968  0.33423089  0.26137190  0.35989309  0.39136675
+## Q16  0.498618057 -0.16755228 -0.4186478  0.41586725  0.39491795  0.24433888  0.38854534
+## Q17  0.370550512 -0.08699527 -0.3273715  0.38273945  0.31041722  0.28226121  0.39074283
+## Q18  0.347118037 -0.16389415 -0.3752329  0.38200149  0.32209148  0.51332164  0.50086685
+## Q19 -0.189011027  0.20329748  0.3415737 -0.18597751 -0.16532210 -0.16675017 -0.26912031
+## Q20  0.213897945 -0.20159437 -0.3248338  0.24291796  0.19966945  0.10092489  0.22095420
+## Q21  0.329153138 -0.20461730 -0.4171878  0.41029317  0.33461494  0.27233273  0.48300388
+## Q22 -0.104408664  0.23087487  0.2036569 -0.09838349 -0.13253593 -0.16513541 -0.16820488
+## Q23 -0.004480593  0.09967828  0.1502065 -0.03381815 -0.04165684 -0.06868743 -0.07029016
+##             Q08         Q09         Q10         Q11         Q12         Q13         Q14
+## Q01  0.33073761 -0.09233946  0.21368171  0.35678629  0.34538113  0.35464628  0.33787966
+## Q02 -0.04962257  0.31464054 -0.08400316 -0.14382984 -0.19486946 -0.14274026 -0.16469991
+## Q03 -0.25863421  0.29980362 -0.19338871 -0.35063969 -0.40995127 -0.31791928 -0.37075510
+## Q04  0.34942939 -0.12454637  0.21581010  0.36865655  0.44164706  0.34429168  0.35080964
+## Q05  0.26862697 -0.09570151  0.25820925  0.29782882  0.34674325  0.30182159  0.31533810
+## Q06  0.22283175 -0.11264384  0.32223023  0.32807072  0.31250937  0.46640487  0.40224407
+## Q07  0.29749696 -0.12829828  0.28372299  0.34474770  0.42298591  0.44211926  0.44070276
+## Q08  1.00000000  0.01573316  0.15860850  0.62929768  0.25198582  0.31424716  0.28058958
+## Q09  0.01573316  1.00000000 -0.13418658 -0.11552479 -0.16739436 -0.16743882 -0.12150197
+## Q10  0.15860850 -0.13418658  1.00000000  0.27143657  0.24582591  0.30196707  0.25468730
+## Q11  0.62929768 -0.11552479  0.27143657  1.00000000  0.33529466  0.42316548  0.32532025
+## Q12  0.25198582 -0.16739436  0.24582591  0.33529466  1.00000000  0.48871303  0.43270398
+## Q13  0.31424716 -0.16743882  0.30196707  0.42316548  0.48871303  1.00000000  0.44978632
+## Q14  0.28058958 -0.12150197  0.25468730  0.32532025  0.43270398  0.44978632  1.00000000
+## Q15  0.29968600 -0.18657099  0.29523438  0.36482687  0.33179910  0.34219704  0.38011484
+## Q16  0.32149420 -0.18886556  0.29058576  0.36907763  0.40805908  0.35837775  0.41841820
+## Q17  0.59014022 -0.03681556  0.21832214  0.58683495  0.33269383  0.40837657  0.35374183
+## Q18  0.27974433 -0.14957782  0.29250304  0.37341373  0.49296482  0.53293713  0.49830615
+## Q19 -0.15947671  0.24931170 -0.12723487 -0.19965203 -0.26665953 -0.22697105 -0.25405813
+## Q20  0.17515089 -0.15864747  0.08406520  0.25533736  0.29802585  0.20396327  0.22592173
+## Q21  0.29571756 -0.13594310  0.19313633  0.34643407  0.44063832  0.37443078  0.39938896
+## Q22 -0.07917265  0.25684622 -0.13090831 -0.16198921 -0.16728557 -0.19535632 -0.16983754
+## Q23 -0.05023839  0.17077441 -0.06191796 -0.08637256 -0.04642506 -0.05298304 -0.04847418
+##             Q15         Q16         Q17         Q18        Q19         Q20         Q21
+## Q01  0.24575263  0.49861806  0.37055051  0.34711804 -0.1890110  0.21389794  0.32915314
+## Q02 -0.16499581 -0.16755228 -0.08699527 -0.16389415  0.2032975 -0.20159437 -0.20461730
+## Q03 -0.31239678 -0.41864780 -0.32737145 -0.37523290  0.3415737 -0.32483385 -0.41718781
+## Q04  0.33423089  0.41586725  0.38273945  0.38200149 -0.1859775  0.24291796  0.41029317
+## Q05  0.26137190  0.39491795  0.31041722  0.32209148 -0.1653221  0.19966945  0.33461494
+## Q06  0.35989309  0.24433888  0.28226121  0.51332164 -0.1667502  0.10092489  0.27233273
+## Q07  0.39136675  0.38854534  0.39074283  0.50086685 -0.2691203  0.22095420  0.48300388
+## Q08  0.29968600  0.32149420  0.59014022  0.27974433 -0.1594767  0.17515089  0.29571756
+## Q09 -0.18657099 -0.18886556 -0.03681556 -0.14957782  0.2493117 -0.15864747 -0.13594310
+## Q10  0.29523438  0.29058576  0.21832214  0.29250304 -0.1272349  0.08406520  0.19313633
+## Q11  0.36482687  0.36907763  0.58683495  0.37341373 -0.1996520  0.25533736  0.34643407
+## Q12  0.33179910  0.40805908  0.33269383  0.49296482 -0.2666595  0.29802585  0.44063832
+## Q13  0.34219704  0.35837775  0.40837657  0.53293713 -0.2269710  0.20396327  0.37443078
+## Q14  0.38011484  0.41841820  0.35374183  0.49830615 -0.2540581  0.22592173  0.39938896
+## Q15  1.00000000  0.45427861  0.37310235  0.34287045 -0.2098023  0.20625622  0.29971557
+## Q16  0.45427861  1.00000000  0.40976309  0.42197911 -0.2670470  0.26514025  0.42054273
+## Q17  0.37310235  0.40976309  1.00000000  0.37560681 -0.1628810  0.20523013  0.36349147
+## Q18  0.34287045  0.42197911  0.37560681  1.00000000 -0.2566318  0.23518040  0.43010427
+## Q19 -0.20980230 -0.26704702 -0.16288096 -0.25663183  1.0000000 -0.24859386 -0.27489793
+## Q20  0.20625622  0.26514025  0.20523013  0.23518040 -0.2485939  1.00000000  0.46770448
+## Q21  0.29971557  0.42054273  0.36349147  0.43010427 -0.2748979  0.46770448  1.00000000
+## Q22 -0.16790617 -0.15579385 -0.12629066 -0.15982631  0.2339226 -0.09970186 -0.12902148
+## Q23 -0.06200665 -0.08152195 -0.09167243 -0.08041698  0.1224344 -0.03466529 -0.06766437
+##             Q22          Q23
+## Q01 -0.10440866 -0.004480593
+## Q02  0.23087487  0.099678285
+## Q03  0.20365686  0.150206522
+## Q04 -0.09838349 -0.033818152
+## Q05 -0.13253593 -0.041656841
+## Q06 -0.16513541 -0.068687430
+## Q07 -0.16820488 -0.070290157
+## Q08 -0.07917265 -0.050238392
+## Q09  0.25684622  0.170774410
+## Q10 -0.13090831 -0.061917956
+## Q11 -0.16198921 -0.086372565
+## Q12 -0.16728557 -0.046425059
+## Q13 -0.19535632 -0.052983042
+## Q14 -0.16983754 -0.048474181
+## Q15 -0.16790617 -0.062006650
+## Q16 -0.15579385 -0.081521950
+## Q17 -0.12629066 -0.091672426
+## Q18 -0.15982631 -0.080416984
+## Q19  0.23392259  0.122434401
+## Q20 -0.09970186 -0.034665293
+## Q21 -0.12902148 -0.067664367
+## Q22  1.00000000  0.230369402
+## Q23  0.23036940  1.000000000</code></pre>
 </div>
 <div id="step-2-lets-check-for-inter-correlation" class="section level2" number="12.8">
 <h2><span class="header-section-number">12.8</span> Step 2: Let’s check for Inter-correlation <good></h2>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="factor-analysis.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb223-2"><a href="factor-analysis.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(raq.matrix, <span class="at">method =</span> <span class="st">&quot;number&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="factor-analysis.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb226-2"><a href="factor-analysis.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(raq.matrix, <span class="at">method =</span> <span class="st">&quot;number&quot;</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-142-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We can use bartlett’s test from the psych package</li>
 </ul>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="factor-analysis.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb224-2"><a href="factor-analysis.html#cb224-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb224-3"><a href="factor-analysis.html#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cortest.bartlett</span>(raq.matrix, <span class="at">n=</span><span class="dv">2571</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="factor-analysis.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb227-2"><a href="factor-analysis.html#cb227-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-3"><a href="factor-analysis.html#cb227-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cortest.bartlett</span>(raq.matrix, <span class="at">n=</span><span class="dv">2571</span>)</span></code></pre></div>
 <pre><code>## $chisq
 ## [1] 19334.49
 ## 
@@ -689,13 +716,15 @@ An r matrix example</p>
 <ul>
 <li>Overall should be &gt; 0.5</li>
 </ul>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="factor-analysis.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">KMO</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="factor-analysis.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">KMO</span>(raq)</span></code></pre></div>
 <pre><code>## Kaiser-Meyer-Olkin factor adequacy
 ## Call: KMO(r = raq)
 ## Overall MSA =  0.93
 ## MSA for each item = 
-##  Q01  Q02  Q03  Q04  Q05  Q06  Q07  Q08  Q09  Q10  Q11  Q12  Q13  Q14  Q15  Q16  Q17  Q18  Q19  Q20  Q21  Q22  Q23 
-## 0.93 0.87 0.95 0.96 0.96 0.89 0.94 0.87 0.83 0.95 0.91 0.95 0.95 0.97 0.94 0.93 0.93 0.95 0.94 0.89 0.93 0.88 0.77</code></pre>
+##  Q01  Q02  Q03  Q04  Q05  Q06  Q07  Q08  Q09  Q10  Q11  Q12  Q13  Q14  Q15  Q16  Q17  Q18 
+## 0.93 0.87 0.95 0.96 0.96 0.89 0.94 0.87 0.83 0.95 0.91 0.95 0.95 0.97 0.94 0.93 0.93 0.95 
+##  Q19  Q20  Q21  Q22  Q23 
+## 0.94 0.89 0.93 0.88 0.77</code></pre>
 </div>
 <div id="step-4-identify-number-of-factors" class="section level2" number="12.10">
 <h2><span class="header-section-number">12.10</span> Step 4: Identify number of factors</h2>
@@ -720,7 +749,7 @@ An r matrix example</p>
 </div>
 <div id="scree-plot" class="section level3" number="12.10.2">
 <h3><span class="header-section-number">12.10.2</span> Scree plot</h3>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="factor-analysis.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scree</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="factor-analysis.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scree</span>(raq)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-145-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We are looking for the point of inflection</li>
@@ -745,33 +774,40 @@ See how many factors we can draw a line through</p>
 </ul></li>
 </ul>
 <p><img src="img/raq.png" width="223" height="100%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="factor-analysis.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb229-2"><a href="factor-analysis.html#cb229-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb229-3"><a href="factor-analysis.html#cb229-3" aria-hidden="true" tabindex="-1"></a> parallel_analysis <span class="ot">&lt;-</span> <span class="fu">fa.parallel</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="factor-analysis.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb232-2"><a href="factor-analysis.html#cb232-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb232-3"><a href="factor-analysis.html#cb232-3" aria-hidden="true" tabindex="-1"></a> parallel_analysis <span class="ot">&lt;-</span> <span class="fu">fa.parallel</span>(raq)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-147-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre><code>## Parallel analysis suggests that the number of factors =  6  and the number of components =  4</code></pre>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="factor-analysis.html#cb231-1" aria-hidden="true" tabindex="-1"></a>parallel_analysis</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="factor-analysis.html#cb234-1" aria-hidden="true" tabindex="-1"></a>parallel_analysis</span></code></pre></div>
 <pre><code>## Call: fa.parallel(x = raq)
 ## Parallel analysis suggests that the number of factors =  6  and the number of components =  4 
 ## 
 ##  Eigen Values of 
-##   Original factors Resampled data Simulated data Original components Resampled components Simulated components
-## 1             6.64           0.29           0.30                7.29                 1.17                 1.17
-## 2             0.91           0.15           0.15                1.74                 1.15                 1.14
-## 3             0.63           0.14           0.13                1.32                 1.13                 1.12
-## 4             0.48           0.12           0.11                1.23                 1.11                 1.11
-## 5             0.29           0.10           0.10                0.99                 1.09                 1.09
-## 6             0.13           0.09           0.08                0.90                 1.08                 1.07</code></pre>
+##   Original factors Resampled data Simulated data Original components Resampled components
+## 1             6.64           0.24           0.21                7.29                 1.17
+## 2             0.91           0.15           0.15                1.74                 1.15
+## 3             0.63           0.14           0.13                1.32                 1.13
+## 4             0.48           0.12           0.11                1.23                 1.11
+## 5             0.29           0.10           0.10                0.99                 1.10
+## 6             0.13           0.09           0.08                0.90                 1.08
+##   Simulated components
+## 1                 1.17
+## 2                 1.14
+## 3                 1.12
+## 4                 1.11
+## 5                 1.09
+## 6                 1.08</code></pre>
 </div>
 </div>
 <div id="step-5-perform-factor-analysis-with-initial-recommended-factors" class="section level2" number="12.11">
 <h2><span class="header-section-number">12.11</span> Step 5: Perform factor analysis (with initial recommended # factors)</h2>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="factor-analysis.html#cb233-1" aria-hidden="true" tabindex="-1"></a>paf <span class="ot">&lt;-</span> <span class="fu">fa</span>(raq,</span>
-<span id="cb233-2"><a href="factor-analysis.html#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="at">nfactors =</span> <span class="dv">6</span>,</span>
-<span id="cb233-3"><a href="factor-analysis.html#cb233-3" aria-hidden="true" tabindex="-1"></a><span class="at">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
-<span id="cb233-4"><a href="factor-analysis.html#cb233-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
-<span id="cb233-5"><a href="factor-analysis.html#cb233-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="factor-analysis.html#cb234-1" aria-hidden="true" tabindex="-1"></a>paf</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="factor-analysis.html#cb236-1" aria-hidden="true" tabindex="-1"></a>paf <span class="ot">&lt;-</span> <span class="fu">fa</span>(raq,</span>
+<span id="cb236-2"><a href="factor-analysis.html#cb236-2" aria-hidden="true" tabindex="-1"></a><span class="at">nfactors =</span> <span class="dv">6</span>,</span>
+<span id="cb236-3"><a href="factor-analysis.html#cb236-3" aria-hidden="true" tabindex="-1"></a><span class="at">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
+<span id="cb236-4"><a href="factor-analysis.html#cb236-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb236-5"><a href="factor-analysis.html#cb236-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="factor-analysis.html#cb237-1" aria-hidden="true" tabindex="-1"></a>paf</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 6, rotate = &quot;none&quot;, max.iter = 100, fm = &quot;pa&quot;)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
@@ -833,7 +869,7 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>We are looking high levels of variance explained with SS loadings &gt; 1</li>
 </ul>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="factor-analysis.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(paf<span class="sc">$</span>loadings, <span class="at">cutoff=</span><span class="dv">0</span>, <span class="at">digits=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="factor-analysis.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(paf<span class="sc">$</span>loadings, <span class="at">cutoff=</span><span class="dv">0</span>, <span class="at">digits=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## 
 ## Loadings:
 ##     PA1    PA2    PA3    PA4    PA5    PA6   
@@ -868,7 +904,7 @@ See how many factors we can draw a line through</p>
 </div>
 <div id="check-the-structure-matrix" class="section level3" number="12.11.2">
 <h3><span class="header-section-number">12.11.2</span> Check the structure matrix</h3>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="factor-analysis.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(paf<span class="sc">$</span>Structure, <span class="at">cutoff=</span><span class="dv">0</span>, <span class="at">digits=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="factor-analysis.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(paf<span class="sc">$</span>Structure, <span class="at">cutoff=</span><span class="dv">0</span>, <span class="at">digits=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## 
 ## Loadings:
 ##     PA1    PA2    PA3    PA4    PA5    PA6   
@@ -903,7 +939,7 @@ See how many factors we can draw a line through</p>
 </div>
 <div id="check-eigenvalues" class="section level3" number="12.11.3">
 <h3><span class="header-section-number">12.11.3</span> Check eigenvalues</h3>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="factor-analysis.html#cb240-1" aria-hidden="true" tabindex="-1"></a>paf<span class="sc">$</span>e.values[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="factor-analysis.html#cb243-1" aria-hidden="true" tabindex="-1"></a>paf<span class="sc">$</span>e.values[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
 <pre><code>## [1] 7.2900471 1.7388287 1.3167515 1.2271982 0.9878779 0.8953304</code></pre>
 </div>
 <div id="check-communalities" class="section level3" number="12.11.4">
@@ -912,22 +948,24 @@ See how many factors we can draw a line through</p>
 <li>Communality for each variable: the percentage of variance that can be explained by the retained factors.</li>
 <li>Retained factors should explain more of the variance in each variable.</li>
 </ul>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="factor-analysis.html#cb242-1" aria-hidden="true" tabindex="-1"></a>paf<span class="sc">$</span>communality</span></code></pre></div>
-<pre><code>##       Q01       Q02       Q03       Q04       Q05       Q06       Q07       Q08       Q09       Q10       Q11       Q12 
-## 0.5170176 0.2585136 0.4643374 0.4196524 0.3341637 0.5720655 0.5042725 0.6649413 0.3542281 0.2240464 0.6328967 0.4544862 
-##       Q13       Q14       Q15       Q16       Q17       Q18       Q19       Q20       Q21       Q22       Q23 
-## 0.4973541 0.4223263 0.5902303 0.5571656 0.5700891 0.5655104 0.2467731 0.3686202 0.5991875 0.2606533 0.1178839</code></pre>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="factor-analysis.html#cb245-1" aria-hidden="true" tabindex="-1"></a>paf<span class="sc">$</span>communality</span></code></pre></div>
+<pre><code>##       Q01       Q02       Q03       Q04       Q05       Q06       Q07       Q08       Q09 
+## 0.5170176 0.2585136 0.4643374 0.4196524 0.3341637 0.5720655 0.5042725 0.6649413 0.3542281 
+##       Q10       Q11       Q12       Q13       Q14       Q15       Q16       Q17       Q18 
+## 0.2240464 0.6328967 0.4544862 0.4973541 0.4223263 0.5902303 0.5571656 0.5700891 0.5655104 
+##       Q19       Q20       Q21       Q22       Q23 
+## 0.2467731 0.3686202 0.5991875 0.2606533 0.1178839</code></pre>
 </div>
 </div>
 <div id="step-6-perform-factor-analysis-with-reduced-number-of-factors" class="section level2" number="12.12">
 <h2><span class="header-section-number">12.12</span> Step 6: Perform factor analysis (with reduced number of factors)</h2>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="factor-analysis.html#cb244-1" aria-hidden="true" tabindex="-1"></a>paf1 <span class="ot">&lt;-</span> <span class="fu">fa</span>(raq,</span>
-<span id="cb244-2"><a href="factor-analysis.html#cb244-2" aria-hidden="true" tabindex="-1"></a><span class="at">nfactors =</span> <span class="dv">2</span>,</span>
-<span id="cb244-3"><a href="factor-analysis.html#cb244-3" aria-hidden="true" tabindex="-1"></a><span class="at">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
-<span id="cb244-4"><a href="factor-analysis.html#cb244-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
-<span id="cb244-5"><a href="factor-analysis.html#cb244-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb244-6"><a href="factor-analysis.html#cb244-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb244-7"><a href="factor-analysis.html#cb244-7" aria-hidden="true" tabindex="-1"></a>paf1</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="factor-analysis.html#cb247-1" aria-hidden="true" tabindex="-1"></a>paf1 <span class="ot">&lt;-</span> <span class="fu">fa</span>(raq,</span>
+<span id="cb247-2"><a href="factor-analysis.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="at">nfactors =</span> <span class="dv">2</span>,</span>
+<span id="cb247-3"><a href="factor-analysis.html#cb247-3" aria-hidden="true" tabindex="-1"></a><span class="at">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
+<span id="cb247-4"><a href="factor-analysis.html#cb247-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb247-5"><a href="factor-analysis.html#cb247-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb247-6"><a href="factor-analysis.html#cb247-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb247-7"><a href="factor-analysis.html#cb247-7" aria-hidden="true" tabindex="-1"></a>paf1</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 2, rotate = &quot;none&quot;, max.iter = 100, fm = &quot;pa&quot;)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
@@ -984,7 +1022,7 @@ See how many factors we can draw a line through</p>
 ## Correlation of (regression) scores with factors   0.96 0.78
 ## Multiple R square of scores with factors          0.92 0.61
 ## Minimum correlation of possible factor scores     0.83 0.23</code></pre>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="factor-analysis.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf1)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="factor-analysis.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf1)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-156-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="factor-analysis-rotation" class="section level2" number="12.13">
@@ -1011,55 +1049,52 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>Perform factor analysis (with rotation)</li>
 </ul>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="factor-analysis.html#cb247-1" aria-hidden="true" tabindex="-1"></a>paf2 <span class="ot">&lt;-</span> <span class="fu">fa</span>(raq,</span>
-<span id="cb247-2"><a href="factor-analysis.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="at">nfactors =</span> <span class="dv">2</span>,</span>
-<span id="cb247-3"><a href="factor-analysis.html#cb247-3" aria-hidden="true" tabindex="-1"></a><span class="at">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
-<span id="cb247-4"><a href="factor-analysis.html#cb247-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
-<span id="cb247-5"><a href="factor-analysis.html#cb247-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;oblimin&quot;</span>)</span>
-<span id="cb247-6"><a href="factor-analysis.html#cb247-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb247-7"><a href="factor-analysis.html#cb247-7" aria-hidden="true" tabindex="-1"></a>paf2</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="factor-analysis.html#cb250-1" aria-hidden="true" tabindex="-1"></a>paf2 <span class="ot">&lt;-</span> <span class="fu">fa</span>(raq,</span>
+<span id="cb250-2"><a href="factor-analysis.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="at">nfactors =</span> <span class="dv">2</span>,</span>
+<span id="cb250-3"><a href="factor-analysis.html#cb250-3" aria-hidden="true" tabindex="-1"></a><span class="at">fm=</span><span class="st">&quot;pa&quot;</span>,</span>
+<span id="cb250-4"><a href="factor-analysis.html#cb250-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb250-5"><a href="factor-analysis.html#cb250-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;oblimin&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required namespace: GPArotation</code></pre>
+<pre><code>## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : I am sorry,
+## to do these rotations requires the GPArotation package to be installed</code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="factor-analysis.html#cb253-1" aria-hidden="true" tabindex="-1"></a>paf2</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 2, rotate = &quot;oblimin&quot;, max.iter = 100, 
 ##     fm = &quot;pa&quot;)
 ## Standardized loadings (pattern matrix) based upon correlation matrix
 ##       PA1   PA2    h2   u2 com
-## Q01  0.57  0.03 0.324 0.68 1.0
-## Q02 -0.12  0.44 0.228 0.77 1.2
-## Q03 -0.48  0.36 0.430 0.57 1.8
-## Q04  0.61 -0.01 0.377 0.62 1.0
-## Q05  0.52 -0.03 0.276 0.72 1.0
-## Q06  0.52 -0.05 0.282 0.72 1.0
-## Q07  0.63 -0.11 0.437 0.56 1.1
-## Q08  0.66  0.32 0.445 0.56 1.4
-## Q09 -0.08  0.51 0.287 0.71 1.0
-## Q10  0.39 -0.06 0.163 0.84 1.1
-## Q11  0.70  0.16 0.472 0.53 1.1
-## Q12  0.58 -0.19 0.421 0.58 1.2
-## Q13  0.63 -0.07 0.421 0.58 1.0
-## Q14  0.59 -0.12 0.396 0.60 1.1
-## Q15  0.53 -0.09 0.315 0.68 1.1
-## Q16  0.62 -0.12 0.428 0.57 1.1
-## Q17  0.73  0.24 0.511 0.49 1.2
-## Q18  0.64 -0.13 0.461 0.54 1.1
-## Q19 -0.27  0.35 0.238 0.76 1.9
-## Q20  0.33 -0.22 0.187 0.81 1.8
-## Q21  0.57 -0.18 0.403 0.60 1.2
-## Q22 -0.15  0.34 0.161 0.84 1.4
-## Q23 -0.05  0.21 0.053 0.95 1.1
+## Q01  0.56  0.12 0.324 0.68 1.1
+## Q02 -0.28  0.39 0.228 0.77 1.8
+## Q03 -0.61  0.25 0.430 0.57 1.3
+## Q04  0.61  0.09 0.377 0.62 1.0
+## Q05  0.52  0.05 0.276 0.72 1.0
+## Q06  0.53  0.04 0.282 0.72 1.0
+## Q07  0.66 -0.01 0.437 0.56 1.0
+## Q08  0.53  0.40 0.445 0.56 1.9
+## Q09 -0.27  0.46 0.287 0.71 1.6
+## Q10  0.40  0.00 0.163 0.84 1.0
+## Q11  0.63  0.27 0.472 0.53 1.3
+## Q12  0.64 -0.08 0.421 0.58 1.0
+## Q13  0.65  0.04 0.421 0.58 1.0
+## Q14  0.63 -0.02 0.396 0.60 1.0
+## Q15  0.56  0.00 0.315 0.68 1.0
+## Q16  0.65 -0.01 0.428 0.57 1.0
+## Q17  0.63  0.34 0.511 0.49 1.5
+## Q18  0.68 -0.02 0.461 0.54 1.0
+## Q19 -0.40  0.28 0.238 0.76 1.8
+## Q20  0.40 -0.15 0.187 0.81 1.3
+## Q21  0.63 -0.07 0.403 0.60 1.0
+## Q22 -0.28  0.29 0.161 0.84 2.0
+## Q23 -0.13  0.19 0.053 0.95 1.8
 ## 
 ##                        PA1  PA2
-## SS loadings           6.33 1.39
-## Proportion Var        0.28 0.06
-## Cumulative Var        0.28 0.34
-## Proportion Explained  0.82 0.18
-## Cumulative Proportion 0.82 1.00
+## SS loadings           6.67 1.04
+## Proportion Var        0.29 0.05
+## Cumulative Var        0.29 0.34
+## Proportion Explained  0.86 0.14
+## Cumulative Proportion 0.86 1.00
 ## 
-##  With factor correlations of 
-##       PA1   PA2
-## PA1  1.00 -0.22
-## PA2 -0.22  1.00
-## 
-## Mean item complexity =  1.2
+## Mean item complexity =  1.3
 ## Test of the hypothesis that 2 factors are sufficient.
 ## 
 ## The degrees of freedom for the null model are  253  and the objective function was  7.55 with Chi Square of  19334.49
@@ -1077,12 +1112,12 @@ See how many factors we can draw a line through</p>
 ## Fit based upon off diagonal values = 0.97
 ## Measures of factor score adequacy             
 ##                                                    PA1  PA2
-## Correlation of (regression) scores with factors   0.96 0.81
-## Multiple R square of scores with factors          0.91 0.65
-## Minimum correlation of possible factor scores     0.82 0.30</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="factor-analysis.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf1)</span></code></pre></div>
+## Correlation of (regression) scores with factors   0.96 0.78
+## Multiple R square of scores with factors          0.92 0.61
+## Minimum correlation of possible factor scores     0.83 0.23</code></pre>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="factor-analysis.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf1)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-158-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="factor-analysis.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf2)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="factor-analysis.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paf2)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-159-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="reliability-internal-consistency" class="section level2" number="12.15">
@@ -1100,9 +1135,9 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>We can use the <em>alpha()</em> function in the psych package</li>
 </ul>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="factor-analysis.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb251-2"><a href="factor-analysis.html#cb251-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb251-3"><a href="factor-analysis.html#cb251-3" aria-hidden="true" tabindex="-1"></a><span class="fu">alpha</span>(raq)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="factor-analysis.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb257-2"><a href="factor-analysis.html#cb257-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb257-3"><a href="factor-analysis.html#cb257-3" aria-hidden="true" tabindex="-1"></a><span class="fu">alpha</span>(raq)</span></code></pre></div>
 <pre><code>## Warning in alpha(raq): Some items were negatively correlated with the total scale and probably 
 ## should be reversed.  
 ## To do this, run the function again with the &#39;check.keys=TRUE&#39; option</code></pre>
@@ -1213,7 +1248,7 @@ See how many factors we can draw a line through</p>
 <ul>
 <li>It is possible to run the analysis with automatic reversal of negatively-correlated items</li>
 </ul>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="factor-analysis.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">alpha</span>(raq, <span class="at">check.keys=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="factor-analysis.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">alpha</span>(raq, <span class="at">check.keys=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Warning in alpha(raq, check.keys = TRUE): Some items were negatively correlated with total scale and were automatically reversed.
 ##  This is indicated by a negative sign for the variable name.</code></pre>
 <pre><code>## 
@@ -1317,7 +1352,6 @@ See how many factors we can draw a line through</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1357,6 +1391,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 },
