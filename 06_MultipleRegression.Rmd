@@ -222,6 +222,7 @@ summary(step.model)
 
 ## Using regression with categorical predictors (more information) {#catreg}
 
+**In the below video, you can click the icon in the top right of the video to change the layout (and remove my face, if you want!)**
 
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=01cdd2e6-c7dd-4677-a5b9-ae1b00caa8b7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
