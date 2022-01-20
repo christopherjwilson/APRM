@@ -396,16 +396,16 @@ Parallel analysis suggests that the number of factors =  6  and the number of co
 
  Eigen Values of 
   Original factors Resampled data Simulated data Original components
-1             6.64           0.21           0.22                7.29
+1             6.64           0.20           0.20                7.29
 2             0.91           0.15           0.15                1.74
-3             0.63           0.13           0.14                1.32
-4             0.48           0.12           0.12                1.23
+3             0.63           0.13           0.13                1.32
+4             0.48           0.11           0.11                1.23
 5             0.29           0.10           0.10                0.99
-6             0.13           0.08           0.09                0.90
+6             0.13           0.09           0.09                0.90
   Resampled components Simulated components
-1                 1.18                 1.18
-2                 1.14                 1.15
-3                 1.12                 1.13
+1                 1.18                 1.17
+2                 1.14                 1.14
+3                 1.12                 1.12
 4                 1.11                 1.11
 5                 1.09                 1.09
 6                 1.08                 1.08
@@ -732,43 +732,38 @@ Call: fa(r = raq, nfactors = 2, rotate = "oblimin", max.iter = 100,
     fm = "pa")
 Standardized loadings (pattern matrix) based upon correlation matrix
       PA1   PA2    h2   u2 com
-Q01  0.57  0.03 0.324 0.68 1.0
-Q02 -0.12  0.44 0.228 0.77 1.2
-Q03 -0.48  0.36 0.430 0.57 1.8
-Q04  0.61 -0.01 0.377 0.62 1.0
-Q05  0.52 -0.03 0.276 0.72 1.0
-Q06  0.52 -0.05 0.282 0.72 1.0
-Q07  0.63 -0.11 0.437 0.56 1.1
-Q08  0.66  0.32 0.445 0.56 1.4
-Q09 -0.08  0.51 0.287 0.71 1.0
-Q10  0.39 -0.06 0.163 0.84 1.1
-Q11  0.70  0.16 0.472 0.53 1.1
-Q12  0.58 -0.19 0.421 0.58 1.2
-Q13  0.63 -0.07 0.421 0.58 1.0
-Q14  0.59 -0.12 0.396 0.60 1.1
-Q15  0.53 -0.09 0.315 0.68 1.1
-Q16  0.62 -0.12 0.428 0.57 1.1
-Q17  0.73  0.24 0.511 0.49 1.2
-Q18  0.64 -0.13 0.461 0.54 1.1
-Q19 -0.27  0.35 0.238 0.76 1.9
-Q20  0.33 -0.22 0.187 0.81 1.8
-Q21  0.57 -0.18 0.403 0.60 1.2
-Q22 -0.15  0.34 0.161 0.84 1.4
-Q23 -0.05  0.21 0.053 0.95 1.1
+Q01  0.56  0.12 0.324 0.68 1.1
+Q02 -0.28  0.39 0.228 0.77 1.8
+Q03 -0.61  0.25 0.430 0.57 1.3
+Q04  0.61  0.09 0.377 0.62 1.0
+Q05  0.52  0.05 0.276 0.72 1.0
+Q06  0.53  0.04 0.282 0.72 1.0
+Q07  0.66 -0.01 0.437 0.56 1.0
+Q08  0.53  0.40 0.445 0.56 1.9
+Q09 -0.27  0.46 0.287 0.71 1.6
+Q10  0.40  0.00 0.163 0.84 1.0
+Q11  0.63  0.27 0.472 0.53 1.3
+Q12  0.64 -0.08 0.421 0.58 1.0
+Q13  0.65  0.04 0.421 0.58 1.0
+Q14  0.63 -0.02 0.396 0.60 1.0
+Q15  0.56  0.00 0.315 0.68 1.0
+Q16  0.65 -0.01 0.428 0.57 1.0
+Q17  0.63  0.34 0.511 0.49 1.5
+Q18  0.68 -0.02 0.461 0.54 1.0
+Q19 -0.40  0.28 0.238 0.76 1.8
+Q20  0.40 -0.15 0.187 0.81 1.3
+Q21  0.63 -0.07 0.403 0.60 1.0
+Q22 -0.28  0.29 0.161 0.84 2.0
+Q23 -0.13  0.19 0.053 0.95 1.8
 
                        PA1  PA2
-SS loadings           6.33 1.39
-Proportion Var        0.28 0.06
-Cumulative Var        0.28 0.34
-Proportion Explained  0.82 0.18
-Cumulative Proportion 0.82 1.00
+SS loadings           6.67 1.04
+Proportion Var        0.29 0.05
+Cumulative Var        0.29 0.34
+Proportion Explained  0.86 0.14
+Cumulative Proportion 0.86 1.00
 
- With factor correlations of 
-      PA1   PA2
-PA1  1.00 -0.22
-PA2 -0.22  1.00
-
-Mean item complexity =  1.2
+Mean item complexity =  1.3
 Test of the hypothesis that 2 factors are sufficient.
 
 The degrees of freedom for the null model are  253  and the objective function was  7.55 with Chi Square of  19334.49
@@ -786,9 +781,9 @@ BIC =  1522.12
 Fit based upon off diagonal values = 0.97
 Measures of factor score adequacy             
                                                    PA1  PA2
-Correlation of (regression) scores with factors   0.96 0.81
-Multiple R square of scores with factors          0.91 0.65
-Minimum correlation of possible factor scores     0.82 0.30
+Correlation of (regression) scores with factors   0.96 0.78
+Multiple R square of scores with factors          0.92 0.61
+Minimum correlation of possible factor scores     0.83 0.23
 ```
 
 
