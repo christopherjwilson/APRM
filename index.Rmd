@@ -151,7 +151,7 @@ It would also be useful to include, though not necessarily in an independent sec
 
 ### Word limits for assessment
 
-Word limits are as stated above (note that there is no allowance of +10%).  The word count refers to the assignment itself and does not include the reference list or tables/graphs.  The references cited in the main body of text are included in the word count.  
+Word limits are as stated above (note: there is an allowance of +10%).  The word count refers to the assignment itself and does not include the reference list or tables/graphs.  The references cited in the main body of text are included in the word count.  
 
 ### Submitting work
 

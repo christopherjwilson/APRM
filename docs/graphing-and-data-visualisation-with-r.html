@@ -489,9 +489,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="the-graph-output" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> The graph output</h2>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="graphing-and-data-visualisation-with-r.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb100-2"><a href="graphing-and-data-visualisation-with-r.html#cb100-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb100-3"><a href="graphing-and-data-visualisation-with-r.html#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="graphing-and-data-visualisation-with-r.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb106-2"><a href="graphing-and-data-visualisation-with-r.html#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-3"><a href="graphing-and-data-visualisation-with-r.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 </div>
 <div id="changing-the-geoms-leads-to-different-visualisations" class="section level2" number="6.6">
@@ -499,9 +499,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>If we change from points to lines, for example we get a different plot:</li>
 </ul>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="graphing-and-data-visualisation-with-r.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb101-2"><a href="graphing-and-data-visualisation-with-r.html#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb101-3"><a href="graphing-and-data-visualisation-with-r.html#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="graphing-and-data-visualisation-with-r.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb107-2"><a href="graphing-and-data-visualisation-with-r.html#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-3"><a href="graphing-and-data-visualisation-with-r.html#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot" class="section level2" number="6.7">
@@ -509,9 +509,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>By specifying that colours of our points should be attached to the <strong>route</strong> variable, the data is now colour-coded</li>
 </ul>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="graphing-and-data-visualisation-with-r.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb102-2"><a href="graphing-and-data-visualisation-with-r.html#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-3"><a href="graphing-and-data-visualisation-with-r.html#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route))</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="graphing-and-data-visualisation-with-r.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb108-2"><a href="graphing-and-data-visualisation-with-r.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="graphing-and-data-visualisation-with-r.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route))</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot-2" class="section level2" number="6.8">
@@ -519,9 +519,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>By specifying that size of our points should be attached to the <strong>satisfactionLevel</strong> variable, the size of the points adjusts</li>
 </ul>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="graphing-and-data-visualisation-with-r.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb103-2"><a href="graphing-and-data-visualisation-with-r.html#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-3"><a href="graphing-and-data-visualisation-with-r.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel))</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="graphing-and-data-visualisation-with-r.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb109-2"><a href="graphing-and-data-visualisation-with-r.html#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-3"><a href="graphing-and-data-visualisation-with-r.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
@@ -530,9 +530,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>By specifying that shape of our points should be attached to the <strong>hasDependents</strong> variable, the shape of the points changes accordingly</li>
 </ul>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="graphing-and-data-visualisation-with-r.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb105-2"><a href="graphing-and-data-visualisation-with-r.html#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb105-3"><a href="graphing-and-data-visualisation-with-r.html#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants))</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="graphing-and-data-visualisation-with-r.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb111-2"><a href="graphing-and-data-visualisation-with-r.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-3"><a href="graphing-and-data-visualisation-with-r.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
@@ -542,7 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We can summarise the data (e.g. get the mean or sd) using the <em>stat_summary()</em> function</li>
 <li>Below we are making a bar chart with the mean grade for each route</li>
 </ul>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="graphing-and-data-visualisation-with-r.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>route, <span class="at">y=</span> grades, <span class="at">fill=</span>route)) <span class="sc">+</span> <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="graphing-and-data-visualisation-with-r.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>route, <span class="at">y=</span> grades, <span class="at">fill=</span>route)) <span class="sc">+</span> <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: `fun.y` is deprecated. Use `fun` instead.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
@@ -550,9 +550,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.11</span> Changing the axis labels and title on a plot</h2>
 <p>We can change the axis labels and title using the <strong>labs()</strong> command:</p>
 <pre><code>labs(x=&quot;Student Grade&quot;, y=&quot;Hours of Study&quot;, title = &quot;Scattterplot of student data&quot;)</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="graphing-and-data-visualisation-with-r.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb110-2"><a href="graphing-and-data-visualisation-with-r.html#cb110-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb110-3"><a href="graphing-and-data-visualisation-with-r.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="graphing-and-data-visualisation-with-r.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb116-2"><a href="graphing-and-data-visualisation-with-r.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-3"><a href="graphing-and-data-visualisation-with-r.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 </div>
@@ -560,11 +560,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.12</span> Changing the legend on a plot</h2>
 <p>To change the legend, we use the <strong>labs()</strong> command too, and reference the relevant property (e.g. size, shape, colour)</p>
 <pre><code>labs(x=&quot;Student Grade&quot;, y=&quot;Hours of Study&quot;, title = &quot;Scattterplot of student data&quot;, color=&quot;Route of study&quot;, size=&quot;Satisfaction level&quot;, shape=&quot;Has dependents?&quot;)</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="graphing-and-data-visualisation-with-r.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb113-2"><a href="graphing-and-data-visualisation-with-r.html#cb113-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-3"><a href="graphing-and-data-visualisation-with-r.html#cb113-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> </span>
-<span id="cb113-4"><a href="graphing-and-data-visualisation-with-r.html#cb113-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
-<span id="cb113-5"><a href="graphing-and-data-visualisation-with-r.html#cb113-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="graphing-and-data-visualisation-with-r.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb119-2"><a href="graphing-and-data-visualisation-with-r.html#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb119-3"><a href="graphing-and-data-visualisation-with-r.html#cb119-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> </span>
+<span id="cb119-4"><a href="graphing-and-data-visualisation-with-r.html#cb119-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
+<span id="cb119-5"><a href="graphing-and-data-visualisation-with-r.html#cb119-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 </div>
@@ -573,18 +573,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Plots can be assigned to objects in R and recalled later, just like any other piece of data</li>
 </ul>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="graphing-and-data-visualisation-with-r.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb115-2"><a href="graphing-and-data-visualisation-with-r.html#cb115-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-3"><a href="graphing-and-data-visualisation-with-r.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Create plot and store it as &quot;myPlot&quot; object</span></span>
-<span id="cb115-4"><a href="graphing-and-data-visualisation-with-r.html#cb115-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-5"><a href="graphing-and-data-visualisation-with-r.html#cb115-5" aria-hidden="true" tabindex="-1"></a>myPlot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span></span>
-<span id="cb115-6"><a href="graphing-and-data-visualisation-with-r.html#cb115-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
-<span id="cb115-7"><a href="graphing-and-data-visualisation-with-r.html#cb115-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="graphing-and-data-visualisation-with-r.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb121-2"><a href="graphing-and-data-visualisation-with-r.html#cb121-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-3"><a href="graphing-and-data-visualisation-with-r.html#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Create plot and store it as &quot;myPlot&quot; object</span></span>
+<span id="cb121-4"><a href="graphing-and-data-visualisation-with-r.html#cb121-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-5"><a href="graphing-and-data-visualisation-with-r.html#cb121-5" aria-hidden="true" tabindex="-1"></a>myPlot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span></span>
+<span id="cb121-6"><a href="graphing-and-data-visualisation-with-r.html#cb121-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
+<span id="cb121-7"><a href="graphing-and-data-visualisation-with-r.html#cb121-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
 </div>
 <div id="recalling-a-stored-plot" class="section level2" number="6.14">
 <h2><span class="header-section-number">6.14</span> Recalling a stored plot</h2>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="graphing-and-data-visualisation-with-r.html#cb116-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Recall myPlot</span></span>
-<span id="cb116-2"><a href="graphing-and-data-visualisation-with-r.html#cb116-2" aria-hidden="true" tabindex="-1"></a>myPlot</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="graphing-and-data-visualisation-with-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Recall myPlot</span></span>
+<span id="cb122-2"><a href="graphing-and-data-visualisation-with-r.html#cb122-2" aria-hidden="true" tabindex="-1"></a>myPlot</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
@@ -601,9 +601,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>You might want to include code to save your plot in a script, for example</li>
 <li>This can allow greater control over the output file and plot dimensions:</li>
 </ul>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="graphing-and-data-visualisation-with-r.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">&quot;myPlot.pdf&quot;</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="graphing-and-data-visualisation-with-r.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">&quot;myPlot.pdf&quot;</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="graphing-and-data-visualisation-with-r.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">&quot;myPlot.png&quot;</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">units=</span><span class="st">&quot;cm&quot;</span>, <span class="at">dpi=</span><span class="dv">320</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="graphing-and-data-visualisation-with-r.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">&quot;myPlot.png&quot;</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">units=</span><span class="st">&quot;cm&quot;</span>, <span class="at">dpi=</span><span class="dv">320</span>)</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 
 </div>
