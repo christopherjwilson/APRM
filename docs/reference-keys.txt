@@ -2,7 +2,7 @@ tab:unnamed-chunk-2
 tab:unnamed-chunk-9
 welcome-to-the-module
 module-overview
-module-timetable-and-delivery-for-20212022
+module-timetable-and-delivery-for-20222023
 learning-and-teaching-strategies
 assessment
 formative-assessment
@@ -12,7 +12,7 @@ submitting-work
 a-note-about-referencing
 statistical-analysis-software
 downloading-r-and-r-studio-software
-texbooks-that-can-be-accessed-online
+textbooks-that-can-be-accessed-online
 research-methods-and-statistics
 working-with-r-and-rstudio-to-do-analysis
 academic-support-and-guidance
@@ -211,5 +211,3 @@ reliability-internal-consistency
 cronbachs-alpha
 chronbachs-alpha-in-r
 course-videos
-create-plot-and-store-it-as-myplot-object
-module-timetable-and-delivery-for-20222023

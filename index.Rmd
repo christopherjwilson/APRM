@@ -183,7 +183,7 @@ You can obtain R and R Studio from the following links:
 
 [https://rstudio.com/](https://rstudio.com/)
 
-## Texbooks that can be accessed online
+## Textbooks that can be accessed online
 
 e-books can be accessed from the library website: [https://www.tees.ac.uk/depts/lis/](https://www.tees.ac.uk/depts/lis/)
 
