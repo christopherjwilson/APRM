@@ -211,3 +211,5 @@ reliability-internal-consistency
 cronbachs-alpha
 chronbachs-alpha-in-r
 course-videos
+create-plot-and-store-it-as-myplot-object
+module-timetable-and-delivery-for-20222023

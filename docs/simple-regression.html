@@ -5,20 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 8 Simple Regression | Advanced Psychological Research Methods (PSY4034)</title>
-  <meta name="description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="description" content="This is handbook for the APRM module" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 8 Simple Regression | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
   
-  
-  <meta property="og:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  <meta property="og:description" content="This is handbook for the APRM module" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Topic 8 Simple Regression | Advanced Psychological Research Methods (PSY4034)" />
   
-  <meta name="twitter:description" content="This is a handbook for postgraduate research methods courses in the psychology department at Teesside University." />
+  <meta name="twitter:description" content="This is handbook for the APRM module" />
   
 
 <meta name="author" content="Christopher J. Wilson" />
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="correlation.html"/>
 <link rel="next" href="multiple-regression.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,14 +48,15 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 
 
 <style type="text/css">
@@ -98,7 +97,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -111,7 +110,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -445,12 +444,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="simple-regression" class="section level1" number="8">
-<h1><span class="header-section-number">Topic 8</span> Simple Regression</h1>
+<div id="simple-regression" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Topic 8</span> Simple Regression<a href="simple-regression.html#simple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=5e657c9f-3a06-4a74-b259-adaa0090242b&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
 </iframe>
-<div id="what-is-regression" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> What is regression?</h2>
+<div id="what-is-regression" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> What is regression?<a href="simple-regression.html#what-is-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Testing to see if we can make predictions based on data that are correlated</li>
 </ul>
@@ -467,8 +466,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="how-is-regression-calculated" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> How is regression calculated?</h2>
+<div id="how-is-regression-calculated" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> How is regression calculated?<a href="simple-regression.html#how-is-regression-calculated" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="img/bestfit.png" width="536" style="display: block; margin: auto;" /></p>
 <ul>
 <li>When we run a regression analysis, a calculation is done to select the “line of best fit”</li>
@@ -478,8 +477,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="the-regression-equation" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> The regression equation</h2>
+<div id="the-regression-equation" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> The regression equation<a href="simple-regression.html#the-regression-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="img/bestfit.png" width="536" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>Once the line of best fit is calculated, predictions are based on this line</p></li>
@@ -494,8 +493,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>predicted outcome value = beta coefficient * value of predictor + constant </strong></p>
 </div>
-<div id="running-regression-in-r" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Running regression in R</h2>
+<div id="running-regression-in-r" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Running regression in R<a href="simple-regression.html#running-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Step 1: Run regression</li>
 <li>Step 2: Check assumptions
@@ -513,14 +512,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Step 5: Check coefficient values</li>
 </ul>
 </div>
-<div id="run-regression" class="section level2" number="8.5">
-<h2><span class="header-section-number">8.5</span> Run regression</h2>
+<div id="run-regression" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Run regression<a href="simple-regression.html#run-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>We use the <em>lm()</em> command to run regression while saving the results</li>
 <li>We then use the <em>summary()</em> function to check the results</li>
 </ul>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="simple-regression.html#cb139-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula=</span> aggression_level <span class="sc">~</span> treatment_duration ,<span class="at">data=</span>regression_data)</span>
-<span id="cb139-2"><a href="simple-regression.html#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="simple-regression.html#cb137-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula=</span> aggression_level <span class="sc">~</span> treatment_duration ,<span class="at">data=</span>regression_data)</span>
+<span id="cb137-2"><a href="simple-regression.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -540,57 +539,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.4821, Adjusted R-squared:  0.4768 
 ## F-statistic: 91.21 on 1 and 98 DF,  p-value: 1.146e-15</code></pre>
 </div>
-<div id="what-are-residuals" class="section level2" number="8.6">
-<h2><span class="header-section-number">8.6</span> What are residuals?</h2>
+<div id="what-are-residuals" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> What are residuals?<a href="simple-regression.html#what-are-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>In regression, the assumptions apply to the residuals, not the data themselves</li>
 <li>Residual just means the difference between the data point and the regression line</li>
 </ul>
 <p><img src="img/residuals1.png" width="510" style="display: block; margin: auto;" /></p>
 </div>
-<div id="check-assumptions-distribution-1" class="section level2" number="8.7">
-<h2><span class="header-section-number">8.7</span> Check assumptions: distribution</h2>
+<div id="check-assumptions-distribution-1" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Check assumptions: distribution<a href="simple-regression.html#check-assumptions-distribution-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Using the <em>plot()</em> command on our regression model will give us some useful diagnostic plots</li>
 <li>The second plot that it outputs shows the normality</li>
 </ul>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="simple-regression.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="simple-regression.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-79-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We could also use a histogram to check the distribution</li>
 <li>Notice how we can use the $ sign to get the residuals from the model</li>
 </ul>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="simple-regression.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(model1<span class="sc">$</span>residuals)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="simple-regression.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(model1<span class="sc">$</span>residuals)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-80-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="check-assumptions-linearity" class="section level2" number="8.8">
-<h2><span class="header-section-number">8.8</span> Check assumptions: linearity</h2>
+<div id="check-assumptions-linearity" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> Check assumptions: linearity<a href="simple-regression.html#check-assumptions-linearity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Using the <em>plot()</em> command on our regression model will give us some useful diagnostic plots</li>
 <li>The first plot that it outputs shows the residuals vs the fitted values</li>
 <li>Here, we want to see them spread out, with the line being horizontal and straight</li>
 </ul>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="simple-regression.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="simple-regression.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-81-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>There is a slight amount of curvilinearity here but nothing to be worried about</li>
 </ul>
 </div>
-<div id="check-assumptions-homogeneity-of-variance-1" class="section level2" number="8.9">
-<h2><span class="header-section-number">8.9</span> Check assumptions: Homogeneity of Variance #1</h2>
+<div id="check-assumptions-homogeneity-of-variance-1" class="section level2 hasAnchor" number="8.9">
+<h2><span class="header-section-number">8.9</span> Check assumptions: Homogeneity of Variance #1<a href="simple-regression.html#check-assumptions-homogeneity-of-variance-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>We can use the sample plot to check Homogeneity of Variance</li>
 <li>We want the variance to be constant across the data set. We do not want the variance to change at different points in the data</li>
 </ul>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="simple-regression.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="simple-regression.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">1</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-82-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>A violation of Homogeneity of Variance would usually look like a funnel, with the data narrowing</li>
 </ul>
 <p><img src="img/biasedresiduals.png" width="496" height="100%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="check-assumptions-influential-cases" class="section level2" number="8.10">
-<h2><span class="header-section-number">8.10</span> Check assumptions: Influential cases</h2>
+<div id="check-assumptions-influential-cases" class="section level2 hasAnchor" number="8.10">
+<h2><span class="header-section-number">8.10</span> Check assumptions: Influential cases<a href="simple-regression.html#check-assumptions-influential-cases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>We need to check that there are no extreme outliers - they could throw off our predictions</li>
 <li>We are looking for participants that have high rediduals + high leverage
@@ -599,7 +598,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Others suggest 4/n is the cut off point (4 divided by number of participants)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="simple-regression.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="simple-regression.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">4</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-84-1.png" width="30%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>We are looking for participants that have high rediduals + high leverage
@@ -608,17 +607,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Many are over 0.04 (4/n = 0.04)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="simple-regression.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="simple-regression.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="at">which=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-85-1.png" width="40%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="check-the-r-squared-value" class="section level2" number="8.11">
-<h2><span class="header-section-number">8.11</span> Check the r squared value</h2>
+<div id="check-the-r-squared-value" class="section level2 hasAnchor" number="8.11">
+<h2><span class="header-section-number">8.11</span> Check the r squared value<a href="simple-regression.html#check-the-r-squared-value" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>r^2 = the amount of variance in the <strong>outcome</strong> that is explained by the <strong>predictor(s)</strong></li>
 <li>The closer this value is to 1, the more useful our regression model is for predicting the outcome</li>
 </ul>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="simple-regression.html#cb147-1" aria-hidden="true" tabindex="-1"></a>modelSummary <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)</span>
-<span id="cb147-2"><a href="simple-regression.html#cb147-2" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="simple-regression.html#cb145-1" aria-hidden="true" tabindex="-1"></a>modelSummary <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)</span>
+<span id="cb145-2"><a href="simple-regression.html#cb145-2" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -641,8 +640,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The r^2 of 0.482052 means that 48% of the variance in <strong>aggression level</strong> is explained by <strong>treatment duration</strong></li>
 </ul>
 </div>
-<div id="check-model-significance" class="section level2" number="8.12">
-<h2><span class="header-section-number">8.12</span> Check model significance</h2>
+<div id="check-model-significance" class="section level2 hasAnchor" number="8.12">
+<h2><span class="header-section-number">8.12</span> Check model significance<a href="simple-regression.html#check-model-significance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>The model significance is displayed at the very end of the output
 <ul>
@@ -650,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>As p &lt; 0.05, the model is significant</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="simple-regression.html#cb149-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="simple-regression.html#cb147-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -670,13 +669,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.4821, Adjusted R-squared:  0.4768 
 ## F-statistic: 91.21 on 1 and 98 DF,  p-value: 1.146e-15</code></pre>
 </div>
-<div id="check-coefficient-values" class="section level2" number="8.13">
-<h2><span class="header-section-number">8.13</span> Check coefficient values</h2>
+<div id="check-coefficient-values" class="section level2 hasAnchor" number="8.13">
+<h2><span class="header-section-number">8.13</span> Check coefficient values<a href="simple-regression.html#check-coefficient-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>The coefficient values are displayed in the coefficients table</li>
 <li>If we have more than one predictor, they are all listed here</li>
 </ul>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="simple-regression.html#cb151-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="simple-regression.html#cb149-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
 <pre><code>##                      Estimate Std. Error   t value     Pr(&gt;|t|)
 ## (Intercept)        12.3300211 0.75087601 16.420848 6.840516e-30
 ## treatment_duration -0.6933201 0.07259671 -9.550297 1.145898e-15</code></pre>
@@ -685,8 +684,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>For every unit increase in treatment duration, aggression level decreases by 0.69</li>
 </ul>
 </div>
-<div id="the-regression-equation-1" class="section level2" number="8.14">
-<h2><span class="header-section-number">8.14</span> The regression equation</h2>
+<div id="the-regression-equation-1" class="section level2 hasAnchor" number="8.14">
+<h2><span class="header-section-number">8.14</span> The regression equation<a href="simple-regression.html#the-regression-equation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>The regression equation is:</li>
 </ul>
@@ -695,18 +694,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>For this model, that is:</li>
 </ul>
 <p>Aggression level = treatment duration * -0.69 + 12.33</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="simple-regression.html#cb153-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="simple-regression.html#cb151-1" aria-hidden="true" tabindex="-1"></a>modelSummary<span class="sc">$</span>coefficients</span></code></pre></div>
 <pre><code>##                      Estimate Std. Error   t value     Pr(&gt;|t|)
 ## (Intercept)        12.3300211 0.75087601 16.420848 6.840516e-30
 ## treatment_duration -0.6933201 0.07259671 -9.550297 1.145898e-15</code></pre>
 </div>
-<div id="accounting-for-error-in-predictions" class="section level2" number="8.15">
-<h2><span class="header-section-number">8.15</span> Accounting for error in predictions</h2>
+<div id="accounting-for-error-in-predictions" class="section level2 hasAnchor" number="8.15">
+<h2><span class="header-section-number">8.15</span> Accounting for error in predictions<a href="simple-regression.html#accounting-for-error-in-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>We also know that the accuracy of predictions will be within a certain margin of error</li>
 <li>This is known as <strong>standard error of the estimate</strong> or <strong>residual standard error</strong></li>
 </ul>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="simple-regression.html#cb155-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="simple-regression.html#cb153-1" aria-hidden="true" tabindex="-1"></a>modelSummary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = aggression_level ~ treatment_duration, data = regression_data)
@@ -797,7 +796,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

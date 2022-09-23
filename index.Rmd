@@ -1,23 +1,23 @@
 --- 
 title: "Advanced Psychological Research Methods (PSY4034)"
 author: "Christopher J. Wilson"
-date: "September 2021"
-link-citations: yes
+date: "September 2022"
+output: pdf_document
 bibliography:
 - book.bib
 - packages.bib
 site: bookdown::bookdown_site
 biblio-style: apalike
 css: style.css
-description: This is a handbook for postgraduate research methods courses in the psychology
-  department at Teesside University.
+description: This is handbook for the APRM module
 documentclass: book
-always_allow_html: true
+always_allow_html: yes
+link-citations: yes
 ---
 
 # Welcome to the module
 
- > Note:To watch the embedded videos on this site, you will need to be logged into Teesside University's Blackboard site and be a part of this course. If you are on the course:
+ > Note: The online version of this guide is accessed at [https://christopherjwilson.github.io/APRM/](https://christopherjwilson.github.io/APRM/). To watch the embedded videos on this site, you will need to be logged into Teesside University's Blackboard site and be a part of this course. If you are on the course:
 > 
 > - Press *Ctrl* + *T* to open a new tab (keeping this one open) and go to [https://bb.tees.ac.uk](https://bb.tees.ac.uk). 
 > - Login to Blackboard. Keep the blackboard tab open and switch back to this page.
@@ -48,7 +48,7 @@ The module is taught using a variety of techniques to best enhance your knowledg
 
 
 
-## Module timetable and delivery for 2021/2022
+## Module timetable and delivery for 2022/2023
 
 
 At the time of writing, all teaching is planned to take place face to face, on campus. 
@@ -82,7 +82,7 @@ By the end of year one, trainees are expected to have identified a thesis topic 
 The required format for thesis research proposals can be found in Appendix 2 of the DClinPsy
 Programme Research Handbook.
 
-**The formal formative assessment is of a presentation of the thesis research proposal to be presented during the research panels, which take place in July 2022.** The presentation will be 20 minutes’ long and will outline the thesis project that the trainee will develop in Years 2 and 3. There will also be 10 minutes allotted for questions from the panel which will have two academic members and one clinical member. This formative assessment is intended as a starting point for the Year 2 and 3 research methods modules. The timing is important as it should enable trainees to start the process of ethics approval for their dissertation. earlier. The trainees will hand in a printed copy of their slides with explanatory notes and references.
+**The formal formative assessment is of a presentation of the thesis research proposal to be presented during the research panels, which take place in May 2023 (see timetable).** The presentation will be 20 minutes’ long and will outline the thesis project that the trainee will develop in Years 2 and 3. There will also be 10 minutes allotted for questions from the panel which will have two academic members and one clinical member. This formative assessment is intended as a starting point for the Year 2 and 3 research methods modules. The timing is important as it should enable trainees to start the process of ethics approval for their dissertation. earlier. The trainees will hand in a printed copy of their slides with explanatory notes and references.
 
 
 **Formative Assessment Criteria**
