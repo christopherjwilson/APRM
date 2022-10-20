@@ -1,0 +1,205 @@
+---
+title: "Importing and working with data in RStudio"
+author: "Christopher Wilson"
+format: revealjs
+css: custom.css
+logo: "logo.png"
+---
+```{r}
+library(tidyverse)
+```
+
+
+## By the end of this section, you will be able to:
+
+- Import data into R from excel, SPSS and csv files
+- Identify different data structures and variable types
+- Convert variables from one type to another
+- Order, filter and group data
+- Summarise data
+- Create new variables from data
+
+## The *Tidyverse* set of packages
+
+- A 'toolkit' of packages that are very useful for organsing and manipulating data
+- We will use the *haven* package to import SPSS files
+- We will use the *dplyr* to organise data
+- Also includes the *ggplot2* and *tidyR* packages which we will use later
+
+To install:
+    
+    install.packages("tidyverse")
+
+
+## Importing .csv data into R 
+
+
+- Can use typed commands or the menu:
+```{r import data}
+library(readr)
+studentData <- read_csv("Datasets/studentData.csv")
+```
+![](img/Import_data.png)
+
+## Importing SPSS data files into R
+
+
+    library(haven)
+    mySPSSData <- read_sav("mySPSSFile.sav")
+
+
+
+## R can store many different data types
+
+- Vectors: One-dimensional 
+- Data frames: Two-dimensional
+- Matrices: Two-dimensional
+- Arrays, Lists etc...
+
+A data matrix:
+![](img/Matrix.png)
+
+## The data frame
+
+
+- A data frame is like a table or a two-dimensional array or matrix
+- Each column contains values of one variable
+- Each row contains one set of values 
+- Each column name must be unique
+
+```{r data frame}
+# view the first few rows of this dataframe
+head(studentData) %>% kableExtra::kable()
+```
+
+
+## Checking the structure of the data
+
+
+- The __str()__ command will allow us to check how our data is structured:
+
+```{r import data 2}
+str(studentData)
+```
+Notice that some of the variable types are incorrect
+
+## Changing variables from one data type to another {.smaller}
+
+
+```{r changing variables}
+
+studentData$route <- as.factor(studentData$route)
+studentData$hasDepdendants <- as.factor(studentData$hasDepdendants)
+studentData$satisfactionLevel <- as.ordered(studentData$satisfactionLevel)
+
+```
+
+## Changing variables from one data type to another #2 
+
+
+Let's check the structure again: 
+
+```{r changing variables 2}
+str(studentData)
+str(studentData$satisfactionLevel)
+
+```
+
+## Changing variables from one data type to another #3 
+
+
+Let's give a proper name to the row ID:
+```{r echo=TRUE}
+#Overwriting studentData with a new version, where the ID column has been correctly named
+studentData <- studentData %>% rename(ID = ...1) 
+head(studentData) %>% kableExtra::kable() # viewing the first 5 rows of the data
+```
+
+## Sorting data 
+
+- Using the *dplyr* package, we can arrange our data according to student grade:
+
+```{r arrange data}
+library(dplyr)
+arrange(studentData, grades)
+arrange(studentData, desc(grades)) # Arrange in descending order
+```
+
+## Filtering data 
+
+- Show students who acheived a grade of less than 40%
+```{r filter data}
+library(dplyr)
+filter(studentData, grades < 40)
+```
+## Filtering data #2 
+
+
+- Show part-time students who scored above 70%
+```{r filter data 2}
+library(dplyr)
+filter(studentData, grades > 70 & route == "PartTime")
+```
+## Using the "pipe" %>% with dplyr 
+
+
+- The pipe %>% allows us to:
+    - write R commands in a way that is easier to read 
+    - Chain multiple commands together
+- For example:
+   
+        filteredData <- studentData %>% filter(grades > 70 & route == "PartTime")
+
+## Grouping data
+
+- It is possible to organise the data into groups and performe analysis on each group:
+```{r group data}
+library(dplyr)
+
+ studentData %>% group_by(hasDepdendants) %>% 
+   summarise(mean = mean(grades), sd = sd(grades))
+
+
+
+```
+
+## Remember: we can store that summary data as an object and call it later:
+
+
+```{r group data 2}
+library(dplyr)
+
+summaryTable <- studentData %>% group_by(hasDepdendants) %>% 
+  summarise(mean = mean(grades), sd = sd(grades))
+
+summaryTable
+
+```
+
+## Create new variables from data
+
+
+We can create new variables from existing data using __mutuate__
+```{r new variable}
+library(dplyr)
+
+studentData %>% mutate(passFail = ifelse(grades > 40, "Pass", "Fail"))
+
+```
+
+# Importing and Working with data in R -- Tasks:
+
+
+
+## Importing and Working with data in R 
+
+
+0. Install the **tidyverse** package. When this has been done, enter the command __library("tidyverse")__
+1. Use the __read.sav()__ command to import the __"Datasets/salesData.sav"__ file to a new object called __salesData__
+2. Use the __str()__ command to check the structure of __salesData__ . There should be 5 variables: salary, married, numberOfVisits, age & valueOfSales
+3. Change the variable __married__ to a factor
+4. Arrange the data from lowest to highest __sales__ . What was the lowest __sales__ value?
+5. What is the mean __salary__ ?
+6. Filter the data to only display customers who are __married__ (1 = married, 2 = not married)
+7. Create a summary of the data to compare the mean and standard deviation of __sales__ for married and non-married customers (1 = married, 2 = not married)
+8. Create a new variable called __VIP__ and label customers who spent over ?500 as "VIP" and other customers as "Non-VIP"
