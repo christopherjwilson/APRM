@@ -1,0 +1,106 @@
+---
+title: "Introduction to R and R Studio / Approaching Critical Review"
+subtitle: "Advanced Psychological Research Methods"
+author: "Dr Christopher Wilson"
+format: revealjs
+css: custom.css
+logo: "logo.png"
+width: 1920
+heght: 1000
+---
+
+## Overview of Today's Session
+
+2 goals:
+
+-   Introduction to working with R and R Studio
+
+    -   2 sets of exercises
+
+-   Discussion of critical review
+
+    -   Papers for critical review assessment
+
+    -   Suggestions for approaching the assessment
+
+## Questions from last week?
+
+<iframe src="https://wall.sli.do/event/vBez5vg2hVDoG4YXdfDuQw" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>
+
+# Section 1: Introduction to R and R Studio
+
+<a href="intro_to_r.html" target="_blank">Introduction to R and R Studio - Slides</a>
+
+# Section 2: Introduction to R and R Studio
+
+<a href="working_with_data.html"  target="_blank">Working with data in R and R Studio - Slides</a>
+
+# Section 3: Critical Review Exercise
+
+## General information (reminder)
+
+-   The articles are on Blackboard - choose 1
+-   The deadlines are on Blackboard (4pm, electronic submission)
+
+> This is a 2,000 word "essay style" assessment
+>
+> You should use APA formatting and referencing style
+
+## What is critical review (for our purposes)?
+
+::: incremental
+-   The evaluation of a piece of research to examine if:
+
+    -   The research aims and questions are logically articulated and based on a strong theoretical rationale
+    -   The research methods proposed are robust, valid, reliable and can answer the research questions
+    -   The analysis methods used are appropriate to help answer the research questions
+    -   The conclusions drawn from the data collected are logical, parsimonious and can be reconciled with previous findings and the wider literature
+:::
+
+## What we are not doing:
+
+::: incremental
+-   We are not reviewing the paper as a piece of prose or written work - a formatting, linguistic or technical issue, if it is not relevant to the research, it not important to us
+
+-   We are not finding fault for the sake of it - the research is not "bad". It is limited in the same ways that any single piece of research is:
+
+    1.  it can only do so much in a single study
+    2.  every study can be improved after the fact
+
+-   We are not looking for "hypothetical" flaws
+:::
+
+## Some tips for approaching this assignment:
+
+::: incremental
+-   Review the literature that exists on the topic of your chosen paper. Consider what the prevailing wisdom or competing theories were at the time. Use this information to inform your evaluation of the research
+
+-   Take the perspective of a researcher who is trying to answer the same research question. Based on your reading of the literature, identify where this research paper could improve (theoretical understanding, methods, analysis)
+
+-   Choose a few (3-4) points that you can develop in detail in your review, rather than many points with little detail
+
+-   Make sure to explain why a critical point is relevant in the context of **this research** and **what consequence** any limitation you raise is likely to have had on the research or its findings
+
+-   When choosing which critical points to focus on, lean towards the points where you can suggest changes or improvements that could remedy the issues you raise
+
+-   Everything needs to be supported with evidence
+:::
+
+## To do:
+
+-   Choose one of the papers on Blackboard for your review
+
+```{=html}
+<!-- -->
+```
+-   Look at some of the guides (on Blackboard) on how to approach critical evaluation
+
+    > Do not amend or over-complicate the **structure** of your assignment based on these guides - only use them as guides on how to think about critical evaluation of research
+
+## Questions?
+
+<iframe src="https://wall.sli.do/event/vBez5vg2hVDoG4YXdfDuQw" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>
