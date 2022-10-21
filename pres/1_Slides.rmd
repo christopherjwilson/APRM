@@ -1,0 +1,280 @@
+---
+title: "Introduction to R and R Studio"
+subtitle: "Advanced Psychological Research Methods"
+author: "Dr Christopher Wilson"
+format: revealjs
+css: custom.css
+logo: "logo.png"
+---
+
+
+
+## By the end of this section, you will be able to:
+
+- List some perceived advantages and disadvantages of working with R in comparison to other stats tools (e.g. SPSS)
+- Distinguish between R and R studio
+- Identify the R script, R console, Data environment and file browser in R studio
+- Install and load R packages
+- Write and run R code from a script
+- Create a data vector and assign it to a variable
+- Perform basic arithmetic operations in R
+
+## Why learn / use R?
+
+R is developed and used by scientists and researchers around the world
+
+- Open source = no cost
+- Constant development
+- Connects to other data science/research tools
+- Worldwide community: training widely available
+- Encourages transparency and reproducibility
+- Publication-ready outputs
+
+# Moving from other software to R
+
+
+
+## Disconnecting statistics from software (e.g. Excel, SPSS)
+
+
+- Workflow is different
+  - Organise files and data differently
+  - Workspace can contain data and outputs
+  - Can manage multiple datasets within a workspace
+- Learning curve can be steep initially
+  - e.g. Variables and coding, scripts
+- Need to know what you want
+  - e.g. building your regression model / ANOVA error terms
+
+## R has many advantages
+
+
+- Using scripts means analysis is easy to follow and reproduce
+- R scripts are small, online collaboration, no SPSS "older version" problems
+- Data can be organised and reorganised however you need it *(tidyr)*
+- Packages are available for "cutting edge" analysis: e.g. Big Data & Machine Learning
+- A robust language for precise plots and graphics *(ggplot)*
+- R analysis code can be embdeded into documents and presentations *(R Markdown)*
+
+# Example: Sentiment analysis of twitter posts
+
+
+## Possible Workflow
+
+
+```{r  out.width = "100%", echo=FALSE}
+library(png)
+library(knitr)
+knitr::include_graphics("img/WORKFLOW.png") 
+```
+
+
+## Workflow using R and RStudio
+
+
+- Use R to pull down tweets
+- Use R to organise data 
+- Use R to conduct analysis
+- Use R to graph data
+- Use R to write paper 
+- Use R to make conference presentation or poster
+
+# How does that work?
+
+
+## R can interface with other tools and platforms making data gathering easier
+
+For example:
+
+- The *twitteR* or *Rfacebook* packages for working with social media data
+- Packages for scraping the web
+- Packages for incorporating AI (e.g. voice recognition for transcription)
+
+## R has "best in class" data analysis and presentation features
+
+
+- R has packages for text analysis using: speech pattern analysis, keywords, phrases, frequency of use etc. 
+- Can code transcripts for within R
+- Can manipulate and present data in a variety of graphical formats 
+
+## R Studio incorporates document creation 
+
+- It is possible to include your analysis *inside* your document
+- The same source files can be used to generate almost any type of output
+  - (e.g. pdf, word, html, images, diagrams)
+- The same file can be automatically rearranged into any type of format
+  - (e.g. research papers, posters, presentations, books, websites)
+
+
+# Working with R
+
+
+## What is the difference between R and R studio?
+
+
+- R is a programme that runs in the background to analyse the data
+- R studio is programme that sits on top and makes it more user-friendly to do work with R
+
+## Layout of R studio
+
+![](img/ide2.png)
+
+## The windows in R Studio
+
+![](img/ide2.png)
+
+- MAIN TOP: R Script files or R Document Files
+  - Where we usually type our code as a script before we run it. Script files are usually saved so we can work on them and rerun the code again later __(.R files)__. 
+  
+## The windows in R Studio
+
+![](img/ide2.png)
+
+
+- MAIN BOTTOM: Console
+  - Shows the output of our R code. We can type R code directly into the console and the answer will ouput immediately. However, it is more convenient to use code files.
+
+## The windows in R Studio
+
+![](img/ide2.png)
+
+  
+- RIGHT TOP: Environment
+  - Contains all of the objects (e.g. data, analysis, equations, plots) that are currently stored in memory. We can save all of this to a file and load it later __(.RData files)__.
+
+## The windows in R Studio
+
+![](img/ide2.png)
+
+
+- RIGHT BOTTOM: File Browser
+  - The folder that R is working from is called 'the working directory' and it will automatically look for files there if we try to import something (e.g. a data file). Using the __more__ button on the file browser allows you to set your desired working directory.
+
+
+
+## Working with script files
+
+
+Scripts can be opened from the __File__ menu
+
+![](img/RScript.png)
+
+
+## Working with script files
+
+
+- You can type your analysis code and save it for use later
+- Script files have a __.R__ extension
+- To run a script, you click the __Run__ button. You can choose to:
+  * Run the whole script
+  * Run the selected line of code
+
+![](img/Run_Button.png)
+
+## Objects and variables
+
+
+- Most things in R are stored as objects in the environment
+- An object can be a data file, a plot, an equation or some code
+- This allows us to work with many data sets at once
+
+## Storing objects and variables 
+
+
+- Objects can be stored in the following way:
+
+```{r object storage, echo=TRUE}
+# Notice that the "<-" arrow is how you store objects in R
+
+x <- 25
+y <- 10 + 2 - 1
+z <- c(1,2,3,4,6,45)
+myData <- rnorm(n= 6, mean = 4, sd = 2)
+myCor <- cor.test(myData, z)
+```
+
+##  Recalling objects and variables 
+
+
+- Objects can be recalled by typing their name
+
+```{r object recall, echo=TRUE}
+x 
+y
+z
+myData
+myCor
+```
+
+## The Environment and History
+
+
+- In the window on the top right, we can see the __Environment__ tab
+- the __Environment__ tab contains our current __Workspace__. That is: all of the objects that  are currently loaded into memory
+- The __Workspace__ can contain: datasets, variables, fuctions, plots, the results of tests. 
+- It is possible to work with many datasets at the same time by loading them into the current __Workspace__
+- The __History__ is a list of all of the commands we have entered into R.
+- It is possible to save the __Workspace__ and __History__ files for later use.
+
+
+## Basic functions
+
+
+- R has many built-in functions. 
+For example, Mean, Standard Deviation, Sum, Min/Max
+
+```{r built-in functions, echo=TRUE}
+# A set of values like this is called a vector
+someData <- c(1,2,3,4,6,45, 98, 1021) 
+
+mean(someData)
+sd(someData)
+min(someData)
+```
+
+## Packages in R
+
+
+- Packages add extra functionality to R
+- They can be installed via the menu (**Tools -> Install Packages**)
+- The can also be installed using code:
+  
+        install.packages()
+
+## Packages in R
+
+ 
+__TidyR__ is a package that contains functions for sorting and organising data.
+
+  __To install the package "tidyr"__
+
+
+![](img/packages1.png)
+
+## Packages in R
+
+Once a package is has been installed, you can load it using the __library()__ command:
+
+For example:
+
+    library("tidyr")
+
+
+# Introduction to R and R studio -- Tasks:
+
+
+## Lesson 1: Tasks 
+
+
+1. Use the file menu to create a new R script 
+2. Save the script and call it _Analysis1.R_
+3. You can use the # symbol before lines of text to create comments in your script. This helps to keep it organised and seprate chunks of code. At the top of your new script file, create a comment that says "Introduction to R: Lesson 1" 
+4. Ask to other people in the room what age they are. Create a data vector with 3 values, your age and the two others. Name your data object __Ages__ (See "Basic Functions" for example of creating a data vector).
+5. Use the __mean__ function to calculate the mean age of your __Ages__ dataset.
+6. Use the __sd__ function to calculate the standard deviation of your __Ages__ dataset.
+7. Create a new data object called __Ages2__ which is your __Ages__ dataset multiplied by 2.
+8. *ggplot2* is a package that can make publication-standard plots of your data. We will be using it later. Install the package *ggplot2* and use the library command to load it.
+9. Save your script file if you have not already done so (keep it open).
+
+
+

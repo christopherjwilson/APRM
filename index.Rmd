@@ -2,7 +2,6 @@
 title: "Advanced Psychological Research Methods (PSY4034)"
 author: "Christopher J. Wilson"
 date: "September 2022"
-output: pdf_document
 bibliography:
 - book.bib
 - packages.bib

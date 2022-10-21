@@ -91,6 +91,7 @@ plotting-summaries-of-data
 changing-the-axis-labels-and-title-on-a-plot
 changing-the-legend-on-a-plot
 storing-plots-to-be-recalled-later
+create-plot-and-store-it-as-myplot-object
 recalling-a-stored-plot
 saving-plots-1
 plots-can-also-be-saved-using-code
@@ -105,7 +106,6 @@ checking-assumptions-linearity
 run-correlation
 check-r-value-correlation-value
 check-the-significance-of-the-correlation
-simple-regression
 what-is-regression
 how-is-regression-calculated
 the-regression-equation

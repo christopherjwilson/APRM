@@ -16,3 +16,5 @@ bookdown::word_document2:
     toc: true
 bookdown::pdf_document2:
     toc: true
+bookdown::html_document2:
+    base_format: revealjs::revealjs_presentation
