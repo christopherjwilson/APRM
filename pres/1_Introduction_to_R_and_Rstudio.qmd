@@ -5,6 +5,8 @@ author: "Dr Christopher Wilson"
 format: revealjs
 css: custom.css
 logo: "logo.png"
+height: 1080
+width: 1920
 ---
 
 ## By the end of this section, you will be able to:
@@ -228,7 +230,7 @@ For example:
 
     library("tidyr")
 
-# Introduction to R and R studio -- Tasks:
+# Introduction to R and R studio -- Tasks: {.smaller}
 
 ## Lesson 1: Tasks
 
