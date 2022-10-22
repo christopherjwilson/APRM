@@ -159,9 +159,3 @@ height:100%;
 }
 
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
-
-
-div.sourceCode {
-  margin-bottom: 30px;
-  overflow: auto;
-}

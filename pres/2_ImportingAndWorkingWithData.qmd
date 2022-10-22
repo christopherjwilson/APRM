@@ -6,7 +6,7 @@ format: revealjs
 css: custom.css
 logo: "logo.png"
 width: 1920
-heght: 1000
+height: 1080
 ---
 
 ```{r}
@@ -86,7 +86,9 @@ str(studentData)
 
 > Notice that some of the variable types are incorrect
 
-## Changing variables from one data type to another {.smaller}
+## Changing variables from one data type to another 
+
+![](images/dataTypes.png)
 
 ```{r changing variables, echo=TRUE}
 

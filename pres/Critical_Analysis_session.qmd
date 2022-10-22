@@ -92,9 +92,8 @@ heght: 1000
 
 -   Choose one of the papers on Blackboard for your review
 
-```{=html}
 <!-- -->
-```
+
 -   Look at some of the guides (on Blackboard) on how to approach critical evaluation
 
     > Do not amend or over-complicate the **structure** of your assignment based on these guides - only use them as guides on how to think about critical evaluation of research
