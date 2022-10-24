@@ -1,0 +1,100 @@
+---
+title: "Mediation Exercise"
+author: "Christopher J Wilson"
+date: "03/02/2020"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Overview
+In these exercises, we will work with the dataset from Tal-Or et al. (2010) which is preloaded and named Tal.Or
+
+Tal-Or et al. (2010) examined the presumed effect of the media in two experimental studies. These data are from study 2.
+
+## Abstract
+
+According to the influence of presumed media influence hypothesis, people estimate the potential effects of media on other people and change their attitudes or behaviors as a consequence. In recent years, many studies offered some support for this idea. However, a central limitation of these studies is that all of them utilized correlational methodology and thus do not offer a valid way to infer causality. The current research examined the causal direction in the influence of presumed media influence using experimental methodology. In Study 2,perceptions regarding the influence of a news story about an expected shortage in sugar were manipulated indirectly, by manipulating the perceived exposure to the news story,and behavioral intentions resulting from the story were consequently measured.
+
+## Experimental hypothesis
+
+Participants will be more likely to react to the sugar shortage report when they are manipulated to think that others are more affected by the report.
+
+## Procedure
+
+Experimenters explained that participants were to answer a short survey about media impact on purchase decisions and handed out randomly two versions of a two page pamphlet. In the first page, participants were asked to read a newspaper article about an expected shortage in sugar that is about to be published in the coming days. In the second page, the participants were asked to answer three questionnaires, one measuring reactions to the publication of the shortage in sugar story, the second served as a manipulation check, and the final set of questions were demographic. After respondents completed the questionnaires, they were debriefed as to the true object of the study and about the fact that the information they received about shortage in sugar was false.
+
+## Data
+
+The results are data frame with 123 observations on the following 6 variables:
+
+**cond:** Experimental Condition: 0 low media importance, 1 high media importance. (Importance was manipulated by telling participants that the story would be published either on the front page of a newspaper or inside the economic suppliment of the newspaper).
+
+**pmi:** Presumed media influence (This was a manipulation check to see that participants felt that publishing the article would affect people’s behaviour and that responses were not different based on age or gender of participants. The value is the mean score of response to two questions.)
+
+**import:** Importance of the issue (Similar to the pmi variables, a check was also done to see that participants agreed that the issue is important and that responses were not different based on age or gender of participants. “The article is about an important topic concerning the global economic crisis” and “the decision to publish the article on the front/back page is an indication of the topic’s importance”.)
+
+**reaction:** Subjects rated agreement about possible reactions to the story. (The score is the mean of 4 items: “publishing the article might affect my decisions about buying sugar, “I will buy sugar next time I go to the store,” “I will buy more sugar than usual next time I go to the store,” and “I will try to reduce my sugar consumption.”).
+
+**gender:** 1 = male, 2 = female
+
+**age:** a numeric vector
+
+
+## Task:
+
+Run a mediation analysis to see whether the relationship between **cond** and **reaction** is mediated by **pmi**
+  - Do this first using the Baron and Kenny Approach, then
+  - Do this analysis using the mediation package
+  - For each analysis check assumptions as needed.
+  - For each analysis, explain the relationships between:
+    - X and Y (total effect)
+    - X and M
+    - M and Y
+    - X and Y accounting for M (Indirect effect)
+
+**NOTE: You can load the Tal.Or data from the *psych* package:**
+
+    library(psych)
+
+    data(Tal.Or)
+
+
+
+**NOTE: both the *psych* package and the *mediation* package have "mediate" functions. The specify that you want to use the mediate function from the mediation package, put the pakage name in front of the function call:**
+
+    mediation::mediate()
+
+```{r}
+library(psych)
+
+data(Tal.Or)
+
+# Mediaiton package
+# Step 1
+library(mediation)
+
+fitM <- lm(pmi ~ cond,     data=Tal.Or) #IV on M; Hours since waking predicting coffee consumption
+fitY <- lm(reaction ~ cond + pmi, data=Tal.Or) #IV and M on DV; Hours since dawn and coffee predicting wakefulness
+
+# Step 2
+
+gvlma(fitM) 
+gvlma(fitY)
+
+# Step 3
+
+fitMed <- mediation::mediate(fitM, fitY, treat="cond", mediator="pmi")
+summary(fitMed)
+plot(fitMed)
+
+# Step 4
+
+fitMedBoot <- mediation::mediate(fitM, fitY, boot=TRUE, sims=999, treat="cond", mediator="pmi")
+summary(fitMedBoot)
+plot(fitMedBoot) ##
+
+```
+

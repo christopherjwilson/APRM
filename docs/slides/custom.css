@@ -70,7 +70,7 @@ height:100%;
  
 }
 
-.reveal h3 {
+.reveal h2 {
   color: #E06B0B;
   font-family: "Roboto", sans-serif;
   line-height: normal;
@@ -131,8 +131,14 @@ height:100%;
     box-shadow: none;
 }
 
+div.sourceCode {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
 .reveal pre {
- 
+margin-bottom: 20px;
+margin-top: 20px;
 }
 .reveal pre code {
   font-size: 1.5em;

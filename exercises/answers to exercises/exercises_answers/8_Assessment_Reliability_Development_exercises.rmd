@@ -1,0 +1,129 @@
+---
+title: "8 Factor analysis exercises"
+author: "Christopher Wilson"
+date: "07/12/2019"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(psych)
+library(tidyverse)
+library(GPArotation)
+```
+
+# Introduction
+
+Before we begin, install and load the following packages:
+
+- tidyverse
+- psych
+- GPArotation
+
+For this session, we will use the BFI dataset from the psych package.
+It is made up of 25 self-report personality items from the International Personality Item Pool, gender, education level and age for 2800 subjects and used in the Synthetic Aperture Personality Assessment.
+
+The personality items are split into 5 categories: Agreeableness (A), Conscientiousness (C), Extraversion(E), Neuroticism(N), Openness(O). 
+
+Each item was answered on a six point scale: 1 Very Inaccurate, 2 Moderately Inaccurate, 3 Slightly Inaccurate, 4 Slightly Accurate, 5 Moderately Accurate, 6 Very Accurate.
+
+To load the data file, use the following code:
+
+```{r}
+ data("bfi")
+
+```
+
+> Note: columns 1 to 25 are the data we are interested in. To include only these columns in analysis, we use the code below to make a subset of the data 
+
+> We are also using the na.omit() command to remove any rows that have empty values
+
+```{r}
+bfidata <- bfi[1:25] %>% na.omit()
+
+# We are also using the na.omit() command to remove any rows that have empty values
+
+```
+
+1. Use the describe() command to review a summary of the data
+
+
+```{r}
+describe(bfidata)
+```
+
+1. Check the number of complete responses using the commands: 
+```{r}
+    bfidata %>% complete.cases() %>% sum()
+```
+
+1. Run Bartletts test of sphericity
+
+```{r}
+# make a correlation matrix first
+
+bfi.maxtrix <- cor(bfidata)
+
+# run bartlettt's test
+cortest.bartlett(bfi.maxtrix, n= 2436)
+
+```
+
+
+1. Run the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy
+
+```{r}
+KMO(bfidata) # using the data
+
+#OR 
+
+KMO(bfi.maxtrix) # using the correlation matrix
+```
+
+
+1. Run a parallel analysis to determine the number of factors
+
+```{r}
+fa.parallel(bfidata)
+```
+
+
+1. Run a factor analysis based on the suggested number of factors (no rotation)
+```{r}
+factoranalysis1 <- fa(bfidata, nfactors = 6, fm="pa", max.iter = 100, rotate = "none")
+```
+
+
+1. Interpret the output and determine an optimal number of factors based on: scree plot, variance levels, eigenvalues
+
+**Based on a combination of eigenvalues, scree plot, variance explained and SS loadings, there appear to be 5 factors in the data**
+
+1. Re-run factor analysis with optimal number of factors and use "oblimin" rotation
+
+```{r}
+factoranalysis2 <- fa(bfidata, nfactors = 5, fm="pa", max.iter = 100, rotate = "oblimin")
+
+fa.diagram(factoranalysis2) ## can use fa.diagram to see factors and the questions that load onto them
+
+```
+
+
+
+1. Run cronbach's alpha on the subscales using the loadings from the pattern matrix
+
+**To do this, We need to make subsets of data based on the questions that load onto each factor. Seperate analysis is then run for each question set. For this example, I will analyse the factor labelled as pa1 in the diagram, which appears to contain all of the extraversion questions. **
+
+```{r}
+pa1 <- bfidata %>% select(E1,E2,E3,E4,E5)
+
+ psych::alpha(pa1, check.keys=TRUE)
+
+ ## Why does the code say psych::alpha() instead of just alpha() ?
+ ## Because there are other r functions that are called alpha, for example in the ggplot package. If you load packages that contain functions with the same name, you can make sure the correct functon is being run by specifying which package it should come from.
+ 
+```
+

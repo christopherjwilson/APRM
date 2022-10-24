@@ -1,0 +1,108 @@
+---
+title: "Multiple Regression Exercises"
+author: "Advanced Psychological Research Methods"
+date: "18/11/2019"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A clinical psychologist is interested in the effects of a treatment plan on the general wellbeing of clients. She is also interested in whether the level of severity of symptoms when entering treatment or the clients' trust in the psychologist predict wellbeing. 
+
+The severity_data.csv dataset contains 5 variables:
+
+- client: an anonymous ID of the client
+- treatment_group (control or therapy): Which treatment the client has been assigned to 
+- level_of_severity (1-20): A rating assigned by clinicians as to the severity of the client's difficulties when they entered treatment (a computed value based on a battery of tests)
+- trust_score (0-100): A rating by the client as to the level of trust they have in their psychologist based on their interaction to this point
+- wellbeing_after_3_months (0-10): Client's score on a psychometric measure of general wellbeing
+
+To answer the research questions outlined above, conduct the following analyses:
+```{r}
+library(readr)
+library(tidyverse)
+severity_data <- read_csv("Datasets/severity_data.csv")
+
+severity_data$treatment_group <- as.factor(severity_data$treatment_group)
+
+```
+
+1. Calculate if there is a difference in the means of *severity level*, *trust score* and *wellbeing after 3 months* between the 2 treatment groups (Hint: use the describeBy function in the Psych package)
+
+```{r}
+library(psych)
+describeBy(severity_data, group = severity_data$treatment_group)
+
+
+```
+
+
+2. Make a histogram for each of the variables in the previous question and assess the distribution (Hint: Use the ggplot2 package to make plots)
+
+```{r}
+severity_data %>% ggplot(aes(x=level_of_severity)) + geom_histogram()
+severity_data %>% ggplot(aes(x=trust_score)) + geom_histogram()
+severity_data %>% ggplot(aes(x=wellbeing_after_3_months)) + geom_histogram()
+```
+
+3. Run a heirarchical multiple regression analysis comparing the following models (in each case, *wellbeing after 3 months* is the outcome). At this stage, check main effects only, not interactions:
+  - Model 0: Constant
+  - Model 1: treatment_group, severity_level
+  - Model 2: treatment_group, severity_level, trust_score
+  
+```{r}
+model0 <- lm(wellbeing_after_3_months ~ 1, data = severity_data)
+model1 <- lm(wellbeing_after_3_months ~ treatment_group + level_of_severity, data = severity_data)
+model2 <- lm(wellbeing_after_3_months ~ treatment_group + level_of_severity + trust_score, data = severity_data)
+
+anova(model0,model1,model2)
+```
+  
+
+4. Check the assumption of multicoliniearity in Model 2 (Hint: Install and load the *mctest* package)
+
+```{r}
+#install.packages("mctest")
+library(mctest)
+mctest(cbind(severity_data$level_of_severity,severity_data$trust_score),severity_data$wellbeing_after_3_months )
+```
+
+
+5. Use the plot() function to check other assumptions of Model 2
+```{r}
+plot(model2)
+```
+
+6. Run Model 2 again, including interactions this time.
+```{r}
+model2 <- lm(wellbeing_after_3_months ~ treatment_group * level_of_severity * trust_score, data = severity_data)
+summary(model2)
+```
+
+7. What conclusions can you draw from these analyses in relation to your research question?
+```{r}
+## The model explains 57.5% of the variance in wellbeing and the model is significant
+## Level of severity is a significant predictor of wellbeing after 3 months. The other predictors are not.
+## As level of severity increases by 1 unit, wellbeing decreases by 1.009
+
+```
+
+8. Run Model 2 as a stepwise analysis (Hint: Install and load the *MASS* package first)
+```{r}
+library(MASS)
+stepwiseModel <- stepAIC(model2, direction = "both", trace = TRUE)
+summary(stepwiseModel)
+
+```
+
+9. Are the results of the stepwise analysis consistent with your previous conclusions?
+
+```{r}
+# yes, the final model from the stepwise analysis only includes level of severity, as it is the only significant predictor
+```
+
