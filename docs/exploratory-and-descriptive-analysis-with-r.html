@@ -451,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s import the data</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb51-1" aria-hidden="true" tabindex="-1"></a>Album_Sales <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Datasets/album_sales.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 200 Columns: 5
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (1): Genre
 ## dbl (4): Adverts, Sales, Airplay, Attract
@@ -476,7 +476,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>This variable is currently stored as charcters, not as a factor / category variable</li>
 </ul>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Album_Sales<span class="sc">$</span>Genre) </span></code></pre></div>
-<pre><code>##  chr [1:200] &quot;Country&quot; &quot;Pop&quot; &quot;HipHop&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Country&quot; &quot;Pop&quot; ...</code></pre>
+<pre><code>##  chr [1:200] &quot;Country&quot; &quot;Pop&quot; &quot;HipHop&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Country&quot; &quot;Pop&quot; &quot;Pop&quot; ...</code></pre>
 <ul>
 <li>We can save it as a factor</li>
 </ul>
@@ -664,20 +664,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="summary---in-base-r" class="section level3 hasAnchor" number="5.6.1">
 <h3><span class="header-section-number">5.6.1</span> summary() - in “base R”<a href="exploratory-and-descriptive-analysis-with-r.html#summary---in-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="exploratory-and-descriptive-analysis-with-r.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Album_Sales)</span></code></pre></div>
-<pre><code>##     Adverts             Sales          Airplay         Attract     
-##  Min.   :   9.104   Min.   : 10.0   Min.   : 0.00   Min.   : 1.00  
-##  1st Qu.: 215.918   1st Qu.:137.5   1st Qu.:19.75   1st Qu.: 6.00  
-##  Median : 531.916   Median :200.0   Median :28.00   Median : 7.00  
-##  Mean   : 614.412   Mean   :193.2   Mean   :27.50   Mean   : 6.77  
-##  3rd Qu.: 911.226   3rd Qu.:250.0   3rd Qu.:36.00   3rd Qu.: 8.00  
-##  Max.   :2271.860   Max.   :360.0   Max.   :63.00   Max.   :10.00  
-##      Genre   
-##  Country:46  
-##  HipHop :53  
-##  Metal  :48  
-##  Pop    :53  
-##              
-## </code></pre>
+<pre><code>##     Adverts             Sales          Airplay         Attract          Genre   
+##  Min.   :   9.104   Min.   : 10.0   Min.   : 0.00   Min.   : 1.00   Country:46  
+##  1st Qu.: 215.918   1st Qu.:137.5   1st Qu.:19.75   1st Qu.: 6.00   HipHop :53  
+##  Median : 531.916   Median :200.0   Median :28.00   Median : 7.00   Metal  :48  
+##  Mean   : 614.412   Mean   :193.2   Mean   :27.50   Mean   : 6.77   Pop    :53  
+##  3rd Qu.: 911.226   3rd Qu.:250.0   3rd Qu.:36.00   3rd Qu.: 8.00               
+##  Max.   :2271.860   Max.   :360.0   Max.   :63.00   Max.   :10.00</code></pre>
 </div>
 <div id="describe---in-the-psych-package-1" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> describe() - in the “psych” package #1<a href="exploratory-and-descriptive-analysis-with-r.html#describe---in-the-psych-package-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -716,7 +709,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Airplay    -0.10  1.55
 ## Attract     3.54  0.24
 ## Genre*       NaN  0.00
-## ------------------------------------------------------------ 
+## -------------------------------------------------------------- 
 ## group: HipHop
 ##         vars  n   mean     sd median trimmed    mad   min  max   range  skew
 ## Adverts    1 53 606.32 452.84 601.43  568.33 501.36 10.65 2000 1989.35  0.70
@@ -730,7 +723,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Airplay    -0.83  1.90
 ## Attract     2.03  0.15
 ## Genre*       NaN  0.00
-## ------------------------------------------------------------ 
+## -------------------------------------------------------------- 
 ## group: Metal
 ##         vars  n   mean     sd median trimmed    mad  min     max   range  skew
 ## Adverts    1 48 693.45 534.06  593.0  640.19 521.34 45.3 2271.86 2226.56  0.92
@@ -744,7 +737,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Airplay    -0.26  1.64
 ## Attract     1.74  0.19
 ## Genre*       NaN  0.00
-## ------------------------------------------------------------ 
+## -------------------------------------------------------------- 
 ## group: Pop
 ##         vars  n   mean     sd median trimmed    mad   min     max   range  skew
 ## Adverts    1 53 514.63 446.04  429.5  453.85 438.01 15.31 1789.66 1774.35  1.01

@@ -449,7 +449,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Warning: `read_table2()` was deprecated in readr 2.0.0.
 ## Please use `read_table()` instead.</code></pre>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────────────────────
 ## cols(
 ##   .default = col_double()
 ## )
@@ -860,14 +860,10 @@ See how many factors we can draw a line through</p>
 ## BIC =  -442.12
 ## Fit based upon off diagonal values = 1
 ## Measures of factor score adequacy             
-##                                                    PA1  PA2  PA3  PA4   PA5
-## Correlation of (regression) scores with factors   0.97 0.83 0.80 0.75  0.70
-## Multiple R square of scores with factors          0.93 0.68 0.64 0.56  0.48
-## Minimum correlation of possible factor scores     0.87 0.37 0.27 0.12 -0.03
-##                                                     PA6
-## Correlation of (regression) scores with factors    0.65
-## Multiple R square of scores with factors           0.42
-## Minimum correlation of possible factor scores     -0.17</code></pre>
+##                                                    PA1  PA2  PA3  PA4   PA5   PA6
+## Correlation of (regression) scores with factors   0.97 0.83 0.80 0.75  0.70  0.65
+## Multiple R square of scores with factors          0.93 0.68 0.64 0.56  0.48  0.42
+## Minimum correlation of possible factor scores     0.87 0.37 0.27 0.12 -0.03 -0.17</code></pre>
 <div id="check-the-factor-matrix" class="section level3 hasAnchor" number="12.11.1">
 <h3><span class="header-section-number">12.11.1</span> Check the factor matrix<a href="factor-analysis.html#check-the-factor-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
@@ -1059,8 +1055,8 @@ See how many factors we can draw a line through</p>
 <span id="cb269-4"><a href="factor-analysis.html#cb269-4" aria-hidden="true" tabindex="-1"></a><span class="at">max.iter =</span> <span class="dv">100</span>,</span>
 <span id="cb269-5"><a href="factor-analysis.html#cb269-5" aria-hidden="true" tabindex="-1"></a><span class="at">rotate =</span> <span class="st">&quot;oblimin&quot;</span>)</span></code></pre></div>
 <pre><code>## Loading required namespace: GPArotation</code></pre>
-<pre><code>## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : I
-## am sorry, to do these rotations requires the GPArotation package to be installed</code></pre>
+<pre><code>## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : I am
+## sorry, to do these rotations requires the GPArotation package to be installed</code></pre>
 <div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="factor-analysis.html#cb272-1" aria-hidden="true" tabindex="-1"></a>paf2</span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = raq, nfactors = 2, rotate = &quot;oblimin&quot;, max.iter = 100, 
