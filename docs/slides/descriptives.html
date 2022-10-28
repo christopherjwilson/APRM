@@ -392,18 +392,19 @@
 <section id="questions-about-last-weeks-session" class="slide level2">
 <h2>Questions about last week’s session?</h2>
 <iframe src="https://wall.sli.do/event/6ghGWEe5pKsfNBNLWywJYZ" height="100%" width="100%" frameborder="0" style="min-height: 560px;" title="Slido">
+</iframe>
 </section>
 <section id="lets-import-the-data" class="slide level2">
 <h2>Let’s import the data</h2>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>Album_Sales <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Datasets/album_sales.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>Album_Sales <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Datasets/album_sales.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="lets-look-at-the-data" class="slide level2">
 <h2>Let’s look at the data</h2>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">head</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">head</span>(Album_Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   Adverts Sales Airplay Attract Genre  
@@ -423,9 +424,9 @@
 <li>This variable is currently stored as charcters, not as a factor / category variable</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">str</span>(Album_Sales<span class="sc">$</span>Genre) </span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">str</span>(Album_Sales<span class="sc">$</span>Genre) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> chr [1:200] &quot;Country&quot; &quot;Pop&quot; &quot;HipHop&quot; &quot;HipHop&quot; &quot;Metal&quot; &quot;Country&quot; &quot;Pop&quot; ...</code></pre>
+<pre><code> chr [1:200] "Country" "Pop" "HipHop" "HipHop" "Metal" "Country" "Pop" ...</code></pre>
 </div>
 </div>
 </section>
@@ -435,16 +436,16 @@
 <li>We can save it as a factor</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>Album_Sales<span class="sc">$</span>Genre <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(Album_Sales<span class="sc">$</span>Genre)</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>Album_Sales<span class="sc">$</span>Genre <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(Album_Sales<span class="sc">$</span>Genre)</span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">str</span>(Album_Sales<span class="sc">$</span>Genre) </span></code></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">str</span>(Album_Sales<span class="sc">$</span>Genre) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Factor w/ 4 levels &quot;Country&quot;,&quot;HipHop&quot;,..: 1 4 2 2 3 1 4 4 3 2 ...</code></pre>
+<pre><code> Factor w/ 4 levels "Country","HipHop",..: 1 4 2 2 3 1 4 4 3 2 ...</code></pre>
 </div>
 </div>
 </section>
 <section>
-<section id="summarising-data-central-tendency" class="title-slide slide level1">
+<section id="summarising-data-central-tendency" class="title-slide slide level1 center">
 <h1>Summarising data: Central tendency</h1>
 
 </section>
@@ -461,7 +462,7 @@
 <h2>Mean</h2>
 <p>“What is the mean of album sales?”</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 193.2</code></pre>
 </div>
@@ -473,7 +474,7 @@
 <li>The trimmed mean is used to reduce the influence of outliers on the summary</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Sales, <span class="at">trim =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Sales, <span class="at">trim =</span> <span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 192.6667</code></pre>
 </div>
@@ -483,7 +484,7 @@
 <h2>Median</h2>
 <p>“What is the median amount of Airplay?”</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">median</span>(Album_Sales<span class="sc">$</span>Airplay)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">median</span>(Album_Sales<span class="sc">$</span>Airplay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 28</code></pre>
 </div>
@@ -496,7 +497,7 @@
 <li>The easiest way to get the mode in R is to generate a frequency table</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">table</span>(Album_Sales<span class="sc">$</span>Attract)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">table</span>(Album_Sales<span class="sc">$</span>Attract)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  1  2  3  4  5  6  7  8  9 10 
@@ -508,7 +509,7 @@
 </ul>
 </section></section>
 <section>
-<section id="measures-of-dispersion-or-variance" class="title-slide slide level1">
+<section id="measures-of-dispersion-or-variance" class="title-slide slide level1 center">
 <h1>Measures of dispersion or variance</h1>
 
 </section>
@@ -519,7 +520,7 @@
 <li>You can calculate it using these values</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">max</span>(Album_Sales<span class="sc">$</span>Airplay) <span class="sc">-</span> <span class="fu">min</span>(Album_Sales<span class="sc">$</span>Airplay)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">max</span>(Album_Sales<span class="sc">$</span>Airplay) <span class="sc">-</span> <span class="fu">min</span>(Album_Sales<span class="sc">$</span>Airplay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 63</code></pre>
 </div>
@@ -528,7 +529,7 @@
 <li>Or you can use the range command to get the min and max values in one go</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">range</span>(Album_Sales<span class="sc">$</span>Airplay)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">range</span>(Album_Sales<span class="sc">$</span>Airplay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  0 63</code></pre>
 </div>
@@ -541,7 +542,7 @@
 <li>The interquatile range is the difference between the values at the 25th and 75th percentiles</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">quantile</span>( <span class="at">x =</span> Album_Sales<span class="sc">$</span>Airplay, <span class="at">probs =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>) )</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">quantile</span>( <span class="at">x =</span> Album_Sales<span class="sc">$</span>Airplay, <span class="at">probs =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  25%   75% 
 19.75 36.00 </code></pre>
@@ -557,7 +558,7 @@
 <li>The difference between each value and the mean value, squared, and then summed together</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">sum</span>( (Album_Sales<span class="sc">$</span>Adverts <span class="sc">-</span> <span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Adverts))<span class="sc">^</span><span class="dv">2</span> )</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">sum</span>( (Album_Sales<span class="sc">$</span>Adverts <span class="sc">-</span> <span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Adverts))<span class="sc">^</span><span class="dv">2</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 46936335</code></pre>
 </div>
@@ -569,8 +570,8 @@
 <li>Variance: Sum of sqaures divided by n-1</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># variance calculation</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>varianceAdverts <span class="ot">&lt;-</span> <span class="fu">sum</span>( (Album_Sales<span class="sc">$</span>Adverts <span class="sc">-</span> <span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Adverts))<span class="sc">^</span><span class="dv">2</span> ) <span class="sc">/</span> <span class="dv">199</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># variance calculation</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>varianceAdverts <span class="ot">&lt;-</span> <span class="fu">sum</span>( (Album_Sales<span class="sc">$</span>Adverts <span class="sc">-</span> <span class="fu">mean</span>(Album_Sales<span class="sc">$</span>Adverts))<span class="sc">^</span><span class="dv">2</span> ) <span class="sc">/</span> <span class="dv">199</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="standard-deviation" class="slide level2">
@@ -579,10 +580,10 @@
 <li>Standard deviation is square root of the variance</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># sd calculation</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># sd calculation</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
 <span id="cb25-3"><a href="#cb25-3"></a></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="fu">sqrt</span>(varianceAdverts)</span></code></pre></div>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="fu">sqrt</span>(varianceAdverts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 485.6552</code></pre>
 </div>
@@ -591,7 +592,7 @@
 <li>Can be calculated using the sd() command</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">sd</span>(Album_Sales<span class="sc">$</span>Adverts)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">sd</span>(Album_Sales<span class="sc">$</span>Adverts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 485.6552</code></pre>
 </div>
@@ -600,11 +601,11 @@
 <section id="the-psych-package-includes-a-lot-of-useful-descriptive-stats" class="slide level2">
 <h2>The <em>psych</em> package includes a lot of useful descriptive stats</h2>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">library</span>(<span class="st">&quot;psych&quot;</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">library</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
-<section id="skewness-and-kurtosis" class="title-slide slide level1">
+<section id="skewness-and-kurtosis" class="title-slide slide level1 center">
 <h1>Skewness and Kurtosis</h1>
 
 </section>
@@ -615,19 +616,17 @@
 <li>We will focus on graphic presentation of data next week</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">hist</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
-<div class="cell-output-display">
-<p><img data-src="descriptives_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" /></p>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">hist</span>(Album_Sales<span class="sc">$</span>Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</section>
+<img data-src="descriptives_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
 <section id="assessing-skewness-of-distribution-2" class="slide level2">
 <h2>Assessing skewness of distribution #2</h2>
 <ul>
 <li>We can check raw skewness value using the <em>skew()</em> command in the <strong>psych</strong> package</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">skew</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">skew</span>(Album_Sales<span class="sc">$</span>Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0432729</code></pre>
 </div>
@@ -662,7 +661,7 @@
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">kurtosi</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">kurtosi</span>(Album_Sales<span class="sc">$</span>Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.7157339</code></pre>
 </div>
@@ -675,7 +674,7 @@
 <li>This is part of “base” r (no package needed)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">shapiro.test</span>(Album_Sales<span class="sc">$</span>Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">shapiro.test</span>(Album_Sales<span class="sc">$</span>Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Shapiro-Wilk normality test
@@ -685,15 +684,15 @@ W = 0.98479, p-value = 0.02965</code></pre>
 </div>
 </div>
 </section></section>
-<section id="getting-an-overall-summary" class="title-slide slide level1">
+<section id="getting-an-overall-summary" class="title-slide slide level1 center">
 <h1>Getting an overall summary</h1>
 
 </section>
 
-<section id="summary---in-base-r" class="title-slide slide level1">
+<section id="summary---in-base-r" class="title-slide slide level1 center">
 <h1>summary() - in “base R”</h1>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">summary</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">summary</span>(Album_Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Adverts             Sales          Airplay         Attract     
  Min.   :   9.104   Min.   : 10.0   Min.   : 0.00   Min.   : 1.00  
@@ -713,10 +712,10 @@ W = 0.98479, p-value = 0.02965</code></pre>
 </div>
 </section>
 
-<section id="describe---in-the-psych-package-1" class="title-slide slide level1">
+<section id="describe---in-the-psych-package-1" class="title-slide slide level1 center">
 <h1>describe() - in the “psych” package #1</h1>
 <div class="cell">
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">describe</span>(Album_Sales)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">describe</span>(Album_Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        vars   n   mean     sd median trimmed    mad  min     max   range  skew
 Adverts    1 200 614.41 485.66 531.92  560.81 489.09  9.1 2271.86 2262.76  0.84
@@ -735,13 +734,13 @@ Genre*     -1.37  0.08</code></pre>
 </section>
 
 <section>
-<section id="describe---in-the-psych-package-2" class="title-slide slide level1">
+<section id="describe---in-the-psych-package-2" class="title-slide slide level1 center">
 <h1>describe() - in the “psych” package #2</h1>
 <ul>
 <li>We can describe by factor variables</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource r cell-code number-lines"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">describeBy</span>(Album_Sales, <span class="at">group =</span> Album_Sales<span class="sc">$</span>Genre)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">describeBy</span>(Album_Sales, <span class="at">group =</span> Album_Sales<span class="sc">$</span>Genre)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  Descriptive statistics by group 
@@ -805,13 +804,13 @@ Genre*       NaN  0.00</code></pre>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions?</h2>
-<iframe src="https://wall.sli.do/event/6ghGWEe5pKsfNBNLWywJYZ" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+<iframe src="https://wall.sli.do/event/6ghGWEe5pKsfNBNLWywJYZ" height="100%" width="100%" frameborder="0" style="min-height: 560px;" title="Slido">
 </iframe>
 
 <img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

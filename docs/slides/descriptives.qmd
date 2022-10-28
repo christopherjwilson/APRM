@@ -15,7 +15,8 @@ knitr:
 
 ## Questions about last week's session?
 
-<iframe src="https://wall.sli.do/event/6ghGWEe5pKsfNBNLWywJYZ" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+<iframe src="https://wall.sli.do/event/6ghGWEe5pKsfNBNLWywJYZ" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido" >
+</iframe>
 
 ## Let's import the data
 
