@@ -570,12 +570,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -2.9468 -1.1104  0.0205  0.9621  3.4481 
 ## 
 ## Coefficients:
-##                         Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)             11.58713    0.77331  14.984  &lt; 2e-16 ***
-## treatment_duration      -0.66024    0.07119  -9.274 4.96e-15 ***
-## treatment_grouptherapy2  0.85032    0.30449   2.793   0.0063 ** 
+##                         Estimate Std. Error
+## (Intercept)             11.58713    0.77331
+## treatment_duration      -0.66024    0.07119
+## treatment_grouptherapy2  0.85032    0.30449
+##                         t value Pr(&gt;|t|)    
+## (Intercept)              14.984  &lt; 2e-16 ***
+## treatment_duration       -9.274 4.96e-15 ***
+## treatment_grouptherapy2   2.793   0.0063 ** 
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 1.5 on 97 degrees of freedom
 ## Multiple R-squared:  0.5206, Adjusted R-squared:  0.5107 
@@ -608,11 +613,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Reviewing the output</p>
 <p><code style="font-size: 1em; width=100%;"></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="multiple-regression.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2) <span class="sc">%&gt;%</span> coefficients</span></code></pre></div>
-<pre><code>##                                              Estimate Std. Error    t value
-## (Intercept)                                12.3529190  1.1006127 11.2236751
-## treatment_duration                         -0.7334435  0.1033086 -7.0995381
-## treatment_grouptherapy2                    -0.5615517  1.4753596 -0.3806202
-## treatment_duration:treatment_grouptherapy2  0.1394649  0.1425977  0.9780305
+<pre><code>##                                              Estimate
+## (Intercept)                                12.3529190
+## treatment_duration                         -0.7334435
+## treatment_grouptherapy2                    -0.5615517
+## treatment_duration:treatment_grouptherapy2  0.1394649
+##                                            Std. Error
+## (Intercept)                                 1.1006127
+## treatment_duration                          0.1033086
+## treatment_grouptherapy2                     1.4753596
+## treatment_duration:treatment_grouptherapy2  0.1425977
+##                                               t value
+## (Intercept)                                11.2236751
+## treatment_duration                         -7.0995381
+## treatment_grouptherapy2                    -0.3806202
+## treatment_duration:treatment_grouptherapy2  0.9780305
 ##                                                Pr(&gt;|t|)
 ## (Intercept)                                3.599000e-19
 ## treatment_duration                         2.166226e-10
@@ -664,12 +679,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Model 1: aggression_level ~ 1
 ## Model 2: aggression_level ~ treatment_duration + treatment_group
 ## Model 3: aggression_level ~ treatment_duration + treatment_group + trust_score
-##   Res.Df    RSS Df Sum of Sq       F    Pr(&gt;F)    
-## 1     99 455.27                                   
-## 2     97 218.26  2   237.013 52.2195 4.507e-16 ***
-## 3     96 217.86  1     0.399  0.1757     0.676    
+##   Res.Df    RSS Df Sum of Sq       F
+## 1     99 455.27                     
+## 2     97 218.26  2   237.013 52.2195
+## 3     96 217.86  1     0.399  0.1757
+##      Pr(&gt;F)    
+## 1              
+## 2 4.507e-16 ***
+## 3     0.676    
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <ul>
 <li>We can see that:
 <ul>
@@ -730,20 +750,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Start:  AIC=85.87
 ## aggression_level ~ treatment_duration + treatment_group + trust_score
 ## 
-##                      Df Sum of Sq    RSS     AIC
-## - trust_score         1     0.399 218.26  84.052
-## &lt;none&gt;                            217.86  85.869
-## - treatment_group     1    17.877 235.74  91.755
-## - treatment_duration  1   188.709 406.57 146.259
+##                      Df Sum of Sq    RSS
+## - trust_score         1     0.399 218.26
+## &lt;none&gt;                            217.86
+## - treatment_group     1    17.877 235.74
+## - treatment_duration  1   188.709 406.57
+##                          AIC
+## - trust_score         84.052
+## &lt;none&gt;                85.869
+## - treatment_group     91.755
+## - treatment_duration 146.259
 ## 
 ## Step:  AIC=84.05
 ## aggression_level ~ treatment_duration + treatment_group
 ## 
-##                      Df Sum of Sq    RSS     AIC
-## &lt;none&gt;                            218.26  84.052
-## + trust_score         1     0.399 217.86  85.869
-## - treatment_group     1    17.547 235.81  89.785
-## - treatment_duration  1   193.515 411.78 145.531</code></pre>
+##                      Df Sum of Sq    RSS
+## &lt;none&gt;                            218.26
+## + trust_score         1     0.399 217.86
+## - treatment_group     1    17.547 235.81
+## - treatment_duration  1   193.515 411.78
+##                          AIC
+## &lt;none&gt;                84.052
+## + trust_score         85.869
+## - treatment_group     89.785
+## - treatment_duration 145.531</code></pre>
 <p></code></p>
 </div>
 <div id="stepwise-multiple-regression-display-the-best-model" class="section level3 hasAnchor" number="9.7.8">
@@ -766,12 +796,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -2.9468 -1.1104  0.0205  0.9621  3.4481 
 ## 
 ## Coefficients:
-##                         Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)             11.58713    0.77331  14.984  &lt; 2e-16 ***
-## treatment_duration      -0.66024    0.07119  -9.274 4.96e-15 ***
-## treatment_grouptherapy2  0.85032    0.30449   2.793   0.0063 ** 
+##                         Estimate Std. Error
+## (Intercept)             11.58713    0.77331
+## treatment_duration      -0.66024    0.07119
+## treatment_grouptherapy2  0.85032    0.30449
+##                         t value Pr(&gt;|t|)    
+## (Intercept)              14.984  &lt; 2e-16 ***
+## treatment_duration       -9.274 4.96e-15 ***
+## treatment_grouptherapy2   2.793   0.0063 ** 
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 1.5 on 97 degrees of freedom
 ## Multiple R-squared:  0.5206, Adjusted R-squared:  0.5107 
