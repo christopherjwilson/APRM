@@ -13,15 +13,37 @@ knitr:
     fig.align: center
     warning: false
 ---
+```{r echo=FALSE}
+library(lubridate)
+library(dplyr)
+attendanceCode <- day(today()) * 394 * month(today()) %>% as.double() 
+```
+
+## Questions from last week's session?
+
+<iframe src="https://wall.sli.do/event/sewBe4ynPJmgeSLu3U1gEn" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>
+
+## Submit your attendance
+### Attendance code: `r format(attendanceCode, scientific = FALSE)`
+
+```{r echo=FALSE}
+
+
+knitr::include_graphics("img/attendanceQR.png") 
+
+```
+
+### <http://bit.ly/APRM22>
 
 
 ## By the end of this section, you will be able to:
 
-
-- Describe the ggplot "grammar of visualisation": coordinates and geoms
-- Write a graph function to display multiple variables on a plot
-- Amend the titles and legends of a plot
-- Save plots in PDF or image formats
+-   Describe the ggplot "grammar of visualisation": coordinates and geoms
+-   Write a graph function to display multiple variables on a plot
+-   Amend the titles and legends of a plot
+-   Save plots in PDF or image formats
 
 ```{r import data, echo=F}
 library(readr)
@@ -29,19 +51,18 @@ library(tidyverse)
 album_sales <- as.data.frame(read_csv("Datasets/album_sales.csv"))
 ```
 
+## We will use the ggplot package for making graphs
 
-## We will use the ggplot package for making graphs 
+<iframe src="https://r-graph-gallery.com/ggplot2-package.html" width="100%" height="100%">
 
-
-<iframe src ="https://r-graph-gallery.com/ggplot2-package.html" width = "100%" height = "100%"> </iframe>
+</iframe>
 
 ## The "grammar of visualisation"
 
- 
-- Graphs are made up of 3 components:
-    * A dataset
-    * A coordinate system
-    * Visual marks to represent data __(geoms)__
+-   Graphs are made up of 3 components:
+    -   A dataset
+    -   A coordinate system
+    -   Visual marks to represent data **(geoms)**
 
 ## The "grammar of visualisation" #2
 
@@ -53,23 +74,22 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point()
 
 ```
 
-- In the above example, the dataset is the __album_sales__ that we used previously.
-- The _adverts_ variable is mapped to the X axis
-- The _airplay_ variable is mapped to the Y axis
+-   In the above example, the dataset is the **album_sales** that we used previously.
+-   The *adverts* variable is mapped to the X axis
+-   The *airplay* variable is mapped to the Y axis
 
 ## How to code a graph
 
+-   The graph is created using the following code:
 
-- The graph is created using the following code:
 ```{r  eval=FALSE}
 ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point()
 
 ```
 
-- In this code, we specify the dataset, the variables for the X and Y axes and the __geom__ that will represent the data points visually (in this case, each datum is a point)
+-   In this code, we specify the dataset, the variables for the X and Y axes and the **geom** that will represent the data points visually (in this case, each datum is a point)
 
 ## The graph output
-
 
 ```{r echo=T, out.height='70%'}
 
@@ -80,11 +100,9 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point()
 
 ```
 
-
 ## Changing the geoms leads to different visualisations
 
-
-- If we change from points to lines, for example we get a different plot:
+-   If we change from points to lines, for example we get a different plot:
 
 ```{r echo=T, out.height='70%'}
 library(ggplot2)
@@ -92,11 +110,9 @@ library(ggplot2)
 ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_line()
 ```
 
-
 ## It is possible to represent more variables on the plot
 
-
-- By specifying that colours of our points should be attached to the __Genre__ variable, the data is now colour-coded
+-   By specifying that colours of our points should be attached to the **Genre** variable, the data is now colour-coded
 
 ```{r echo=T, out.height='70%'}
 
@@ -109,7 +125,7 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(a
 
 ## It is possible to represent more variables on the plot #2
 
-- By specifying that size of our points should be attached to the __Attract__ variable, the size of the points adjusts
+-   By specifying that size of our points should be attached to the **Attract** variable, the size of the points adjusts
 
 ```{r}
 
@@ -122,8 +138,7 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(a
 
 ## It is possible to represent more variables on the plot #3
 
-
-- By specifying that shape of our points should be attached to the __Genre__ variable, the shape of the points changes accordingly
+-   By specifying that shape of our points should be attached to the **Genre** variable, the shape of the points changes accordingly
 
 ```{r}
 
@@ -134,10 +149,9 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(a
 
 ```
 
-
 ## Something a little more useful...
 
-- What if we wanted to make a bar chart of the average sales of different genres?
+-   What if we wanted to make a bar chart of the average sales of different genres?
 
 Let's view the data:
 
@@ -166,21 +180,20 @@ ggplot(data = meanSales, aes(x = Genre, y = mean_sales)) + geom_col()
   
 
 ```
+
 ## Changing colours
 
-- We can change colours by modifying the geom
+-   We can change colours by modifying the geom
 
-- Some objects use "fill", some use "colour"
+-   Some objects use "fill", some use "colour"
 
 ```{r}
 ggplot(data = meanSales, aes(x = Genre, y = mean_sales)) + geom_col(aes(fill = Genre)) 
 ```
 
-
-
 ## Changing the axis labels and title on a plot
 
-We can change the axis labels and title using the __labs()__ command:
+We can change the axis labels and title using the **labs()** command:
 
 labs(x="Genre", y="Mean Sales", title = "Mean sales by Genre")
 
@@ -195,8 +208,7 @@ ggplot(data = meanSales, aes(x = Genre, y = mean_sales)) + geom_col(aes(fill = G
 
 ## Changing the legend on a plot
 
-
-To change the legend, we use the __labs()__ command too, and reference the relevant property (e.g. size, shape, colour)
+To change the legend, we use the **labs()** command too, and reference the relevant property (e.g. size, shape, colour)
 
 ```{r}
 
@@ -210,7 +222,7 @@ labs(x="Genre", y="Mean Sales", title = "Mean sales by Genre", size="Attractiven
 
 ## Storing plots to be recalled later
 
-- Plots can be assigned to objects in R and recalled later, just like any other piece of data
+-   Plots can be assigned to objects in R and recalled later, just like any other piece of data
 
 ```{r}
 
@@ -227,18 +239,14 @@ labs(x="Genre", y="Mean Sales", title = "Mean sales by Genre", size="Attractiven
 
 ## Recalling a stored plot
 
-
-
 ```{r}
  #Recall myPlot
 myPlot
 ```
 
+## Saving plots \# 1
 
-## Saving plots # 1
-
-
-- Plots can be save using the __export__ button in the plots tab
+-   Plots can be save using the **export** button in the plots tab
 
 ```{r  out.width = "100%", echo=FALSE}
 
@@ -247,10 +255,17 @@ knitr::include_graphics("img/savePlot1.png")
 
 ## Plots can also be saved using code
 
+-   You might want to include code to save your plot in a script, for example
+-   This can allow greater control over the output file and plot dimensions:
 
-- You might want to include code to save your plot in a script, for example
-- This can allow greater control over the output file and plot dimensions:
 ```{r}
 ggsave(plot= myPlot, file="myPlot.pdf", width = 4, height = 4)
 ggsave(plot= myPlot, file="myPlot.png", width = 4, height = 4, units="cm", dpi=320)
 ```
+
+
+## Questions?
+
+<iframe src="https://wall.sli.do/event/sewBe4ynPJmgeSLu3U1gEn" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>

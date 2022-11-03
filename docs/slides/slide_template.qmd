@@ -1,0 +1,41 @@
+---
+title: "Graphs and Data Visualisation in R"
+subtitle: "Advanced Psychological Research Methods"
+author: "Dr Christopher Wilson"
+format: revealjs
+css: custom.css
+logo: "logo.png"
+width: 1920
+height: 1080
+knitr:
+  opts_chunk:
+    echo: true
+    fig.align: center
+    warning: false
+---
+```{r echo=FALSE}
+library(lubridate)
+library(dplyr)
+attendanceCode <- day(today()) * 394 * month(today()) %>% as.double() 
+```
+
+## Questions from last week's session?
+
+<iframe src="https://wall.sli.do/event/sewBe4ynPJmgeSLu3U1gEn" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>
+
+## Submit your attendance
+### Attendance code: `r format(attendanceCode, scientific = FALSE)`
+
+```{r echo=FALSE}
+
+
+knitr::include_graphics("img/attendanceQR.png") 
+
+```
+
+### <http://bit.ly/APRM22>
+
+
+## By the end of this section, you will be able to:

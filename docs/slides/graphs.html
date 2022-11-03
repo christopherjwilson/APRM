@@ -389,6 +389,23 @@
   <p class="author">Dr Christopher Wilson</p>
 </section>
 
+<section class="slide level2">
+
+<div class="cell" data-layout-align="center">
+
+</div>
+</section>
+<section id="questions-from-last-weeks-session" class="slide level2">
+<h2>Questions from last week’s session?</h2>
+<iframe src="https://wall.sli.do/event/sewBe4ynPJmgeSLu3U1gEn" height="100%" width="100%" frameborder="0" style="min-height: 560px;" title="Slido">
+</iframe>
+</section>
+<section id="submit-your-attendance" class="slide level2">
+<h2>Submit your attendance</h2>
+<h3 id="attendance-code-13002">Attendance code: 13002</h3>
+
+<img data-src="img/attendanceQR.png" width="400" class="r-stretch quarto-figure-center"><h3 id="httpbit.lyaprm22"><a href="http://bit.ly/APRM22" class="uri">http://bit.ly/APRM22</a></h3>
+</section>
 <section id="by-the-end-of-this-section-you-will-be-able-to" class="slide level2">
 <h2>By the end of this section, you will be able to:</h2>
 <ul>
@@ -431,7 +448,7 @@
 </div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><ul>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><ul>
 <li>In the above example, the dataset is the <strong>album_sales</strong> that we used previously.</li>
 <li>The <em>adverts</em> variable is mapped to the X axis</li>
 <li>The <em>airplay</em> variable is mapped to the Y axis</li>
@@ -458,7 +475,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="graphs_files/figure-revealjs/unnamed-chunk-3-1.png" style="height:70.0%" width="960"></p>
+<p><img data-src="graphs_files/figure-revealjs/unnamed-chunk-5-1.png" style="height:70.0%" width="960"></p>
 </figure>
 </div>
 </div>
@@ -476,7 +493,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="graphs_files/figure-revealjs/unnamed-chunk-4-1.png" style="height:70.0%" width="960"></p>
+<p><img data-src="graphs_files/figure-revealjs/unnamed-chunk-6-1.png" style="height:70.0%" width="960"></p>
 </figure>
 </div>
 </div>
@@ -494,7 +511,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="graphs_files/figure-revealjs/unnamed-chunk-5-1.png" style="height:70.0%" width="960"></p>
+<p><img data-src="graphs_files/figure-revealjs/unnamed-chunk-7-1.png" style="height:70.0%" width="960"></p>
 </figure>
 </div>
 </div>
@@ -511,7 +528,7 @@
 <span id="cb6-3"><a href="#cb6-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="it-is-possible-to-represent-more-variables-on-the-plot-3" class="slide level2">
 <h2>It is possible to represent more variables on the plot #3</h2>
 <ul>
@@ -523,7 +540,7 @@
 <span id="cb7-3"><a href="#cb7-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract, <span class="at">shape=</span>Genre))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="something-a-little-more-useful" class="slide level2">
 <h2>Something a little more useful…</h2>
 <ul>
@@ -562,7 +579,7 @@
 <span id="cb10-14"><a href="#cb10-14"></a><span class="fu">ggplot</span>(<span class="at">data =</span> meanSales, <span class="fu">aes</span>(<span class="at">x =</span> Genre, <span class="at">y =</span> mean_sales)) <span class="sc">+</span> <span class="fu">geom_col</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="changing-colours" class="slide level2">
 <h2>Changing colours</h2>
 <ul>
@@ -573,7 +590,7 @@
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> meanSales, <span class="fu">aes</span>(<span class="at">x =</span> Genre, <span class="at">y =</span> mean_sales)) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Genre)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="changing-the-axis-labels-and-title-on-a-plot" class="slide level2">
 <h2>Changing the axis labels and title on a plot</h2>
 <p>We can change the axis labels and title using the <strong>labs()</strong> command:</p>
@@ -583,7 +600,7 @@
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Genre"</span>, <span class="at">y=</span><span class="st">"Mean Sales"</span>, <span class="at">title =</span> <span class="st">"Mean sales by Genre"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="changing-the-legend-on-a-plot" class="slide level2">
 <h2>Changing the legend on a plot</h2>
 <p>To change the legend, we use the <strong>labs()</strong> command too, and reference the relevant property (e.g.&nbsp;size, shape, colour)</p>
@@ -592,7 +609,7 @@
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Genre"</span>, <span class="at">y=</span><span class="st">"Mean Sales"</span>, <span class="at">title =</span> <span class="st">"Mean sales by Genre"</span>, <span class="at">size=</span><span class="st">"Attractiveness"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="storing-plots-to-be-recalled-later" class="slide level2">
 <h2>Storing plots to be recalled later</h2>
 <ul>
@@ -614,7 +631,7 @@
 <span id="cb15-2"><a href="#cb15-2"></a>myPlot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="graphs_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="graphs_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="saving-plots-1" class="slide level2">
 <h2>Saving plots # 1</h2>
 <ul>
@@ -632,6 +649,11 @@
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">"myPlot.pdf"</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">"myPlot.png"</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">units=</span><span class="st">"cm"</span>, <span class="at">dpi=</span><span class="dv">320</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<iframe src="https://wall.sli.do/event/sewBe4ynPJmgeSLu3U1gEn" height="100%" width="100%" frameborder="0" style="min-height: 560px;" title="Slido">
+</iframe>
 
 <img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 

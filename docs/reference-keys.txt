@@ -79,6 +79,7 @@ tests-of-difference---t-test
 tests-of-difference---anova
 graphing-and-data-visualisation-with-r
 presenting-data-visually
+using-ggplot-to-make-graphs
 by-the-end-of-this-section-you-will-be-able-to-1
 the-grammar-of-visualisation
 how-to-code-a-graph
