@@ -402,7 +402,7 @@
 </section>
 <section id="submit-your-attendance" class="slide level2">
 <h2>Submit your attendance</h2>
-<h3 id="attendance-code-13002">Attendance code: 13002</h3>
+<h3 id="attendance-code-26004">Attendance code: 26004</h3>
 
 <img data-src="img/attendanceQR.png" width="400" class="r-stretch quarto-figure-center"><h3 id="httpbit.lyaprm22"><a href="http://bit.ly/APRM22" class="uri">http://bit.ly/APRM22</a></h3>
 </section>
@@ -507,7 +507,7 @@
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -525,7 +525,7 @@
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="graphs_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"></section>
@@ -537,7 +537,7 @@
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract, <span class="at">shape=</span>Genre))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract, <span class="at">shape=</span>Genre))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="graphs_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch quarto-figure-center"></section>
@@ -605,7 +605,7 @@
 <h2>Changing the legend on a plot</h2>
 <p>To change the legend, we use the <strong>labs()</strong> command too, and reference the relevant property (e.g.&nbsp;size, shape, colour)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract)) <span class="sc">+</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Genre"</span>, <span class="at">y=</span><span class="st">"Mean Sales"</span>, <span class="at">title =</span> <span class="st">"Mean sales by Genre"</span>, <span class="at">size=</span><span class="st">"Attractiveness"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
@@ -620,7 +620,7 @@
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="do">## Create plot and store it as "myPlot" object</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a></span>
-<span id="cb14-5"><a href="#cb14-5"></a>myPlot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>myPlot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>album_sales, <span class="fu">aes</span>(<span class="at">x=</span>Adverts,<span class="at">y=</span>Airplay)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Genre, <span class="at">size =</span> Attract)) <span class="sc">+</span></span>
 <span id="cb14-6"><a href="#cb14-6"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Genre"</span>, <span class="at">y=</span><span class="st">"Mean Sales"</span>, <span class="at">title =</span> <span class="st">"Mean sales by Genre"</span>, <span class="at">size=</span><span class="st">"Attractiveness"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>

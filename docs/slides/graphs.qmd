@@ -118,7 +118,7 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_line()
 
 library(ggplot2)
 
-ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(aes(color = Genre))
+ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point(aes(color = Genre))
 
 
 ```
@@ -131,7 +131,7 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(a
 
 library(ggplot2)
 
-ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(aes(color = Genre, size = Attract))
+ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point(aes(color = Genre, size = Attract))
 
 
 ```
@@ -144,7 +144,7 @@ ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(a
 
 library(ggplot2)
 
-ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(aes(color = Genre, size = Attract, shape=Genre))
+ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point(aes(color = Genre, size = Attract, shape=Genre))
 
 
 ```
@@ -212,7 +212,7 @@ To change the legend, we use the **labs()** command too, and reference the relev
 
 ```{r}
 
-ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(aes(color = Genre, size = Attract)) +
+ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point(aes(color = Genre, size = Attract)) +
 labs(x="Genre", y="Mean Sales", title = "Mean sales by Genre", size="Attractiveness")
 
 
@@ -230,7 +230,7 @@ library(ggplot2)
 
 ## Create plot and store it as "myPlot" object
 
-myPlot <- ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point() + geom_point(aes(color = Genre, size = Attract)) +
+myPlot <- ggplot(data=album_sales, aes(x=Adverts,y=Airplay)) + geom_point(aes(color = Genre, size = Attract)) +
 labs(x="Genre", y="Mean Sales", title = "Mean sales by Genre", size="Attractiveness")
 
 
