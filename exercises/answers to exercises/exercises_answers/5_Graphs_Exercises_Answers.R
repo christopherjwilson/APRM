@@ -1,5 +1,9 @@
+
+
+
 ## 0. Install the ggplot2 package and then load it using the library() command
 library(ggplot2)
+library(tidyverse)
 
 ## 1. Create a plot using the salesData dataset - put the salary variable on the X axis and the valueOfSales variable on the Y axis.
 
@@ -31,7 +35,18 @@ ggplot(salesData, aes(x=married,y=valueOfSales)) + stat_summary(fun.y = "mean", 
 
 ## 6. Inside the ggplot aes() function, add the option fill=“married” to the code to change the fill colour of the bars based on the married variable
 
+salesData$married <- as.factor(salesData$married)
+
 ggplot(salesData, aes(x=married,y=valueOfSales, fill = married)) + stat_summary(fun.y = "mean", geom = "bar")
+
+### You can also use this code (fun instead of fun.y):
+ggplot(salesData, aes(x=married,y=valueOfSales, fill = married)) + stat_summary(fun = "mean", geom = "bar")
+
+### You can also summarise the data and make the plot this way:
+
+meanValueOfSales <- salesData %>% group_by(married) %>% summarise(mean_vos = mean(valueOfSales))
+
+ggplot(data = meanValueOfSales, aes(x = married, y = mean_vos)) + geom_col()
 
 
 ## 7. Store this plot as a plot named “plot2” 
@@ -41,8 +56,8 @@ plot2 <- ggplot(salesData, aes(x=married,y=valueOfSales, fill = married)) + stat
 
 ## 8 Save “plot1” as a pdf file
 
-ggsave(plot= plot1, file="plot1.pdf", width = 4, height = 4)
+ggsave(plot= plot1, file="plot1.pdf", width = 5, height = 4)
 
 ## 8. Save “plot2” as a png file
 
-ggsave(plot= plot2, file="plot2.png", width = 4, height = 4)
+ggsave(plot= plot2, file="plot2.png", width = 5, height = 4)
