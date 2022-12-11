@@ -1,0 +1,71 @@
+---
+format: html
+---
+
+# Exercise: Conducting analysis and presenting the output using an R Markdown (.Rmd) file
+
+## Overview of dataset
+
+Erik Nisbet reported the relationship between emotions, ideology, and party affiliation as predictors
+of attitudes towards government action on climate change. Data were collected from 815 residents of the United States (417 female, 398 male).
+
+The dataset contains a variable constructed from how each participant responded to five questions about the extent to which he or she supports various policies or actions by the U.S. government to mitigate the threat of global climate change. Examples include “How much do you support or oppose increasing government investment for developing alternative energy like biofuels, wind, or solar by 25%?” and “How much do you support or oppose creating a ‘Cap and Trade’ policy that limits greenhouse gases said to cause global warming?” Response options were scaled from “Strongly opposed” (coded 1) or ”Strongly support” (7), with intermediate labels to denote intermediate levels of support. An index of support for government action to reduce climate change was constructed for each person by averaging responses to the five questions (GOVACT in the data file).
+
+The dataset also contains a variable quantifying participants’ negative emotional responses to the prospect of climate change. This variable was constructed using participants’ responses to a question that asked them to indicate how frequently they feel each of three emotions when thinking about global warming: “worried,” “alarmed,” and “concerned.” Response options included “not at all,” “slightly,” “a little bit,” “some,” “a fair amount,” and “a great deal.” These responses were numerically coded 1 to 6, respectively, and each participant’s responses were averaged across all three emotions to produce a measure of negative emotions about climate change (NEGEMOT in the data file). This variable is scaled such that higher scores reflect feeling stronger negative emotions.
+
+At the same time, participants were asked how frequently they felt “hopeful,” “encouraged,” and “optimistic” about global climate change usingmthe same 1- to 6-point scale. A measure of positive emotions about climate change was constructed as the average response a participant provided to these three items (POSEMOT in the data).
+
+Participants were also asked to rate their political ideology (IDEOLOGY in the data file) on a 1 (very liberal) to 7 (very conservative) scale in response to the question “How would you describe your views on most political matters?”.
+
+Finally, there is a variable named PARTYID that codes whether a person identified as a Democrat (1), an Independent (2), or a Republican
+(3).
+
+The data frame contains 815 observations on the following 7 variables:
+
+- govact 
+- posemot 
+- negemot 
+- ideology 
+- age 
+- sex 
+- partyid
+
+## Research questions
+
+Create an R Markdown file and conduct the appropriate analyses to answer the following:
+
+1. Is there a relationship between *ideology* and *govact*? Create an approrpiate graph to view this relationship, as well as running the appropriate statistical test.
+
+2. Is there a differece in the mean *govact* score between the 3 different political party affiliations? Create an approrpiate graph to view this difference, as well as running the appropriate statistical test. 
+
+3. Create and test regression model(s) to examine the following questions: 
+    - Which variables in the dataset predict support for government action to reduce climate (*govact*)? 
+    - Does *ideology* add any value to the model, beyond what is already explained by the other variables?  
+
+> This example is adapted from: Hayes, (2018). Introduction to Mediation, Moderation, and Conditional Process Analysis. Guildford Press, New York.
+
+```{r eval= FALSE, echo=FALSE}
+library(psychTools)
+globalWarm<- psychTools::globalWarm
+head(globalWarm)
+
+# Question 1
+## Scatterplot to examine correlation
+### Method 1: Simple R scatterplot:
+plot(globalWarm$ideology, globalWarm$govact)
+
+### Method 2: ggplot scatterplot
+library(ggplot2)
+
+ggplot(data = globalWarm, aes(x=ideology, y=govact)) + geom_point()
+
+#Question 2
+
+library(dplyr)
+
+meanGovact <- globalWarm %>% group_by(partyid) %>% summarise(meanGovact = mean(govact)) %>% ungroup()
+
+ggplot(data = meanGovact, aes(x=partyid, y=meanGovact)) + geom_col()
+
+```
+

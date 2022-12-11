@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>intro_to_rmarkdown</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="intro_to_rmarkdown_files/libs/clipboard/clipboard.min.js"></script>
+<script src="intro_to_rmarkdown_files/libs/quarto-html/quarto.js"></script>
+<script src="intro_to_rmarkdown_files/libs/quarto-html/popper.min.js"></script>
+<script src="intro_to_rmarkdown_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="intro_to_rmarkdown_files/libs/quarto-html/anchor.min.js"></script>
+<link href="intro_to_rmarkdown_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="intro_to_rmarkdown_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="intro_to_rmarkdown_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="intro_to_rmarkdown_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="intro_to_rmarkdown_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="exercise-conducting-analysis-and-presenting-the-output-using-an-r-markdown-.rmd-file" class="level1">
+<h1>Exercise: Conducting analysis and presenting the output using an R Markdown (.Rmd) file</h1>
+<section id="overview-of-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-dataset">Overview of dataset</h2>
+<p>Erik Nisbet reported the relationship between emotions, ideology, and party affiliation as predictors of attitudes towards government action on climate change. Data were collected from 815 residents of the United States (417 female, 398 male).</p>
+<p>The dataset contains a variable constructed from how each participant responded to five questions about the extent to which he or she supports various policies or actions by the U.S. government to mitigate the threat of global climate change. Examples include “How much do you support or oppose increasing government investment for developing alternative energy like biofuels, wind, or solar by 25%?” and “How much do you support or oppose creating a ‘Cap and Trade’ policy that limits greenhouse gases said to cause global warming?” Response options were scaled from “Strongly opposed” (coded 1) or ”Strongly support” (7), with intermediate labels to denote intermediate levels of support. An index of support for government action to reduce climate change was constructed for each person by averaging responses to the five questions (GOVACT in the data file).</p>
+<p>The dataset also contains a variable quantifying participants’ negative emotional responses to the prospect of climate change. This variable was constructed using participants’ responses to a question that asked them to indicate how frequently they feel each of three emotions when thinking about global warming: “worried,” “alarmed,” and “concerned.” Response options included “not at all,” “slightly,” “a little bit,” “some,” “a fair amount,” and “a great deal.” These responses were numerically coded 1 to 6, respectively, and each participant’s responses were averaged across all three emotions to produce a measure of negative emotions about climate change (NEGEMOT in the data file). This variable is scaled such that higher scores reflect feeling stronger negative emotions.</p>
+<p>At the same time, participants were asked how frequently they felt “hopeful,” “encouraged,” and “optimistic” about global climate change usingmthe same 1- to 6-point scale. A measure of positive emotions about climate change was constructed as the average response a participant provided to these three items (POSEMOT in the data).</p>
+<p>Participants were also asked to rate their political ideology (IDEOLOGY in the data file) on a 1 (very liberal) to 7 (very conservative) scale in response to the question “How would you describe your views on most political matters?”.</p>
+<p>Finally, there is a variable named PARTYID that codes whether a person identified as a Democrat (1), an Independent (2), or a Republican (3).</p>
+<p>The data frame contains 815 observations on the following 7 variables:</p>
+<ul>
+<li>govact</li>
+<li>posemot</li>
+<li>negemot</li>
+<li>ideology</li>
+<li>age</li>
+<li>sex</li>
+<li>partyid</li>
+</ul>
+</section>
+<section id="research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="research-questions">Research questions</h2>
+<p>Create an R Markdown file and conduct the appropriate analyses to answer the following:</p>
+<ol type="1">
+<li><p>Is there a relationship between <em>ideology</em> and <em>govact</em>? Create an approrpiate graph to view this relationship, as well as running the appropriate statistical test.</p></li>
+<li><p>Is there a differece in the mean <em>govact</em> score between the 3 different political party affiliations? Create an approrpiate graph to view this difference, as well as running the appropriate statistical test.</p></li>
+<li><p>Create and test regression model(s) to examine the following questions:</p>
+<ul>
+<li>Which variables in the dataset predict support for government action to reduce climate (<em>govact</em>)?</li>
+<li>Does <em>ideology</em> add any value to the model, beyond what is already explained by the other variables?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p>This example is adapted from: Hayes, (2018). Introduction to Mediation, Moderation, and Conditional Process Analysis. Guildford Press, New York.</p>
+</blockquote>
+<div class="cell">
+
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
