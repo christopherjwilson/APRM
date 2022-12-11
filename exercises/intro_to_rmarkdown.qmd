@@ -48,6 +48,8 @@ Create an R Markdown file and conduct the appropriate analyses to answer the fol
 library(psychTools)
 globalWarm<- psychTools::globalWarm
 head(globalWarm)
+write.csv(globalWarm, "C:\\Users\\wilso\\Documents\\GitHub\\APRM\\exercises\\globalWarm.csv")
+
 
 # Question 1
 ## Scatterplot to examine correlation
