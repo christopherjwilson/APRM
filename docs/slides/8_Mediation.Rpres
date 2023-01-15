@@ -139,7 +139,7 @@ type: section
 What is a mediation design?
 ======
 
-Whether a mediation analysis is approprite is determined as much by the design as by statistical criteria.
+Whether a mediation analysis is appropriate is determined as much by the design as by statistical criteria.
 
 
 ```{r echo = FALSE}

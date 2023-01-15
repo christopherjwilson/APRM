@@ -142,7 +142,10 @@ margin-top: 20px;
 }
 .reveal pre code {
   font-size: 1.5em;
-
+  display: block;
+  padding: 5px;
+  max-height: 400px;
+  word-wrap: normal;
 }
 
 .reveal .state-background {
@@ -165,3 +168,8 @@ margin-top: 20px;
 }
 
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
+
+.slide {
+
+  
+}

@@ -1,0 +1,715 @@
+---
+title: "Moderation and Mediation in R"
+subtitle: "Advanced Psychological Research Methods"
+author: "Dr Christopher Wilson"
+format: 
+  revealjs:
+    width: 1920
+    height: 1080
+css: custom.css
+logo: "logo.png"
+knitr:
+  opts_chunk:
+    echo: false
+    fig.align: center
+    warning: false
+    messages: false
+---
+```{r echo=FALSE}
+library(lubridate)
+library(dplyr)
+attendanceCode <- day(today()) * 394 * month(today()) %>% as.double() 
+```
+
+## Questions?
+
+<iframe src="https://wall.sli.do/event/u3jTwQP6TdcYodD7qZBEnD" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>
+
+## Submit your attendance
+### Attendance code: `r format(attendanceCode, scientific = FALSE)`
+
+```{r echo=FALSE}
+
+
+knitr::include_graphics("img/attendanceQR.png") 
+
+```
+
+### <http://bit.ly/APRM22>
+
+
+
+# Moderation analysis
+
+## Overview
+
+-   What are mediation and moderation?
+-   Moderation analysis in more detail
+-   Grand Mean Centering
+-   Checking Assumptions
+-   Interpreting Moderation
+-   Bootstrapping Moderation
+
+# What are moderation and mediation?
+
+
+
+
+## What is moderation?
+
+
+There is a direct relationship between X and Y but it is affected by a moderator (M)
+
+```{r  out.height = "75%", echo=F}
+## Diagrams from original paper 1
+library(DiagrammeR)
+library(tidyverse)
+library(mediation) #Mediation package
+# library(rockchalk) #Graphing simple slopes; moderation
+library(multilevel) #Sobel Test
+# library(bda) #Another Sobel Test option
+library(gvlma) #Testing Model Assumptions 
+library(stargazer) #Handy regression tables
+
+edf <-
+  create_edge_df(
+    from = c(1,2),
+    to = c(4,3),
+    color="black",
+    # label = c(" ","-","+"),
+    fontsize=16)
+
+ndf <- create_node_df(
+  n=4,
+  label = c("Treatment", "clinician Engagement","", "Client Recovery"),
+  shape = c("rectangle","rectangle","point","rectangle" ), 
+  fillcolor = "white", 
+  width = c(1.5,1.5,0,1.5), 
+  height = c(1,1,0,1),
+  x=c(1,3,3,5), 
+  y=c(1,2,1,1),
+  fontsize=12,
+  color="black",
+  fontcolor="black")
+
+mod_graph <-
+  create_graph(nodes_df = ndf, edges_df = edf)
+
+
+mod_graph %>% render_graph(title = " ")
+
+```
+
+In the above model, we theorise that the Treatment has a direct relationship with Recovery and the nature of that relationship can be affected by the level of Engagement from the clinician.
+
+## What is mediation?
+
+Where the relationship between a predictor (X) and an outcome (Y) is mediated by another variable (M). 
+
+```{r  out.height = "75%", echo=F}
+
+
+edf <-
+  create_edge_df(
+    from = c(1, 2, 1),
+    to = c(2, 3, 3),
+    color=c("blue","green","red"),
+    # label = c(" ","-","+"),
+    fontsize=16)
+
+ndf <- create_node_df(
+  n=3,
+  label = c("Treatment", "Clinician Engagement", "Client Recovery"),
+  shape = "rectangle", 
+  fillcolor = "white", 
+  width = 1.5, 
+  height = 1, 
+  x=c(1,3,5), 
+  y=c(1,3,1),
+  fontsize=12,
+  color="black",
+  fontcolor="black")
+
+med_graph <-
+  create_graph(nodes_df = ndf, edges_df = edf)
+
+med_graph %>% render_graph(title = " ")
+```
+
+In the above model, we theorise that the relationship between Treatment and Recovery is indirect. That is, Recovery happens via Engagement from the clinician, not independently of it.
+
+
+## Why different models?
+
+```{r echo = FALSE}
+med_graph %>% render_graph(title = " ") 
+```
+
+In this model, we are saying that to understand the relationship between Treatment and Recovery, we need to include Clinician Engagement, because that is what has the direct relationship with Recovery.
+
+
+## Why different models?
+
+
+```{r echo = FALSE}
+mod_graph %>% render_graph(title = " ") 
+```
+
+In this model, we are saying that the variance in recovery can be explained by treatment, but the level of clinician engagement affects the strength or direction of the relationship (i.e. can weaken/strengthen it, change its direction).
+
+
+# Moderation
+
+## What packages do we need?
+
+-   **gvlma** (for checking assumptions)
+-   **interactions** (for generating interaction plot)
+-   **Rockchalk** (for testing simple slopes)
+-   **car** (includes a **Boot()** function to bootstrap regression
+    models )
+
+## What is moderation?
+
+-   The relationship between a predictor (X) and outcome (Y) is affected
+    by another variable (M)
+-   This is referred to as an interaction (similar to interaction in
+    standard regression)
+-   A moderator can effect the direction and/or strength of a
+    relationship between X and Y
+
+```{r echo=F}
+mod_graph %>% render_graph(title = " ")
+```
+
+Here we might find that the relationship between Time in Treatment and
+General Wellbeing is strong for those who have a strong engagement with
+their Treatment psychologist and weak for those who do not have good
+engagement with their Treatment psychologist.
+
+## What is moderation? \#2
+
+-   Very similar to multiple regression
+
+    lm(Y \~ X + M + X\*M)
+
+-   Moderation analysis includes X, M and the interaction between X and
+    M
+
+-   If we find a moderation effect it becomes the focus of our analysis
+    (the independent role of X and M becomes less important)
+
+## What is moderation? \#3
+
+```{r echo = F, out.width = "60%"}
+#setwd("location") #Working directory
+set.seed(123)#Standardizes the numbers generated by rnorm; see Chapter 5
+N  <- 100 #Number of participants; graduate students
+timeInTreatment  <- abs(rnorm(N, 6, 4)) #IV; 
+X1 <- abs(rnorm(N, 60, 30)) #Adding some systematic variance for our DV
+engagementLevel  <- rnorm(N, 4, 8) #Moderator; years in education
+recoveryLevel  <- abs((0.8*-timeInTreatment) * (.1*engagementLevel) + -0.8*timeInTreatment + -0.4*X1 + 10 + rnorm(N, 0, 3)) #DV; 
+Moddata <- data.frame(timeInTreatment, engagementLevel, recoveryLevel)
+
+
+#Moderation "By Hand" with centred data
+library(gvlma)
+fitMod <- lm(recoveryLevel ~ timeInTreatment *engagementLevel , data = Moddata) #Model interacts IV & moderator
+
+library(interactions)
+ ip <- interact_plot(fitMod, pred = timeInTreatment, modx = engagementLevel)
+ ip
+```
+
+In the plot above: 
+
+- The blue line is the "standard" regression line 
+- The black line is when the moderator is "low" (-1sd) 
+- The dotted line is when the moderator is "high" (+1sd)
+
+# Moderation: step-by-step
+
+
+
+## Step 1: Grand Mean Centering
+
+-   Regression coefficients (b values) are based on predicting Y when X
+    = 0
+
+-   Not all measures actually have a zero value
+
+-   To make results easier to interpret, we can centre our data around
+    the grand mean of the data (making the mean 0)
+
+    -   The mean of the full sample is subtracted from the value
+
+-   This is similar to z-score (i.e. a standardised score)
+
+To do this in R, we can use the **scale()** function:
+
+    Xc    <- scale(X, center=TRUE, scale=FALSE) #Centering X; 
+    Mc    <- scale(M,  center=TRUE, scale=FALSE) #Centering M;
+
+We then use the centred data in our analysis
+
+## Step 1: Grand Mean Centering \#2
+
+### We can see that the difference between the original data is the mean of the data.
+
+```{r echo = T}
+#Centering Data
+Moddata$timeInTreatment_centred    <- c(scale(timeInTreatment, center=TRUE, scale=FALSE)) 
+
+#Centering IV; 
+Moddata$engagementLevel_centred    <- c(scale(engagementLevel,  center=TRUE, scale=FALSE)) #Centering moderator; 
+
+#Moderation "By Hand" with centred data
+library(gvlma)
+fitMod <- lm(recoveryLevel ~ timeInTreatment_centred *engagementLevel_centred  , data = Moddata) #Model interacts IV & moderator
+
+library(interactions)
+ ip <- interact_plot(fitMod, pred = timeInTreatment_centred, modx = engagementLevel_centred)
+ ip
+```
+
+## Do I need to mean centre my data?
+
+It is worth noting:
+
+-   It does not change the results of your interaction (coefficient,
+    standard error or significance tests).
+-   It will change the results of the direct effects (the individual
+    predictors in your model).
+-   It is a step that tries to ensure that the coefficients of the
+    predictor and moderator are meaningful in relation to each other.
+-   In some cases, it might not be necessary to mean centre at all.
+    However, there is no harm in doing so, and it could potentially be
+    helpful.
+
+Hayes (2013) discusses mean centering, pp. 282-290.
+
+McClelland, G. H., Irwin, J. R., Disatnik, D., & Sivan, L. (2017).
+Multicollinearity is a red herring in the search for moderator
+variables: A guide to interpreting moderated multiple regression models
+and a critique of Iacobucci, Schneider, Popovich, and Bakamitsos (2016).
+Behavior research methods, 49(1), 394-402.
+
+## Step 2: Check assumptions
+
+### We can use the gvlma function to check regression assumptions
+
+```{r}
+
+library(gvlma)
+gvlma(fitMod)
+```
+
+The "global stat" is an attempt to check multiple assumptions of linear
+model (Pena & Slate, 2006).
+
+Since one of the underlying assumptions is violated, the overall stat is
+also not acceptable.
+
+The data looks skewed, we should transform it or perhaps use
+bootstrapping
+
+## Step 3: Moderation Analysis
+
+```{r}
+
+fitMod <- lm(recoveryLevel ~ timeInTreatment_centred * engagementLevel_centred  , data = Moddata) #Model interacts IV & moderator
+ #Model interacts IV & moderator
+summary(fitMod)
+```
+
+The results above show that there is a moderated effect
+
+## Step 3: Moderation analysis \#2
+
+We use an approach called **simple slopes** to visualise the moderation
+effect
+
+        interact_plot(fitMod, pred = timeInTreatment_centred, modx = engagementLevel_centred)
+
+```{r echo=F}
+ip
+ 
+```
+
+## Step 3: Moderation analysis \#3
+
+The **rockchalk** package includes useful functions for visualising
+simple slopes
+
+```{r}
+library(rockchalk)
+
+fitMod <- lm(recoveryLevel ~ timeInTreatment *engagementLevel  , data = Moddata)
+summary(fitMod)
+slopes <- plotSlopes(fitMod, modx = "engagementLevel", plotx = "timeInTreatment")
+testSlopes <- testSlopes(slopes)
+plot(testSlopes)
+
+
+```
+
+## What is bootstrapping?
+
+>> "Bootstrapping is a nonparametric approach to effect-size estimation and hypothesis testing that makes no assumptions about the shape of the distributions of the variables or the sampling distribution of the statistic" (Preacher & Hayes, 2004, p. 722)
+
+- Bootstrapping takes a large number of samples from our data and runs the analysis on each of these samples
+- The sampling is done randomly with replacement, and each sample in the bootstrap is the same size as our dataset
+
+- Using this method, we can create estimates with that fall within a narrower confidence interval (since we have now run the analysis on 100's of samples)
+- Bootstrapping overcomes concerns about the distribution of our original dataset
+
+## Step 4: Bootstrapping
+
+### The **car** package includes a function to bootstrap regression
+
+```{r}
+library(car)
+
+bootstrapModel <- Boot(fitMod, R=999)
+
+confint(fitMod)
+confint(bootstrapModel)
+summary(bootstrapModel)
+hist(bootstrapModel)
+```
+
+
+## How do we use this information?
+
+-  If this bias is large, there could be bias in the estimates from your sample data
+
+- However, you should not correct based on one bias estimate, as it could be an over-correction
+
+- "It provides information to you that your estimate contains bias (or not) and this information can influence your decision making based on the estimate" (Zivot, 2021, Chapter 8.6).
+
+```{r}
+summary(bootstrapModel)
+```
+
+
+
+# Mediation analysis
+
+
+
+## What is a mediation design?
+
+
+Whether a mediation analysis is appropriate is determined as much by the design as by statistical criteria.
+
+
+```{r echo = FALSE}
+med_graph %>% render_graph(title = " ") 
+```
+
+We must consider whether it makes sense to predict this relationship between variables
+
+
+
+## What is mediation analysis?
+
+```{r echo = FALSE}
+med_graph %>% render_graph(title = " ") 
+```
+
+- Based on regression
+
+A summary of the logic of mediation:
+
+- The direct relationship between X and Y should be significant
+- The relationship between X and M should be significant
+- The relationship between M and Y (controlling for X) should be significant
+- When controlling for M, the strength of the relationship between X and Y decreases and is **not** significant
+
+## What is mediation analysis /#2?
+
+- The direct relationship between X and Y should be significant
+- <span style="color: blue;"> The relationship between X and M should be significant </span>
+- <span style="color: green;"> The relationship between M and Y (controlling for X) should be significant </span>
+- <span style="color: red;"> When controlling for M, the strength of the relationship between X and Y decreases and is **not** significant </span>
+
+> Baron & Kenny (1986) originally used a 4-step regression model to test each of these relationships.
+
+
+## What packages do we need?
+
+
+    library(mediation) #Mediation package
+    library(multilevel) #Sobel Test
+    library(bda) #Another Sobel Test option
+    library(gvlma) #Testing Model Assumptions 
+    library(stargazer) #Handy regression tables
+    
+    
+# Mediation analysis (the Baron and Kenny Approach)
+
+## Conducting mediation analysis (the Baron and Kenny Approach)
+
+- Baron & Kenny (1986) originally used a 4-step regression model to test each of these relationships.
+- The sobel test is then used to test the significance of mediation
+
+```{r  echo=F}
+set.seed(123) #Standardizes the numbers generated by rnorm; see Chapter 5
+N <- 100 #Number of participants; graduate students
+X <- rnorm(N, 175, 7) #IV; hours since dawn
+M <- 0.7*X + rnorm(N, 0, 5) #Suspected mediator; coffee consumption 
+Y <- 0.4*M + rnorm(N, 0, 5) #DV; wakefulness
+Meddata <- data.frame(X, M, Y)
+```
+
+## Step 1: Total Effect
+
+```{r}
+#1. Total Effect
+fit <- lm(Y ~ X, data=Meddata)
+summary(fit)
+```
+
+## Step 2: 
+
+
+```{r}
+#2. Path A (X on M)
+fita <- lm(M ~ X, data=Meddata)
+summary(fita)
+```
+
+## Step 3: 
+
+
+```{r}
+#3. Path B (M on Y, controlling for X)
+fitb <- lm(Y ~ M + X, data=Meddata)
+summary(fitb)
+```
+
+## Step 4: 
+
+```{r}
+#4. Reversed Path C (Y on X, controlling for M)
+fitc <- lm(X ~ Y + M, data=Meddata)
+summary(fitc)
+```
+
+## Viewing output
+
+
+
+    Summary Table
+    stargazer(fit, fita, fitb, fitc, type = "text", title = "Baron and Kenny Method")
+
+```{r  out.height = "700px", out.width="2000px", echo=F}
+
+knitr::include_graphics("img/baronandkenny.png") 
+```
+
+## Interpreting Baron and Kenny approach
+
+
+A reminder of the logic of mediation:
+
+- The direct relationship between X and Y should be significant
+- The relationship between X and M should be significant
+- The relationship between M and Y (controlling for X) should be significant
+- When controlling for M, the strength of the relationship between X and Y decreases and is **not** significant
+
+## Running the Sobel test
+
+
+- The Sobel test checks the significance of indirect effects
+
+```{r}
+#Sobel Test
+library(multilevel)
+sobel(Meddata$X, Meddata$M, Meddata$Y)
+```
+
+# Mediation analysis (the Mediation package)
+
+
+
+
+## Preacher & Hayes (2004) mediation approach
+
+- Mediation package in R uses the  Preacher & Hayes (2004) bootstrapping approach
+- They argue that few people test the signficance of the indirect effect
+
+>> "Baron and Kenny simply state that perfect mediation has occurred if c' becomes nonsignificant after controlling for
+M, so researchers have focused on that requirement." (Preacer & Hayes, 2004, p. 719)
+
+- Sobel test has low power (requires larger sample sizes)
+- Sobel test assumes normality (often violated)
+
+
+
+## Mediation example
+
+
+Is the relationship between *No of hours awake* and *wakefulness* mediated by *caffiene consumption*?
+
+>  This example is from  Demos & Salas (2019). *A Language, not a Letter: Learning Statistics in R* (Chapter 14)
+
+```{r  out.height = "75%", echo=F}
+## Diagrams from original paper 1
+
+
+edf <-
+  create_edge_df(
+    from = c(1, 2, 1),
+    to = c(2, 3, 3),
+    color=c("blue","green","red"),
+    # label = c(" ","-","+"),
+    fontsize=16)
+
+ndf <- create_node_df(
+  n=3,
+  label = c("# Hours Awake", "Caffiene \n consumption", "Wakefulness"),
+  shape = "rectangle", 
+  fillcolor = "white", 
+  width = 1.5, 
+  height = 1, 
+  x=c(1,3,5), 
+  y=c(1,3,1),
+  fontsize=12,
+  color="black",
+  fontcolor="black")
+
+med_graph <-
+  create_graph(nodes_df = ndf, edges_df = edf)
+
+med_graph %>% render_graph(title = "")
+```
+
+## Step 1: Run the models 
+
+
+```{r echo=TRUE}
+#Mediate package
+library(mediation)
+
+fitM <- lm(M ~ X,     data=Meddata) #IV on M; Hours since waking predicting coffee consumption
+fitY <- lm(Y ~ X + M, data=Meddata) #IV and M on DV; Hours since dawn and coffee predicting wakefulness
+
+```
+
+## Step 2: Check assumptions
+
+
+```{r echo=TRUE}
+gvlma(fitM) 
+
+# We can see that the data is positively skewed. We might need to transform the data 
+```
+
+
+## Step 2: Check assumptions
+
+
+```{r echo=TRUE}
+
+gvlma(fitY)
+```
+
+
+
+## Step 3.1: Run the mediation analysis on the models
+
+
+The mediate function gives us:  
+- Average Causal Mediation Effects (ACME)
+- Average Direct Effects (ADE) 
+- combined indirect and direct effects (Total Effect) 
+- the ratio of these estimates (Prop. Mediated). 
+
+The ACME here is the indirect effect of M (total effect - direct effect) and thus this value tells us if our mediation effect is significant.
+
+```{r echo=TRUE}
+fitMed <- mediate(fitM, fitY, treat="X", mediator="M")
+summary(fitMed)
+```
+
+## Step 3.2: Plot the mediation analysis of the models
+
+
+The plot below reiterates what was on the previous slide:
+
+- The confidence intervals of Total Effect and ACME are significant
+- The confidence interval of ADE is not significant
+
+> **Translation:**
+> - Total effect is signficant: there is a relationship between X and Y (direct and indirect)
+> - ADE is not significant: the relationship between X and Y is not direct
+> - ACME is significant: the relationship between X and Y is mediated by M
+
+```{r}
+plot(fitMed)
+```
+
+## Step 4: Bootstrap the mediation model
+
+
+The plot below changes our interpretation slightly:
+
+- The confidence interval ACME is significant
+- The confidence interval of Total Effect and ADE are not significant
+
+> **Translation:**
+> - Total effect is not signficant: the relationship between X and Y is not significant when we combine direct and indirect effects
+> - ADE is not significant: the relationship between X and Y is not direct
+> - ACME is significant: the relationship between X and Y is mediated by M
+
+```{r echo=TRUE}
+fitMedBoot <- mediate(fitM, fitY, boot=TRUE, sims=999, treat="X", mediator="M")
+summary(fitMedBoot)
+plot(fitMedBoot) ##
+```
+
+## Summary
+
+- What are mediation and moderation?
+- Mediation analysis example
+- Packages needed
+- Baron and Kenny approach in R
+- Mediation package approach in R
+
+## References
+
+Demos & Salas (2019). *A Language, not a Letter: Learning Statistics in R* (Chapter 14). https://ademos.people.uic.edu/ Accessed Jan 2020.
+
+Pardo, A., & Román, M. (2013). Reflections on the Baron and Kenny model of statistical mediation. Anales de psicologia, 29(2), 614-623.
+
+Pena, E. A., & Slate, E. H. (2006). Global validation of linear model assumptions. Journal of the American Statistical Association, 101(473), 341-354.
+
+Preacher, K. J., & Hayes, A. F. (2004). SPSS and SAS procedures for estimating indirect effects in simple mediation models. Behavior research methods, instruments, & computers, 36(4), 717-731.
+
+Zivot, E. (2021). Introduction to Computational Finance and Financial Econometrics with R. Retrieved 11 November 2022, from https://bookdown.org/compfinezbook/introcompfinr/
+
+
+## Questions?
+
+<iframe src="https://wall.sli.do/event/u3jTwQP6TdcYodD7qZBEnD" height="100%" width="100%" frameBorder="0" style="min-height: 560px;" title="Slido">
+
+</iframe>
+
+## Submit your attendance
+### Attendance code: `r format(attendanceCode, scientific = FALSE)`
+
+```{r echo=FALSE}
+
+
+knitr::include_graphics("img/attendanceQR.png") 
+
+```
+
+### <http://bit.ly/APRM22>
+
+
+
+
+
