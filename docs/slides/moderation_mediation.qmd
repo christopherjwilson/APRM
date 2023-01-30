@@ -622,6 +622,7 @@ gvlma(fitY)
 
 
 The mediate function gives us:  
+
 - Average Causal Mediation Effects (ACME)
 - Average Direct Effects (ADE) 
 - combined indirect and direct effects (Total Effect) 
