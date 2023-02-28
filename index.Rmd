@@ -45,6 +45,32 @@ The key foci for this module include:
   
 The module is taught using a variety of techniques to best enhance your knowledge and understanding of the application of research theory and methods in the context of clinical psychology. These include lectures, seminars, guided statistical analysis and tutorials with the latter being used to provide individual guidance and formative feedback. The module has its own site on the University’s Virtual Learning Environment http://eat.tees.ac.uk - known as Blackboard), with resources and literature designed to support learning.
 
+On successful completion of this module, the student will:
+  
+Knowledge & Understanding 
+
+1.	Demonstrate a comprehensive and critical understanding of techniques/methodologies appropriate to their own research or advanced scholarship.  
+2.	Demonstrate originality in the application of knowledge, together with a practical understanding of how established techniques of research and enquiry are used to create and interpret knowledge in the discipline.  
+3.	Demonstrate a systematic and critical understanding of the breadth and depth of knowledge in the discipline and a critical awareness of current problems and/or new insights, much of which is aimed at, or informed by, the forefront of their academic discipline or area of professional practice.  
+4.	As appropriate to the field, have the awareness and ability to manage the implications of ethical dilemmas and work pro-actively with others to formulate solutions. 
+
+Cognitive and Intellectual Skills 
+
+1.	Be able to integrate and synthesise diverse knowledge, evidence, concepts, theory and practice to promote understanding and/or good practice and solve foreseen and unforeseen problems.  
+2.	Be able to make argued conclusions on the basis of incomplete and/or contested data.  
+3.	Be able to challenge orthodoxy and formulate new/alternative hypotheses or solutions. 
+Practical and Professional Skills 
+
+1.	Operate ethically in complex and unpredictable, possibly specialised, research situations and have a critical understanding of the issues governing good practice in psychological research.  
+2.	Act autonomously in planning and implementing tasks at a professional or equivalent level. 
+
+Key Transferable Skills 
+
+1.	Demonstrate the independent learning ability required for continuing professional development.  
+2.	Communicate complex academic or professional issues clearly to specialist and non-specialist audiences.  
+3.	Be competent in the numeracy skills commensurate with the demands of research and scholarship in ways appropriate to the academic or professional context.  
+4.	Be competent in the IT skills commensurate with the demands of research and scholarship in ways appropriate to the academic or professional context.
+5.	Collaborate effectively with others in ways appropriate to the professional or academic context.
 
 
 ## Module timetable and delivery for 2022/2023
@@ -69,6 +95,9 @@ The module is taught using a variety of techniques to best enhance your knowledg
 You will be provided with two papers for critical review at the start of the module and asked to decide which one you will use for your summative critical review assignment; one of these papers is from a quantitative research tradition and the other is from a qualitative research tradition. 
 
 All presentations (with added annotations) are available, along with additional support materials, via an e-learning@tees on the VLE.  E-learning is enabled through group activities on the VLE or Microsoft Teams where discussion and problem solving is undertaken in relation to tasks set during teaching sessions. The discussion boards or Microsoft Teams site will be used to ask and answer questions that arise from the taught material and also your independent work.
+
+
+
 
 ## Assessment
 

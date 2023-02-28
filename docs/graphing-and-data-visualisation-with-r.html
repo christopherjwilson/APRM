@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 6 Graphing and data visualisation with R | Advanced Psychological Research Methods (PSY4034)</title>
   <meta name="description" content="This is handbook for the APRM module" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 6 Graphing and data visualisation with R | Advanced Psychological Research Methods (PSY4034)" />
   <meta property="og:type" content="book" />
@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -527,8 +527,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="graphing-and-data-visualisation-with-r.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb107-2"><a href="graphing-and-data-visualisation-with-r.html#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb107-3"><a href="graphing-and-data-visualisation-with-r.html#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel))</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
 <div id="it-is-possible-to-represent-more-variables-on-the-plot-3" class="section level2 hasAnchor" number="6.10">
@@ -539,8 +539,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="graphing-and-data-visualisation-with-r.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb109-2"><a href="graphing-and-data-visualisation-with-r.html#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb109-3"><a href="graphing-and-data-visualisation-with-r.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants))</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
 <div id="plotting-summaries-of-data" class="section level2 hasAnchor" number="6.11">
@@ -550,8 +550,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Below we are making a bar chart with the mean grade for each route</li>
 </ul>
 <div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="graphing-and-data-visualisation-with-r.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>route, <span class="at">y=</span> grades, <span class="at">fill=</span>route)) <span class="sc">+</span> <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: `fun.y` is deprecated. Use
-## `fun` instead.</code></pre>
+<pre><code>## Warning: The `fun.y` argument of
+## `stat_summary()` is deprecated as of
+## ggplot2 3.3.0.
+## ℹ Please use the `fun` argument
+##   instead.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 <div id="changing-the-axis-labels-and-title-on-a-plot" class="section level2 hasAnchor" number="6.12">
@@ -561,8 +564,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="graphing-and-data-visualisation-with-r.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb114-2"><a href="graphing-and-data-visualisation-with-r.html#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb114-3"><a href="graphing-and-data-visualisation-with-r.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 </div>
 <div id="changing-the-legend-on-a-plot" class="section level2 hasAnchor" number="6.13">
@@ -574,8 +577,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb117-3"><a href="graphing-and-data-visualisation-with-r.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data=</span>studentData, <span class="fu">aes</span>(<span class="at">x=</span>grades,<span class="at">y=</span>hoursOfStudy)) <span class="sc">+</span> </span>
 <span id="cb117-4"><a href="graphing-and-data-visualisation-with-r.html#cb117-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> route, <span class="at">size=</span>satisfactionLevel, <span class="at">shape=</span>hasDepdendants)) <span class="sc">+</span></span>
 <span id="cb117-5"><a href="graphing-and-data-visualisation-with-r.html#cb117-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Student Grade&quot;</span>, <span class="at">y=</span><span class="st">&quot;Hours of Study&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Scattterplot of studentdata&quot;</span>, <span class="at">color=</span><span class="st">&quot;Route of study&quot;</span>, <span class="at">size=</span><span class="st">&quot;Satisfaction level&quot;</span>, <span class="at">shape=</span><span class="st">&quot;Has dependents?&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 </div>
 <div id="storing-plots-to-be-recalled-later" class="section level2 hasAnchor" number="6.14">
@@ -595,8 +598,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.15</span> Recalling a stored plot<a href="graphing-and-data-visualisation-with-r.html#recalling-a-stored-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="graphing-and-data-visualisation-with-r.html#cb120-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#Recall myPlot</span></span>
 <span id="cb120-2"><a href="graphing-and-data-visualisation-with-r.html#cb120-2" aria-hidden="true" tabindex="-1"></a>myPlot</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 <p><img src="PRBook_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
 <div id="saving-plots-1" class="section level2 hasAnchor" number="6.16">
@@ -613,11 +616,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>This can allow greater control over the output file and plot dimensions:</li>
 </ul>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="graphing-and-data-visualisation-with-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">&quot;myPlot.pdf&quot;</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="graphing-and-data-visualisation-with-r.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot=</span> myPlot, <span class="at">file=</span><span class="st">&quot;myPlot.png&quot;</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">units=</span><span class="st">&quot;cm&quot;</span>, <span class="at">dpi=</span><span class="dv">320</span>)</span></code></pre></div>
-<pre><code>## Warning: Using size for a discrete
-## variable is not advised.</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is
+## not advised.</code></pre>
 
 </div>
 </div>
